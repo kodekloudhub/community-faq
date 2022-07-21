@@ -118,3 +118,7 @@ The PSI document states a minimum screen resolution of 1368x769, but we *really*
 ## Specific Questions About The Exam
 * [Specific Questions About Exam](https://trainingsupport.linuxfoundation.org/). Login here with your Linux Foundation credentials. You can raise a ticket to ask questions about anything to do with the exam. The answers you receive here are the ultimate source of truth and trump anything you may read on this page or in any public discussion forums. Expect 2-3 days for a response.
 
+Should a response from Linux Foundation contradict anything on this page, please reach out to a member of the support team in Slack. Thanks!
+
+KodeKloud Team.
+
