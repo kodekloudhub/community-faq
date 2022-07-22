@@ -13,6 +13,8 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
+* [Kubernetes Challenges](#kubernetes-challenges)
+    * [I cannot complete Challenge 2](#i-cannot-complete-challenge-2)
 * [Useful Links](#useful-links)
     * [Pre-Exam](#pre-exam)
     * [All Exams](#all-exams)
@@ -88,29 +90,39 @@ Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/art
 
 The PSI document states a minimum screen resolution of 1368x769, but we *really* would not recommend that. See the section on [monitors](#can-i-use-multiple-monitors) above.
 
-# Useful Links
+## Kubernetes Challenges
 
-## Pre-Exam
+### I cannot complete Challenge 2
+
+All the icons are green, yet it still says "tasks incomplete".
+
+Notice the red arrow between `users` and `gop-fs-service`. Click this to reveal the final task.
+
+
+
+## Useful Links
+
+### Pre-Exam
 
 * [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
 * [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements)
 * [Exam Workspace Requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-testing-environment-requirements-to-take-the-exam)
 * [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam)
 
-## All Exams
+### All Exams
 
 * [Exam Desktop](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-user-interface)
 
-## CKA/CKAD
+### CKA/CKAD
 
 * [Exam Environment](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad#cka-and-ckad-environment)
 * [Allowed Documentation](https://docs.linuxfoundation.org/tc-docs/certification/certification-resources-allowed#certified-kubernetes-administrator-cka-and-certified-kubernetes-application-developer-ckad)
 
-## CKS
+### CKS
 * [Exam Environment](https://docs.linuxfoundation.org/tc-docs/certification/important-instructions-cks#cks-environment)
 * [Allowed Documentation](https://docs.linuxfoundation.org/tc-docs/certification/certification-resources-allowed#certified-kubernetes-security-specialist-cks)
 
-## Other
+### Other
 
 * [vim Cheat Sheet](https://vim.rtorr.com/)
 * [tmux Cheat Sheet](https://opensource.com/article/20/7/tmux-cheat-sheet)
