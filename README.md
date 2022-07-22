@@ -112,6 +112,7 @@ Notice the red arrow between `users` and `gop-fs-service`. Click this to reveal 
 ### All Exams
 
 * [Exam Desktop](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-user-interface)
+* [Detailed write-up on exam procedure](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) by Alistair Mackay (KodeKloud)
 
 ### CKA/CKAD
 
