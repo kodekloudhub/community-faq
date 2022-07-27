@@ -13,6 +13,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
+    * [What ID is required?](#what-id-is-required)
 * [Kubernetes Challenges](#kubernetes-challenges)
     * [I cannot complete Challenge 2](#i-cannot-complete-challenge-2)
 * [Useful Links](#useful-links)
@@ -89,6 +90,11 @@ Note that for e.g. cluster upgrades, then `apt` package manager should work exac
 Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements) and [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
 
 The PSI document states a minimum screen resolution of 1368x769, but we *really* would not recommend that. See the section on [monitors](#can-i-use-multiple-monitors) above.
+
+
+### What ID is required
+
+Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. Please carefully read  [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
 
 ## Kubernetes Challenges
 
