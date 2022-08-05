@@ -78,7 +78,7 @@ This is the one you need to learn for the CKA, as that's how the clusters are de
 
 #### Manually installed clusters
 
-For clusters where `etcd` is deployed as an operating system service (like in [Kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way), you have to edit the command lime parameters to `etcd` by editing its service unit file. This is normally found in<br>`/etc/systemd/system/etcd.service`
+For clusters where `etcd` is deployed as an operating system service (like in [Kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way)), you have to edit the command lime parameters to `etcd` by editing its service unit file. This is normally found in<br>`/etc/systemd/system/etcd.service`
 
 1. Edit the service unit file
 1. Change the `--data-dir` argument to point to the new directory (e.g `/var/lib/etcd-from-backup`)
