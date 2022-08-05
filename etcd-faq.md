@@ -94,7 +94,7 @@ This is the section in `etcd.yaml` that you need to find...
 
 Why does this work? You need to remember how mounting volumes in containers works.
 
-* `volumes.hostPath.path` which you edited above specifies the directory on the node (host) where the data is stored.
+* `volumes.hostPath.path` which you edited above specifies the directory on the node (host) where the data is stored. This is the actual location of where the backup was restored to.
 * `containers.volumeMounts.mountPath` specifies the directory *inside* the container where the host data is mounted. We haven't changed that. From the `etcd` container's point of view, the directory is still `/var/lib/etcd`.
 
 And note...
