@@ -72,9 +72,38 @@ ETCDCTL_API=3 etcdctl snapshot restore \
 This is the one you need to learn for the CKA, as that's how the clusters are deployed, both there and in the labs.
 
 1. Edit the manifest file for `etcd` on the controlplane node. This is found in <br>`/etc/kubernetes/manifests/etcd.yaml`.
-1. Scroll down to the `volumes` section and find the volume that describes the data directory.
-1. Edit the `hostPath` from `/var/lib/etcd` to `/var/lib/etcd-from-backup` (or whichever directory you used for the restore command). Note that you *do not* change the `--data-dir` command line argument to `etcd` in the container's command specification.
+1. Scroll down to the `volumes` section and find the volume that describes the data directory (see below).
+1. Edit the `hostPath/path` of the volume with name `etcd-data` from `/var/lib/etcd` to `/var/lib/etcd-from-backup` (or whichever directory you used for the restore command). Note that you *do not* change the `--data-dir` command line argument to `etcd` in the container's command specification.
 1. Wait about 30 seconds for `etcd` to reload.
+
+This is the section in `etcd.yaml` that you need to find...
+
+```yaml
+  volumes:
+  - hostPath:
+      path: /etc/kubernetes/pki/etcd
+      type: DirectoryOrCreate
+    name: etcd-certs
+  - hostPath:
+      path: /var/lib/etcd    # <- change this
+      type: DirectoryOrCreate
+    name: etcd-data
+```
+
+And note...
+
+```yaml
+  containers:
+  - command:
+    - etcd
+    - --advertise-client-urls=https://10.40.10.9:2379
+    - --cert-file=/etc/kubernetes/pki/etcd/server.crt
+    - --client-cert-auth=true
+    - --data-dir=/var/lib/etcd                  # <- DO NOT CHANGE THIS!
+    - --initial-advertise-peer-urls=https://10.40.10.9:2380
+    - --initial-cluster=controlplane=https://10.40.10.9:2380
+
+```
 
 #### Manually installed clusters
 
