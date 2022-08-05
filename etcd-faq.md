@@ -2,12 +2,12 @@
 
 `etcd` is a distributed key-value store, kind of similar to a NoSQL database. It is the database backend chosen by the Kubernetes project for the storage of cluster state. It is a separate open source project that is not maintained by the Kubernetes developers, but no doubt they have some input on its development.
 
-* [What is ECTDCTL-API=3 all about?](#what-is-ectdctl-api3-all-about)
+* [What is ECTDCTL-API=3 all about?](#what-is-ectdctlapi3-all-about)
 * [When do I use --endpoints?](#when-do-i-use---endpoints)
 * [How do I make a backup?](#how-do-i-make-a-backup)
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
 
-### What is ECTDCTL-API=3 all about?
+### What is ECTDCTL_API=3 all about?
 
 `etcdctl` supports two versions of the server's API. When making server calls, it defaults to version 2 of the API, and in version 2 some operations are either undefined, or have different arguments. Setting this environment variable tells `etcdctl` to use the V3 API, which is required for the snapshot functionality.
 
