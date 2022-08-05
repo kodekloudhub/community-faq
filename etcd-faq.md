@@ -2,7 +2,7 @@
 
 `etcd` is a distributed key-value store, kind of similar to a NoSQL database. It is the database backend chosen by the Kubernetes project for the storage of cluster state. It is a separate open source project that is not maintained by the Kubernetes developers, but no doubt they have some input on its development.
 
-* [What is ECTDCTL-API=3 all about?](#what-is-ectdctlapi3-all-about)
+* [What is ECTDCTL_API=3 all about?](#what-is-ectdctlapi3-all-about)
 * [When do I use --endpoints?](#when-do-i-use---endpoints)
 * [How do I make a backup?](#how-do-i-make-a-backup)
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
@@ -14,14 +14,14 @@
 You may set the environment variable with each call...
 
 ```bash
-ECTDCTL-API=3 etcdctl snapshot save ...
-ECTDCTL-API=3 etcdctl snapshot restore ...
+ECTDCTL_API=3 etcdctl snapshot save ...
+ECTDCTL_API=3 etcdctl snapshot restore ...
 ```
 
 ...or for the entire terminal session...
 
 ```bash
-export ECTDCTL-API=3
+export ECTDCTL_API=3
 etcdctl snapshot save ...
 etcdctl snapshot restore ...
 ```
