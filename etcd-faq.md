@@ -71,6 +71,8 @@ ETCDCTL_API=3 etcdctl snapshot restore \
 
 This is the one you need to learn for the CKA, as that's how the clusters are deployed, both there and in the labs.
 
+It is a change to a single line in the manifest.
+
 1. Edit the manifest file for `etcd` on the controlplane node. This is found in <br>`/etc/kubernetes/manifests/etcd.yaml`.
 1. Scroll down to the `volumes` section and find the volume that describes the data directory (see below).
 1. Edit the `hostPath/path` of the volume with name `etcd-data` from `/var/lib/etcd` to `/var/lib/etcd-from-backup` (or whichever directory you used for the restore command). Note that you *do not* change the `--data-dir` command line argument to `etcd` in the container's command specification.
@@ -89,6 +91,11 @@ This is the section in `etcd.yaml` that you need to find...
       type: DirectoryOrCreate
     name: etcd-data
 ```
+
+Why does this work? You need to remember how mounting volumes in containers works.
+
+* `volumes.hostPath.path` which you edited above specifies the directory on the node (host) where the data is stored.
+* `containers.volumeMounts.mountPath` specifies the directory *inside* the container where the host data is mounted. We haven't changed that. From the `etcd` container's point of view, the directory is still `/var/lib/etcd`.
 
 And note...
 
