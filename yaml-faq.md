@@ -70,7 +70,7 @@ command:
 - "4800"
 ```
 
-In places where you need to declare an empty YAML key, then you must use flow style to represent the value as an empty (JSON) object, such as
+In places where you need to declare an empty YAML object key, then you must use flow style to represent the value as an empty (JSON) object, such as
 
 ```yaml
 volumes:
@@ -185,7 +185,7 @@ spec:
 
 ```
 
-## Aliases and Anchors 
+## Aliases and Anchors
 The GoLang YAML parser supports funky stuff like Aliases and Anchors, which help you to avoid repetition. Consider the case where you have a load of containers in a single pod, and they all require the same environment. You can do this:
 
 ```yaml
