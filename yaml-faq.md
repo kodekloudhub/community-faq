@@ -2,7 +2,7 @@
 
 We see a few questions about "kubectl" YAML manifests and what you can and can't do syntactically, therefore we'll try to clear some of this up.
 
-`kubectl` (and anything else in the ecosystem that needs to read YAML like `kubelet` etc) is built using the standard GoLang YAML package, which apart from anything explicitly mentioned in the package's [Compatibility](https://github.com/go-yaml/yaml#compatibility) paragraph is YAML 1.2 compliant, and this is the dialect that `kubectl` understands.
+`kubectl` (and anything else in the ecosystem that needs to read YAML like `kubelet` etc) is built using the standard GoLang YAML package, which apart from anything explicitly mentioned in the package's [Compatibility](https://github.com/go-yaml/yaml#compatibility) paragraph is YAML 1.2 compliant, and this is the dialect that `kubectl` understands. There is no "special" `kubectl` dialect.
 
 * [In a nutshell](#in-a-nutshell)
 * [To quote or not to quote](#to-quote-or-not-to-quote)
@@ -14,7 +14,47 @@ We see a few questions about "kubectl" YAML manifests and what you can and can't
 
 ## In a nutshell
 
-YAML is a superset of JSON. Any valid JSON is also valid YAML, meaning you can mix and match
+YAML is a superset of JSON and has all the same concepts like objects (a.k.a. dictionary, map) and lists, and combinations of all these
+
+```yaml
+myString: I am a string value
+myNumber: 123
+myBoolean: true
+myList:
+- value1
+- value2
+- valuen
+myObject:           # Every key-value indented beneath here is part of `myObject` dictionary
+  property1: value1
+  property2: value2
+  propertyn: valuen
+```
+
+Every item is a key-value pair, where the key name ends with a `:` and the value follows.
+
+A value may be of any valid type; a scalar (string, number, bool etc.), or a list or another object, so `value1`, `value2`, `valuen` above can be any of these types, however here they are string literals.
+
+This is exactly the same as this JSON
+
+```json
+{
+    "myString": "I am a string value",
+    "myNumber": 123,
+    "myBoolean": true,
+    "myList": [
+        "value1",
+        "value2",
+        "valuen"
+    ],
+    "myObject": {
+        "property1": "value1",
+        "property2": "value2",
+        "propertyn": "valuen"
+    }
+}
+```
+
+Any valid JSON is also valid YAML, meaning you can mix and match
 
 ```yaml
 # Using JSON array for command parameters (known as YAML flow style)
@@ -24,15 +64,26 @@ command: ["sleep", "4800"]
 is equivalent to
 
 ```yaml
-# Using YAML array for command parameters (konwon as YAML block style)
+# Using YAML array for command parameters (known as YAML block style)
 command:
 - sleep
 - "4800"
 ```
 
+In places where you need to declare an empty YAML key, then you must use flow style to represent the value as an empty (JSON) object, such as
+
+```yaml
+volumes:
+- name: my-volume
+  emptyDir: {}
+```
+
+This is because to put nothing after `emptyDir:` would be a syntax error as the value would be missing. What we are doing is asking for an `emptyDir` volume with no custom properties. There are properties that could be used with this but they are beyond the scope of the exams.
+
+
 ## To quote or not to quote
 
-YAML always parses values as strings, unless the value is wholly numeric (including canonical, integer, fixed point, exponential, octal or hex), a timestamp or a boolean: `true`, `false`, `yes`, `no`. If you want to force a non-string to be parsed as a string, you must quote it. This rule applies to environment variable values and to command arguments which must both be passed to the underlying container as a string, hence
+YAML always parses literal values as strings, unless the value is wholly numeric (including canonical, integer, fixed point, exponential, octal or hex), a timestamp or a boolean: `true`, `false`, `yes`, `no`. If you want to force a non-string to be parsed as a string, you must quote it. This rule applies to environment variable values and to command arguments which must both be passed to the underlying container as a string, hence
 
 ```yaml
 command:
