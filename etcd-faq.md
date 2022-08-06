@@ -30,7 +30,7 @@ etcdctl snapshot restore ...
 
 The `--endpoints` argument on `etcdctl` is used to tell it where to find the `etcd` server. If you are running the command on the same host where `etcd` service is running, then you do not need to provide this argument, as it has a default value of `https://127.0.0.1:2379`.<br>This is the case in most labs, as your prompt will nearly always be on the controlplane node.
 
-If you run `etcdctl` from a different workstation, as would be the case in most production environments, then you need to provide this argument to say where the `etcd` server is. When properly set up in a corporate environment, you would expect the internal DNS to provide a hostname for the etcd service, so you would use something like<br>`--endpoints https://etcd.my-big-cluster.my-company.org:2379`
+If you run `etcdctl` from a different workstation, as may be the case in a production environment, then you need to provide this argument to say where the `etcd` server is. When properly set up in a corporate environment, you would expect the internal DNS to provide a hostname for the etcd service, so you would use something like<br>`--endpoints https://etcd.my-big-cluster.my-company.org:2379`.<br>If you do not have a DNS entry pointing to the host that runs `etcd`, then you use the host's IP address.
 
 ### How do I make a backup?
 
@@ -75,7 +75,7 @@ It is a change to a single line in the manifest.
 
 1. Edit the manifest file for `etcd` on the controlplane node. This is found in <br>`/etc/kubernetes/manifests/etcd.yaml`.
 1. Scroll down to the `volumes` section and find the volume that describes the data directory (see below).
-1. Edit the `hostPath/path` of the volume with name `etcd-data` from `/var/lib/etcd` to `/var/lib/etcd-from-backup` (or whichever directory you used for the restore command). Note that you *do not* change the `--data-dir` command line argument to `etcd` in the container's command specification.
+1. Edit the `hostPath.path` of the volume with name `etcd-data` from `/var/lib/etcd` to `/var/lib/etcd-from-backup` (or whichever directory you used for the restore command). Note that you *do not* change the `--data-dir` command line argument to `etcd` in the container's command specification.
 1. Wait about 30 seconds for `etcd` to reload.
 
 This is the section in `etcd.yaml` that you need to find...
