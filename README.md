@@ -14,8 +14,13 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
+* [Kubernetes CKA](#kubernetes-cka)
+    * [How do I backup etcd?](#how-do-i-backup-etcd)
+    * [How do I restore etcd?](#how-do-i-restore-etcd)
 * [Kubernetes Challenges](#kubernetes-challenges)
     * [I cannot complete Challenge 2](#i-cannot-complete-challenge-2)
+* YAML Syntax
+    * See the [dedicated YAML FAQ](./yaml-faq.md)
 * [Useful Links](#useful-links)
     * [Pre-Exam](#pre-exam)
     * [All Exams](#all-exams)
@@ -94,7 +99,19 @@ The PSI document states a minimum screen resolution of 1368x769, but we *really*
 
 ### What ID is required
 
-Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. Please carefully read  [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
+Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. If your primary ID is in a language that uses non-Latin characters (e.g. Arabic, Greek, Russian etc.), then you must provide an additional form of ID that has your name as written in English.
+
+Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
+
+## Kubernetes CKA
+
+### How do I backup etcd?
+
+See the dedicated [ectd FAQ](./etcd-faq.md)
+
+### How do I restore etcd?
+
+See the dedicated [ectd FAQ](./etcd-faq.md)
 
 ## Kubernetes Challenges
 
