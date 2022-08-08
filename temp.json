@@ -1,0 +1,15 @@
+{
+    "myString": "I am a string value",
+    "myNumber": 123,
+    "myBoolean": true,
+    "myList": [
+        "value1",
+        "value2",
+        "valuen"
+    ],
+    "myObject": {
+        "property1": "value1",
+        "property2": "value2",
+        "propertyn": "valuen"
+    }
+}

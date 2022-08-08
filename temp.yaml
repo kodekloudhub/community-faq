@@ -1,0 +1,11 @@
+myString: I am a string value
+myNumber: 123
+myBoolean: true
+myList:
+- value1
+- value2
+- valuen
+myObject:           # Every key-value indented beneath here is part of `myObject` dictionary
+  property1: value1
+  property2: value2
+  propertyn: valuen
