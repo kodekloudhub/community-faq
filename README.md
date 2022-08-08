@@ -12,6 +12,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Do my speakers need to work?](#do-my-speakers-need-to-work)
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
+    * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
 * [Kubernetes CKA](#kubernetes-cka)
@@ -89,6 +90,23 @@ The only software that may be running is the PSI software, therefore you must me
 If you are required to install any software or 3rd party Kubernetes applications, then the question will tell you where to obtain the files/packages you need.
 
 Note that for e.g. cluster upgrades, then `apt` package manager should work exactly as you have practiced in labs.
+
+### How do I run Docker commands when Docker is removed?
+
+As you most likely know, the Dockershim layer is removed in Kubernetes 1.24. This means that the `docker` command is also likely not installed.
+
+For examining and working with containers at that level, you should find that one, other or both of `crictl` and `podman` will be present, depending on the exam requirements
+
+* `podman` can be used for creating containers from Dockerfiles. It has the same arguments as `docker`, and fully supports Dockerfile syntax.
+* `crictl` can be used for controlling containers, like listing running containers and getting logs. It too has the same arguments as the corresponding `docker` commands.
+
+Find out which of these are installed by running these commands in the terminal
+
+```bash
+which docker
+which crictl
+which podman
+```
 
 ### What are the system requirements for taking the exam?
 
