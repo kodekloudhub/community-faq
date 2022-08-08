@@ -11,13 +11,13 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Does my microphone need to work?](#does-my-microphone-need-to-work)
     * [Do my speakers need to work?](#do-my-speakers-need-to-work)
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
-    * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
-    * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
-* [Kubernetes CKA](#kubernetes-cka)
+* [Kubernetes CKA/CKAD](#kubernetes-ckackad)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
     * [How do I restore etcd?](#how-do-i-restore-etcd)
+    * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
+    * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
 * [Kubernetes Challenges](#kubernetes-challenges)
     * [I cannot complete Challenge 2](#i-cannot-complete-challenge-2)
 * YAML Syntax
@@ -85,6 +85,28 @@ Because you cannot run your own browser. The only software that may be running o
 The only software that may be running is the PSI software, therefore you must memorize such things and enter them up manually at the beginning of the exam.
 
 
+### What are the system requirements for taking the exam?
+
+Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements) and [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
+
+The PSI document states a minimum screen resolution of 1368x769, but we *really* would not recommend that. See the section on [monitors](#can-i-use-multiple-monitors) above.
+
+
+### What ID is required
+
+Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. If your primary ID is in a language that uses non-Latin characters (e.g. Arabic, Greek, Russian etc.), then you must provide an additional form of ID that has your name as written in English.
+
+Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
+
+## Kubernetes CKA/CKAD
+
+### How do I backup etcd?
+
+See the dedicated [ectd FAQ](./etcd-faq.md)
+
+### How do I restore etcd?
+
+See the dedicated [ectd FAQ](./etcd-faq.md)
 ### How do I install a CNI (or anything else)?
 
 If you are required to install any software or 3rd party Kubernetes applications, then the question will tell you where to obtain the files/packages you need.
@@ -107,29 +129,6 @@ which docker
 which crictl
 which podman
 ```
-
-### What are the system requirements for taking the exam?
-
-Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements) and [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
-
-The PSI document states a minimum screen resolution of 1368x769, but we *really* would not recommend that. See the section on [monitors](#can-i-use-multiple-monitors) above.
-
-
-### What ID is required
-
-Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. If your primary ID is in a language that uses non-Latin characters (e.g. Arabic, Greek, Russian etc.), then you must provide an additional form of ID that has your name as written in English.
-
-Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
-
-## Kubernetes CKA
-
-### How do I backup etcd?
-
-See the dedicated [ectd FAQ](./etcd-faq.md)
-
-### How do I restore etcd?
-
-See the dedicated [ectd FAQ](./etcd-faq.md)
 
 ## Kubernetes Challenges
 
