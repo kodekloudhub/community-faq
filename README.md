@@ -33,6 +33,8 @@ This document answers the most frequently asked questions in the KodeKloud Slack
 
 Probably *the* most asked questions! This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022.
 
+In addition to the Q&A below, you can also watch [our video](https://youtu.be/1fSxM0_dtac) on this subject.
+
 ### Can I use an external monitor?
 
 > Yes
@@ -153,6 +155,7 @@ Notice the red arrow between `users` and `gop-fs-service`. Click this to reveal 
 
 * [Exam Desktop](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-user-interface)
 * [Detailed write-up on exam procedure](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) by Alistair Mackay (KodeKloud)
+* [Video presentation](https://youtu.be/1fSxM0_dtac) on the new exam environment
 
 ### CKA/CKAD
 
