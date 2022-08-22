@@ -104,11 +104,11 @@ Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc
 
 ### How do I backup etcd?
 
-See the dedicated [ectd FAQ](./etcd-faq.md)
+See the dedicated [etcd FAQ](./etcd-faq.md)
 
 ### How do I restore etcd?
 
-See the dedicated [ectd FAQ](./etcd-faq.md)
+See the dedicated [etcd FAQ](./etcd-faq.md)
 ### How do I install a CNI (or anything else)?
 
 If you are required to install any software or 3rd party Kubernetes applications, then the question will tell you where to obtain the files/packages you need.
