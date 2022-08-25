@@ -95,7 +95,7 @@ We've seen posts that say "You must quote mount paths" or "You must quote pod ca
 
 ## Indentation
 
-Beware of the pesky indentation rules. Whitespace is part of the syntax like Python, however `TAB` characters are not.
+Beware of the pesky indentation rules. Whitespace is part of the syntax like Python, however `TAB` characters are not. Each indentation level should be two spaces. If you mess this up you can get all kinds of different errors from `kubectl` depending on where it was in the file when it encountered the error.
 
 * Make sure vim is not inserting `TAB` instead of spaces, or you will get cryptic errors from `kubectl`!
 * Remember to use `INSERT (paste)` mode when pasting YAML from documentation, and toggle paste mode OFF before hitting tab on the keyboard.
