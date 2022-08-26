@@ -73,10 +73,19 @@ This is the one you need to learn for the CKA, as that's how the clusters are de
 
 It is a change to a single line in the manifest.
 
-1. Edit the manifest file for `etcd` on the controlplane node. This is found in <br>`/etc/kubernetes/manifests/etcd.yaml`.
+1. "Stop" the kubernetes services by moving their manifests
+```bash
+cd /etc/kubernetes/manifests
+mv kube-apiserver.yaml kube-controller-manager.yaml kube-scheduler.yaml ..
+```
+2. Edit the manifest file for `etcd` on the controlplane node. This is found in <br>`/etc/kubernetes/manifests/etcd.yaml`.
 1. Scroll down to the `volumes` section and find the volume that describes the data directory (see below).
 1. Edit the `hostPath.path` of the volume with name `etcd-data` from `/var/lib/etcd` to `/var/lib/etcd-from-backup` (or whichever directory you used for the restore command). Note that you *do not* change the `--data-dir` command line argument to `etcd` in the container's command specification.
-1. Wait about 30 seconds for `etcd` to reload.
+1. Restart the other services by moving their manifests back (this assumes you are still cd'ed to `/etc/kubernetes/manifests`)
+```
+mv ../*.yaml .
+```
+6. Wait about a minute for everything to reload.
 
 This is the section in `etcd.yaml` that you need to find...
 
@@ -116,13 +125,13 @@ And note...
 
 For clusters where `etcd` is deployed as an operating system service (like in [Kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way)), you have to edit the command lime parameters to `etcd` by editing its service unit file. This is normally found in<br>`/etc/systemd/system/etcd.service`
 
+1. Stop control plane services (`kube-apiserver`, `kube-controller-manager`, `kube-scheduler`) using `systemctl`
 1. Edit the service unit file
 1. Change the `--data-dir` argument to point to the new directory (e.g `/var/lib/etcd-from-backup`)
 1. Note when editing in the service unit file whether a specific user account is being used to run `etcd`. If it is, you need to set the owner of the restored directory structure to this user with `chown -R`
-1. Restart the service
+1. Restart the services
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl restart etcd
+sudo systemctl restart etcd kube-apiserver kube-controller-manager kube-scheduler
 ```
-
