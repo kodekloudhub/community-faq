@@ -35,9 +35,12 @@ etcdctl snapshot restore ...
 
 ## When do I use --endpoints?
 
-The `--endpoints` argument on `etcdctl` is used to tell it where to find the `etcd` server. If you are running the command on the same host where `etcd` service is running, then you do not need to provide this argument, as it has a default value of `https://127.0.0.1:2379`.<br>This is the case in most labs, as your prompt will nearly always be on the controlplane node.
+The `--endpoints` argument on `etcdctl` is used to tell it where to find the `etcd` server. If you are running the command on the same host where `etcd` service is running *and* there is only one instance of `etcd`, then you do not need to provide this argument, as it has a default value of `https://127.0.0.1:2379`.<br>This is the case in most labs, as your prompt will nearly always be on the controlplane node.
 
-If you run `etcdctl` from a different workstation, as may be the case in a production environment, then you need to provide this argument to say where the `etcd` server is. When properly set up in a corporate environment, you would expect the internal DNS to provide a hostname for the etcd service, so you would use something like<br>`--endpoints https://etcd.my-big-cluster.my-company.org:2379`.<br>If you do not have a DNS entry pointing to the host that runs `etcd`, then you use the host's IP address.
+If you run `etcdctl` from a different workstation from where `etcd` is running, as may be the case in a production environment, *or* you need to use a non-standard port, then you need to provide this argument to say where the `etcd` server is.
+
+* Same host, different port: `--endpoints https://127.0.0.1:port`
+* Remote host: `--endpoints https://host-ip:port`
 
 ## How do I make a backup?
 
