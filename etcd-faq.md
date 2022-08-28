@@ -177,12 +177,41 @@ Log out of the control node
 Next, find the unit file for the correct `etcd` service. The following will give you the file *names*.
 
 ```
-sudo systemctl list-unit-files | grep etcd
+systemctl list-unit-files | grep etcd
 ```
 
-These files will be located in either `/etc/systemd/system` or `/lib/systemd/system`. Find the correct one by examining each identified unit file and choose the one that has the matching port number for the `--listen-client-urls` argument. You will need to edit this later.
+> Output
 
-Now do the backup and specify `--endpoint https://127.0.0.1:port` where `port` is the port you have identified, then do the restore to a new directory.
+```bash
+etcd-1.service                               enabled         enabled
+etcd-2.service                               enabled         enabled
+```
+
+To locate these files, run the following on each filename returned by the command above
+
+```
+sytemctl cat XXXX.service
+```
+
+...where `XXXX.service` is e.g. `etcd-1.service`. This will show the file content with a comment above it which is the location of the unit file.
+
+> Output
+
+```bash
+# /etc/systemd/system/etcd-1.service
+[Unit]
+Description=etcd
+Documentation=https://github.com/coreos
+
+[Service]
+ExecStart=/usr/local/bin/etcd \
+--- truncated---
+  --listen-client-urls https://192.168.56.11:2379
+```
+
+Find the correct one by examining each identified unit file and choose the one that has the matching port number for the `--listen-client-urls` argument. You will need to edit this later.
+
+Now do the backup and specify `--endpoint CLIENT_URL` where `CLIENT_URL` is the URL from the `--listen-client-urls` in the indentified unit file.
 
 Finally edit the identified unit file
 
