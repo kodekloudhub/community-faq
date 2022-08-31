@@ -33,6 +33,14 @@ This document answers the most frequently asked questions in the KodeKloud Slack
 
 Probably *the* most asked questions! This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022.
 
+Many people also ask "Can I use external webcam?", "Can I use bluetooth mouse?" etc. From the point of view of the system check, the PSI sofware will simply query the operating system. It will expect to find the following devices, and *it doesn't matter* how they are connected (built-in, wired, RF wireless, bluetooth, USB, via docking station, etc., etc.):
+
+* One active monitor
+* Mouse
+* Keyboard
+* Microphone
+* Camera
+
 In addition to the Q&A below, you can also watch [our video](https://youtu.be/1fSxM0_dtac) on this subject.
 
 ### Can I use an external monitor?
