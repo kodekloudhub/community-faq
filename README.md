@@ -70,6 +70,8 @@ If you are working with laptop lid closed, then this is your only option. It doe
 
 Due to the nature of the check-in process for the exam, it's actually easier to use an external webcam, since you have to move it around *a lot* to cover everything that the proctor requires you to video - including 360 of room, all of desk area (left, right, up, down), all around your head and wrists too.
 
+Note that you should practice getting a clear shot of your ID using your webcam *well before* exam day. Even consider building something to hold the ID card steady using your kids lego or something :-) 
+
 ### Does my microphone need to work?
 
 > Yes
