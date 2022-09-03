@@ -1,5 +1,7 @@
 # ETCD FAQ
 
+**IMPORTANT** Following recent student comments about the exam backup/restore questions,  this FAQ is currently under review. Once we ascertain what is actually required,  we will update this page, and the labs accordingly. 
+
 `etcd` is a distributed key-value store, kind of similar to a NoSQL database. It is the database backend chosen by the Kubernetes project for the storage of cluster state. It is a separate open source project that is not maintained by the Kubernetes developers, but no doubt they have some input on its development.
 
 * [What is ETCDCTL_API=3 all about?](#what-is-etcdctlapi3-all-about)
