@@ -10,7 +10,7 @@
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
     * [kubeadm clusters with etcd running as a pod](#kubeadm-clusters-with-etcd-running-as-a-pod)
     * [Manually installed clusters](#manually-installed-clusters)
-    * [Clusters with remote etcd](#clusters-with-remote-etcd)
+    * [Clusters with external etcd](#clusters-with-external-etcd)
 
 **NOTE**: In the exam, you are advised to skip this question and come back to it at the end, as it is probably the hardest one and you don't want to waste time if there are easier questions further on!!
 
@@ -154,7 +154,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart etcd kube-apiserver kube-controller-manager kube-scheduler
 ```
 
-### Clusters with remote etcd
+### Clusters with external etcd
 
 Some people have suggested that this is how the exam is set up, as in you have to do it all from the exam node and *not* the control node for the target cluster. It requires a bit more work!
 
@@ -168,11 +168,19 @@ If there's more than one, you need to identify the correct one! In the output of
 
 Go onto the control node for the target cluster and run
 
-```
-sudo ps -x | grep apiserver
-```
+* If it is a kubeadm cluster (api server is running as a pod)
 
-Find `--etcd-servers` in the argument list and note the port number. You need to match that with one of the port numbers you've noted down. That will get you the correct `etcd` process.
+    ```
+    grep etcd-servers /etc/kubernetes/manifests/kube-apiserver.yaml
+    ```
+
+* If it is not kubeadm, and api server is an operating system service
+
+  ```
+  sudo ps -x | grep apiserver
+  ```
+
+  Find `--etcd-servers` in the argument list and note the port number. You need to match that with one of the port numbers you've noted down. That will get you the correct `etcd` process.
 
 Log out of the control node
 
@@ -213,7 +221,7 @@ ExecStart=/usr/local/bin/etcd \
 
 Find the correct one by examining each identified unit file and choose the one that has the matching port number for the `--listen-client-urls` argument. You will need to edit this later.
 
-Now do the backup and specify `--endpoint CLIENT_URL` where `CLIENT_URL` is the URL from the `--listen-client-urls` in the indentified unit file.
+Now do the backup and specify `--endpoint CLIENT_URL` where `CLIENT_URL` is the URL from the `--listen-client-urls` in the identified unit file.
 
 Finally edit the identified unit file
 
