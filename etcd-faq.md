@@ -81,6 +81,8 @@ ETCDCTL_API=3 etcdctl snapshot restore \
 
 ### kubeadm clusters with etcd running as a pod
 
+This is known as "stacked etcd"
+
 It is a change to a single line in the manifest.
 
 Determine that the cluster is configured this way by executing the following and determining that `etcd` is in the results
