@@ -184,7 +184,7 @@ Go onto the control node for the target cluster and run
 
   Find `--etcd-servers` in the argument list and note the port number. You need to match that with one of the port numbers you've noted down. That will get you the correct `etcd` process.
 
-Log out of the control node
+Log out of the control node and return to the node running `etcd`.
 
 Next, find the unit file for the correct `etcd` service. The following will give you the file *names*.
 
