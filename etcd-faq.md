@@ -225,6 +225,8 @@ Find the correct one by examining each identified unit file and choose the one t
 
 Now do the backup and specify `--endpoint CLIENT_URL` where `CLIENT_URL` is the URL from the `--listen-client-urls` in the identified unit file.
 
+Next do the restore using whatever backup file you are instructed to use.
+
 Finally edit the identified unit file
 
 1. Change the `--data-dir` argument to point to the new directory (e.g `/var/lib/etcd-from-backup`)
