@@ -235,3 +235,7 @@ sudo systemctl restart XXXX.service
 ```
 
 where `XXXX.service` is the filename (not path) of the service unit file you have edited.
+
+Please also try the following lab for practice of external etcd
+
+> https://kodekloud.com/topic/practice-test-backup-and-restore-methods-2-2/
