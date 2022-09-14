@@ -103,6 +103,7 @@ Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/art
 
 The PSI document states a minimum screen resolution of 1368x769, but we *really* would not recommend that. See the section on [monitors](#can-i-use-multiple-monitors) above.
 
+See also this [detailed write-up on events for exam day](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS).
 
 ### What ID is required
 
