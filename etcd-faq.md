@@ -219,6 +219,8 @@ Documentation=https://github.com/coreos
 ExecStart=/usr/local/bin/etcd \
 --- truncated---
   --listen-client-urls https://192.168.56.11:2379,https://127.0.0.1:2379
+--- truncated---
+  --data-dir /var/lib/etcd
 ```
 
 Find the correct one by examining each identified unit file and choose the one that has the matching port number for the `--listen-client-urls` argument. You will need to edit this later.
