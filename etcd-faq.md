@@ -218,12 +218,12 @@ Documentation=https://github.com/coreos
 [Service]
 ExecStart=/usr/local/bin/etcd \
 --- truncated---
-  --listen-client-urls https://192.168.56.11:2379
+  --listen-client-urls https://192.168.56.11:2379,https://127.0.0.1:2379
 ```
 
 Find the correct one by examining each identified unit file and choose the one that has the matching port number for the `--listen-client-urls` argument. You will need to edit this later.
 
-Now do the backup and specify `--endpoint CLIENT_URL` where `CLIENT_URL` is the URL from the `--listen-client-urls` in the identified unit file.
+Now do the backup and specify `--endpoint CLIENT_URL` where `CLIENT_URL` is the URL from the `--listen-client-urls` in the identified unit file. If `--listen-client-urls` includes `https://127.0.0.1:2379` *and* you are on the node where `etcd` is running, then you do not require `--endpoints`
 
 Next do the restore using whatever backup file you are instructed to use.
 
