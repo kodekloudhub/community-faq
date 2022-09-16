@@ -1,6 +1,6 @@
 # ETCD FAQ
 
-**IMPORTANT** Following recent student comments about the exam backup/restore questions,  this FAQ is currently under review. Once we ascertain what is actually required,  we will update this page, and the labs accordingly. 
+**IMPORTANT** Following recent student comments about the exam backup/restore questions,  this FAQ is currently under review. Once we ascertain what is actually required,  we will update this page, and the labs accordingly.
 
 `etcd` is a distributed key-value store, kind of similar to a NoSQL database. It is the database backend chosen by the Kubernetes project for the storage of cluster state. It is a separate open source project that is not maintained by the Kubernetes developers, but no doubt they have some input on its development.
 
@@ -9,7 +9,6 @@
 * [How do I make a backup?](#how-do-i-make-a-backup)
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
     * [kubeadm clusters with etcd running as a pod](#kubeadm-clusters-with-etcd-running-as-a-pod)
-    * [Manually installed clusters](#manually-installed-clusters)
     * [Clusters with external etcd](#clusters-with-external-etcd)
 
 **NOTE**: In the exam, you are advised to skip this question and come back to it at the end, as it is probably the hardest one and you don't want to waste time if there are easier questions further on!!
@@ -93,19 +92,10 @@ kubectl get pods -n kube-system
 
 Now do the following on the control node.
 
-1. "Stop" the kubernetes services by moving their manifests
-```bash
-cd /etc/kubernetes/manifests
-mv kube-apiserver.yaml kube-controller-manager.yaml kube-scheduler.yaml ..
-```
-2. Edit the manifest file for `etcd` on the controlplane node. This is found in <br>`/etc/kubernetes/manifests/etcd.yaml`.
+1. Edit the manifest file for `etcd` on the controlplane node. This is found in <br>`/etc/kubernetes/manifests/etcd.yaml`.
 1. Scroll down to the `volumes` section and find the volume that describes the data directory (see below).
 1. Edit the `hostPath.path` of the volume with name `etcd-data` from `/var/lib/etcd` to `/var/lib/etcd-from-backup` (or whichever directory you used for the restore command). Note that you *do not* change the `--data-dir` command line argument to `etcd` in the container's command specification.
-1. Restart the other services by moving their manifests back (this assumes you are still cd'ed to `/etc/kubernetes/manifests`)
-```
-mv ../*.yaml .
-```
-6. Wait about a minute for everything to reload.
+1. Wait about a minute for everything to reload.
 
 This is the section in `etcd.yaml` that you need to find...
 
@@ -141,22 +131,9 @@ And note...
 
 ```
 
-### Manually installed clusters
-
-For clusters where `etcd` is deployed as an operating system service (like in [Kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way)), you have to edit the command lime parameters to `etcd` by editing its service unit file. This is normally found in<br>`/etc/systemd/system/etcd.service`
-
-1. Stop control plane services (`kube-apiserver`, `kube-controller-manager`, `kube-scheduler`) using `systemctl`
-1. Edit the service unit file
-1. Change the `--data-dir` argument to point to the new directory (e.g `/var/lib/etcd-from-backup`)
-1. Note when editing in the service unit file whether a specific user account is being used to run `etcd`. If it is, you need to set the owner of the restored directory structure to this user with `chown -R`
-1. Restart the services
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl restart etcd kube-apiserver kube-controller-manager kube-scheduler
-```
-
 ### Clusters with external etcd
+
+This covers both `kubeadm` clusters where `etcd` is *not* running as a pod, and fully manual installations like [kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way).
 
 Some people have suggested that this is how the exam is set up, as in you have to do it all from the exam node and *not* the control node for the target cluster. It requires a bit more work!
 
@@ -235,12 +212,12 @@ Finally edit the identified unit file
 1. Note when editing in the service unit file whether a specific user account is being used to run `etcd`. If it is, you need to set the owner of the restored directory structure to this user with `chown -R`
 1. Restart the service
 
-```
-sudo systemctl daemon-reload
-sudo systemctl restart XXXX.service
-```
+    ```
+    sudo systemctl daemon-reload
+    sudo systemctl restart XXXX.service
+    ```
 
-where `XXXX.service` is the filename (not path) of the service unit file you have edited.
+where `XXXX.service` is the filename (not path) of the service unit file you have edited. Note that a `daemon-reload` is always necessary after editing a unit file.
 
 Please also try the following lab for practice of external etcd
 
