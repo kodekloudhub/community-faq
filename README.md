@@ -11,6 +11,8 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Does my microphone need to work?](#does-my-microphone-need-to-work)
     * [Do my speakers need to work?](#do-my-speakers-need-to-work)
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
+    * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
+    * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
 * [Kubernetes CKA/CKAD](#kubernetes-ckackad)
@@ -98,6 +100,13 @@ Because you cannot run your own browser. The only software that may be running o
 
 The only software that may be running is the PSI software, therefore you must memorize such things and enter them up manually at the beginning of the exam.
 
+### How many killer.sh sessions do I get?
+
+> 2
+
+The exam fee includes one free retake and two killer sessions. If you use both killer sessions and then subsequently fail on your first attempt, you do not get additional killer sessions for the retake. You need to purchase them separately. If you pass your exam without having used both killer sessions, the remaining session(s) remain valid until one year after the date you purchased the exam.
+
+Should you fail twice, you have to purchase a new exam. You will then get two more free sessions included.
 
 ### What are the system requirements for taking the exam?
 
