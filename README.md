@@ -62,6 +62,8 @@ If using a desktop computer with multiple monitors, disable all but your best on
 
 **TIP**: You are strongly advised *not* to rely on a small laptop screen (like 13 or 14 inch). Your workspace will be extremely tiny, worse if you rely on scaling the font size up. A monitor of higher than HD resolution running at 100% scale and large enough that you can read the text is highly recommended. Anything less than full HD is seriously disadvantageous!
 
+**IMPORTANT NOTE ABOUT MACBOOKS** From various discussions in slack, it appears that mirror mode is not supported by the PSI software and it is also not possible to disable the laptop display from display settings to have only external monitor enabled, meaning that you are stuck with the laptop display no matter how small it may be. If anybody knows how to set up a macbook to run external display only, please message in KodeKloud slack and tag `Alistair Mackay (KodeKloud)`, or raise an issue in this repo.
+
 ### Can I use an external webcam?
 
 > Yes
