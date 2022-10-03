@@ -22,8 +22,6 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I restore etcd?](#how-do-i-restore-etcd)
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
     * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
-* [Kubernetes Challenges](#kubernetes-challenges)
-    * [I cannot complete Challenge 2](#i-cannot-complete-challenge-2)
 * YAML Syntax
     * See the [dedicated YAML FAQ](./yaml-faq.md)
 * [Useful Links](#useful-links)
@@ -165,16 +163,6 @@ which docker
 which crictl
 which podman
 ```
-
-## Kubernetes Challenges
-
-### I cannot complete Challenge 2
-
-All the icons are green, yet it still says "tasks incomplete".
-
-Notice the red arrow between `users` and `gop-fs-service`. Click this to reveal the final task.
-
-
 
 ## Useful Links
 
