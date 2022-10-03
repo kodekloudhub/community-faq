@@ -5,6 +5,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
 # Contents
 
 * [Exam Environment](#exam-environment)
+    * [Students' own notes on the Exam Environment](#students-own-notes-on-the-exam-environment)
     * [Can I use an external monitor?](#can-i-use-an-external-monitor)
     * [Can I use multiple monitors?](#can-i-use-multiple-monitors)
     * [Can I use an external webcam?](#can-i-use-an-external-webcam)
@@ -12,6 +13,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Do my speakers need to work?](#do-my-speakers-need-to-work)
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
     * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
+    * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
@@ -35,7 +37,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
 
 Probably *the* most asked questions! This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022.
 
-Many people also ask "Can I use external webcam?", "Can I use bluetooth mouse?" etc. From the point of view of the system check, the PSI sofware will simply query the operating system. It will expect to find the following devices, and *it doesn't matter* how they are connected (built-in, wired, RF wireless, bluetooth, USB, via docking station, etc., etc.):
+Many people also ask "Can I use external webcam?", "Can I use bluetooth mouse?" etc. From the point of view of the system check, the PSI software will simply query the operating system. It will expect to find the following devices, and *it doesn't matter* how they are connected (built-in, wired, RF wireless, bluetooth, USB, via docking station, etc., etc.):
 
 * One active monitor
 * Mouse
@@ -44,6 +46,10 @@ Many people also ask "Can I use external webcam?", "Can I use bluetooth mouse?" 
 * Camera
 
 In addition to the Q&A below, you can also watch [our video](https://youtu.be/1fSxM0_dtac) on this subject.
+
+### Students' own notes on the Exam Environment
+
+Download [this PDF](./student-notes.pdf) of curated student experiences taken from our Slack channels.
 
 ### Can I use an external monitor?
 
@@ -107,6 +113,12 @@ The only software that may be running is the PSI software, therefore you must me
 The exam fee includes one free retake and two killer sessions. If you use both killer sessions and then subsequently fail on your first attempt, you do not get additional killer sessions for the retake. You need to purchase them separately. If you pass your exam without having used both killer sessions, the remaining session(s) remain valid until one year after the date you purchased the exam.
 
 Should you fail twice, you have to purchase a new exam. You will then get two more free sessions included.
+
+### How do I remove the nag dialog when pasting into the terminal application?
+
+In the terminal application, select `Edit -> Preferences`. Uncheck `Show unsafe paste dialog`.
+
+You can practice this in killer.sh before the exam.
 
 ### What are the system requirements for taking the exam?
 
