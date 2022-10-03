@@ -125,6 +125,23 @@ Paste mode may also be toggled from vi [normal mode](https://www.freecodecamp.or
 * `:set paste`
 * `:set nopaste`
 
+## Dealing with errors
+
+A YAML parse stops at the first error encountered. This means if you have made multiple errors you have to fix one to be able to find the next, therefore getting it right is an iterative process!
+
+You will get errors like
+
+```
+line 115: did not find expected key
+```
+
+Doesn't tell you much really, but the important information is the line number which tells you where to start looking. Ensure you have line numbers enabled in `vi` (see above section on [indentation](#indentation)). Common problems include
+
+* Incorrect indentation
+* Misspelled or missing key
+* Array when it should have been map
+* Map when it should have been array
+
 ## YAML practice lab
 
 A lecture and practice lab may be found in [this free course](https://kodekloud.com/courses/json-path-quiz/). Note that the lecture is taken from the Ansible course, however all the main concepts of YAML syntax are discussed.
