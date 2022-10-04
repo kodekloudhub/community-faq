@@ -47,7 +47,7 @@ In addition to the Q&A below, you can also watch [our video](https://youtu.be/1f
 
 ### Students' own notes on the Exam Environment
 
-Download [this PDF](./student-notes.pdf) of curated student experiences taken from our Slack channels.
+Download [this PDF](./student-exam-experiences.pdf) of curated student experiences taken from our Slack channels.
 
 ### Can I use an external monitor?
 
