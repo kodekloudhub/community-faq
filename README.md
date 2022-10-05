@@ -18,6 +18,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
     * [What does the environment look like?](#what-does-the-environment-look-like)
+    * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) :arrow_upper_right:
 * [Kubernetes CKA/CKAD](#kubernetes-ckackad)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
     * [How do I restore etcd?](#how-do-i-restore-etcd)
@@ -123,13 +124,17 @@ You can practice this in killer.sh before the exam.
 
 ### What are the system requirements for taking the exam?
 
+**IMPORTANT**
+* Mac M1 is not supported!
+* Linux is not supported _except_ for Ubuntu 18.04 or 20.04.
+
 Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements) and [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
 
 The PSI document states a minimum screen resolution of 1368x769, but we *really* would not recommend that. See the section on [monitors](#can-i-use-multiple-monitors) above.
 
 See also this [detailed write-up on events for exam day](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS).
 
-### What ID is required
+### What ID is required?
 
 Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. If your primary ID is in a language that uses non-Latin characters (e.g. Arabic, Greek, Russian etc.), then you must provide an additional form of ID that has your name as written in English.
 
