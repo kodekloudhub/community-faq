@@ -17,6 +17,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
+    * [What does the environment look like?](#what-does-the-environment-look-like)
 * [Kubernetes CKA/CKAD](#kubernetes-ckackad)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
     * [How do I restore etcd?](#how-do-i-restore-etcd)
