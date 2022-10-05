@@ -66,7 +66,9 @@ This can be the laptop display, or an externally connected display. If using an 
 
 If using a desktop computer with multiple monitors, disable all but your best one in display settings.
 
-**TIP**: You are strongly advised *not* to rely on a small laptop screen (like 13 or 14 inch). Your workspace will be extremely tiny, worse if you rely on scaling the font size up. A monitor of higher than HD resolution running at 100% scale and large enough that you can read the text is highly recommended. Anything less than full HD is seriously disadvantageous!
+**TIP**: You are strongly advised *not* to rely on a small laptop screen (like 13 or 14 inch). Your workspace will be extremely tiny, worse if you rely on scaling the font size up. A monitor of higher than HD resolution running at 100% scale and large enough that you can read the text is highly recommended. Anything less than full HD is seriously disadvantageous! See the [image](#what-does-the-environment-look-like) further down this page.
+
+The Linux Foundation recommends 15 inch or greater display.
 
 **IMPORTANT NOTE ABOUT MACBOOKS** From various discussions in slack, it appears that mirror mode is not supported by the PSI software and it is also not possible to disable the laptop display from display settings to have only external monitor enabled, meaning that you are stuck with the laptop display no matter how small it may be. If anybody knows how to set up a macbook to run external display only, please message in KodeKloud slack and tag `Alistair Mackay (KodeKloud)`, or raise an issue in this repo.
 
@@ -131,6 +133,11 @@ See also this [detailed write-up on events for exam day](https://github.com/fire
 Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. If your primary ID is in a language that uses non-Latin characters (e.g. Arabic, Greek, Russian etc.), then you must provide an additional form of ID that has your name as written in English.
 
 Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
+
+### What does the environment look like?
+
+![Image: The Linux Foundation](./img/LF-Remote-Desktop-070722d.png)
+[Image: The Linux Foundation]
 
 ## Kubernetes CKA/CKAD
 
