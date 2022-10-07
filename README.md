@@ -125,8 +125,9 @@ You can practice this in killer.sh before the exam.
 ### What are the system requirements for taking the exam?
 
 **IMPORTANT**
-* Mac M1 is not supported!
 * Linux is not supported _except_ for Ubuntu 18.04 or 20.04.
+
+Mac M1 _is_ supported.
 
 Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements) and [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
 
