@@ -74,7 +74,7 @@ The Linux Foundation recommends 15 inch or greater display.
 
 **IMPORTANT NOTE ABOUT MACBOOKS** From various discussions in slack, it appears that mirror mode is not supported by the PSI software and it is also not possible to disable the laptop display from display settings to have only external monitor enabled, meaning that you are stuck with the laptop display no matter how small it may be.
 
-It may be possible if you set it up in [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too - test the mic first! If anybody has successfully taken the exam using clamshell mode, please post this in Slack.
+It may be possible if you set it up in [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too - test the mic first!</br>If using an Intel chipset Mac, beware of cooling issues!</br>If anybody has successfully taken the exam using clamshell mode, please post this in Slack.
 
 ### Can I use an external webcam?
 
