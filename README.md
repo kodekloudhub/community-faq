@@ -15,6 +15,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
     * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
+    * [Can I request a break?](#can-i-request-a-break)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
     * [What does the environment look like?](#what-does-the-environment-look-like)
@@ -118,7 +119,7 @@ The exam fee includes one free retake and two killer sessions. If you use both k
 
 Should you fail twice, you have to purchase a new exam. You will then get two more free sessions included.
 
-### Can I request a break
+### Can I request a break?
 
 > Yes
 
