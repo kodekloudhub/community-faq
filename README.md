@@ -64,7 +64,7 @@ Download [this PDF](./student-exam-experiences.pdf) of curated student experienc
 
 You are permitted to use one *active* monitor. All other monitors must be disabled, and the PSI Secure software will check your display settings to confirm only one monitor is active.
 
-This can be the laptop display, or an externally connected display. If using an external monitor connected to laptop, the laptop display must be disabled, either using display settings or by closing the lid.
+This can be the laptop display, or an externally connected display. If using an external monitor connected to laptop, the laptop display must be disabled. On Windows, this can be done from Display Settings (Windows key + P). For Mac, see below.
 
 If using a desktop computer with multiple monitors, disable all but your best one in display settings.
 
@@ -74,7 +74,7 @@ The Linux Foundation recommends 15 inch or greater display.
 
 **IMPORTANT NOTE ABOUT MACBOOKS** From various discussions in slack, it appears that mirror mode is not supported by the PSI software and it is also not possible to disable the laptop display from display settings to have only external monitor enabled, meaning that you are stuck with the laptop display no matter how small it may be.
 
-It may be possible if you set it up in [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too - test the mic first!</br>If using an Intel chipset Mac, beware of cooling issues!</br>If anybody has successfully taken the exam using clamshell mode, please post this in Slack.
+It may be possible if you set it up in [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too, if the external camera is not fitted with one already - test the mic first!</br>If using an Intel chipset Mac (pre-M1 versions), beware of cooling issues!</br>If anybody has successfully taken the exam using clamshell mode, please post this in Slack.
 
 ### Can I use an external webcam?
 
@@ -84,7 +84,7 @@ If you are working with laptop lid closed, then this is your only option. It doe
 
 Due to the nature of the check-in process for the exam, it's actually easier to use an external webcam, since you have to move it around *a lot* to cover everything that the proctor requires you to video - including 360 of room, all of desk area (left, right, up, down), all around your head and wrists too.
 
-Note that you should practice getting a clear shot of your ID using your webcam *well before* exam day. Even consider building something to hold the ID card steady using your kids lego or something :-) 
+Note that you should practice getting a clear shot of your ID using the webcam you intend to use in the exam *well before* exam day using your operating system's camera app. Even consider building something to hold the ID card steady using your kids lego or something :smiley:
 
 ### Does my microphone need to work?
 
