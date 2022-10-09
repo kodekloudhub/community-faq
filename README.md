@@ -118,6 +118,14 @@ The exam fee includes one free retake and two killer sessions. If you use both k
 
 Should you fail twice, you have to purchase a new exam. You will then get two more free sessions included.
 
+### Can I request a break
+
+> Yes
+
+Press the "Request Break" button at top left of the PSI application, if you need to leave the keyboard for any reason. It can be seen in the [image](#what-does-the-environment-look-like) below.
+
+**This is not recommended as the countdown timer does not stop**! Ensure you've done what you need to do before beginning the exam :wink:.
+
 ### How do I remove the nag dialog when pasting into the terminal application?
 
 In the terminal application, select `Edit -> Preferences`. Uncheck `Show unsafe paste dialog`.
