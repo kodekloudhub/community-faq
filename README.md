@@ -19,6 +19,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
     * [What does the environment look like?](#what-does-the-environment-look-like)
+    * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
     * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) :arrow_upper_right:
 * [Kubernetes CKA/CKAD](#kubernetes-ckackad)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
@@ -156,6 +157,16 @@ Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc
 
 ![Image: The Linux Foundation](./img/LF-Remote-Desktop-070722d.png)
 [Image: The Linux Foundation]
+
+### How does killer.sh compare to the real thing?
+
+> Very closely
+
+The interface is a very close simulation of what you see in the image above. However, don't be fooled by the responsiveness of the interface. Many students report the real exam as being more laggy. What you should do in killer is to practice all the keyboard shortcuts, and practice entering up any customization you intend to use (vi settings, aliases etc) from memory.
+
+Questions in killer are considered harder than real exam questions. Use your sessions wisely and be sure to be able to complete it in under 2 hours with a score of more than 100. Reset the environment as many times as you need in the time you have.
+
+There is also a free version of the killer UI (with no questions to answer) [here](https://killercoda.com/kimwuestkamp/scenario/cks-cka-ckad-remote-desktop). Note that this is only the desktop VDI - it does not have the sidebar/top bar etc. You can also use this to practice keyboard shortcuts and customizing your environment.
 
 ## Kubernetes CKA/CKAD
 
