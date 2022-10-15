@@ -151,6 +151,10 @@ Doesn't tell you much really, but the important information is the line number w
 * Array when it should have been map
 * Map when it should have been array
 
+**EXAM TIP**
+
+While debugging a YAML file, have `vi` open in one terminal window and the command prompt in another. With each edit, save the file without exiting `vi`, using `:w`. Then in the other terminal run `kubectl create` or `kubectl apply` as appropriate until the command is successful. Then exit `vi`.
+
 ## YAML practice lab
 
 A lecture and practice lab may be found in [this free course](https://kodekloud.com/courses/json-path-quiz/). Note that the lecture is taken from the Ansible course, however all the main concepts of YAML syntax are discussed.
