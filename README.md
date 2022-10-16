@@ -21,6 +21,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [What does the environment look like?](#what-does-the-environment-look-like)
     * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
     * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) :arrow_upper_right:
+    * [Issues with launching the exam](#issues-with-launching-the-exam)
 * [Kubernetes CKA/CKAD](#kubernetes-ckackad)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
     * [How do I restore etcd?](#how-do-i-restore-etcd)
@@ -167,6 +168,10 @@ The interface is a very close simulation of what you see in the image above. How
 Questions in killer are considered harder than real exam questions. Use your sessions wisely and be sure to be able to complete it in under 2 hours with a score of more than 100. Reset the environment as many times as you need in the time you have.
 
 There is also a free version of the killer UI (with no questions to answer) [here](https://killercoda.com/kimwuestkamp/scenario/cks-cka-ckad-remote-desktop). Note that this is only the desktop VDI - it does not have the sidebar/top bar etc. You can also use this to practice keyboard shortcuts and customizing your environment.
+
+### Issues with launching the exam
+
+Please read the [PSI Bridge FAQ](https://helpdesk.psionline.com/hc/en-gb/sections/360013179931-PSI-Bridge-FAQ) BEFORE you appear for the exam so you know what kind of setup issues you may face.
 
 ## Kubernetes CKA/CKAD
 
