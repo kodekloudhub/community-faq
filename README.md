@@ -67,17 +67,16 @@ Download [this PDF](./student-exam-experiences.pdf) of curated student experienc
 
 You are permitted to use one *active* monitor. All other monitors must be disabled, and the PSI Secure software will check your display settings to confirm only one monitor is active.
 
-This can be the laptop display, or an externally connected display. If using an external monitor connected to laptop, the laptop display must be disabled. On Windows, this can be done from Display Settings (Windows key + P). For Mac, see below.
+This can be the laptop display, or an externally connected display. If using an external monitor connected to laptop, the laptop display must be disabled:
 
-If using a desktop computer with multiple monitors, disable all but your best one in display settings.
+* **Windows** This can be done from Display Settings (Windows key + P)
+* **Mac** You must set it up in  [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too, if the external camera is not fitted with one already - test the mic first!</br>If using an Intel chipset Mac (pre-M1 versions), beware of cooling issues!
+
+If using a desktop computer with multiple monitors, disable or disconnect all but your best one.
 
 **TIP**: You are strongly advised *not* to rely on a small laptop screen (like 13 or 14 inch). Your workspace will be extremely tiny, worse if you rely on scaling the font size up. A monitor of higher than HD resolution running at 100% scale and large enough that you can read the text is highly recommended. Anything less than full HD is seriously disadvantageous! See the [image](#what-does-the-environment-look-like) further down this page.
 
 The Linux Foundation recommends 15 inch or greater display.
-
-**IMPORTANT NOTE ABOUT MACBOOKS** From various discussions in slack, it appears that mirror mode is not supported by the PSI software and it is also not possible to disable the laptop display from display settings to have only external monitor enabled, meaning that you are stuck with the laptop display no matter how small it may be.
-
-It may be possible if you set it up in [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too, if the external camera is not fitted with one already - test the mic first!</br>If using an Intel chipset Mac (pre-M1 versions), beware of cooling issues!</br>If anybody has successfully taken the exam using clamshell mode, please post this in Slack.
 
 ### Can I use an external webcam?
 
