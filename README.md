@@ -12,6 +12,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Does my microphone need to work?](#does-my-microphone-need-to-work)
     * [Do my speakers need to work?](#do-my-speakers-need-to-work)
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
+    * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
     * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
     * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
@@ -105,6 +106,12 @@ Proctor will only communicate with you via webchat built into the PSI software.
 > No
 
 Because you cannot run your own browser. The only software that may be running on your desktop at exam time is the PSI software. Each question has several relevant links into the Kubernetes documentation. Clicking these links opens tabs in Firefox within the exam environment. You can visit any of the allowed documentation using the provided Firefox.</br>You may open multiple tabs in Firefox.
+
+### Can I open multiple terminal sessions?
+
+> Yes
+
+Either multiple instances of the terminal emulator app, multiple tabs within the terminal emulator, or both. We would encourage you to do so. This is useful when editing manifests. Have the manifest open in `vi` in one terminal, and a command prompt in the other. Edit the YAML and save without exiting (`:w`). In the other terminal, apply. Repeat until the bugs in the YAML are out.
 
 ### Can I paste settings for vi, aliases etc from my notepad?
 
