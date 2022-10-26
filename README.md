@@ -30,7 +30,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
     * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
 * YAML Syntax
-    * See the [dedicated YAML FAQ](./yaml-faq.md)
+    * See the [dedicated YAML FAQ](./docs/yaml-faq.md)
 * [Useful Links](#useful-links)
     * [Pre-Exam](#pre-exam)
     * [All Exams](#all-exams)
