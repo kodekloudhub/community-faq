@@ -63,4 +63,6 @@ Steps to take
 
     The issue should be revealed here.
 
+Practice this on [Killercoda](https://killercoda.com/killer-shell-cka/scenario/apiserver-crash). You can sign up for free via social media.
+
 [Return to main FAQ](../README.md)
