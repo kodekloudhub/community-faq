@@ -254,3 +254,5 @@ kubectl get pod nginx-with-anchors -o yaml
 
 You will see that the environment for c1 is replicated to all the other containers. Neat huh?
 
+
+[Return to main FAQ](../README.md)
