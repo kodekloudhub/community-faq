@@ -191,7 +191,7 @@ See the dedicated [etcd FAQ](./docs/etcd-faq.md)
 See the dedicated [etcd FAQ](./docs/etcd-faq.md)
 ### How do I install a CNI (or anything else)?
 
-If you are required to install any software or 3rd party Kubernetes applications, then the question will tell you where to obtain the files/packages you need.
+You will *not* be expected to memorize download locations for third party tools you may have downloaded in course labs. If you are required to install any software or 3rd party Kubernetes applications, then the question will tell you where to obtain the files/packages you need.
 
 Note that for e.g. cluster upgrades, then `apt` package manager should work exactly as you have practiced in labs.
 
