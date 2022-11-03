@@ -18,7 +18,7 @@ Firstly, you must ensure that `kodekloud.com` and all subdomains has access to t
 
 This much should permit you to copy and paste in the code editor windows.
 
-To copy/paste to the integrated terminal window, we must use shortcut keys:
+To copy/paste to the integrated terminal window, we must use shortcut keys. If you try to use the mouse, you will see `Unable to read from the browser's clipboard` error.
 
 ### Windows
 
