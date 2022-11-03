@@ -6,6 +6,7 @@
 
 * [What is ETCDCTL_API=3 all about?](#what-is-etcdctlapi3-all-about)
 * [When do I use --endpoints?](#when-do-i-use---endpoints)
+* [What are all the certificates used for?](#what-are-all-the-certificates-used-for)
 * [How do I make a backup?](#how-do-i-make-a-backup)
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
     * [kubeadm clusters with etcd running as a pod](#kubeadm-clusters-with-etcd-running-as-a-pod)
@@ -42,6 +43,33 @@ If you run `etcdctl` from a different workstation from where `etcd` is running, 
 
 * Same host, different port: `--endpoints https://127.0.0.1:port`
 * Remote host: `--endpoints https://host-ip:port`
+
+## What are all the certificates used for?
+
+When we take a backup, we have to pass three arguments related to certificates. This is because we must authenticate with the `etcd` server before it will divulge its sensitive data. The authentication scheme is called Mutual TLS (mTLS).
+
+This is an extension of what happens when you browse to an HTTPS web site. For web sites, that is one-way TLS where the web server must prove its identity to the browser before an encrypted channel is established. In mTLS, both ends must prove their identity to each other.
+
+Note that for *restore* on single control plane clusters such as those found in the exam, it is not necessary to use the certificate arguments, since all the restore is doing is creating a directory. It does not need to communicate with the `etcd` server - which may even not be running if the exam deliberately sets it up with a corrupt database.
+
+### --cacert
+
+* This provides the path to the Certificate Authority (CA) certificate. The CA certificate is used to verify the authenticity of the TLS certificate sent to `etcdctl` by the `etcd` server. The server's certificate must be found to be *signed by* the CA certificate. When building a cluster, creating the CA is one of the tasks you need to do. `kubeadm` does it automatically, but to see how it is done manually (outside the scope of CKA exam), see [kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way).
+
+### --cert
+
+* This is the path to the TLS certificate that `etcdctl` sends to the `etcd` server. The `etcd` server will verify that this certificate is also signed by the same CA certificate. Certificates of this type contain a *public key* which can be used to encrypt data.
+
+### --key
+
+* This is the path to the private key that is used to decrypt data sent to `etcdctl` by the `etcd` server during the authentication steps.
+
+
+For ease, you will find that normally both `etcdctl` and `etcd` share all three certificates, and these are the ones usually found in `/etc/kubernetes/pki/etcd`, however it is possible to issue `etcdtl` with its own certificate and key which is considered more secure, but that certificate must have been signed by the shared CA certificate.
+
+CA certificates are public knowledge. For HTTPS to work, your computer has copies of many well-known CA certificates, such as Comodo, DigiCert, GlobalSign etc. On Windows, these are located in the Trusted Root Certification Authorities section of the Certificate Manager application. When a web server passes its TLS certificate to the browser, it is these CA certificates it looks up to verify the identity of the web server.
+
+For a more detailed explanation of how mTLS works, see [this page](https://www.cloudflare.com/en-gb/learning/access-management/what-is-mutual-tls/).
 
 ## How do I make a backup?
 
