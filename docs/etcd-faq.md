@@ -58,7 +58,7 @@ Note that for *restore* on single control plane clusters such as those found in 
 
 ### --cert
 
-* This is the path to the TLS certificate that `etcdctl` sends to the `etcd` server. The `etcd` server will verify that this certificate is also signed by the same CA certificate. Certificates of this type contain a *public key* which can be used to encrypt data.
+* This is the path to the TLS certificate that `etcdctl` sends to the `etcd` server. The `etcd` server will verify that this certificate is also signed by the same CA certificate. Certificates of this type contain a *public key* which can be used to encrypt data. The public key is used by the server to encrypt data being sent back to `etcdctl` during the authentication steps.
 
 ### --key
 
