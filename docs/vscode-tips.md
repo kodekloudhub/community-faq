@@ -4,7 +4,7 @@ Most of the terraform labs and some others use a VSCode editor embedded in the b
 
 This page sets out how to solve this issue. It will be expanded as information about other browsers and operating systems is gathered, however as with all labs, the recommended browser is Chrome.
 
-Firstly, you must ensure that `kodekloud.com` and all subdomains has access to the clipboard.
+Firstly, you must ensure that `kodekloud.com` and all subdomains have access to the clipboard.
 
 ## Chrome
 
