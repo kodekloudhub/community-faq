@@ -22,6 +22,10 @@ To copy/paste to the integrated terminal window, we must use shortcut keys. If y
 
 ### Windows
 
-* **Copy** - `CTRL+C`
-* **Paste** - `SHIFT+INSERT`
+* **Copy** - `CTRL + C`
+* **Paste** - `SHIFT + INSERT`
 
+### Mac
+
+* **Copy** - `COMMAND + C`
+* **Paste** - `COMMAND + SHIFT + V`

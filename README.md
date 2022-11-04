@@ -29,6 +29,8 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
     * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
     * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
+* [Other](#other)
+    * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
 * YAML Syntax
     * See the [dedicated YAML FAQ](./docs/yaml-faq.md)
 * [Useful Links](#useful-links)
@@ -216,6 +218,13 @@ which podman
 
 See the [Crashed API Server](./docs/diagnose-crashed-apiserver.md) page.
 
+## Other
+
+### How do I copy/paste in VSCode integrated terminal window?
+
+Some of our courses use a browser embedded version of VSCode, e.g. Terraform and some of the programming courses. Getting copy and paste to work can be challenging!
+
+Please see [this guide](./docs/vscode-tips.md).
 
 ## Useful Links
 
