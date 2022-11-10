@@ -29,3 +29,5 @@ To copy/paste to the integrated terminal window, we must use shortcut keys. If y
 
 * **Copy** - `COMMAND + C`
 * **Paste** - `COMMAND + SHIFT + V`
+
+[Return to main FAQ](../README.md)

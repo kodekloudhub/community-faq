@@ -126,10 +126,7 @@ The only software that may be running is the PSI software, therefore you must me
 
 > 2
 
-The exam fee includes one free retake and two killer sessions. If you use both killer sessions and then subsequently fail on your first attempt, you do not get additional killer sessions for the retake. You need to purchase them separately. If you pass your exam without having used both killer sessions, the remaining session(s) remain valid until one year after the date you purchased the exam.
-
-Should you fail twice, you have to purchase a new exam. You will then get two more free sessions included.
-
+Please see [killer.sh](./docs/killer-sh.md) FAQ page.
 ### Can I request a break?
 
 > Yes
