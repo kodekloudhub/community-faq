@@ -19,5 +19,6 @@ Aim to score more than 90% with time to spare.
 * If you pass the exam without having used both sessions, any remaining sessions are still available to you.
 * If you finish early, you can end the exam by selecting `Solutions & Score` from the `Exam Controls` menu. This will set to timer to zero before displaying the link to the solutions and score pages.
 * When timer is at zero you can still do things in the environment but any questions answered after timer is at zero are not scored.
+* Note that the score is recalculated every few minutes. When you end the exam, the score for the last question you answered before ending might not be calculated. Wait 5 minutes, then refresh the score page.
 
 [Return to main FAQ](../README.md)
