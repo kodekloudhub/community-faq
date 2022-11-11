@@ -17,5 +17,7 @@ Aim to score more than 90% with time to spare.
 * During the 36 hours, you may restart and re-do the exam as many times as you like - simply use the `Exam Controls` menu and select `Restart Session`. This is highly encouraged!
 * At the end of the two hour exam duration, a link to the solutions and score page appears at the top of the question pane.
 * If you pass the exam without having used both sessions, any remaining sessions are still available to you.
+* If you finish early, you can end the exam by selecting `Solutions & Score` from the `Exam Controls` menu. This will set to timer to zero before displaying the link to the solutions and score pages.
+* When timer is at zero you can still do things in the environment but any questions answered after timer is at zero are not scored.
 
 [Return to main FAQ](../README.md)
