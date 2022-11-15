@@ -31,6 +31,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
 * [Other](#other)
     * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
+    * [I can't get out of vi!](#i-cant-get-out-of-vi)
 * YAML Syntax
     * See the [dedicated YAML FAQ](./docs/yaml-faq.md)
 * [Useful Links](#useful-links)
@@ -222,6 +223,10 @@ See the [Crashed API Server](./docs/diagnose-crashed-apiserver.md) page.
 Some of our courses use a browser embedded version of VSCode, e.g. Terraform and some of the programming courses. Getting copy and paste to work can be challenging!
 
 Please see [this guide](./docs/vscode-tips.md).
+
+### I can't get out of vi!
+
+For this and other `vi` tips, see [vi-101](./docs/vi-101.md)
 
 ## Useful Links
 
