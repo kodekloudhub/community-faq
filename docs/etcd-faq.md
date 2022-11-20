@@ -11,6 +11,9 @@
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
     * [kubeadm clusters with etcd running as a pod](#kubeadm-clusters-with-etcd-running-as-a-pod)
     * [Clusters with external etcd](#clusters-with-external-etcd)
+* [Advanced Usage](#advanced-usage)
+    * [How do I read data directly from etcd?](#how-do-i-read-data-directly-from-etcd)
+    * [How do I encrypt secrets at rest?](#how-do-i-encrypt-secrets-at-rest)
 
 **NOTE**: In the exam, you are advised to skip this question and come back to it at the end, as it is probably the hardest one and you don't want to waste time if there are easier questions further on!!
 
@@ -251,6 +254,59 @@ Please also try the following lab for practice of external etcd
 
 > https://kodekloud.com/topic/practice-test-backup-and-restore-methods-2-2/
 
+# Advanced Usage
+
+This section contains topics that may come up in CKS exam. You do not need to know this for CKA.
+
+## How do I read data directly from etcd?
+
+You may get a question that asks you to get data directly from the etcd database, for instance the content of a secret.
+
+ETCD in Kubernetes stores data under `/registry/{type}/{namespace}/{name}`.
+
+Thus, if you were looking for a `secret` called `database-access` in namespace `team-green`, the key path would be
+
+```
+/registry/secrets/team-green/database-access
+```
+
+To read this data, you would run the following `get` command
+
+```
+ETCDCTL_API=3 etcdctl \
+  --cacert /etc/kubernetes/pki/etcd/ca.crt \
+  --cert /etc/kubernetes/pki/apiserver-etcd-client.crt \
+  --key /etc/kubernetes/pki/apiserver-etcd-client.key \
+  get /registry/secrets/team-green/database-access
+```
+
+The same rules [discussed above](#when-do-i-use---endpoints) apply to the use of `--endpoints`
+
+## How do I encrypt secrets at rest?
+
+Secrets are more or less human readable when stored in etcd. To store them in an encrypted form you need to create an encryption configuration file, then update the API server manifest to make use of it. The steps to do this are detailed [here](https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#encrypting-your-data).
+
+Once the configuration is properly applied, you can encrypt existing secrets by replacing them.
+
+All secrets in the cluster
+
+```
+kubectl get secrets --all-namespaces -o json | kubectl replace -f -
+```
+
+A single namespace
+
+```
+kubectl get secrets --n some_namespace -o json | kubectl replace -f -
+```
+
+A single secret
+
+```
+kubectl get secrets my_secret -o json | kubectl replace -f -
+```
+
+In our [kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way) labs, we enable secret encryption at rest by default.
 
 
 [Return to main FAQ](../README.md)
