@@ -297,7 +297,7 @@ kubectl get secrets --all-namespaces -o json | kubectl replace -f -
 A single namespace
 
 ```
-kubectl get secrets --n some_namespace -o json | kubectl replace -f -
+kubectl get secrets -n some_namespace -o json | kubectl replace -f -
 ```
 
 A single secret
