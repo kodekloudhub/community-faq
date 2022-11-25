@@ -11,6 +11,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Can I use an external webcam?](#can-i-use-an-external-webcam)
     * [Does my microphone need to work?](#does-my-microphone-need-to-work)
     * [Do my speakers need to work?](#do-my-speakers-need-to-work)
+    * [Can I use a headset?](#can-i-use-a-headset)
     * [Can I use a corporate device?](#can-i-use-a-corporate-device)
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
     * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
@@ -105,6 +106,12 @@ Proctor needs to be able to hear if anybody is talking to you from outside the c
 > No
 
 Proctor will only communicate with you via webchat built into the PSI software.
+
+### Can I use a headset?
+
+> No
+
+Proctor needs to see your ears to ensure that you are not getting some kind of external communication that could help you. Since speakers are not required, this also rules out headsets.
 
 ### Can I use a corporate device?
 
