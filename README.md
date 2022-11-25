@@ -11,6 +11,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Can I use an external webcam?](#can-i-use-an-external-webcam)
     * [Does my microphone need to work?](#does-my-microphone-need-to-work)
     * [Do my speakers need to work?](#do-my-speakers-need-to-work)
+    * [Can I use a corporate device?](#can-i-use-a-corporate-device)
     * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
     * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
     * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
@@ -91,7 +92,7 @@ If you are working with laptop lid closed, then this is your only option. It doe
 
 Due to the nature of the check-in process for the exam, it's actually easier to use an external webcam, since you have to move it around *a lot* to cover everything that the proctor requires you to video - including 360 of room, all of desk area (left, right, up, down), all around your head and wrists too.
 
-Note that you should practice getting a clear shot of your ID using the webcam you intend to use in the exam *well before* exam day using your operating system's camera app. Even consider building something to hold the ID card steady using your kids lego or something :smiley:
+Note that you should practice getting a clear shot of your ID using the webcam you intend to use in the exam *well before* exam day using your operating system's camera app. Even consider building something to hold the ID card steady using your kids Lego or something :smiley:. See [here](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS#launching-the-exam) for an example that has been used successfully in an exam check-in process.
 
 ### Does my microphone need to work?
 
@@ -104,6 +105,14 @@ Proctor needs to be able to hear if anybody is talking to you from outside the c
 > No
 
 Proctor will only communicate with you via webchat built into the PSI software.
+
+### Can I use a corporate device?
+
+> Unwise
+
+Use of corporate devices or laptops is not recommended, unless you have an account on it with full local administrator rights. There may be many programs and services mandated by company policy running on the device which are incompatible with PSI software and must be stopped. Bear in mind that stopping these programs may in violation of such policies.
+
+Connecting via a corporate network is also not recommended as company firewall policy may block ports that are required by the exam software.
 
 ### Can I use my own bookmarks?
 
