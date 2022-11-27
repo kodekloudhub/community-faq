@@ -12,7 +12,7 @@ Aim to score more than 90% with time to spare.
 * You get two simulator sessions included in the price of the exam. If you want more, you must purchase them separately from `killer.sh` website, or in the event that you failed the main exam twice - when you purchase another exam.
 * You activate the free sessions from the exam portal.
 * Each session lasts for 36 hours from when you start it, i.e. if you activate it at 9am Monday, it lasts till 9pm Tuesday.
-* Both sessions will have the same questions.
+* Both sessions will have the same questions, unless the Kubernetes version of the exam is updated between the time you do session 1 and session 2.
 * You may close the site or even switch off your machine during that 36 hours. For quick re-access, save the URL of your session from the browser address bar. It looks like `https://killer.sh/attendee/6ea50f0c-85b3-XXXX-XXXX-8cbac653201f`.
 * During the 36 hours, you may restart and re-do the test as many times as you like - simply use the `Exam Controls` menu and select `Restart Session`. This is highly encouraged!
 * At the end of the two hour test duration, a link to the solutions and score page appears at the top of the question pane.
