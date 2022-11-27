@@ -14,11 +14,11 @@ Aim to score more than 90% with time to spare.
 * Each session lasts for 36 hours from when you start it, i.e. if you activate it at 9am Monday, it lasts till 9pm Tuesday.
 * Both sessions will have the same questions.
 * You may close the site or even switch off your machine during that 36 hours. For quick re-access, save the URL of your session from the browser address bar. It looks like `https://killer.sh/attendee/6ea50f0c-85b3-XXXX-XXXX-8cbac653201f`.
-* During the 36 hours, you may restart and re-do the exam as many times as you like - simply use the `Exam Controls` menu and select `Restart Session`. This is highly encouraged!
-* At the end of the two hour exam duration, a link to the solutions and score page appears at the top of the question pane.
-* If you pass the exam without having used both sessions, any remaining sessions are still available to you.
-* If you finish early, you can end the exam by selecting `Solutions & Score` from the `Exam Controls` menu. This will set to timer to zero before displaying the link to the solutions and score pages.
+* During the 36 hours, you may restart and re-do the test as many times as you like - simply use the `Exam Controls` menu and select `Restart Session`. This is highly encouraged!
+* At the end of the two hour test duration, a link to the solutions and score page appears at the top of the question pane.
+* If you finish early, you can end the test by selecting `Solutions & Score` from the `Exam Controls` menu. This will set to timer to zero before displaying the link to the solutions and score pages.
 * When timer is at zero you can still do things in the environment but any questions answered after timer is at zero are not scored.
-* Note that the score is recalculated every few minutes. When you end the exam, the score for the last question you answered before ending might not be calculated. Wait 5 minutes, then refresh the score page.
+* Note that the score is recalculated every few minutes. When you end the test, the score for the last question you answered before ending might not be calculated. Wait 5 minutes, then refresh the score page.
+* If you pass the real exam without having used both killer sessions, any remaining sessions are still available to you.
 
 [Return to main FAQ](../README.md)
