@@ -21,4 +21,6 @@ Aim to score more than 90% with time to spare.
 * Note that the score is recalculated every few minutes. When you end the test, the score for the last question you answered before ending might not be calculated. Wait 5 minutes, then refresh the score page.
 * If you pass the real exam without having used both killer sessions, any remaining sessions are still available to you.
 
+See also the [complete killer.sh FAQ](https://killer.sh/faq)
+
 [Return to main FAQ](../README.md)
