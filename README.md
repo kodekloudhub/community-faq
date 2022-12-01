@@ -4,6 +4,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
 
 # Contents
 
+* [Buying the Exam](#buying-the-exam)
 * [Exam Environment](#exam-environment)
     * [Students' own notes on the Exam Environment](#students-own-notes-on-the-exam-environment)
     * [Can I use an external monitor?](#can-i-use-an-external-monitor)
@@ -42,6 +43,17 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [CKA/CKAD](#ckackad)
     * [CKS](#cks)
     * [Other](#other)
+
+
+## Buying the Exam
+
+To buy any exam run by The Linux Foundation, you need to first sign up with [The Linux Foundation](https://www.linuxfoundation.org/). Once you have an account, known as an LFID, then you can go to their [training portal](https://trainingportal.linuxfoundation.org/) to purchase the exam. For Kubernetes exams, you get two killer.sh sessions included in the purchase. More on this further down this document.
+
+With most of these exams, you have one year from the date of purchase to take the exam and this time includes scheduling any free retake that may be offered.
+
+DO NOT LEAVE IT UNTIL THE LAST MINUTE TO SIT THE EXAM!!!
+
+If you do that, and you have only days remaining before the validity expires, what are you going to do if there are issues with the exam environment (these are not infrequent) which means that you fail to complete, or even start the exam? You should appear for your first attempt *at least* one month before the expiry in case of issues like this.
 
 ## Exam Environment
 
