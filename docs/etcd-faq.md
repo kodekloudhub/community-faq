@@ -168,7 +168,7 @@ If the `etcd` pod does not come back up in a reasonable time, you can [troublesh
 
 This covers both `kubeadm` clusters where `etcd` is *not* running as a pod, and fully manual installations like [kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way).
 
-Some people have suggested that this is how some of the `etcd` questions the exam question bank are set up, as in you have to do it all from the exam node and *not* the control node for the target cluster. It requires a bit more work, but it doesn't means that you will definitely get a question that is this way and not stacked-mode as above!
+Some people have suggested that this is how some of the `etcd` questions the exam question bank are set up, as in you have to do it all from the exam node and *not* the control node for the target cluster. It requires a bit more work, but it doesn't mean that you will definitely get a question that is this way and not stacked-mode as above!
 
 On the node where you are instructed to do the task, first determine how many `etcd` processes there are
 
