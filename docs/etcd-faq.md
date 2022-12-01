@@ -162,6 +162,8 @@ And note...
 
 ```
 
+If the `etcd` pod does not come back up in a reasonable time, you can [troubleshoot the same ways as for apiserver](./diagnose-crashed-apiserver.md).
+
 ### Clusters with external etcd
 
 This covers both `kubeadm` clusters where `etcd` is *not* running as a pod, and fully manual installations like [kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way).
