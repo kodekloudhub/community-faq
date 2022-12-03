@@ -19,13 +19,14 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
     * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
+    * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
     * [Can I request a break?](#can-i-request-a-break)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
     * [What does the environment look like?](#what-does-the-environment-look-like)
-    * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
     * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) :arrow_upper_right:
     * [Issues with launching the exam](#issues-with-launching-the-exam)
+    * [If I fail, how soon can I schedule a retake?](#if-i-fail-how-soon-can-i-schedule-a-retake)
 * [Kubernetes CKA/CKAD](#kubernetes-ckackad)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
     * [How do I restore etcd?](#how-do-i-restore-etcd)
@@ -53,7 +54,7 @@ With most of these exams, you have one year from the date of purchase to take th
 
 DO NOT LEAVE IT UNTIL THE LAST MINUTE TO SIT THE EXAM!!!
 
-If you do that, and you have only days remaining before the validity expires, what are you going to do if there are issues with the exam environment (these are not infrequent) which means that you fail to complete, or even start the exam? You should appear for your first attempt *at least* one month before the expiry in case of issues like this.
+If you do that, and you have only days remaining before the validity expires, what are you going to do if there are issues with the exam environment (these are not infrequent) which means that you fail to complete, or even start the exam? You should appear for your first attempt *at least* one month before the expiry in case of issues like this. If your exam is credited back to you due to issues like this, then you still have to do this and the free retake if you require it within the one year period.
 
 ## Exam Environment
 
@@ -156,6 +157,17 @@ The only software that may be running is the PSI software, therefore you must me
 > 2
 
 Please see [killer.sh](./docs/killer-sh.md) FAQ page.
+
+### How does killer.sh compare to the real thing?
+
+> Very closely
+
+The interface is a very close simulation of what you see in the image above. However, don't be fooled by the responsiveness of the interface. Many students report the real exam as being more laggy. What you should do in killer is to practice all the keyboard shortcuts, and practice entering up any customization you intend to use (vi settings, aliases etc) from memory.
+
+Questions in killer are considered harder than real exam questions. Use your sessions wisely and be sure to be able to complete it in under 2 hours with a score of more than 100. Reset the environment as many times as you need in the time you have.
+
+There is also a free version of the killer UI (with no questions to answer) [here](https://killercoda.com/kimwuestkamp/scenario/cks-cka-ckad-remote-desktop). Note that this is only the desktop VDI - it does not have the sidebar/top bar etc. You can also use this to practice keyboard shortcuts and customizing your environment.
+
 ### Can I request a break?
 
 > Yes
@@ -194,19 +206,17 @@ Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc
 ![Image: The Linux Foundation](./img/LF-Remote-Desktop-070722d.png)
 [Image: The Linux Foundation]
 
-### How does killer.sh compare to the real thing?
-
-> Very closely
-
-The interface is a very close simulation of what you see in the image above. However, don't be fooled by the responsiveness of the interface. Many students report the real exam as being more laggy. What you should do in killer is to practice all the keyboard shortcuts, and practice entering up any customization you intend to use (vi settings, aliases etc) from memory.
-
-Questions in killer are considered harder than real exam questions. Use your sessions wisely and be sure to be able to complete it in under 2 hours with a score of more than 100. Reset the environment as many times as you need in the time you have.
-
-There is also a free version of the killer UI (with no questions to answer) [here](https://killercoda.com/kimwuestkamp/scenario/cks-cka-ckad-remote-desktop). Note that this is only the desktop VDI - it does not have the sidebar/top bar etc. You can also use this to practice keyboard shortcuts and customizing your environment.
-
 ### Issues with launching the exam
 
 Please read the [PSI Bridge FAQ](https://helpdesk.psionline.com/hc/en-gb/sections/360013179931-PSI-Bridge-FAQ) BEFORE you appear for the exam so you know what kind of setup issues you may face.
+
+### If I fail, how soon can I schedule a retake?
+
+> Immediately
+
+For exams with an included free retake, you may log into the training portal and schedule your retake as soon as you know you have failed.
+
+Remember that the retake must also fall within the one year period since the date of exam purchase.
 
 ## Kubernetes CKA/CKAD
 
