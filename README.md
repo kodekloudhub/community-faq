@@ -162,11 +162,7 @@ Please see [killer.sh](./docs/killer-sh.md) FAQ page.
 
 > Very closely
 
-The interface is a very close simulation of what you see in the image above. However, don't be fooled by the responsiveness of the interface. Many students report the real exam as being more laggy. What you should do in killer is to practice all the keyboard shortcuts, and practice entering up any customization you intend to use (vi settings, aliases etc) from memory.
-
-Questions in killer are considered harder than real exam questions. Use your sessions wisely and be sure to be able to complete it in under 2 hours with a score of more than 100. Reset the environment as many times as you need in the time you have.
-
-There is also a free version of the killer UI (with no questions to answer) [here](https://killercoda.com/kimwuestkamp/scenario/cks-cka-ckad-remote-desktop). Note that this is only the desktop VDI - it does not have the sidebar/top bar etc. You can also use this to practice keyboard shortcuts and customizing your environment.
+Please see [killer.sh](./docs/killer-sh.md) FAQ page.
 
 ### Can I request a break?
 

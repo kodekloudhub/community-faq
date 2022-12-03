@@ -7,6 +7,8 @@ We think this gives you a greater learning effect and also confidence to score i
 
 Each question is made of a number of "sub-tasks", each completed sub-task scoring a point. At the end of the exam when you get the score, it will tell you the number of completed sub-tasks out of the total, so you can calculate a percentage from that.
 
+The killer.sh test interface is a very close simulation of the real exam and everything in it should work very similarly.
+
 Aim to score more than 90% with time to spare.
 
 * You get two simulator sessions included in the price of the exam. If you want more, you must purchase them separately from `killer.sh` website, or in the event that you failed the main exam twice - when you purchase another exam.
@@ -21,6 +23,9 @@ Aim to score more than 90% with time to spare.
 * Note that the score is recalculated every few minutes. When you end the test, the score for the last question you answered before ending might not be calculated. Wait 5 minutes, then refresh the score page.
 * If you pass the real exam without having used both killer sessions, any remaining sessions are still available to you.
 
-See also the [complete killer.sh FAQ](https://killer.sh/faq)
+See also
+* [Complete killer.sh FAQ](https://killer.sh/faq)
+* [Exam Environment Simulation](https://killercoda.com/kimwuestkamp/scenario/cks-cka-ckad-remote-desktop) - This is free and on Killer's killercoda site. Sign up with social media. Note that this is only the desktop VDI - it does not have the sidebar/top bar etc. You can use this to practice keyboard shortcuts and customizing your environment. If you explore the killercoda site you will also find more practice questions in a lab environment similar to KodeKloud's.
+
 
 [Return to main FAQ](../README.md)
