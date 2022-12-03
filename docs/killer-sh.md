@@ -15,7 +15,7 @@ Aim to score more than 90% with time to spare.
 * You activate the free sessions from the exam portal.
 * Each session lasts for 36 hours from when you start it, i.e. if you activate it at 9am Monday, it lasts till 9pm Tuesday.
 * Both sessions will have the same questions, unless the Kubernetes version of the exam is updated between the time you do session 1 and session 2.
-* You may close the site or even switch off your machine during that 36 hours. For quick re-access, save the URL of your session from the browser address bar. It looks like `https://killer.sh/attendee/6ea50f0c-85b3-XXXX-XXXX-8cbac653201f`.
+* You may close the site or even switch off your machine during that 36 hours. For quick re-access, save the URL of your session from the browser address bar. It looks like `https://killer.sh/attendee/229b6e26-1495-4646-ac93-9503f49a8c3a`.
 * During the 36 hours, you may restart and re-do the test as many times as you like - simply use the `Exam Controls` menu and select `Restart Session`. This is highly encouraged!
 * At the end of the two hour test duration, a link to the solutions and score page appears at the top of the question pane.
 * If you finish early, you can end the test by selecting `Solutions & Score` from the `Exam Controls` menu. This will set to timer to zero before displaying the link to the solutions and score pages.
