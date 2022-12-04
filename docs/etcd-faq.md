@@ -56,7 +56,7 @@ When we take a backup, we have to pass three arguments related to certificates. 
 
 This is an extension of what happens when you browse to an HTTPS web site. For web sites, that is one-way TLS where the web server must prove its identity to the browser before an encrypted channel is established. In mTLS, both ends must prove their identity to each other.
 
-Note that for *restore* on single control plane clusters such as those found in the exam, it is not necessary to use the certificate arguments, since all the restore is doing is creating a directory. It does not need to communicate with the `etcd` server - which may even not be running if the exam deliberately sets it up with a corrupt database.
+Note that for *restore* on single `etcd` node clusters such as those found in the exam, it is not necessary to use the certificate arguments, since all the restore is doing is creating a directory. It does not need to communicate with the `etcd` server - which may even not be running if the exam deliberately sets it up with a corrupt database. You would only use certs and some additional arguments when restoring a broken node into what is left of a multi-node `etcd`, which is beyond the scope of CKA.
 
 ### --cacert
 
