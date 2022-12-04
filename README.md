@@ -50,7 +50,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
 
 To buy any exam run by The Linux Foundation, you need to first sign up with [The Linux Foundation](https://www.linuxfoundation.org/). Once you have an account, known as an LFID, then you can go to their [training portal](https://trainingportal.linuxfoundation.org/) to purchase the exam. For Kubernetes exams, you get two killer.sh sessions included in the purchase. More on this further down this document.
 
-With most of these exams, you have one year from the date of purchase to take the exam and this time includes scheduling any free retake that may be offered.
+With most of these exams, you have one year from the date of purchase in which to schedule *and* take the exam and this time includes scheduling any free retake that may be offered. You do not have to schedule immediately at time of purchase.
 
 DO NOT LEAVE IT UNTIL THE LAST MINUTE TO SIT THE EXAM!!!
 
