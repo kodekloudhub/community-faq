@@ -7,6 +7,7 @@
 * [What is ETCDCTL_API=3 all about?](#what-is-etcdctlapi3-all-about)
 * [When do I use --endpoints?](#when-do-i-use---endpoints)
 * [What are all the certificates used for?](#what-are-all-the-certificates-used-for)
+* [Should I stop API server and/or etcd during backup or restore?](#should-i-stop-api-server-andor-etcd-during-backup-or-restore)
 * [How do I make a backup?](#how-do-i-make-a-backup)
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
     * [kubeadm clusters with etcd running as a pod](#kubeadm-clusters-with-etcd-running-as-a-pod)
@@ -75,6 +76,14 @@ For ease, you will find that normally both `etcdctl` and `etcd` share all three 
 CA certificates are public knowledge. For HTTPS to work, your computer has copies of many well-known CA certificates, such as Comodo, DigiCert, GlobalSign etc. On Windows, these are located in the Trusted Root Certification Authorities section of the Certificate Manager application. When a web server passes its TLS certificate to the browser, it is these CA certificates it looks up to verify the identity of the web server.
 
 For a more detailed explanation of how mTLS works, see [this page](https://www.cloudflare.com/en-gb/learning/access-management/what-is-mutual-tls/).
+
+## Should I stop API server and/or etcd during backup or restore?
+
+> No
+
+Consider a production environment. In such environments, you would be making regular automated backups of etcd. If you stopped either of these processes, then the cluster could go offline, and you would be faced with a production major incident!
+
+etcd is designed to ensure consistency in its backups even while in use, just as you would expect from any regular SQL database.
 
 ## How do I make a backup?
 
