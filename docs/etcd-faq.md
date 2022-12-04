@@ -260,7 +260,7 @@ In the exam, use the `mousepad` application to take notes.
     1. Do the restore to whichever directory instructed by the question. For instance, if it is `/var/lib/etcd-from-backup` then
 
         ```bash
-        ETCDCTL_API=3 etcdctl snapshot save \
+        ETCDCTL_API=3 etcdctl snapshot restore \
           --data-dir /var/lib/etcd-from-backup \
           /path/to/snapshot.db
         ```
