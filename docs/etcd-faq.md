@@ -10,7 +10,9 @@
 * [How do I make a backup?](#how-do-i-make-a-backup)
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
     * [kubeadm clusters with etcd running as a pod](#kubeadm-clusters-with-etcd-running-as-a-pod)
-    * [Clusters with external etcd](#clusters-with-external-etcd)
+* [Clusters with external etcd](#clusters-with-external-etcd)
+    * [Single etcd process](#single-etcd-process)
+    * [Multiple etcd processes](#multiple-etcd-processes)
 * [Advanced Usage](#advanced-usage)
     * [How do I read data directly from etcd?](#how-do-i-read-data-directly-from-etcd)
     * [How do I encrypt secrets at rest?](#how-do-i-encrypt-secrets-at-rest)
@@ -159,98 +161,182 @@ And note...
     - --data-dir=/var/lib/etcd                  # <- DO NOT CHANGE THIS!
     - --initial-advertise-peer-urls=https://10.40.10.9:2380
     - --initial-cluster=controlplane=https://10.40.10.9:2380
-
 ```
 
-If the `etcd` pod does not come back up in a reasonable time, you can [troubleshoot the same ways as for apiserver](./diagnose-crashed-apiserver.md).
+If the `etcd` pod does not come back up in a reasonable time, you can [troubleshoot the same way as for apiserver](./diagnose-crashed-apiserver.md).
 
-### Clusters with external etcd
+## Clusters with external etcd
 
 This covers both `kubeadm` clusters where `etcd` is *not* running as a pod, and fully manual installations like [kubernetes the hard way](https://github.com/mmumshad/kubernetes-the-hard-way).
 
-Some people have suggested that this is how some of the `etcd` questions the exam question bank are set up, as in you have to do it all from the exam node and *not* the control node for the target cluster. It requires a bit more work, but it doesn't mean that you will definitely get a question that is this way and not stacked-mode as above!
+Some people have suggested that this is how some of the `etcd` questions the exam question bank are set up, as in you have to do it all from some node other than the control node for the target cluster. It requires a bit more work, but it doesn't mean that you will definitely get a question that is this way and not stacked-mode as above!
 
-On the node where you are instructed to do the task, first determine how many `etcd` processes there are
+If you do find that your backup/restore question is an External etcd, then definitely flag the question and leave it till last!
 
-```
-sudo ps -x | grep bin/etcd
-```
-
-If there's more than one, you need to identify the correct one! In the output of the above command, you should be able to see the `--listen-client-urls` argument. Note down the port numbers from this URL for each. In the exam, use the `mousepad` application to take notes.
-
-Go onto the control node for the target cluster and run
-
-* If it is a kubeadm cluster (api server is running as a pod)
-
-    ```
-    grep etcd-servers /etc/kubernetes/manifests/kube-apiserver.yaml
-    ```
-
-* If it is not kubeadm, and api server is an operating system service
-
-  ```
-  sudo ps -x | grep apiserver
-  ```
-
-  Find `--etcd-servers` in the argument list and note the port number. You need to match that with one of the port numbers you've noted down. That will get you the correct `etcd` process.
-
-Log out of the control node and return to the node running `etcd`.
-
-Next, find the unit file for the correct `etcd` service. The following will give you the file *names*.
-
-```
-systemctl list-unit-files | grep etcd
-```
-
-> Output
+On the node where you are instructed to do the task, first become root, if you are not already root.
 
 ```bash
-etcd-1.service                               enabled         enabled
-etcd-2.service                               enabled         enabled
+sudo -i
 ```
 
-To locate these files, run the following on each filename returned by the command above
+Next, determine how many `etcd` processes there are
 
 ```
-sytemctl cat XXXX.service
+ps -aux | grep etcd
 ```
 
-...where `XXXX.service` is e.g. `etcd-1.service`. This will show the file content with a comment above it which is the location of the unit file.
+The output looks like this
 
-> Output
+> etcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;804&nbsp;&nbsp;&nbsp;&nbsp;0.0  0.0 11217856 46296 ?      Ssl  10:10   0:08 /usr/local/bin/etcd --name etcd-server --data-dir=/var/lib/etcd-data --cert-file=/etc/etcd/pki/etcd.pem --key-file=/etc/etcd/pki/etcd-key.pem --peer-cert-file=/etc/etcd/pki/etcd.pem --peer-key-file=/etc/etcd/pki/etcd-key.pem --trusted-ca-file=/etc/etcd/pki/ca.pem --peer-trusted-ca-file=/etc/etcd/pki/ca.pem --peer-client-cert-auth --client-cert-auth --initial-advertise-peer-urls <span>https://</span>10.21.18.18:2380 --listen-peer-urls <span>https://</span>10.21.18.18:2380 --advertise-client-urls <span>https://</span>10.21.18.18:2379 `--listen-client-urls https://10.21.18.18:2379,https://127.0.0.1:2379` --initial-cluster-token etcd-cluster-1 --initial-cluster etcd-server=https://10.21.18.18:2380 --initial-cluster-state new<br>
+root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1106&nbsp;&nbsp;&nbsp;&nbsp;0.0  0.0  13448  1064 pts/0    S+   10:17   0:00 grep etcd
 
-```bash
-# /etc/systemd/system/etcd-1.service
-[Unit]
-Description=etcd
-Documentation=https://github.com/coreos
+In the above, there is one instance of `etcd` running. If there were more, then you would see additional big blocks of `etcd` arguments. It should be highly unusual to be faced with more than one `etcd` running on the same host in the exam. If you have seen more than one `etcd`, please post in the [slack channel](https://kodekloud.slack.com/archives/CHMV3P9NV). Don't include full details of the question, as that would violate NDA. Only state that you have seen multiple external etcd processes.
 
-[Service]
-ExecStart=/usr/local/bin/etcd \
---- truncated---
-  --listen-client-urls https://192.168.56.11:2379,https://127.0.0.1:2379
---- truncated---
-  --data-dir /var/lib/etcd
-```
+In the exam, use the `mousepad` application to take notes.
 
-Find the correct one by examining each identified unit file and choose the one that has the matching port number for the `--listen-client-urls` argument. You will need to edit this later.
+### Single etcd process
 
-Now do the backup and specify `--endpoint CLIENT_URL` where `CLIENT_URL` is the URL from the `--listen-client-urls` in the identified unit file. If `--listen-client-urls` includes `https://127.0.0.1:2379` *and* you are on the node where `etcd` is running, then you do not require `--endpoints`
+1. Note down the port number from `--listen-client-urls`. It will be unusual (not impossible) if it is something other than `2379`
+1. Determine the name of the `etcd` service unit. Note that the service unit files end with `.service`. When referring to a service uint with `sysemctl` commands, it is not necessary to type `.service` - it is assumed, therefore less typing!
 
-Next do the restore using whatever backup file you are instructed to use.
-
-Finally edit the identified unit file
-
-1. Change the `--data-dir` argument to point to the new directory (e.g `/var/lib/etcd-from-backup`)
-1. Note when editing in the service unit file whether a specific user account is being used to run `etcd`. If it is, you need to set the owner of the restored directory structure to this user with `chown -R`
-1. Restart the service
-
-    ```
-    sudo systemctl daemon-reload
-    sudo systemctl restart XXXX.service
+    ```bash
+    systemctl list-unit-files | grep etcd
     ```
 
-where `XXXX.service` is the filename (not path) of the service unit file you have edited. Note that a `daemon-reload` is always necessary after editing a unit file.
+    > Output will be like
+
+      ```
+      etcd.service                               enabled         enabled
+      ```
+1. If the location of the service unit file has not been given in the question, then you must locate it. You will need to edit it later if you have to do a restore.
+
+    ```bash
+    systemctl cat etcd
+    ```
+
+    > Output (some lines truncated. Important lines are shown)
+
+      ```bash
+      # /etc/systemd/system/etcd.service
+      [Unit]
+      Description=etcd
+      Documentation=https://github.com/coreos
+
+      [Service]
+      ExecStart=/usr/local/bin/etcd \
+      --- truncated---
+        --listen-client-urls https://192.168.56.11:2379,https://127.0.0.1:2379
+      --- truncated---
+        --data-dir /var/lib/etcd
+      ```
+
+      * Note the first line which is a comment. This is the full path to the file. Note it down, you will need to edit this file later if doing a restore.
+      * Note also the values for `--listen-client-urls`
+
+1. If you have been instructed to take a backup, then you should have been given the path to the certificates to use with `etcdctl`. If you have only been given a *directory* name, rather than all three certificates, do an `ls -l` of this directory to determine the certificate/key names.<br>For instance, if the directory given is `/etc/etcd/pki` and you find this contains `ca.crt`, `server.crt` and `server.key` then the command would be
+
+    ```bash
+    ETCDCTL_API=3 etcdctl snapshot save \
+      --cacert /etc/etcd/pki/ca.crt \
+      --cert /etc/etcd/pki/server.crt \
+      --key /etc/etcd/pki/server.key \
+      /path/to/snapshot.db
+    ```
+
+    Note that if the port number on `--listen-client-urls` is not 2379, then you also require `--endpoints`
+
+1. If you have been instructed to do a restore then
+
+    1. Determine the ownership of the original data directory as found in the unit file above at `--data-dir`
+
+        ```bash
+        ls -ld /var/lib/etcd
+        ```
+
+        > Output - here we see it is owned by `etcd:etcd`
+
+            drwx------ 3 etcd etcd 4096 Nov 28 01:18 /var/lib/etcd
+
+    1. Do the restore to whichever directory instructed by the question. For instance, if it is `/var/lib/etcd-from-backup` then
+
+        ```bash
+        ETCDCTL_API=3 etcdctl snapshot save \
+          --data-dir /var/lib/etcd-from-backup \
+          /path/to/snapshot.db
+        ```
+
+    1. If the original data directory was not owned by root, set the ownership of the newly created directory to the correct user:group
+
+        ```bash
+        chown -R etcd:etcd /var/lib/etcd-from-backup
+        ```
+
+    1. Now edit the system uint file with `vi` using the path you noted above and set `--data-dir` to where you did the restore, e.g. `/var/lib/etcd-from-backup`
+
+        ```bash
+        vi /etc/systemd/system/etcd.service
+        ```
+
+    1. Restart the `etcd` service
+
+        ```bash
+        systemctl daemon-reload
+        systemctl restart etcd
+        ```
+
+### Multiple etcd processes
+
+It is highly unlikely you will find this configuration, but if you do, please report it in the [slack channel](https://kodekloud.slack.com/archives/CHMV3P9NV).
+
+If there's more than one, you need to identify the correct one! In the output of the above `ps -aux | grep etcd` command, you should be able to see the `--listen-client-urls` argument. Note down the port numbers from this URL for each `etcd` process.
+
+1. Go onto the control node for the target cluster and run
+
+    * If it is a kubeadm cluster (api server is running as a pod). It should be like this in the exam.
+
+        ```
+        grep etcd-servers /etc/kubernetes/manifests/kube-apiserver.yaml
+        ```
+
+    * If it is not kubeadm, and api server is an operating system service
+
+      ```
+      sudo ps -aux | grep apiserver
+      ```
+
+      Find `--etcd-servers` in the argument list and note the port number. You need to match that with one of the port numbers you've noted down above. That will get you the correct `etcd` process.
+
+    Log out of the control node and return to the node running `etcd`. When you get there, remember to do `sudo -i` again if needed.
+
+1. Next, find the unit file for the correct `etcd` service. The following will give you the file *names*.
+
+    ```bash
+    systemctl list-unit-files | grep etcd
+    ```
+
+    > Output will be something like
+
+        ```
+        etcd-1.service                               enabled         enabled
+        etcd-2.service                               enabled         enabled
+        ```
+
+1. To locate these files, run the following on each filename returned by the command above
+
+    ```bash
+    sytemctl cat etcd-1
+    sytemctl cat etcd-2
+    ```
+
+    Refer to above sections for what the output looks like. Find the correct one by examining each identified unit file and choose the one that has the matching port number for the `--listen-client-urls` argument. You will need to edit this later if doing a restore.
+
+1. If you have been instructed to take a backup, then identify the certificates as per instructions for single etcd above and form the backup command in the same way, but additionally specify `--endpoint CLIENT_URL` where `CLIENT_URL` is the URL from the<br/>`--listen-client-urls` in the identified unit file. Choose the `https://127.0.0.1:...` URL if present.
+
+1. If you have been instructed to do a restore
+
+    1. Perform the same steps as for single etcd to form the restore command, and to set directory ownership.
+    1. Edit the correct service unit file identified above and set the new `--data-dir`
+    1. Restart the identified service with `systemctl daemon-reload` and `systemctl restart`
 
 Please also try the following lab for practice of external etcd
 
