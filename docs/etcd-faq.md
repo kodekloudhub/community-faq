@@ -333,8 +333,8 @@ If there's more than one, you need to identify the correct one! In the output of
 1. To locate these files, run the following on each filename returned by the command above
 
     ```bash
-    sytemctl cat etcd-1
-    sytemctl cat etcd-2
+    systemctl cat etcd-1
+    systemctl cat etcd-2
     ```
 
     Refer to above sections for what the output looks like. Find the correct one by examining each identified unit file and choose the one that has the matching port number for the `--listen-client-urls` argument. You will need to edit this later if doing a restore.
