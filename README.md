@@ -26,6 +26,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [What does the environment look like?](#what-does-the-environment-look-like)
     * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) :arrow_upper_right:
     * [Issues with launching the exam](#issues-with-launching-the-exam)
+    * [What happens if there are issues during the exam?](#what-happens-if-there-are-issues-during-the-exam)
     * [If I fail, how soon can I schedule a retake?](#if-i-fail-how-soon-can-i-schedule-a-retake)
 * [Kubernetes CKA/CKAD](#kubernetes-ckackad)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
@@ -205,6 +206,18 @@ Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc
 ### Issues with launching the exam
 
 Please read the [PSI Bridge FAQ](https://helpdesk.psionline.com/hc/en-gb/sections/360013179931-PSI-Bridge-FAQ) BEFORE you appear for the exam so you know what kind of setup issues you may face.
+
+### What happens if there are issues during the exam?
+
+No infrastructure is perfect! Be that KodeKloud labs, killer.sh or the exam environment. There may be issues that cause the exam to slow down or even disconnect in the middle of your session. Some issues are beyond the control of the environment provider (KodeKloud, PSI, etc), and include but probably not limited to:
+
+* Issue with your own broadband provider.
+* Issue with some third party network provider on the route between your own broadband provider and PSI's exam environment. This would add latency (lagging) or disconnects.
+* The route between your location and the nearest cloud region has many hops or has slow sections (again adds latency). Doesn't matter how fast your own broadband provider is. If the route goes through a slow section, then that is the maximum speed you will attain. Think traffic jam - having a Ferrari won't get you through it any faster!
+* Issue within the cloud provider used by PSI (AWS, GCP, Azure - don't know which they actually do use).
+* Issue with PSI themselves.
+
+The first two and to a certain extent the third are more likely if you live in, or the route crosses countries with poorly maintained infrastructure or political instability. What I'm getting at is it is not *always* PSI's fault! If you are still connected to the proctor, then they will generally try to help but it is not always successful. In the event that your exam finishes incomplete due to technical issues, you must [raise a ticket with Linux Foundation](https://trainingsupport.linuxfoundation.org/) explaining clearly what happened. In most cases they will credit your exam back to you.
 
 ### If I fail, how soon can I schedule a retake?
 
