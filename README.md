@@ -35,6 +35,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
     * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
 * [Other](#other)
+    * [Labs are broken/crashing/not loading](#labs-are-brokencrashingnot-loading)
     * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
     * [I can't get out of vi!](#i-cant-get-out-of-vi)
 * YAML Syntax
@@ -264,6 +265,10 @@ which podman
 See the [Crashed API Server](./docs/diagnose-crashed-apiserver.md) page.
 
 ## Other
+
+### Labs are broken/crashing/not loading
+
+Please see [this guide](./docs/lab-issues.md)
 
 ### How do I copy/paste in VSCode integrated terminal window?
 
