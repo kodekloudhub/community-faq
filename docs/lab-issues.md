@@ -10,7 +10,7 @@ If the labs are still not working, there are a number of reasons this may be hap
 
 Additionally, we have tens of thousands of students doing courses at any one time. There is only so much infrastructure to go round. It may be that you've hit a busy time, so you should wait a few minutes and retry. If still broken, wait a few hours before retrying. Even Cloud providers (which we rely on) have periods where infrastructure cannot be provisioned due to excessive demand.
 
-Occasionally the issue is within KodeKloud itself. When this is the case, there will generally be announcements made on our Slack channels, so you should also check there for updates.
+Occasionally the issue is within KodeKloud itself. When this is the case or if we know where the cause is, there will generally be announcements made on our [Lab Support Slack channel](https://kodekloud.slack.com/archives/C045CAW4PJP), so you should also check there for updates and fix ETAs
 
 The key takeaway from this is that the issues you may be facing are not always something that is our fault, therefore not something that can be fixed immediately.
 
