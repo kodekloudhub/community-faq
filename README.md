@@ -20,6 +20,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
     * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
+    * [Where can I find other practice scenarios for free?](#where-can-i-find-other-practice-scenarios-for-free)
     * [Can I request a break?](#can-i-request-a-break)
     * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
     * [What ID is required?](#what-id-is-required)
@@ -165,6 +166,18 @@ Please see [killer.sh](./docs/killer-sh.md) FAQ page.
 > Very closely
 
 Please see [killer.sh](./docs/killer-sh.md) FAQ page.
+
+### Where can I find other practice scenarios for free?
+
+For the following links, unless stated interactive lab environment you will need either your own cluster ([minikube](https://minikube.sigs.k8s.io/), [kind](https://kind.sigs.k8s.io/) or one you've built with kubeadm).
+
+* CKA
+    * https://killercoda.com/killer-shell-cka (interactive lab environment)
+* CKAD
+    * https://killercoda.com/killer-shell-ckad (interactive lab environment)
+    * https://github.com/dgkanatsios/CKAD-exercises
+* CKS
+    * https://killercoda.com/killer-shell-cks (interactive lab environment)
 
 ### Can I request a break?
 
