@@ -6,30 +6,32 @@ This document answers the most frequently asked questions in the KodeKloud Slack
 
 * [Buying the Exam](#buying-the-exam)
 * [Exam Environment](#exam-environment)
-    * [Students' own notes on the Exam Environment](#students-own-notes-on-the-exam-environment)
-    * [Can I use an external monitor?](#can-i-use-an-external-monitor)
-    * [Can I use multiple monitors?](#can-i-use-multiple-monitors)
-    * [Can I use an external webcam?](#can-i-use-an-external-webcam)
-    * [Does my microphone need to work?](#does-my-microphone-need-to-work)
-    * [Do my speakers need to work?](#do-my-speakers-need-to-work)
-    * [Can I use a headset?](#can-i-use-a-headset)
-    * [Can I use a corporate device?](#can-i-use-a-corporate-device)
-    * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
-    * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
-    * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
-    * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
+    * [PSI Bridge](#psi-bridge)
+        * [Students' own notes on the Exam Environment](#students-own-notes-on-the-exam-environment)
+        * [Can I use an external monitor?](#can-i-use-an-external-monitor)
+        * [Can I use multiple monitors?](#can-i-use-multiple-monitors)
+        * [Can I use an external webcam?](#can-i-use-an-external-webcam)
+        * [Does my microphone need to work?](#does-my-microphone-need-to-work)
+        * [Do my speakers need to work?](#do-my-speakers-need-to-work)
+        * [Can I use a headset?](#can-i-use-a-headset)
+        * [Can I use a corporate device?](#can-i-use-a-corporate-device)
+        * [Can I request a break?](#can-i-request-a-break)
+        * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
+        * [What ID is required?](#what-id-is-required)
+        * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) :arrow_upper_right:
+        * [Issues with launching the exam](#issues-with-launching-the-exam)
+        * [What happens if there are issues during the exam?](#what-happens-if-there-are-issues-during-the-exam)
+        * [If I fail, how soon can I schedule a retake?](#if-i-fail-how-soon-can-i-schedule-a-retake)
+    * [Performance Based Exams](#performance-based-exams)
+        * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
+        * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
+        * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
+        * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
+        * [What does the environment look like?](#what-does-the-environment-look-like)
+* [Kubernetes Certifications](#kubernetes-ckackad)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
     * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
     * [Where can I find other practice scenarios for free?](#where-can-i-find-other-practice-scenarios-for-free)
-    * [Can I request a break?](#can-i-request-a-break)
-    * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
-    * [What ID is required?](#what-id-is-required)
-    * [What does the environment look like?](#what-does-the-environment-look-like)
-    * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) :arrow_upper_right:
-    * [Issues with launching the exam](#issues-with-launching-the-exam)
-    * [What happens if there are issues during the exam?](#what-happens-if-there-are-issues-during-the-exam)
-    * [If I fail, how soon can I schedule a retake?](#if-i-fail-how-soon-can-i-schedule-a-retake)
-* [Kubernetes CKA/CKAD](#kubernetes-ckackad)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
     * [How do I restore etcd?](#how-do-i-restore-etcd)
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
@@ -49,7 +51,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [Other](#other)
 
 
-## Buying the Exam
+# Buying the Exam
 
 To buy any exam run by The Linux Foundation, you need to first sign up with [The Linux Foundation](https://www.linuxfoundation.org/). Once you have an account, known as an LFID, then you can go to their [training portal](https://trainingportal.linuxfoundation.org/) to purchase the exam. For Kubernetes exams, you get two killer.sh sessions included in the purchase. More on this further down this document.
 
@@ -59,7 +61,9 @@ DO NOT LEAVE IT UNTIL THE LAST MINUTE TO SIT THE EXAM!!!
 
 If you do that, and you have only days remaining before the validity expires, what are you going to do if there are issues with the exam environment (these are not infrequent) which means that you fail to complete, or even start the exam? You should appear for your first attempt *at least* one month before the expiry in case of issues like this. If your exam is credited back to you due to issues like this, then you still have to do this and the free retake if you require it within the one year period.
 
-## Exam Environment
+# Exam Environment
+
+## PSI Bridge
 
 Probably *the* most asked questions!</br></br>This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022. This provides a Linux XFCE desktop VDI for the exam environment. You may use any of the applications it provides in any way you see fit, however the only useful ones are `Terminal`, `Firefox` and `Mousepad` (for note taking). Firewalls prevent you from browsing anything other than allowed documentation. The terminal application connects to a remote host, thus the File Manager app is of no use, and for the same reason, Mousepad can't be used to edit exam files unless you edit them there, then paste into `vi` (not recommended).
 
@@ -137,48 +141,6 @@ Use of corporate devices or laptops is not recommended, unless you have an accou
 
 Connecting via a corporate network is also not recommended as company firewall policy may block ports that are required by the exam software. Bear in mind that most companies install a mandatory VPN which kicks in if you use the device from outside of the office - ergo it means you are still connected via the corporate network, so the statements in the previous sentence still apply.
 
-### Can I use my own bookmarks?
-
-> No
-
-Because you cannot run your own browser. The only software that may be running on your desktop at exam time is the PSI software. Each question has several relevant links into the Kubernetes documentation. Clicking these links opens tabs in Firefox within the exam environment. You can visit any of the allowed documentation using the provided Firefox.</br>You may open multiple tabs in Firefox, however a question may state that you can only open one additional tab on a particular topic.
-
-### Can I open multiple terminal sessions?
-
-> Yes
-
-Either multiple instances of the terminal emulator app, multiple tabs within the terminal emulator, or both. We would encourage you to do so. This is useful when editing manifests. Have the manifest open in `vi` in one terminal, and a command prompt in the other. Edit the YAML and save without exiting (`:w`). In the other terminal, apply. Repeat until the bugs in the YAML are out.
-
-### Can I paste settings for vi, aliases etc from my notepad?
-
-> No
-
-The only software that may be running is the PSI software, therefore you must memorize such things and enter them up manually at the beginning of the exam.
-
-### How many killer.sh sessions do I get?
-
-> 2
-
-Please see [killer.sh](./docs/killer-sh.md) FAQ page.
-
-### How does killer.sh compare to the real thing?
-
-> Very closely
-
-Please see [killer.sh](./docs/killer-sh.md) FAQ page.
-
-### Where can I find other practice scenarios for free?
-
-For the following links, unless stated interactive lab environment you will need either your own cluster ([minikube](https://minikube.sigs.k8s.io/), [kind](https://kind.sigs.k8s.io/) or one you've built with kubeadm).
-
-* CKA
-    * https://killercoda.com/killer-shell-cka (interactive lab environment)
-* CKAD
-    * https://killercoda.com/killer-shell-ckad (interactive lab environment)
-    * https://github.com/dgkanatsios/CKAD-exercises
-* CKS
-    * https://killercoda.com/killer-shell-cks (interactive lab environment)
-
 ### Can I request a break?
 
 > Yes
@@ -212,11 +174,6 @@ Any national or state government issued photo ID where the name exactly matches 
 
 Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
 
-### What does the environment look like?
-
-![Image: The Linux Foundation](./img/LF-Remote-Desktop-070722d.png)
-[Image: The Linux Foundation]
-
 ### Issues with launching the exam
 
 Please read the [PSI Bridge FAQ](https://helpdesk.psionline.com/hc/en-gb/sections/360013179931-PSI-Bridge-FAQ) BEFORE you appear for the exam so you know what kind of setup issues you may face.
@@ -241,7 +198,59 @@ For exams with an included free retake, you may log into the training portal and
 
 Remember that the retake must also fall within the one year period since the date of exam purchase.
 
-## Kubernetes CKA/CKAD
+## Performance Based Exams
+
+Performance based exams (as opposed to Multiple Choice Question) are provided in a virtual desktop (VDI) within the PSI Bridge software. This VDI is a Linux XFCE desktop running on top of Ubuntu. Kubernetes and LFCS fall in this category.
+
+### Can I use my own bookmarks?
+
+> No
+
+Because you cannot run your own browser. The only software that may be running on your desktop at exam time is the PSI software. Each question has several relevant links into the Kubernetes documentation. Clicking these links opens tabs in Firefox within the exam environment. You can visit any of the allowed documentation using the provided Firefox.</br>You may open multiple tabs in Firefox, however a question may state that you can only open one additional tab on a particular topic.
+
+### Can I open multiple terminal sessions?
+
+> Yes
+
+Either multiple instances of the terminal emulator app, multiple tabs within the terminal emulator, or both. We would encourage you to do so. This is useful when editing manifests. Have the manifest open in `vi` in one terminal, and a command prompt in the other. Edit the YAML and save without exiting (`:w`). In the other terminal, apply. Repeat until the bugs in the YAML are out.
+
+### Can I paste settings for vi, aliases etc from my notepad?
+
+> No
+
+The only software that may be running is the PSI software, therefore you must memorize such things and enter them up manually at the beginning of the exam.
+
+### What does the environment look like?
+
+![Image: The Linux Foundation](./img/LF-Remote-Desktop-070722d.png)
+[Image: The Linux Foundation]
+
+# Kubernetes Certifications
+
+### How many killer.sh sessions do I get?
+
+> 2
+
+Please see [killer.sh](./docs/killer-sh.md) FAQ page.
+
+### How does killer.sh compare to the real thing?
+
+> Very closely
+
+Please see [killer.sh](./docs/killer-sh.md) FAQ page.
+
+### Where can I find other practice scenarios for free?
+
+For the following links, unless stated interactive lab environment you will need either your own cluster ([minikube](https://minikube.sigs.k8s.io/), [kind](https://kind.sigs.k8s.io/) or one you've built with kubeadm).
+
+* CKA
+    * https://killercoda.com/killer-shell-cka (interactive lab environment)
+* CKAD
+    * https://killercoda.com/killer-shell-ckad (interactive lab environment)
+    * https://github.com/dgkanatsios/CKAD-exercises
+* CKS
+    * https://killercoda.com/killer-shell-cks (interactive lab environment)
+
 
 ### How do I backup etcd?
 
@@ -277,7 +286,7 @@ which podman
 
 See the [Crashed API Server](./docs/diagnose-crashed-apiserver.md) page.
 
-## Other
+# Other
 
 ### Labs are broken/crashing/not loading
 
@@ -293,7 +302,7 @@ Please see [this guide](./docs/vscode-tips.md).
 
 For this and other `vi` tips, see [vi-101](./docs/vi-101.md)
 
-## Useful Links
+# Useful Links
 
 ### Pre-Exam
 
