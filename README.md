@@ -134,7 +134,7 @@ Proctor needs to see your ears to ensure that you are not getting some kind of e
 
 Use of corporate devices or laptops is not recommended, unless you have an account on it with full local administrator rights. There may be many programs and services mandated by company policy running on the device which are incompatible with PSI software and must be stopped. Bear in mind that stopping these programs may in violation of such policies.
 
-Connecting via a corporate network is also not recommended as company firewall policy may block ports that are required by the exam software.
+Connecting via a corporate network is also not recommended as company firewall policy may block ports that are required by the exam software. Bear in mind that most companies install a mandatory VPN which kicks in if you use the device from outside of the office - ergo it means you are still connected via the corporate network, so the statements in the previous sentence still apply.
 
 ### Can I use my own bookmarks?
 
