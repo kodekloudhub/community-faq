@@ -1,6 +1,6 @@
 # VSCode Integrated Editor
 
-Most of the terraform labs and some others use a VSCode editor embedded in the browser for coding exercises. Getting copy and paste to work can be a challenge!
+Most of the terraform labs and some others use a VSCode editor embedded in the browser for coding exercises. Opening the terminal and getting copy and paste to work can be a challenge!
 
 This page sets out how to solve this issue. It will be expanded as information about other browsers and operating systems is gathered, however as with all labs, the recommended browser is Chrome.
 
