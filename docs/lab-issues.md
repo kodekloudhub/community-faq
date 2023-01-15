@@ -8,7 +8,7 @@ For all lab issues that are not related to login problems, the primary channel f
 
 ## Unable to access labs from Udemy course
 
-We provide a free enrolment coupon for labs on the Udemy courses. Please check the steps here: https://support.kodekloud.com/udemy-students-unable-to-access-labs
+We provide a free enrolment coupon for labs on the Udemy courses. Please check the steps here: https://support.kodekloud.com/udemy-students-unable-to-access-labs. When creating an account on kodekloud.com as required, be sure to use the same email address you used for your Udemy account.
 
 If you are still having an issue, please get in touch with the support team: support@kodekloud.com
 
