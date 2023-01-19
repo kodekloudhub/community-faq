@@ -45,10 +45,10 @@ etcdctl snapshot restore ...
 
 The `--endpoints` argument on `etcdctl` is used to tell it where to find the `etcd` server. If you are running the command on the same host where `etcd` service is running *and* there is only one instance of `etcd`, then you do not need to provide this argument, as it has a default value of `https://127.0.0.1:2379`.<br>This is the case in most labs, as your prompt will nearly always be on the controlplane node.
 
-If you run `etcdctl` from a different workstation from where `etcd` is running, as may be the case in a production environment, *or* you need to use a non-standard port, then you need to provide this argument to say where the `etcd` server is.
+If you run `etcdctl` from a different workstation from where `etcd` is running, as may be the case in a production environment, *or* you need to use a non-standard port, then you need to provide this argument to say where the `etcd` server is. If you need to determine `host-ip` and/or `port` they can be found by looking at the etcd manifest (or systemd unit file when etcd is external) and finding this on the `--listen-client-urls` argument.
 
 * Same host, different port: `--endpoints https://127.0.0.1:port`
-* Remote host: `--endpoints https://host-ip:port`<br/>In this case, the `host-ip` and `port` can be found by looking at the etcd manifest (or systemd unit file when etcd is external) and finding this on the `--listen-client-urls` argument.
+* Remote host: `--endpoints https://host-ip:port`
 
 ## What are all the certificates used for?
 
