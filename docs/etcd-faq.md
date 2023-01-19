@@ -48,7 +48,7 @@ The `--endpoints` argument on `etcdctl` is used to tell it where to find the `et
 If you run `etcdctl` from a different workstation from where `etcd` is running, as may be the case in a production environment, *or* you need to use a non-standard port, then you need to provide this argument to say where the `etcd` server is.
 
 * Same host, different port: `--endpoints https://127.0.0.1:port`
-* Remote host: `--endpoints https://host-ip:port`
+* Remote host: `--endpoints https://host-ip:port`<br/>In this case, the `host-ip` and `port` can be found by looking at the etcd manifest (or systemd unit file when etcd is external) and finding this on the `--listen-client-urls` argument.
 
 ## What are all the certificates used for?
 
