@@ -11,6 +11,7 @@
 * [How do I make a backup?](#how-do-i-make-a-backup)
 * [How do I restore a backup?](#how-do-i-restore-a-backup)
     * [kubeadm clusters with etcd running as a pod](#kubeadm-clusters-with-etcd-running-as-a-pod)
+      * [Troubleshooting after the restore](#troubleshooting-after-the-restore)
 * [Clusters with external etcd](#clusters-with-external-etcd)
     * [Single etcd process](#single-etcd-process)
     * [Multiple etcd processes](#multiple-etcd-processes)
@@ -171,6 +172,31 @@ And note...
     - --initial-advertise-peer-urls=https://10.40.10.9:2380
     - --initial-cluster=controlplane=https://10.40.10.9:2380
 ```
+
+#### Troubleshooting after the restore
+
+It can take up to 60 seconds for service to resume after you have edited the `etcd` manifest. You may observe the progress of the pod restarts by running the following command. As mentioned above, give it up to 60 seconds to become stable.
+
+```bash
+watch crictl ps
+```
+
+This will show you the running _containers_, refreshing the list every two seconds. You are waiting for the following to be stable:
+
+```
+Every 2.0s: crictl ps                                                                                                                                    controlplane: Thu Jan 26 01:50:48 2023
+
+CONTAINER           IMAGE               CREATED             STATE               NAME                      ATTEMPT             POD ID              POD
+c6e61480ac614       a31e1d84401e6       9 minutes ago       Running             kube-apiserver            6                   2623ac5d1b43b       kube-apiserver-controlplane
+629d81d592938       fce326961ae2d       10 minutes ago      Running             etcd                      0                   87710b3c9a99a       etcd-controlplane
+3715d4173cc9f       5d7c5dfd3ba18       15 minutes ago      Running             kube-controller-manager   1                   bd8758b9de774       kube-controller-manager-controlplane
+b182a4a2ba76d       dafd8ad70b156       15 minutes ago      Running             kube-scheduler            1                   3359954829552       kube-scheduler-controlplane
+e431a0ba0c04d       5185b96f0becf       23 minutes ago      Running             coredns                   0                   8d65a558ea93d       coredns-787d4945fb-2jn9w
+b8e8d94ea1074       5185b96f0becf       23 minutes ago      Running             coredns                   0                   7dc120679094d       coredns-787d4945fb-xj4ll
+fc30b4a42a287       8b675dda11bb1       23 minutes ago      Running             kube-proxy                0                   d73933f8fac41       kube-proxy-b9cv2
+```
+
+All the containers must be stable, i.e. not flipping on and off the list and `ATTEMPT` value should stop increasing. There may be other containers, but the ones in this list are the important ones. To get out of this display, press `CTRL-C`. Now you should be able to run `kubectl` commands again.
 
 If the `etcd` pod does not come back up in a reasonable time, you can [troubleshoot the same way as for apiserver](./diagnose-crashed-apiserver.md).
 
