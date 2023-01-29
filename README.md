@@ -142,6 +142,8 @@ Use of corporate devices or laptops is not recommended, unless you have an accou
 
 Connecting via a corporate network is also not recommended as company firewall policy may block ports that are required by the exam software. Bear in mind that most companies install a mandatory VPN which kicks in if you use the device from outside of the office - ergo it means you are still connected via the corporate network, so the statements in the previous sentence still apply.
 
+See also [launching the exam](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS#launching-the-exam)
+
 ### Can I request a break?
 
 > Yes
