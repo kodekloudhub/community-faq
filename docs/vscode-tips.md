@@ -7,6 +7,7 @@ This page sets out how to solve this issue. It will be expanded as information a
 * [Chrome Settings](#chrome-settings)
 * [Open Terminal](#open-terminal)
 * [Copy/Paste to Terminal](#copypaste-to-terminal)
+* [The terminal I had open closed on me!]
 
 Firstly, you must ensure that `kodekloud.com` and all subdomains have access to the clipboard.
 
@@ -56,5 +57,12 @@ To copy/paste to the integrated terminal window, we must use shortcut keys. If y
 
 * **Copy** - `COMMAND + C`
 * **Paste** - `COMMAND + SHIFT + V`
+
+## The terminal I had open closed on me!
+
+This happens, often after a "Setting things up..." between questions. Simply open it again with the key sequence above, then check the list of existing terminals in the list indicated in the screenshot below. Click on each of these till you recover the terminal you want.
+
+![vscode terminal](../img/vs-code-terminal.jpg)
+
 
 [Return to main FAQ](../README.md)
