@@ -7,7 +7,7 @@ This page sets out how to solve this issue. It will be expanded as information a
 * [Chrome Settings](#chrome-settings)
 * [Open Terminal](#open-terminal)
 * [Copy/Paste to Terminal](#copypaste-to-terminal)
-* [The terminal I had open closed on me!]
+* [The terminal I had open closed on me!](#the-terminal-i-had-open-closed-on-me)
 
 Firstly, you must ensure that `kodekloud.com` and all subdomains have access to the clipboard.
 
