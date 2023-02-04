@@ -324,7 +324,7 @@ For this and other `vi` tips, see [vi-101](./docs/vi-101.md)
 * [Exam Preparation Checklist](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-preparation-checklist)
     * [Checklist Items](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-preparation-checklist#checklist-items)
     * [Name Verification](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-preparation-checklist#checklist-items)
-    * [Platform Selection](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-preparation-checklist#checklist-items) - For LFCS you may select CentOS or Ubuntu.
+    * [Platform Selection](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-preparation-checklist#checklist-items) - For LFCS you may select CentOS or Ubuntu. Bear in mind that KodeKloud LCFS course is delivered on CentOS, so you should select this option.
     * [Test Accommodations](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-preparation-checklist#test_accommodations) - For those with disabilities.
 * [Detailed write-up on exam procedure](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) by Alistair Mackay (KodeKloud)
 * [Video presentation](https://youtu.be/1fSxM0_dtac) on the new exam environment
