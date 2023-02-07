@@ -12,7 +12,7 @@ The killer.sh test interface is a very close simulation of the real exam and eve
 Aim to score more than 90% with time to spare.
 
 * You get two simulator sessions included in the price of the exam. If you want more, you must purchase them separately from `killer.sh` website, or in the event that you failed the main exam twice - when you purchase another exam.
-* You activate the free sessions from the exam portal.
+* You activate the free sessions from the [exam portal](https://trainingportal.linuxfoundation.org/).<br/><br/>![killer](../img/killer.jpg)
 * Each session lasts for 36 hours from when you start it, i.e. if you activate it at 9am Monday, it lasts till 9pm Tuesday.
 * Both sessions will have the same questions, unless the Kubernetes version of the exam is updated between the time you do session 1 and session 2.
 * Like the real exam, you may attempt questions in any order - e.g. leaving the hardest ones till the end. If there is any dependency between questions, it will be stated in the question.
