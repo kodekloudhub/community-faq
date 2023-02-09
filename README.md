@@ -199,7 +199,7 @@ The first two and to a certain extent the third are more likely if you live in, 
 
 > 24 hours
 
-For the Linux Foundation online proctored exams, you will normally receive the result via email to the address registered to your Linux Foundation account. The response comes in not less than 24 hours, but can occasionally be longer.
+For the Linux Foundation online proctored exams, you will receive the result via email to the address registered to your Linux Foundation account. The response comes in not less than 24 hours, but can occasionally be longer.
 
 If you've been waiting more than 48 hours, raise a [support ticket](https://trainingsupport.linuxfoundation.org/).
 
