@@ -21,6 +21,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
         * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS) :arrow_upper_right:
         * [Issues with launching the exam](#issues-with-launching-the-exam)
         * [What happens if there are issues during the exam?](#what-happens-if-there-are-issues-during-the-exam)
+        * [How long until I get my result?](#how-long-until-i-get-my-result)
         * [If I fail, how soon can I schedule a retake?](#if-i-fail-how-soon-can-i-schedule-a-retake)
     * [Performance Based Exams](#performance-based-exams)
         * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
@@ -192,6 +193,14 @@ No infrastructure is perfect! Be that KodeKloud labs, killer.sh or the exam envi
 * Issue with PSI themselves.
 
 The first two and to a certain extent the third are more likely if you live in, or the route crosses countries with poorly maintained infrastructure or political instability. What I'm getting at is it is not *always* PSI's fault! If you are still connected to the proctor, then they will generally try to help but it is not always successful. In the event that your exam finishes incomplete due to technical issues, you must [raise a ticket with Linux Foundation](https://trainingsupport.linuxfoundation.org/) explaining clearly what happened. In most cases they will credit your exam back to you.
+
+### How long until I get my result?
+
+> 24 hours
+
+For the Linux Foundation online proctored exams, you will normally receive the result via email to the address registered to your Linux Foundation account. The response comes in not less than 24 hours, but can occasionally be longer.
+
+If you've been waiting more than 48 hours, raise a [support ticket](https://trainingsupport.linuxfoundation.org/).
 
 ### If I fail, how soon can I schedule a retake?
 
