@@ -23,6 +23,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
         * [What happens if there are issues during the exam?](#what-happens-if-there-are-issues-during-the-exam)
         * [How long until I get my result?](#how-long-until-i-get-my-result)
         * [If I fail, how soon can I schedule a retake?](#if-i-fail-how-soon-can-i-schedule-a-retake)
+        * [If I raise a support ticket, when will it be answered?](#if-i-raise-a-support-ticket-when-will-it-be-answered)
     * [Performance Based Exams](#performance-based-exams)
         * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
         * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
@@ -209,6 +210,10 @@ If you've been waiting more than 48 hours, raise a [support ticket](https://trai
 For exams with an included free retake, you may log into the training portal and schedule your retake as soon as you know you have failed.
 
 Remember that the retake must also fall within the one year period since the date of exam purchase.
+
+### If I raise a support ticket, when will it be answered?
+
+Expect _at least 3 working_ days for a response. If you raise it on a Friday, you're unlikely to hear back before the following Wednesday.
 
 ## Performance Based Exams
 
