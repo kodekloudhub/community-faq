@@ -201,7 +201,13 @@ The first two and to a certain extent the third are more likely if you live in, 
 
 For the Linux Foundation online proctored exams, you will receive the result via email to the address registered to your Linux Foundation account. The response comes in not less than 24 hours, but can occasionally be longer.
 
-If you've been waiting more than 48 hours, raise a [support ticket](https://trainingsupport.linuxfoundation.org/).
+If you've been waiting more than 48 hours, raise a [support ticket](https://trainingsupport.linuxfoundation.org/). Be sure to check it's not gone into your junk folder.
+
+EMail domains associated with Linux Foundation are as follows. You can configure your email client to not treat any of these as spam.
+
+* `linuxfoundation.org`
+* `thoughtindustries.com`
+* `credly.com`
 
 ### If I fail, how soon can I schedule a retake?
 
