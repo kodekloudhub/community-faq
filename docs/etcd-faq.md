@@ -21,8 +21,6 @@
 
 **NOTE**: In the exam, you are advised to skip this question and come back to it at the end, as it is probably the hardest one and you don't want to waste time if there are easier questions further on!!
 
-**NOTE ALSO**: On newer installations, the `etcdctl` command may not be present. If that's the case then the newer `etcdutl` should be. It has the same arguments.
-
 ## What is ETCDCTL_API=3 all about?
 
 `etcdctl` supports two versions of the server's API. When making server calls, it defaults to version 2 of the API, and in version 2 some operations are either undefined, or have different arguments. Setting this environment variable tells `etcdctl` to use the V3 API, which is required for the snapshot functionality.
