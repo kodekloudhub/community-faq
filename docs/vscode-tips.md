@@ -25,7 +25,11 @@ This much should permit you to copy and paste in the code editor windows.
 
 ## Open Terminal
 
-To open a new terminal Press:
+On any system, the terminal my be opened from the Command Palette (normally `CTRL + SHIFT + P`). If that key combination doesn't work, right click on the editor window and Command Palette should be a selection on there.
+
+In the command palette that opens at the top, start typing `Terminal: Create New Integrated Terminal` - you should see it appear in the drop down long before you complete typing the above command. Select it from there
+
+To open a new terminal using shortcut keys, press:
 
 ### Mac
 
@@ -57,6 +61,10 @@ To copy/paste to the integrated terminal window, we must use shortcut keys. If y
 
 * **Copy** - `COMMAND + C`
 * **Paste** - `COMMAND + SHIFT + V`
+
+### Linux
+
+Unfortunately we have not so far been able to determine the key combinations for Linux desktops, and information is thin on the ground. Copying sometimes works from right mouse menu, but pasting is an issue. If you know a key combination that works, either submit a PR, or notify one of the KodeKloud operatives in Slack.
 
 ## The terminal I had open closed on me!
 
