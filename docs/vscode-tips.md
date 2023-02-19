@@ -64,7 +64,11 @@ To copy/paste to the integrated terminal window, we must use shortcut keys. If y
 
 ### Linux
 
-Unfortunately we have not so far been able to determine the key combinations for Linux desktops, and information is thin on the ground. Copying sometimes works from right mouse menu, but pasting is an issue. If you know a key combination that works, either submit a PR, or notify one of the KodeKloud operatives in Slack.
+This requires further validation and is based on the input of one person who reports the following:
+
+Open the lab in a new browser window, then `CTRL + C` and `CTRL + V` should work in the terminal.
+
+Please post in Slack on your own experiences with using VSCode labs in Linux OS.
 
 ## The terminal I had open closed on me!
 
