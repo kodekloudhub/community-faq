@@ -35,6 +35,8 @@ Steps to take
     drwxr-xr-x 3 root root 4096 Oct 26 04:29 kube-system_kube-apiserver-controlplane_02d13ddeddf8e935ec2407132767aeaa
     ```
 
+    If there's more than one match, choose the one with the most recent timestamp.
+
     **NOTE**: This directory can change name frequently. If you have to repeat the diagnostic process, don't assume it is the same as last time you did this in the same session. Repeat this step from the top.
 
     Next, `cd` into the given directory
