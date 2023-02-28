@@ -137,7 +137,25 @@ Paste mode may also be toggled from vi [normal mode](https://www.freecodecamp.or
 
 ## Dealing with errors
 
-A YAML parse stops at the first error encountered. This means if you have made multiple errors you have to fix one to be able to find the next, therefore getting it right is an iterative process!
+When a manifest is read, it is a two-pass operation
+
+1. The YAML is read in and converted to JSON. In this phase, errors specific to the grammar of YAML itself will be detected. If it gets past this phase, then the YAML is syntactically correct _as far as YAML grammar goes_. These errors have line number context and will be shown as
+
+    ```
+    (yaml: line #: error message)
+    ```
+
+2. Once the YAML has successfully been converted to JSON, then the JSON is marshalled to Go structures internally (i.e. the programmatic representation of pods, deployments, etc.). These errors are generally of the form
+
+    ```
+    (json: cannot unmarshal _something_ ito Go _something_ of type _sometype_)
+    ```
+
+    This means that you have probably missed a key, or put a list or a string literal where there should have been a map. Basically what you've put for a pod is syntactically correct YAML, but that YAML does not correctly represent a pod.
+
+
+A manifest parse stops at the first error encountered, as it loses context and cannot continue. This means if you have made multiple errors you have to fix one to be able to find the next, therefore getting it right is an iterative process!
+
 
 You should enable line numbers in `vi` to help you get to the error quickly. If line numbers are not showing, enter `:set nu` into `vi` before entering insert mode.
 
