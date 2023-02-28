@@ -14,7 +14,7 @@ Steps to take
     ```
 
 1.  Determine if the kubelet can even start the API server</br></br>
-    If there is a syntax error in the YAML manifest, then kubelet will not be able to parse it and will eventually complain. Do the following and watch the output for up to 60 seconds
+    If there is a syntax error in the YAML manifest, then kubelet will not be able to parse it and will eventually complain. Do the following and watch the output for up to 60 seconds. Note that if you have errors in your pod manifest, kubelet will report them exactly the same way using the [same kind of error messages](./yaml-faq.md#dealing-with-errors) that kubectl does!
 
     ```
     journalctl -fu kubelet | grep apiserver
