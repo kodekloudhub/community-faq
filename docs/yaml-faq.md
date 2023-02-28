@@ -151,10 +151,10 @@ When a manifest is read, it is a two-pass operation
 2. Once the YAML has successfully been converted to JSON, then the JSON is marshalled to Go structures internally (i.e. the programmatic representation of pods, deployments, etc.). These errors are generally of the form
 
     ```
-    (json: cannot unmarshal _something_ into Go _something_ of type _sometype_)
+    (json: cannot unmarshal _something_ into Go _something_else_ of type _sometype_)
     ```
 
-    This means that you have probably missed a key, or put a list or a string literal where there should have been a map. Basically what you've put for a pod is syntactically correct YAML, but that YAML does not correctly represent a pod.
+    This means that you have probably missed a key, or put a list or a string literal where there should have been a map. Basically what you've put for a pod is syntactically correct YAML, but that YAML does not correctly represent a pod.<br/><br/>You can get a clue as to where the error is from the `something_else`. Say that is `PodSpec.spec.containers` then it's in the `containers:` section of the manifest. Say it's `Volume.spec.volumes.hostPath` then it's a `hostPath:` within one of your `volumes:`.
 
 
 A manifest parse stops at the first error encountered, as it loses context and cannot continue. This means if you have made multiple errors you have to fix one to be able to find the next, therefore getting it right is an iterative process!
