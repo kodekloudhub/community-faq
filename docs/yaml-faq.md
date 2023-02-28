@@ -7,6 +7,7 @@ We see a few questions about "kubectl" YAML manifests and what you can and can't
 * [In a nutshell](#in-a-nutshell)
 * [To quote or not to quote](#to-quote-or-not-to-quote)
 * [Indentation](#indentation)
+* [Dealing with Errors](#dealing-with-errors)
 * [YAML Practice lab](#yaml-practice-lab)
 * [Advanced features](#advanced-features)
      * [Documents](#documents)
