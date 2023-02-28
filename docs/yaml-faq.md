@@ -138,13 +138,121 @@ Paste mode may also be toggled from vi [normal mode](https://www.freecodecamp.or
 
 A YAML parse stops at the first error encountered. This means if you have made multiple errors you have to fix one to be able to find the next, therefore getting it right is an iterative process!
 
-You will get errors like
+You should enable line numbers in `vi` to help you get to the error quickly. If line numbers are not showing, enter `:set nu` into `vi` before entering insert mode.
 
-```
-line 115: did not find expected key
-```
+Some common errors you'll get from Kubernetes components when your YAML is malformed are shown below. I'm showing the _relevant_ portion of the error messages:
 
-Doesn't tell you much really, but the important information is the line number which tells you where to start looking. Ensure you have line numbers enabled in `vi` (see above section on [indentation](#indentation)). Common problems include
+* TABs
+
+    ```
+    (yaml: line 67: found character that cannot start any token)
+    ```
+
+    Usually indicative of `TAB` characters found where there should be spaces at the given line.
+
+* Missing list
+
+    ```
+    (json: cannot unmarshal object into Go struct field PodSpec.spec.containers of type []v1.Container)
+    ```
+
+    Any unmarshalling error that mentions `type []...` (doesn't matter what comes after `[]`) means that a YAML list was expected but not found. In this particular case, it is telling us `PodSpec.spec.containers`, so it is complaining about the `containers:` section in your pod defintion not being a list. That means you probably did something like
+
+    ```yaml
+    spec:
+      containers:
+        name: nginx
+        image nginx
+    ```
+
+    When it should be
+
+    ```yaml
+    spec:
+      containers:
+      - name: nginx
+        image nginx
+    ```
+* Missing map
+
+    ```
+    (json: cannot unmarshal string into Go struct field Volume.spec.volumes.hostPath of type v1.HostPathVolumeSource)
+    ```
+
+    In this case, the error is caused by
+
+    ```yaml
+    volumes:
+    - hostPath: /tmp
+    ```
+
+    We have specified a string `/tmp` for the value of `hostPath` when a YAML map is expected. These are represented as Go `struct` internally.
+
+    It should have been
+
+    ```yaml
+    volumes:
+    - hostPath:
+        path: /tmp
+    ```
+
+* Incorrect indention causing map when list is expected
+
+    ```
+    (yaml: line 56: mapping values are not allowed in this context)
+    ```
+
+    Here the error is caused by
+
+    ```yaml
+    spec:
+      containers:
+      name: nginx     # <- line 56
+    ```
+
+    `name` is not an allowed key for `spec`, which is how we've put it. `name` is actually part of a container definition and `containers` is a _list_ of container defintions. Should have been
+
+    ```yaml
+    spec:
+      containers:
+      - name: nginx
+    ```
+* Could not find expected key
+
+    ```
+    (yaml: line 106: did not find expected key)
+    ```
+
+    Most likely you inserted a new list item somewhere near the given line, but did not specify it as a list item, e.g.
+
+    ```yaml
+      volumes:
+        hostPath:                    # <- you inserted this volume
+          path: /etc/ssl/certs
+          type: DirectoryOrCreate
+        name: ca-certs
+      - hostPath:
+          path: /etc/ca-certificates
+          type: DirectoryOrCreate
+        name: etc-ca-certificates
+    ```
+
+    But you forgot the `-`
+
+    ```yaml
+      volumes:
+      - hostPath:                    # <- note the difference
+          path: /etc/ssl/certs
+          type: DirectoryOrCreate
+        name: ca-certs
+      - hostPath:
+          path: /etc/ca-certificates
+          type: DirectoryOrCreate
+        name: etc-ca-certificates
+    ```
+
+
+In general the categories of error fall under
 
 * Incorrect indentation
 * Misspelled or missing key
