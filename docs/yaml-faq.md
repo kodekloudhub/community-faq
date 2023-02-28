@@ -145,6 +145,9 @@ When a manifest is read, it is a two-pass operation
     (yaml: line #: error message)
     ```
 
+    You should enable line numbers in `vi` to help you get to these errors quickly. If line numbers are not showing, enter `:set nu` into `vi` before entering insert mode.
+
+
 2. Once the YAML has successfully been converted to JSON, then the JSON is marshalled to Go structures internally (i.e. the programmatic representation of pods, deployments, etc.). These errors are generally of the form
 
     ```
@@ -157,7 +160,6 @@ When a manifest is read, it is a two-pass operation
 A manifest parse stops at the first error encountered, as it loses context and cannot continue. This means if you have made multiple errors you have to fix one to be able to find the next, therefore getting it right is an iterative process!
 
 
-You should enable line numbers in `vi` to help you get to the error quickly. If line numbers are not showing, enter `:set nu` into `vi` before entering insert mode.
 
 Some common errors you'll get from Kubernetes components when your YAML is malformed are shown below. I'm showing the _relevant_ portion of the error messages:
 
