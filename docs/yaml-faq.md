@@ -162,7 +162,7 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
     spec:
       containers:
         name: nginx
-        image nginx
+        image: nginx
     ```
 
     When it should be
@@ -171,7 +171,7 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
     spec:
       containers:
       - name: nginx
-        image nginx
+        image: nginx
     ```
 * Missing map
 
