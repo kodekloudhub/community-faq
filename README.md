@@ -30,6 +30,8 @@ This document answers the most frequently asked questions in the KodeKloud Slack
         * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
         * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
         * [What does the environment look like?](#what-does-the-environment-look-like)
+        * [How is the exam scored?](#how-is-the-exam-scored)
+        * [What if I want to dispute my score?](#what-if-i-want-to-dispute-my-score)
 * [Kubernetes Certifications](#kubernetes-ckackad)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
     * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
@@ -247,6 +249,20 @@ The only software that may be running is the PSI software, therefore you must me
 
 ![Image: The Linux Foundation](./img/LF-Remote-Desktop-070722d.png)
 [Image: The Linux Foundation]
+
+### How is the exam scored?
+
+There will usually be several tasks associated with a question. You will obtain credit for each part of the question correctly answered.
+
+Scoring is done by a grading script, which examines the end state of the system. It does not consider how you got there, meaning you can solve a question by any valid means.
+
+### What if I want to dispute my score?
+
+This is what The Linux Foundation says:
+
+>   We offer an Exam rescoring service, but the turnaround time is 4+ weeks right now due to the current workload of the Exam Tech Support team. What the rescore service provides is a manual scoring of your exam by the Exam Tech Support team that can then be compared to the automated scoring that was initially performed by the grading scripts. Due to the manual nature of the work, the rescore service does cost $150 USD. (It is worth bearing in mind that rescores rarely result in conversion of a non-passing score. This is because the grading scripts have been time tested and continuously refined; additionally, the likelihood of having incorrectly graded a question or two is very low since we grade on outcomes (end state of the system), not the path the user took to get there. Should the rescore result in a passing grade, we would refund the fee to you.)<br/><br/>
+Exam servers are decommissioned within a few days from the Exam date, so if you would like to go with the rescore service, please complete payment ASAP for the rescoring fee at –https://trainingportal.linuxfoundation.org/products/certification-exam-manual-rescore-fee-150.</br></br>
+Please notify us as soon as you have completed the payment and we can then submit the ticket to Exam Tech Support for the manual review to be performed.
 
 # Kubernetes Certifications
 
