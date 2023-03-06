@@ -261,8 +261,7 @@ Scoring is done by a grading script, which examines the end state of the system.
 This is what The Linux Foundation says:
 
 >   We offer an Exam rescoring service, but the turnaround time is 4+ weeks right now due to the current workload of the Exam Tech Support team. What the rescore service provides is a manual scoring of your exam by the Exam Tech Support team that can then be compared to the automated scoring that was initially performed by the grading scripts. Due to the manual nature of the work, the rescore service does cost $150 USD. (It is worth bearing in mind that rescores rarely result in conversion of a non-passing score. This is because the grading scripts have been time tested and continuously refined; additionally, the likelihood of having incorrectly graded a question or two is very low since we grade on outcomes (end state of the system), not the path the user took to get there. Should the rescore result in a passing grade, we would refund the fee to you.)<br/><br/>
-Exam servers are decommissioned within a few days from the Exam date, so if you would like to go with the rescore service, please complete payment ASAP for the rescoring fee at –https://trainingportal.linuxfoundation.org/products/certification-exam-manual-rescore-fee-150.</br></br>
-Please notify us as soon as you have completed the payment and we can then submit the ticket to Exam Tech Support for the manual review to be performed.
+Exam servers are decommissioned within a few days from the Exam date, so if you would like to go with the rescore service, please complete payment ASAP for the rescoring fee at –https://trainingportal.linuxfoundation.org/products/certification-exam-manual-rescore-fee-150.
 
 # Kubernetes Certifications
 
