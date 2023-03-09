@@ -92,6 +92,8 @@ command:
 - "4800"
 ```
 
+If you are creating configmaps or secrets for use with environment variables, the same quoting rules apply.
+
 We've seen posts that say "You must quote mount paths" or "You must quote pod capabilities". This isn't case, at least not with later versions of the tools. This may have been so with older versions where they may have been using a less mature version of the GoLang YAML parser. At the end of the day you want to use as few keystrokes as possible when doing the exam!
 
 ## Indentation
