@@ -173,52 +173,6 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
 
     Usually indicative of `TAB` characters found where there should be spaces at the given line.
 
-* Missing list
-
-    ```
-    (json: cannot unmarshal object into Go struct field PodSpec.spec.containers of type []v1.Container)
-    ```
-
-    Any unmarshalling error that mentions `type []...` (doesn't matter what comes after `[]`) means that a YAML list was expected but not found. In this particular case, it is telling us `PodSpec.spec.containers`, so it is complaining about the `containers:` section in your pod defintion not being a list. That means you probably did something like
-
-    ```yaml
-    spec:
-      containers:
-        name: nginx
-        image: nginx
-    ```
-
-    When it should be
-
-    ```yaml
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
-    ```
-* Missing map
-
-    ```
-    (json: cannot unmarshal string into Go struct field Volume.spec.volumes.hostPath of type v1.HostPathVolumeSource)
-    ```
-
-    In this case, the error is caused by
-
-    ```yaml
-    volumes:
-    - hostPath: /tmp
-    ```
-
-    We have specified a string `/tmp` for the value of `hostPath` when a YAML map is expected. These are represented as Go `struct` internally.
-
-    It should have been
-
-    ```yaml
-    volumes:
-    - hostPath:
-        path: /tmp
-    ```
-
 * Incorrect indention causing map when list is expected
 
     ```
@@ -273,6 +227,54 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
           type: DirectoryOrCreate
         name: etc-ca-certificates
     ```
+
+* Missing list where Kubernetes expects one
+
+    ```
+    (json: cannot unmarshal object into Go struct field PodSpec.spec.containers of type []v1.Container)
+    ```
+
+    Any unmarshalling error that mentions `type []...` (doesn't matter what comes after `[]`) means that a YAML list was expected but not found. In this particular case, it is telling us `PodSpec.spec.containers`, so it is complaining about the `containers:` section in your pod defintion not being a list. That means you probably did something like
+
+    ```yaml
+    spec:
+      containers:
+        name: nginx
+        image: nginx
+    ```
+
+    When it should be
+
+    ```yaml
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+    ```
+
+* Missing map where Kubernetes expects one
+
+    ```
+    (json: cannot unmarshal string into Go struct field Volume.spec.volumes.hostPath of type v1.HostPathVolumeSource)
+    ```
+
+    In this case, the error is caused by
+
+    ```yaml
+    volumes:
+    - hostPath: /tmp
+    ```
+
+    We have specified a string `/tmp` for the value of `hostPath` when a YAML map is expected. These are represented as Go `struct` internally.
+
+    It should have been
+
+    ```yaml
+    volumes:
+    - hostPath:
+        path: /tmp
+    ```
+
 
 
 In general the categories of error fall under
