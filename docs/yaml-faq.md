@@ -84,7 +84,7 @@ This is because to put nothing after `emptyDir:` would be a syntax error as the 
 
 ## To quote or not to quote
 
-YAML always parses literal values as strings, unless the value is wholly numeric (including canonical, integer, fixed point, exponential, octal or hex), a timestamp or a boolean: `true`, `false`, `yes`, `no`. If you want to force a non-string to be parsed as a string, you must quote it. This rule applies to environment variable values and to command arguments which must both be passed to the underlying container as a string, hence
+YAML always parses literal values as strings, _unless_ the value is wholly numeric (including canonical, integer, fixed point, exponential, octal or hex), a timestamp or a boolean (`true`, `false`). If you want to force a non-string to be parsed as a string, you must quote it. This rule applies to environment variable values and to command arguments which must both be passed to the underlying container as a string, hence
 
 ```yaml
 command:
@@ -94,7 +94,7 @@ command:
 
 If you are creating configmaps or secrets for use with environment variables, the same quoting rules apply.
 
-We've seen posts that say "You must quote mount paths" or "You must quote pod capabilities". This isn't case, at least not with later versions of the tools. This may have been so with older versions where they may have been using a less mature version of the GoLang YAML parser. At the end of the day you want to use as few keystrokes as possible when doing the exam!
+We've seen posts that say "You must quote mount paths" or "You must quote pod capabilities". This is not the case. The rules are as stated above. At the end of the day you want to use as few keystrokes as possible when doing the exam!
 
 ## Indentation
 
