@@ -165,7 +165,7 @@ You can practice this in killer.sh before the exam.
 ### What are the system requirements for taking the exam?
 
 **IMPORTANT**
-* Linux is not supported _except_ for Ubuntu 18.04 or 20.04.
+* Linux is not supported _except_ for Ubuntu 18.04, 20.04 and 22.04.
 
 Mac M1 _is_ supported.
 
