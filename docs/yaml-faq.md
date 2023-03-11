@@ -94,8 +94,23 @@ command:
 
 If you are creating configmaps or secrets for use with environment variables, the same quoting rules apply.
 
-We've seen posts that say "You must quote mount paths" or "You must quote pod capabilities". This is not the case. The rules are as stated above. At the end of the day you want to use as few keystrokes as possible when doing the exam!
+We've seen posts that say "You must quote mount paths" or "You must quote pod capabilities". This is not the case. The rules are as stated above. At the end of the day you want to use as few keystrokes as possible when doing the exam! You only need to quote in flow-style e.g.
 
+```yaml
+    securityContext:
+      capabilities:
+        add: ["NET_ADMIN", "SYS_TIME"]
+```
+
+is _exactly_ the same as
+
+```yaml
+    securityContext:
+      capabilities:
+        add:
+        - NET_ADMIN
+        - SYS_TIME
+```
 ## Indentation
 
 Beware of the pesky indentation rules. Whitespace is part of the syntax like Python, however `TAB` characters are not. Each indentation level should be two spaces. If you mess this up you can get all kinds of different errors from `kubectl` depending on where it was in the file when it encountered the error.
