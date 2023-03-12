@@ -290,7 +290,15 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
         path: /tmp
     ```
 
+* Argument error
 
+    The YAML is correct. The spec structure is correct after it's been converted to JSON and marshalled, however the argument to a spec property is invalid.
+
+    For instance, you've created a `volume` with type `File` or `Directory` which means that the indicated path must exist. fF it does not, you will get an error similar to
+
+    ```
+    Error: MountVolume.SetUp failed for volume "audit" (UniqueName: "kubernetes.io/host-path/5a5fb26ce98b248d1257ea78eeb44853-audit") pod "kube-apiserver-controlplane" (UID: "5a5fb26ce98b248d1257ea78eeb44853") : hostPath type check failed: /etc/kubernetes/dev-audit.yaml is not a file
+    ```
 
 In general the categories of error fall under
 
@@ -298,6 +306,7 @@ In general the categories of error fall under
 * Misspelled or missing key
 * Array when it should have been map
 * Map when it should have been array
+* Argument errors
 
 **EXAM TIP**
 
