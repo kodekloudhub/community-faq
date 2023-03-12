@@ -11,7 +11,7 @@ The killer.sh test interface is a very close simulation of the real exam and eve
 
 Aim to score more than 90% with time to spare.
 
-* You get two simulator sessions included in the price of the exam. If you want more, you must purchase them separately from `killer.sh` website, or in the event that you failed the main exam twice - when you purchase another exam.
+* You get two simulator sessions included in the price of the exam. If you want more, you must purchase them separately from `killer.sh` website, or in the event that you failed the main exam twice - when you purchase another exam.<br/>You should aim to do the first session about 2 weeks before the exam. Revise anything you find hard. Do the second session 2-3 days before your exam.
 * You activate the free sessions from the [exam portal](https://trainingportal.linuxfoundation.org/). Note that the killer test does not start immediately when you click this link. You will get a confirmation dialog that you must accept before it launches the test environment.<br/><br/>![killer](../img/killer.jpg)
 * Each session lasts for 36 hours from when you start it, i.e. if you activate it at 9am Monday, it lasts till 9pm Tuesday.
 * Both sessions will have the same questions, unless the Kubernetes version of the exam is updated between the time you do session 1 and session 2, in which case _some_ questions _may_ change, depending on what has changed with the Kubernetes upgrade. Any questions relating to features that have been retired (e.g. PodSecurityPolicy in 1.25) are definitely replaced.
