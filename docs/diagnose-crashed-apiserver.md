@@ -20,7 +20,20 @@ Steps to take
     journalctl -fu kubelet | grep apiserver
     ```
 
-    If you see any obvious messages, then this is your issue. Note that YAML parsers only report the first error they find. If you have more than one error - i.e. the apiserver doesn't come up after fixing whatever you've found, then repeat this diagnostic process from the top.
+    There are normally three classes of error we will see here
+
+    1. Could not process manifest file
+
+        This is indicative of an error in the YAML of `/etc/kubernetes/manifests/kube-apiserver.yaml`. You should go directly to edit that file and correct the issue.<br/>Note that YAML parsers only report the first error they find. If you have more than one error - i.e. the apiserver doesn't come up after fixing whatever you've found, then repeat this diagnostic process from the top.
+
+    1.  Structure or argument error
+
+        The YAML has been parsed successfully, however you get some cryptic message about something or other. This means that although there's no syntax issues, what you've put in the manifest does not correctly represent the spec for the API server pod, or an argument for something like a volume mount is an invalid path. You need to find and fix this in the manifest file. See also [YAML - Dealing with errors](./yaml-faq.md#dealing-with-errors).
+
+    1. CrashLoopBackOff
+
+        This means that the YAML was successfully parsed, the pod started and then exited with an error. To fix this, continue reading.
+
 1.  Kubelet does launch API server, but it crashes immediately.</br></br>
     This means there is likely an issue with one or more arguments to the `kube-apiserver` command. There is a location where the last output of the pod is stored, which can help you to get information about why the pod is not starting.
 
