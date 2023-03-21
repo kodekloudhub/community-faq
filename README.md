@@ -221,7 +221,7 @@ Remember that the retake must also fall within the one year period since the dat
 
 ### If I raise a support ticket, when will it be answered?
 
-Expect _at least 3 working_ days for a response. If you raise it on a Friday, you're unlikely to hear back before the following Wednesday.
+Expect _at least 3 business days_ for a response. If you raise it on a Friday, you're unlikely to hear back before the following Wednesday. They don't work weekends or US public holidays.
 
 ## Performance Based Exams
 
@@ -379,7 +379,7 @@ For this and other `vi` tips, see [vi-101](./docs/vi-101.md)
 * [tmux Cheat Sheet](https://opensource.com/article/20/7/tmux-cheat-sheet)
 
 ## Specific Questions About The Exam
-* [Specific Questions About Exam](https://trainingsupport.linuxfoundation.org/). Login here with your Linux Foundation credentials. You can raise a ticket to ask questions about anything to do with the exam. The answers you receive here are the ultimate source of truth and trump anything you may read on this page or in any public discussion forums. Expect 2-3 days for a response.
+* [Specific Questions About Exam](https://trainingsupport.linuxfoundation.org/). Login here with your Linux Foundation credentials. You can raise a ticket to ask questions about anything to do with the exam. The answers you receive here are the ultimate source of truth and trump anything you may read on this page or in any public discussion forums. Expect _at least 3 business_ days for a response. They don't work weekends or US public holidays.
 
 Should a response from Linux Foundation contradict anything on this page, please reach out to a member of the support team in Slack. Thanks!
 
