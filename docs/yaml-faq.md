@@ -354,7 +354,7 @@ Here we list any bugs in the GoLang YAML parser. By "bugs" we mean deviations fr
 
       `resources:` is defined twice. This should be reported as an error, but is not!
 
-      Could be any key, and the one which is most likely to nip you (epsecially if you're doing CKS) would be `securityContext` which can be defined at container and pod level. If you do a container `securityContext`, then a pod one later in the manifest and get the indentation wrong, it would be interpreted as a second entry at container level and trump the first one.
+      Could be any key, and the one which is most likely to nip you (especially if you're doing CKS) would be `securityContext` which can be defined at container and pod level. If you do a container `securityContext`, then a pod one later in the manifest and get the indentation wrong, it would be interpreted as a second entry at container level and trump the first one.
 
       </details>
 
