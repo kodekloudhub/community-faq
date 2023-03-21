@@ -8,6 +8,7 @@ We see a few questions about "kubectl" YAML manifests and what you can and can't
 * [To quote or not to quote](#to-quote-or-not-to-quote)
 * [Indentation](#indentation)
 * [Dealing with Errors](#dealing-with-errors)
+* [Gotchas](#gotchas)
 * [YAML Practice lab](#yaml-practice-lab)
 * [Advanced features](#advanced-features)
      * [Documents](#documents)
@@ -311,6 +312,65 @@ In general the categories of error fall under
 **EXAM TIP**
 
 While debugging a YAML file, have `vi` open in one terminal window and the command prompt in another. With each edit, save the file without exiting `vi`, using `:w`. Then in the other terminal run `kubectl create` or `kubectl apply` as appropriate until the command is successful. Then exit `vi`.
+
+# Gotchas
+
+Here we list any bugs in the GoLang YAML parser. By "bugs" we mean deviations from the [YAML 1.2 Standard](https://yaml.org/spec/1.2.2), whereby the parser does not behave as per the specification. These are traps for the unwary!
+
+* Key duplication is not reported as an error.
+
+    As per section [3.2.1.3](https://yaml.org/spec/1.2.2/#3213-node-comparison), a duplicate key should be reported as an error. Golang's parser (and thus `kubectl`) does not do this. Consider the following. Can you see the issue, and predict what will happen?
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: test
+      name: test
+    spec:
+      volumes:
+      - name: data
+        emptyDir: {}
+      containers:
+      - image: nginx
+        name: test
+        resources:
+          requests:
+            cpu: 200m
+        volumeMounts:
+        - name: data
+          mountPath: /data
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+    ```
+
+    * What's wrong with the above?
+
+      <details>
+      <summary>Reveal</summary>
+
+      `resources:` is defined twice. This should be reported as an error, but is not!
+
+      </details>
+
+    * What will happen?
+      <details>
+      <summary>Reveal</summary>
+
+      The last value found for `resources` is what will go into the pod, therefore you may _think_ you set a CPU request, but in fact it will _not_ be set, and if that's for an exam question, then it won't score!
+
+      Try creating a pod from the above, and get it back with
+
+      ```
+      kubectl get pod test -o yaml
+      ```
+
+      and note the lack of resources!
+
+      </details>
 
 ## YAML practice lab
 
