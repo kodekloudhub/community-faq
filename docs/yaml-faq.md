@@ -313,7 +313,7 @@ In general the categories of error fall under
 
 While debugging a YAML file, have `vi` open in one terminal window and the command prompt in another. With each edit, save the file without exiting `vi`, using `:w`. Then in the other terminal run `kubectl create` or `kubectl apply` as appropriate until the command is successful. Then exit `vi`.
 
-# Gotchas
+## Gotchas
 
 Here we list any bugs in the GoLang YAML parser. By "bugs" we mean deviations from the [YAML 1.2 Standard](https://yaml.org/spec/1.2.2), whereby the parser does not behave as per the specification. These are traps for the unwary!
 
