@@ -2,7 +2,7 @@
 
 We see a few questions about "kubectl" YAML manifests and what you can and can't do syntactically, therefore we'll try to clear some of this up.
 
-`kubectl` (and anything else in the ecosystem that needs to read YAML like `kubelet` etc) is built using the standard GoLang YAML package, which apart from anything explicitly mentioned in the package's [Compatibility](https://github.com/go-yaml/yaml#compatibility) paragraph is YAML 1.2 compliant, and this is the dialect that `kubectl` understands. There is no "special" `kubectl` dialect.
+`kubectl` (and anything else in the ecosystem that needs to read YAML like `kubelet` etc) is built using the standard GoLang YAML package, which apart from anything explicitly mentioned in the package's [Compatibility](https://github.com/go-yaml/yaml#compatibility) paragraph is generally YAML 1.2 compliant (see [gotchas](#gotchas) below), and this is the dialect that `kubectl` understands. There is no "special" `kubectl` dialect.
 
 * [In a nutshell](#in-a-nutshell)
 * [To quote or not to quote](#to-quote-or-not-to-quote)
@@ -434,7 +434,7 @@ spec:
 
 ```
 
-## Aliases and Anchors
+### Aliases and Anchors
 The GoLang YAML parser supports funky stuff like Aliases and Anchors, which help you to avoid repetition. Consider the case where you have a load of containers in a single pod, and they all require the same environment. You can do this:
 
 ```yaml
