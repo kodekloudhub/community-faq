@@ -18,7 +18,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
         * [Can I request a break?](#can-i-request-a-break)
         * [What are the system requirements for taking the exam?](#what-are-the-system-requirements-for-taking-the-exam)
         * [What ID is required?](#what-id-is-required)
-        * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS)&nbsp;&nbsp;&nbsp;![external link](./img/open-external-link-icon-16-16.png)
+        * [How do I prepare for exam day?](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS)&nbsp;&nbsp;&nbsp;[![external link](./img/open-external-link-icon-16-16.png)](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS)
         * [Issues with launching the exam](#issues-with-launching-the-exam)
         * [What happens if there are issues during the exam?](#what-happens-if-there-are-issues-during-the-exam)
         * [How long until I get my result?](#how-long-until-i-get-my-result)
