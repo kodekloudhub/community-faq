@@ -6,6 +6,8 @@ Perhaps you've made a manifest edit, or perhaps some question has put you into a
 
 Note that these techniques can be used for the other static pods like `etcd` by looking for `etcd` instead of `apiserver` in the commands below.
 
+See this demonstrated live in our [Office Hours with Community session](https://us02web.zoom.us/rec/share/9arsF4_YOEli7xKa9DsXpqrciqz2drNHbyzX4LoFlP3r1o0ieQ_K4SnamLZOU4Q.Z-LKaVLEbNhKRocT) from March 2023.
+
 Steps to take
 
 1.  Restart `kubelet` so you don't have to wait too long in the following steps</br></br>
