@@ -6,8 +6,6 @@ Perhaps you've made a manifest edit, or perhaps some question has put you into a
 
 Note that these techniques can be used for the other static pods like `etcd` by looking for `etcd` instead of `apiserver` in the commands below.
 
-See this demonstrated live in our [Office Hours with Community session](https://us02web.zoom.us/rec/share/9arsF4_YOEli7xKa9DsXpqrciqz2drNHbyzX4LoFlP3r1o0ieQ_K4SnamLZOU4Q.Z-LKaVLEbNhKRocT) from March 2023.
-
 Steps to take
 
 1.  Restart `kubelet` so you don't have to wait too long in the following steps</br></br>
@@ -80,6 +78,10 @@ Steps to take
 
     The issue should be revealed here.
 
+See all of the above demonstrated live in our [Office Hours with Community session](https://us02web.zoom.us/rec/share/9arsF4_YOEli7xKa9DsXpqrciqz2drNHbyzX4LoFlP3r1o0ieQ_K4SnamLZOU4Q.Z-LKaVLEbNhKRocT) from March 2023.
+
 Practice this on [Killercoda](https://killercoda.com/killer-shell-cka/scenario/apiserver-crash). You can sign up for free via social media.
+
+Use [this repo](https://github.com/kodekloudhub/cka-debugging-api-server) to get some scenarios to practice with.
 
 [Return to main FAQ](../README.md)
