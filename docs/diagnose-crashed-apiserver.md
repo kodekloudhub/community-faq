@@ -82,6 +82,6 @@ See all of the above demonstrated live in our [Office Hours with Community sessi
 
 Practice this on [Killercoda](https://killercoda.com/killer-shell-cka/scenario/apiserver-crash). You can sign up for free via social media.
 
-Use [this repo](https://github.com/kodekloudhub/cka-debugging-api-server) to get some scenarios to practice with.
+Use [this repo](https://github.com/kodekloudhub/cka-debugging-api-server) to get some scenarios to practice with. This is the repo used in the above video.
 
 [Return to main FAQ](../README.md)
