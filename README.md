@@ -282,7 +282,7 @@ Please see [killer.sh](./docs/killer-sh.md) FAQ page.
 If you have a KodeKloud Pro subscription, you can attempt our Ultimate Mock Exam series. These are much harder than the real exam, and likely harder than Killer, with more questions than Killer across the series. Some questions will cover tasks that you will not be expected to perform in the real exam, and possibly involving resources and techniques not covered in the courses. These are to test your skills of information gathering and problem solving that you will face in the real world should you land a job doing Kubernetes.
 
 * [Ultimate CKA Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam/)
-* [Ulitmate CKAD Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-application-developer-ckad-mock-exam-series/)
+* [Ultimate CKAD Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-application-developer-ckad-mock-exam-series/)
 * Ultimate CKS Mocks - Coming soon.
 * [CKS Challenges](https://kodekloud.com/courses/cks-challenges/) - Included with standard subscription.
 
