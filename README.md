@@ -35,7 +35,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
 * [Kubernetes Certifications](#kubernetes-ckackad)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
     * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
-    * [Where can I find other practice scenarios for free?](#where-can-i-find-other-practice-scenarios-for-free)
+    * [How do I get some SERIOUS practice?](#how-do-i-get-some-serious-practice)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
     * [How do I restore etcd?](#how-do-i-restore-etcd)
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
@@ -277,18 +277,14 @@ Please see [killer.sh](./docs/killer-sh.md) FAQ page.
 
 Please see [killer.sh](./docs/killer-sh.md) FAQ page.
 
-### Where can I find other practice scenarios for free?
+### How do I get some SERIOUS practice?
 
-For the following links, unless stated interactive lab environment you will need either your own cluster ([minikube](https://minikube.sigs.k8s.io/), [kind](https://kind.sigs.k8s.io/) or one you've built with kubeadm).
+If you have a KodeKloud Pro subscription, you can attempt our Ultimate Mock Exam series. These are much harder than the real exam, and likely harder than Killer, with more questions than Killer across the series. Some questions will cover tasks that you will not be expected to perform in the real exam, and possibly involving resources and techniques not covered in the courses. These are to test your skills of information gathering and problem solving that you will face in the real world should you land a job doing Kubernetes.
 
-* CKA
-    * https://killercoda.com/killer-shell-cka (interactive lab environment)
-* CKAD
-    * https://killercoda.com/killer-shell-ckad (interactive lab environment)
-    * https://github.com/dgkanatsios/CKAD-exercises
-* CKS
-    * https://killercoda.com/killer-shell-cks (interactive lab environment)
-
+* [Ultimate CKA Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam/)
+* [Ulitmate CKAD Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-application-developer-ckad-mock-exam-series/)
+* Ultimate CKS Mocks - Coming soon.
+* [CKS Challenges](https://kodekloud.com/courses/cks-challenges/) - Included with standard subscription.
 
 ### How do I backup etcd?
 

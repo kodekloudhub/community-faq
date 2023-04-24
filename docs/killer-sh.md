@@ -27,7 +27,7 @@ Aim to score more than 90% with time to spare.
 
 See also
 * [Complete killer.sh FAQ](https://killer.sh/faq)
-* [Exam Environment Simulation](https://killercoda.com/kimwuestkamp/scenario/cks-cka-ckad-remote-desktop) - This is free and on Killer's killercoda site. Sign up with social media. Note that this is only the desktop VDI - it does not have the sidebar/top bar etc. You can use this to practice keyboard shortcuts and customizing your environment. If you explore the killercoda site you will also find more practice questions in a lab environment similar to KodeKloud's.
+* [Exam Environment Simulation](https://killercoda.com/kimwuestkamp/scenario/cks-cka-ckad-remote-desktop) - This is free and on Killer's killercoda site. Sign up with social media. Note that this is only the desktop VDI - it does not have the sidebar/top bar etc. or any questions. You can use this to practice keyboard shortcuts and customizing your environment.
 
 
 [Return to main FAQ](../README.md)

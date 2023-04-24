@@ -80,7 +80,7 @@ Steps to take
 
 See all of the above demonstrated live in our [Office Hours with Community session](https://us02web.zoom.us/rec/share/9arsF4_YOEli7xKa9DsXpqrciqz2drNHbyzX4LoFlP3r1o0ieQ_K4SnamLZOU4Q.Z-LKaVLEbNhKRocT) from March 2023.
 
-Practice this on [Killercoda](https://killercoda.com/killer-shell-cka/scenario/apiserver-crash). You can sign up for free via social media.
+You can use one of our Kubernetes playgrounds, or any Kubernetes lab (just ignore the questions).
 
 Use [this repo](https://github.com/kodekloudhub/cka-debugging-api-server) to get some scenarios to practice with. This is the repo used in the above video.
 
