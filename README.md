@@ -42,6 +42,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
     * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
     * [How-to: Install Ingress in the KodeKloud playgrounds](#how-to-install-ingress-in-the-kodekloud-playgrounds)
+    * [What's the deal with Certificate Signing Requests?](./docs/certificate-signing-requests.md)
 * [Other](#other)
     * [Labs are broken/crashing/not loading](#labs-are-brokencrashingnot-loading)
     * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
