@@ -6,7 +6,7 @@ In the CKAD ingress-networking-1 practice lab there is the following question
 
 > Q11. If the requirement does not match any of the configured paths what service are the requests forwarded to?
 
-This question is *specifically* about the ingress *resource* `ingress-wear-watch`. To answer it we need to look at the ingress resource manifest:
+This question is *specifically* about the ingress *resource* `ingress-wear-watch`. The fact that you are seeing a 404 page is not the point! To answer it we need to look at the ingress resource manifest:
 
 ```
 kubectl  get ingress -n app-space ingress-wear-watch -o yaml
