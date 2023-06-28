@@ -16,7 +16,7 @@ Contents
 * [Creating a key and csr](#creating-a-key-and-csr)
 * [Creating a CertificateSigningRequest](#creating-a-certificatesigningrequest)
 
-## The actors
+## The Actors
 
 There are three entities involved
 
@@ -24,11 +24,11 @@ There are three entities involved
 1. His x509 CSR: `/root/CKA/john.csr`.
 1. The Kubernetes `CertificateSigningRequest` (confusingly also referred to as CSR) we will create to present the CSR from #2 to the cluster.
 
-## The confusion
+## The Confusion
 
 Why does a `CertificateSigningRequest` created as `john-developer` represent a user called `john`?
 
-## The explanation
+## The Explanation
 
 When a user wants access to a cluster, that user must do the following
 
