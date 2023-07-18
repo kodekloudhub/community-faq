@@ -3,6 +3,8 @@
 Applies to:
 
 * Ansible for the Absolute Beginners ([KodeKloud](https://kodekloud.com/courses/ansible-for-the-absolute-beginners-course/), [Udemy](https://www.udemy.com/course/learn-ansible/))
+* DevOps Pre-Requisite Course ([KodeKloud](https://kodekloud.com/courses/devops-pre-requisite-course/))
+
 
 # Important
 
