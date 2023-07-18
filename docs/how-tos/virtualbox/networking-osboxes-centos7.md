@@ -16,7 +16,7 @@ This will only work for Intel Mac laptops.
 
 This guide will show you how to get networking functioning correctly on CentOS 7 desktop image from oxboxes that is used in the above courses. It is supplemental to the install instructions given in the courses. If you cannot connect to the VM using SHH (MobaXterm etc), or if the VM cannot reach the Internet, then this guide is for you!
 
-The assumption is that you have installed the image in VirtualBox, started it and logged into it, however it cannot connect to the internet and/or you cannot connect to it using an SSH client like MobaXterm, most likely due to the primary adapter `enps03` not having an IP address.
+The assumption is that you have installed the image in VirtualBox, started it and logged into it, however it cannot connect to the internet and/or you cannot connect to it using an SSH client like MobaXterm, most likely due to the primary adapter `enp0s3` not having an IP address.
 
 Credentials to log into osboxes virtual machines are as follows. Note that for any `sudo` command, it will ask for this password.
 
@@ -28,7 +28,7 @@ Credentials to log into osboxes virtual machines are as follows. Note that for a
 If the VM cannot connect to the Internet, this is fairly simple to fix, and happens because some osboxes VMs do not come with the primary network card set to automatically connect by default. We will assume that you have correctly configured the network adapter as `Bridged` as shown in the course video.
 
 1. Power on the VM if it is not already and log in.
-1. Open the Terminal application (Click `Applications` at top left of desktop, select `System Tools`, then `Terminal` )
+1. Open the Terminal application (Click `Applications` at top left of desktop, select `System Tools`, then `Terminal`)
 1. Enter the command `sudo nmtui`.</br>This will bring up the following. In this application, use cursor keys to navigate the controls and ENTER to select/press buttons. `Edit a connection` is already selected, so hit ENTER.</br></br>![nmtui](../../../img/ceontos7-nmtui-1.png)
 1. `enps03` should already be selected. If not, select it first then hit ENTER.</br></br>![nmtui](../../../img/ceontos7-nmtui-2.png)
 1. Now you have the `Edit Connection` dialog.<br/></br>![nmtui](../../../img/ceontos7-nmtui-3.png)</br>
@@ -41,6 +41,20 @@ If the VM cannot connect to the Internet, this is fairly simple to fix, and happ
 
 # SSH configuration
 
-If you got the above network configuration working, then the VM should now be listening on SSH port 22 on the IP address you assigned to it (which will be e.g. `192.168.0.220` depending on what you chose in step 2). The MobaXterm instructions given in the course video should now work provided you use the correct IP address and have followed the other instructions correctly.
+If you got the above network configuration working, then the VM should now be listening on SSH port 22. Determine the IP address that was auto-assigned to the VM.
 
+1. Open the Terminal application (Click `Applications` at top left of desktop, select `System Tools`, then `Terminal`)
+1. Run the command 
 
+    ```bash
+    ifconfig | grep -A 1 enp0s3
+    ```
+
+    Output will look like this
+
+    ```
+    enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+    inet 192.168.0.79  netmask 255.255.255.0  broadcast 192.168.230.255
+    ```
+
+    Take the value for `inet` which in this example is `192.168.0.79`. On your machine it will almost certainly be different. The value for `inet` is the address you use in MobaXterm or other SSH client to connect to this machine remotely.
