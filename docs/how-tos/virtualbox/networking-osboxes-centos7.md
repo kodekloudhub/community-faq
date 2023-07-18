@@ -92,6 +92,6 @@ If the VM cannot connect to the Internet, this section will fix that. We will as
 
 # SSH configuration
 
-If you got the above network configuration working, then the VM should now be listening on SSH port 22 on the IP address you assigned to it (which might be `192.168.0.22`). The MobaXterm instructions given in the course video should now work provided you use the correct IP address and have followed the other instructions correctly.
+If you got the above network configuration working, then the VM should now be listening on SSH port 22 on the IP address you assigned to it (which will be e.g. `192.168.0.220` depending on what you chose in step 2). The MobaXterm instructions given in the course video should now work provided you use the correct IP address and have followed the other instructions correctly.
 
 
