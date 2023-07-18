@@ -80,10 +80,11 @@ If the VM cannot connect to the Internet, this section will fix that. We will as
 1. Enter the command `sudo nmtui`.</br>This will bring up the following. In this application, use cursor keys to navigate the controls and ENTER to select/press buttons. `Edit a connection` is already selected, so hit ENTER.</br>![nmtui](../../../img/ceontos7-nmtui-1.png)
 1. `enps03` should already be selected. If not, select it first then hit ENTER.</br>![nmtui](../../../img/ceontos7-nmtui-2.png)
 1. Now you have the `Edit Connection` dialog.<br/>![nmtui](../../../img/ceontos7-nmtui-3.png)</br>
-    1. Set `IPv4 CONFIGURATION` to `Manual`
-    1. In `Addresses` set the IP you chose in step 2 and put `/24` after it.
+    1. Set `IPv4 CONFIGURATION` to `Manual`, then hit `<Show>`
+    1. In `Addresses`, hit `<Add>`. Set the IP you chose in step 2 and put `/24` after it.
     1. In `Gateway` set the gateway address you found in step 1
-    1. In `DNS servers` put the two IP addresses as shown in the screenshot. If there are not two spaces to add IPs, use `<Add..>` below the first entry.
+    1. In `DNS servers`, hit `Add`. Put `8.8.8.8` in the box that appears. IT should now be looking something like this</br>![nmtui](../../../img/ceontos7-nmtui-4.png)</br>
+    1. Down arrow until you reach the checkbox `Automatically connect`. Hit space bar in the checkbox to make it to `[X]`.
     1. Down-arrow till you reach the end of the dialog box and hit ENTER on `<OK>`. This will return you to the previous dialog.
     1. Hit ESC a couple of times until the application closes
 1.  Restart the VM by entering `reboot` at the terminal prompt
