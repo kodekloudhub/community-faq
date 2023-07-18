@@ -14,7 +14,7 @@ This will only work for Intel Mac laptops.
 
 This guide will show you how to get networking functioning correctly on CentOS 7 desktop image from oxboxes that is used in the above courses. It is supplemental to the install instructions given in the courses. If you cannot connect to the VM using SHH (MobaXterm etc), or if the VM cannot reach the Internet, then this guide is for you!
 
-The assumption is that you have installed the image in VirtualBox, started it and logged into it, however it cannot connect to the internet and/or you cannot connect to it using an SSH client like MobaXterm.
+The assumption is that you have installed the image in VirtualBox, started it and logged into it, however it cannot connect to the internet and/or you cannot connect to it using an SSH client like MobaXterm, most likely due to the primary adapter `enps03` not having an IP address.
 
 Credentials to log into osboxes virtual machines are as follows. Note that for any `sudo` command, it will ask for this password.
 
@@ -24,8 +24,6 @@ Credentials to log into osboxes virtual machines are as follows. Note that for a
 # Network Adapter Configuration
 
 If the VM cannot connect to the Internet, this section will fix that. We will assume that you have correctly configured the network adapter as `Bridged` as shown in the course video. What we are doing here is configuring a static IP address for the network adapter inside the VM.
-
-See also [help for vi editor](../../../docs/vi-101.md)
 
 1. Determine your network gateway. Note that the gateway on a home network is usually your broadband router.
     1. For Windows users:
@@ -54,7 +52,7 @@ See also [help for vi editor](../../../docs/vi-101.md)
 
     1. The first 3 numbers in the gateway address is your `network address`. We will use that information when choosing an IP address for the VM later.
 
-1. Choose an IP address on your network that is not already in use by something else (your laptop, any other devices connected to the router or via WiFi).
+1. Choose an IP address on your network that is not already in use by something else (your laptop, any other devices connected to the router or via WiFi).</br></br>**IMPORTANT** If you "clone" a VM, you will have choose a different IP for each clone you create, and configure the clone as per the remaining instructions below. If you are going to be making clones, pick as many unique IP addresses as you're going to need to bring up all VMs requested by the course.
     1. For Windows users:
         1. Open a command prompt and enter the command `arp -a`.
         1. Several lists are printed. Find the list that is for your laptop adapter (has the `Interface` IP found in the route table above). It looks like this, and is showing the IP of all devices currently connected to your network in the `Internet Address` column. Choose an IP not in this list, e.g. `192.168.0.220`. Be sure to use *your* network address which may or may not be `192.168.0.`, so it is the last number you need to choose. The first 3 must be the same.
@@ -72,53 +70,22 @@ See also [help for vi editor](../../../docs/vi-101.md)
         1. It looks like this, and is showing the IP of all devices currently connected to your network in brackets. Choose an IP not in this list, e.g. `192.168.0.220`. Be sure to use *your* network address which may or may not be `192.168.0.`, so it is the last number you need to choose. The first 3 must be the same.
 
             ```
-            ? (192.168.0.24) at a4:ca:a0:32:ff:f3 on eno ifscope [ethernet]
+            ? (192.168.0.12) at a4:ca:a0:32:ff:f3 on eno ifscope [ethernet]
+            ? (192.168.0.24) at 4a:39:17:86:4f:53 on eno ifscope [ethernet]
             ```
 
 
 1. Power on the VM if it is not already and log in.
 1. Open the Terminal application (Click `Applications` at top left of desktop, select `System Tools`, then `Terminal` )
-1. Edit the network adapter config file:
-
-    ```bash
-    sudo vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
-    ```
-
-    1. In this file, add the following lines to the end. Replace any `<place-holder>` with the value determined in previous steps. If any of these lines already exist, change their values to match what is below
-
-        ```
-        DNS1=8.8.8.8
-        DNS2=8.8.4.4
-        IPADDR=<put-ip-address-from-step-2-instead-of-this>
-        NETMASK=255.255.255.0
-        ```
-
-    1. Find the line that starts `ONBOOT`. If this is `no`, change it to `yes`. If the line is not present, then add it. You should end up with it looking like
-
-        ```
-        ONBOOT=yes
-        ```
-
-    1. Find the line that starts `BOOTPROTO`. Change its value to `static`
-
-        ```
-        BOOTPROTO=static
-        ```
-1.  Save and exit from vi.
-1.  Edit the network configuration file
-
-        ```bash
-        sudo vi /etc/sysconfig/network
-        ```
-
-    1. Add (or edit) the following lines in this file to the following values. Replace any `<place-holder>` with the value determined in previous steps.
-
-        ```
-        NETWORKING=yes
-        GATEWAY=<put-gateway-address-from-step-1-instead-of-this>
-        ```
-
-1.  Save and exit from vi.
+1. Enter the command `sudo nmtui`.</br>This will bring up the following. In this application, use cursor keys to navigate the controls and ENTER to select/press buttons. `Edit a connection` is already selected, so hit ENTER.</br>![nmtui](../../../img/ceontos7-nmtui-1.png)
+1. `enps03` should already be selected. If not, select it first then hit ENTER.</br>![nmtui](../../../img/ceontos7-nmtui-2.png)
+1. Now you have the `Edit Connection` dialog.<br/>![nmtui](../../../img/ceontos7-nmtui-3.png)</br>
+    1. Set `IPv4 CONFIGURATION` to `Manual`
+    1. In `Addresses` set the IP you chose in step 2 and put `/24` after it.
+    1. In `Gateway` set the gateway address you found in step 1
+    1. In `DNS servers` put the two IP addresses as shown in the screenshot. If there are not two spaces to add IPs, use `<Add..>` below the first entry.
+    1. Down-arrow till you reach the end of the dialog box and hit ENTER on `<OK>`. This will return you to the previous dialog.
+    1. Hit ESC a couple of times until the application closes
 1.  Restart the VM by entering `reboot` at the terminal prompt
 1.  Log back in and run firefox from the Applications menu. It should now be able to browse.
 
