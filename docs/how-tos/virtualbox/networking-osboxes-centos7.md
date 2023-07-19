@@ -30,7 +30,7 @@ If the VM cannot connect to the Internet, this is fairly simple to fix, and happ
 1. Power on the VM if it is not already and log in.
 1. Open the Terminal application (Click `Applications` at top left of desktop, select `System Tools`, then `Terminal`)
 1. Enter the command `sudo nmtui`.</br>This will bring up the following. In this application, use cursor keys to navigate the controls and ENTER to select/press buttons. `Edit a connection` is already selected, so hit ENTER.</br></br>![nmtui](../../../img/ceontos7-nmtui-1.png)
-1. `enps03` should already be selected. If not, select it first then hit ENTER.</br></br>![nmtui](../../../img/ceontos7-nmtui-2.png)
+1. `enp0s3` should already be selected. If not, select it first then hit ENTER.</br></br>![nmtui](../../../img/ceontos7-nmtui-2.png)
 1. Now you have the `Edit Connection` dialog.<br/></br>![nmtui](../../../img/ceontos7-nmtui-3.png)</br>
 1. Down arrow until you reach the checkbox `Automatically connect`. Hit space bar in the checkbox to make it to `[X]`.</br></br>![nmtui](../../../img/ceontos7-nmtui-5.png)</br>
 1. Down-arrow till you reach the end of the dialog box and hit ENTER on `<OK>`. This will return you to the previous dialog.
@@ -54,7 +54,7 @@ If you got the above network configuration working, then the VM should now be li
 
     ```
     enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
-    inet 192.168.0.79  netmask 255.255.255.0  broadcast 192.168.230.255
+    inet 192.168.0.79  netmask 255.255.255.0  broadcast 192.168.0.255
     ```
 
     Take the value for `inet` which in this example is `192.168.0.79`. On your machine it will almost certainly be different. The value for `inet` is the address you use in MobaXterm or other SSH client to connect to this machine remotely.
