@@ -174,7 +174,7 @@ When a manifest is read, it is a two-pass operation
 
     This means that you have probably missed a key, or put a list or a string literal where there should have been a map. Basically what you've put for a pod is syntactically correct YAML, but that YAML does not correctly represent a pod.<br/><br/>You can get a clue as to where the error is from the `something_else`. Say that is `PodSpec.spec.containers` then it's in the `containers:` section of the manifest. Say it's `Volume.spec.volumes.hostPath` then it's a `hostPath:` within one of your `volumes:`.
 
-    Essentially you have suppoted the wrong data type at the manifast path indicated by _something_else_. You can use this information in a `kubectl explain` to find out what should be there, so for the above `PodSpec.spec.containers`:
+    Essentially you have supplied the wrong data type at the manifest path indicated by _something_else_. You can use this information in a `kubectl explain` to find out what should be there, so for the above `PodSpec.spec.containers`:
 
     1. From the _something_else_ omit the first `Spec` (if present and has capital S), then lowercase what remains, e.g. `PodSpec` = `pod`, `PersistentVolumeSpec` = `persistentvolume`.
     2. Make an explain command
