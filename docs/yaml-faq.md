@@ -7,7 +7,7 @@ We see a few questions about "kubectl" YAML manifests and what you can and can't
 * [In a nutshell](#in-a-nutshell)
 * [To quote or not to quote](#to-quote-or-not-to-quote)
 * [Indentation](#indentation)
-* [Dealing with Errors](#dealing-with-errors)
+* [Dealing with Errors (kubectl)](#dealing-with-errors-kubectl)
 * [Gotchas](#gotchas)
 * [YAML Practice lab](#yaml-practice-lab)
 * [Advanced features](#advanced-features)
@@ -153,7 +153,7 @@ Paste mode may also be toggled from vi [normal mode](https://www.freecodecamp.or
 * `:set paste`
 * `:set nopaste`
 
-## Dealing with errors
+## Dealing with errors (kubectl)
 
 When a manifest is read, it is a two-pass operation
 
