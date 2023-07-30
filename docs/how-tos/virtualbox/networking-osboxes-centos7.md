@@ -6,7 +6,7 @@ Applies to:
 * DevOps Pre-Requisite Course ([KodeKloud](https://kodekloud.com/courses/devops-pre-requisite-course/))
 
 
-**Update** - I've now tested this on CentOS 9 image from oxboxes. The following steps also work for this, so by definition will work for CentOS 8 too. In CentOS 9, you'll find the terminal app from `Activiities` at the top left, then click it's icon at the bottom of the screen.
+**Update** - I've now tested this on CentOS 9 image from oxboxes. The following steps also work for this, so by definition will work for CentOS 8 too. In CentOS 9, you'll find the terminal app from `Activities` at the top left, then click it's icon at the bottom of the screen.
 
 # Important
 
