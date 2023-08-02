@@ -84,6 +84,8 @@ Consider a production environment. In such environments, you would be making reg
 
 etcd is designed to ensure consistency in its backups even while in use, just as you would expect from any regular SQL database.
 
+There may be some instances on a multi-node etcd cluster that it would be beneficial to stop everything to do a restore to ensure the database is not written before all nodes are aligned. In the CKA exam, all clusters are single-node etcd.
+
 ## How do I make a backup?
 
 In order to take a backup, there are several required arguments, as we need to authenticate with the server to pull any data from it. These are
