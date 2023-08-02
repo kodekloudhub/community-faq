@@ -67,7 +67,7 @@ Note that for *restore* on single `etcd` node clusters such as those found in th
 
 ### --key
 
-* This is the path to the private key that is used to decrypt data sent to `etcdctl` by the `etcd` server during the authentication steps.
+* This is the path to the private key that is used to decrypt data sent to `etcdctl` by the `etcd` server during the authentication steps. The key is _only_ used by the `etcdctl` process. It is never sent to the server.
 
 
 For ease, you will find that normally both `etcdctl` and `etcd` share all three certificates, and these are the ones usually found in `/etc/kubernetes/pki/etcd`, however it is possible to issue `etcdtl` with its own certificate and key which is considered more secure, but that certificate must have been signed by the shared CA certificate.
