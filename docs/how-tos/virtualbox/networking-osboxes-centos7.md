@@ -31,6 +31,7 @@ If the VM cannot connect to the Internet, this is fairly simple to fix, and happ
 
 1. Power on the VM if it is not already and log in.
 1. Open the Terminal application (Click `Applications` at top left of desktop, select `System Tools`, then `Terminal`)
+    * If using a server version (no GUI), then you will already be at the terminal prompt.
 1. Enter the command `sudo nmtui`.</br>This will bring up the following. In this application, use cursor keys to navigate the controls and ENTER to select/press buttons. `Edit a connection` is already selected, so hit ENTER.</br></br>![nmtui](../../../img/ceontos7-nmtui-1.png)
 1. `enp0s3` should already be selected. If not, select it first then hit ENTER.</br></br>![nmtui](../../../img/ceontos7-nmtui-2.png)
 1. Now you have the `Edit Connection` dialog.<br/></br>![nmtui](../../../img/ceontos7-nmtui-3.png)</br>
@@ -39,6 +40,7 @@ If the VM cannot connect to the Internet, this is fairly simple to fix, and happ
 1. Hit ESC a couple of times until the application closes
 1. Restart the VM by entering `reboot` at the terminal prompt
 1. Log back in and run firefox from the Applications menu. It should now be able to browse.
+    * If you are using a server version (no GUI), then make a curl command (e.g. `curl https://www.google.com`). You should get a load of HTML and JavaScript if it's working.
 
 
 # SSH configuration
