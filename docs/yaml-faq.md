@@ -245,7 +245,7 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
         dnsPolicy: ClusterFirst  #<- This is indented too far
     ```
 
-    In the example above `dnsPolicy` has been indented to be part of the first container (i.e. `containers[0]`), and as suck is an unknown field for a container specification. It should be part of `spec` for the pod itslf.
+    In the example above `dnsPolicy` has been indented to be part of the first container (i.e. `containers[0]`), and as such is an unknown field for a container specification. It should be part of `spec` for the pod itslf.
 
 * Could not find expected key
 
