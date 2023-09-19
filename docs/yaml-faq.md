@@ -221,6 +221,32 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
       containers:
       - name: nginx
     ```
+* Unknown field
+
+    ```
+    Error from server (BadRequest): error when creating “pod-limitado.yaml”:
+    Pod in version “v1” cannot be handled as a Pod: strict decoding error: unknown field “spec.containers[0].dnsPolicy”
+    ```
+
+    Again, usually an indentation problem (in this case), or it really is a field that doesn't exist e.g. you put `foobar` or some other nonsense, or you simply typoed the key name.
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: test
+    spec:
+      containers:
+      - image: busybox
+        name: test
+        command:
+        - sleep
+        - “1800”
+        dnsPolicy: ClusterFirst  #<- This is indented too far
+    ```
+
+    In the example above `dnsPolicy` has been indented to be part of the first container (i.e. `containers[0]`), and as suck is an unknown field for a container specification. It should be part of `spec` for the pod itslf.
+
 * Could not find expected key
 
     ```
