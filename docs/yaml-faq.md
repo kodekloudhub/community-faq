@@ -224,7 +224,7 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
 * Unknown field
 
     ```
-    Error from server (BadRequest): error when creating “pod-limitado.yaml”:
+    Error from server (BadRequest): error when creating "some-pod":
     Pod in version “v1” cannot be handled as a Pod: strict decoding error: unknown field “spec.containers[0].dnsPolicy”
     ```
 
