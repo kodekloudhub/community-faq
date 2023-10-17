@@ -375,7 +375,7 @@ status:
 We want the image for the container called `sidecar`
 
 ```
-kubectl get pod pod1 -o jsonpath='{.spec.containers[?(@name == "sidecar")].image'}
+kubectl get pod pod1 -o jsonpath='{.spec.containers[?(@.name == "sidecar")].image'}
 ```
 
 This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
