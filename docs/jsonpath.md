@@ -311,7 +311,7 @@ So, what just happened?
 This is just like using a for loop in programming, and is in fact taken directly from golang - the language in which kubectl is written, effectively...
 
 ```go
-for pod := range items {
+for _, pod := range items {
     fmt.Print(pod.status.podIP)
     fmt.Print("\n")
 }
