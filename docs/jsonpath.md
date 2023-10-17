@@ -308,7 +308,14 @@ So, what just happened?
 1.  `{"\n"}` - print a newline character
 1.  `{end}` - end of the range context.
 
-This is just like using a for loop in programming
+This is just like using a for loop in programming, and is in fact taken directly from golang - the language in which kubectl is written, effectively...
+
+```go
+for pod := range items {
+    fmt.Print(pod.status.podIP)
+    fmt.Print("\n")
+}
+```
 
 You can use any other plain text and/or get multiple fields in the same jsonpath query and format them nicely.
 
