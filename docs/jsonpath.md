@@ -308,7 +308,7 @@ So, what just happened?
 1.  `{"\n"}` - print a newline character
 1.  `{end}` - end of the range context.
 
-This is just like using a for loop in programming, and is in fact taken directly from golang - the language in which kubectl is written, effectively...
+This is just like using a for loop in programming, and is in fact taken directly from [golang](https://kodekloud.com/courses/golang/) - the language in which kubectl is written, effectively...
 
 ```go
 for _, pod := range items {
