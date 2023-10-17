@@ -1,6 +1,6 @@
 # jsonpath and custom-columns in kubectl
 
-Lots of people ask questions about jsonpath. 
+Lots of people ask questions about jsonpath.
 
 * Should, I learn it?
 
@@ -10,6 +10,19 @@ Lots of people ask questions about jsonpath.
 
     It really isn't once you understand the relationship between the resource YAML and the query syntax, which I hope to demystify a bit here.
 
+# Contents
+
+* [Basic](#basic)
+    * [jsonpath](#jsonpath)
+    * [Handling multiple results](#handling-multiple-results)
+    * [custom-columns](#custom-columns)
+* [Advanced](#advanced)
+    * [Formatting](#formatting)
+    * [Querying items by property value](#querying-items-by-property-value)
+
+# Basic
+
+## jsonpath
 
 Now let's look at a complete running pod definition and how we can obtain *any* of the information present in the form of jsonpath. Expand the following to see the jsonpath expression that targets each field in this running pod definition. Note in the `annotations` of this pod how we specify a field that has a name that itself contains dots.
 
@@ -235,7 +248,7 @@ Examples
     .items[*].spec.containers[*].image
     ```
 
-# custom-columns
+## custom-columns
 
 Custom column expressions are also jsonpath. Some people ask why you never use `items` when forming a custom column definition. The reason is that a custom-columns expression is always targeting multiple results, there's not really much point on doing it for a single pod. Saying this, because we have multiple results, the `items` part of the query is implicit, therefore we can omit it.
 
@@ -252,6 +265,8 @@ kubectl get pods -o custom-columns=POD_NAME:items[*].metadata.name
 ```
 
 # Advanced
+
+## Formatting
 
 How do I make kubectl jsonpath output on separate lines?
 
@@ -334,3 +349,48 @@ kube-system/coredns-66bff467f8-xfd5k,10.244.0.5
 kube-system/etcd-kind-control-plane,172.18.0.2
 kube-system/kindnet-g6jvd,172.18.0.2
 ```
+
+## Querying items by property value
+
+Say we wanted to get the image name for a specific named container in a multi-container pod. We can do that too!
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+  namespace: default
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+  - image: busybox
+    name: sidecar
+status:
+  hostIP: 172.30.1.2
+  phase: Running
+  podIP: 172.30.1.2
+```
+
+We want the image for the container called `sidecar`
+
+```
+kubectl get pod pod1 -o jsonpath='{.spec.containers[?(@name == "sidecar)].image'}
+```
+
+This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
+
+* `?` means "where" the following bracketed expression.
+* `@` means "the current list object", in this case container
+
+You can use other operators, e.g.
+
+* `!=` - not equals
+
+and comparison operators when the field's value is numeric
+* `<` - less than
+* `>` - grater than
+* `<=` - less than or equal
+* `>=` - greater than or equal
+
+There are others too. See [here](https://docs.oracle.com/cd/E60058_01/PDF/8.0.8.x/8.0.8.0.0/PMF_HTML/JsonPath_Expressions.htm)
