@@ -38,6 +38,7 @@ This document answers the most frequently asked questions in the KodeKloud Slack
     * [How do I get some SERIOUS practice?](#how-do-i-get-some-serious-practice)
     * [How do I backup etcd?](#how-do-i-backup-etcd)
     * [How do I restore etcd?](#how-do-i-restore-etcd)
+    * [What's the deal with jsonpath and custom-columns?](#whats-the-deal-with-jsonpath-and-custom-columns)
     * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
     * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
     * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
@@ -294,6 +295,11 @@ See the dedicated [etcd FAQ](./docs/etcd-faq.md)
 ### How do I restore etcd?
 
 See the dedicated [etcd FAQ](./docs/etcd-faq.md)
+
+### What's the deal with jsonpath and custom-columns?
+
+See the dedicated [jsonpath FAQ](./docs/jsonpath.md)
+
 ### How do I install a CNI (or anything else)?
 
 You will *not* be expected to memorize download locations for third party tools you may have downloaded in course labs. If you are required to install any software or 3rd party Kubernetes applications, then the question will tell you where to obtain the files/packages you need.
