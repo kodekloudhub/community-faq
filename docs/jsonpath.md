@@ -2,7 +2,7 @@
 
 Lots of people ask questions about jsonpath.
 
-* Should, I learn it?
+* Should I learn it?
 
     Yes absolutely! If you are a working DevOps/SRE and you need to create automations based on information gathered from deployed resources, this is the way you gather that information in scripts. If you aspire to do the CKS certification, you can speed up the resolution of many exam questions by using creating one-line scripts involving jsonpath queries.
 
