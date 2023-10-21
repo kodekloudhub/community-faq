@@ -1,5 +1,7 @@
 # killer.sh
 
+**Killer is included in the exam purchase. You do not need to purchase it separately**
+
 Killer is the ultimate test of readiness to take the exam. In their own words:
 
 > **This simulator is more difficult than the real certification**</br>
