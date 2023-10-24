@@ -67,7 +67,7 @@ DESCRIPTION:
 
 The ingress resource has no `defaultBackend` defined, so that is why the answer is `No Service`.
 
-But - you cry, I am seeing a 404 page presented, so how can the answer be `No Service`? Note the last sentence of the above explain command. Let's investigate that.
+But - you exclaim, I am seeing a 404 page presented, so how can the answer be `No Service`? Note the last sentence of the above explain command. Let's investigate that.
 
 
 ```
