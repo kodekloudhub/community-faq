@@ -37,7 +37,7 @@
     code blocks
     ```
 
-    Use of code blocks is absolutely required when pasting program code or YAML. Without this they will be formatted as text, losing important indentation and we cannot do a syntax check.
+    Use of code blocks is essential when pasting program code or YAML. Without this they will be formatted as text, losing important indentation and we cannot do a syntax check.
 
     Please also refrain from pasting screen shots of code that you want others to verify - again, this is what code blocks are for.
 
