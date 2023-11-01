@@ -29,7 +29,7 @@
 
 1. **Comprehensive Queries for Effective Communication**: When asking questions, strive to incorporate all relevant details into one cohesive message. Additionally, consider utilizing [Slack threads](https://slack.com/intl/en-gb/help/articles/115000769927-Use-threads-to-organise-discussions) to keep the conversation organized. This practice enhances clarity and preserves context, contributing to more productive discussions.
 
-1. **Message Formatting**: To create a new line in your message, please use `shift+enter`. Remember, pressing the `enter` key will send your message. This practice helps maintain clear and organized communication. Know more about message formatting in [Slack](https://slack.com/intl/en-in/help/articles/202288908-Format-your-messages), and the [markdown format](https://markdown-it.github.io/) used in Discourse.
+1. **Message Formatting**: To create a new line in your Slack message, please use `shift+enter`. Remember, pressing the `enter` key will send your message. This practice helps maintain clear and organized communication. Know more about message formatting in [Slack](https://slack.com/intl/en-in/help/articles/202288908-Format-your-messages), and the [markdown format](https://markdown-it.github.io/) used in Discourse.
 
     In both forums, please pay special attention to how to format `code` emphasis and
 
