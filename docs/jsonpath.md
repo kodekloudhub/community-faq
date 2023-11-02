@@ -142,7 +142,27 @@ Hopefully after studying this carefully you can see how to form the jsonpath exp
 
 Note that if you put two dots `..` anywhere in a jsonpath query, then what will be returned is every occurrence of the property to the right of `..` that is found beneath what is on the left of `..`, no matter how deep in the hierarchy. Take care as this may give you more results than you need, or some unexpected ones.
 
-Examples
+### Examples
+
+*   Resource name
+
+    ```
+    .metadata.name
+    ```
+
+*   Image of the first container
+
+    ```
+    .spec.containers[0].image
+    ```
+
+*   Images of all containers
+
+    ```
+    .spec.containers[*].image
+    ```
+
+    Results will be each image seperated by a space.
 
 *   Every property called image beneath `spec`
 
