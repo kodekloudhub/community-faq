@@ -147,27 +147,57 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 *   Resource name
 
     ```
-    .metadata.name
+    k get pod test -o jsonpath='{.metadata.name}'
+    ```
+
+    Output
+
+    ```
+    test
     ```
 
 *   Image of the first container
 
     ```
-    .spec.containers[0].image
+    k get pod test -o jsonpath='{.spec.containers[0].image}'
+    ```
+
+    Output
+
+    ```
+    nginx
     ```
 
 *   Images of all containers
 
     ```
-    .spec.containers[*].image
+    k get pod test -o jsonpath='{.spec.containers[*].image}'
     ```
 
-    Results will be each image seperated by a space.
+    Output
+
+    ```
+    nginx
+    ```
+
+    Results will be each image seperated by a space, if there is more than one container.
+
+*   Get the calico pod IP annotation. This shows how to handle YAML keys that contain `.`
+
+    ```
+    k get pod test -o jsonpath='{.metadata.annotations.cni\.projectcalico\.org/podIP}'
+    ```
+
+    Output
+
+    ```
+    192.168.1.3/32
+    ```
 
 *   Every property called image beneath `spec`
 
     ```
-    .spec..image
+    k get pod test -o jsonpath='{.spec..image}'
     ```
 
     Output
@@ -181,7 +211,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 *   Every property called `image` in the entire manifest
 
     ```
-    ..image
+    k get pod test -o jsonpath='{..image}'
     ```
 
     Output
@@ -198,7 +228,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 *   Try this one for yourself!
 
     ```
-    ..status
+    k get pod test -o jsonpath='{..status}'
     ```
 
     There is *a lot* of output. Some reults are entire portions of the schema, and others are indiviual properties. Not that useful!
