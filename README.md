@@ -2,6 +2,8 @@
 
 This document answers the most frequently asked questions in the KodeKloud Slack channels. We will be adding to this list periodically.
 
+First and foremost, please be aware of our [Community Guidelines](./docs/code-of-conduct.md), thank you! :smile:
+
 # Contents
 
 * [Buying the Exam](#buying-the-exam)

@@ -44,3 +44,5 @@
 1. **Stuck with Labs**: Please, when raising queries about questions in labs, include a link to the lab you are stuck on. This helps the support staff find the lab quickly and therefore more able to assist promptly. For Ultimate Mock labs where the questions are randomized, please include the `section` and the first couple of lines of the question. A screen shot including these things is acceptable here.
 
 These guidelines are in place to ensure that our KodeKloud community remains a positive and enriching environment for all. Your cooperation is greatly appreciated. Thank you!
+
+[Click here](../README.md) to return to the FAQ index.
