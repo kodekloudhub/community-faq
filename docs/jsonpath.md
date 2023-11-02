@@ -32,6 +32,8 @@ Notice the relationship between the path to and the position of each property in
 <summary>Expand</summary>
 
 ```yaml
+# YAML                                                              # JSONPATH
+# ----                                                              ----------
 apiVersion: v1                                                      # .apiVersion
 kind: Pod                                                           # .kind
 metadata:                                                           # .metadata
@@ -59,7 +61,7 @@ spec:                                                               # .spec
   dnsPolicy: ClusterFirst                                           # .spec.dnsPolicy
   enableServiceLinks: true                                          # .spec.enableServiceLinks
   nodeName: node01                                                  # .spec.nodeName
-  preemptionPolicy: PreemptLowerPriority                            # .spec.preemmtionPolicy
+  preemptionPolicy: PreemptLowerPriority                            # .spec.preemptionPolicy
   priority: 0                                                       # .spec.priority
   restartPolicy: Always                                             # .spec.restartPolicy
   schedulerName: default-scheduler                                  # .spec.schedulerName
