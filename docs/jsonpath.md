@@ -180,7 +180,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
     nginx
     ```
 
-    Results will be each image seperated by a space, if there is more than one container.
+    Results will be each image separated by a space, if there is more than one container.
 
 *   Get the calico pod IP annotation. This shows how to handle YAML keys that contain `.`
 
@@ -206,7 +206,9 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
     nginx
     ```
 
-    The value is that of `spec.containers[0].image`
+    The value here is that of `spec.containers[0].image`.
+
+    This would return images for all containers *and* initContainers in the spec where present, on a single line separated by spaces.
 
 *   Every property called `image` in the entire manifest
 
