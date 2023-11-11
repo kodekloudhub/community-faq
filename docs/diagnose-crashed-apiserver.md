@@ -4,7 +4,7 @@ The API server pod won't come back up - HELP :scream: :scream: :scream:
 
 Perhaps you've made a manifest edit, or perhaps some question has put you into a context where the API server is already broken. You're using `docker ps` or `crictl ps` and see the API server flash up briefly then go away. The container doesn't last long enough for you to grab an ID to pull logs from. Or maybe it never appears in the `ps` output.
 
-Note that these techniques can be used for the other static pods like `etcd` by looking for `etcd` instead of `apiserver` in the commands below.
+Note that these techniques can be used for the other static pods like `etcd`, `kube-controller-manager` and `kube-scheduler` by looking for the corresponding name instead of `apiserver` in the commands below.
 
 Steps to take
 
