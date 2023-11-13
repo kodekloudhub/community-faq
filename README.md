@@ -249,6 +249,14 @@ Either multiple instances of the terminal emulator app, multiple tabs within the
 
 The only software that may be running is the PSI software, therefore you must memorize such things and enter them up manually at the beginning of the exam.
 
+### Can I install packages to the exam terminal?
+
+> Yes
+
+You may install additional packages if they are part of the operating system distribution. What this means is that you may use the Linux package manager to install anything that is available by default on the terminal without the addition of other `apt` (or `yum/dnf` for Linux certifications) package repos, unless directed by a question to add one. You may not install third party packages using package manager, curl, wget etc. unless directed by a question.
+
+See the third bullet point [here](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-rules-and-policies#policy-on-tools-and-resources-allowed-during-exam).
+
 ### What does the environment look like?
 
 ![Image: The Linux Foundation](./img/LF-Remote-Desktop-070722d.png)
