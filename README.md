@@ -30,6 +30,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
         * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
         * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
+        * [Can I install packages to the exam terminal?](#can-i-install-packages-to-the-exam-terminal)
         * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
         * [What does the environment look like?](#what-does-the-environment-look-like)
         * [How is the exam scored?](#how-is-the-exam-scored)
