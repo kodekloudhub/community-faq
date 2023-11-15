@@ -165,7 +165,7 @@ When a manifest is read, it is a two-pass operation
 
     You should enable line numbers in `vi` to help you get to these errors quickly. If line numbers are not showing, enter `:set nu` into `vi` before entering insert mode.
 
-    If the manifest file being read has [multiple documents](#documents), then the error line number is relative to the beginning of the document currently being read, not the beginning of the file.
+    If the manifest file being read has [multiple documents](#documents), then the error line number is relative to the beginning of the document currently being read, not the beginning of the file. You can use [relative line numbers](./vi-101.md#relative-numbers) in vi to get to the correct line of a document further down the manifest file.
 
 
 2. Once the YAML has successfully been converted to JSON, then the JSON is marshalled to Go structures internally (i.e. the programmatic representation of pods, deployments, etc.). These errors are generally of the form
