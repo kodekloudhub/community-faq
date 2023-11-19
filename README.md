@@ -252,7 +252,7 @@ The only software that may be running is the PSI software, therefore you must me
 
 ### Can I install packages to the exam terminal?
 
-> Yes
+> Yes and No
 
 You may install additional packages if they are part of the operating system distribution. What this means is that you may use the Linux package manager to install anything that is available by default on the terminal without the addition of other `apt` (or `yum/dnf` for Linux certifications) package repos, unless directed by a question to add one. You may not download third party packages using curl, wget etc. unless directed by a question.
 
