@@ -276,6 +276,10 @@ This is what The Linux Foundation says:
 >   We offer an Exam rescoring service, but the turnaround time is 4+ weeks right now due to the current workload of the Exam Tech Support team. What the rescore service provides is a manual scoring of your exam by the Exam Tech Support team that can then be compared to the automated scoring that was initially performed by the grading scripts. Due to the manual nature of the work, the rescore service does cost $150 USD. (It is worth bearing in mind that rescores rarely result in conversion of a non-passing score. This is because the grading scripts have been time tested and continuously refined; additionally, the likelihood of having incorrectly graded a question or two is very low since we grade on outcomes (end state of the system), not the path the user took to get there. Should the rescore result in a passing grade, we would refund the fee to you.)<br/><br/>
 Exam servers are decommissioned within a few days from the Exam date, so if you would like to go with the rescore service, please complete payment ASAP for the rescoring fee at –https://trainingportal.linuxfoundation.org/products/certification-exam-manual-rescore-fee-150.
 
+### The certifications are *so* expensive! What about a discount?
+
+Linux Foundation certifications are quite expensive, however Linux Foundation do from time to time offer fairly substantial discounts. KodeKloud have no advance notice of when these discounts will occur, however Black Friday weekend is almost certain and other holiday weekends in the US calendar are not uncommon. You need to check their [website](https://training.linuxfoundation.org/) frequently. KodeKloud do have a permanent Linux Foundation discount of 20%. You can ask for details of that in our Slack channels.
+
 # Kubernetes Certifications
 
 ### How many killer.sh sessions do I get?
@@ -294,6 +298,7 @@ Please see [killer.sh](./docs/killer-sh.md) FAQ page.
 
 If you have a KodeKloud Pro subscription, you can attempt our Ultimate Mock Exam series. These are much harder than the real exam, and likely harder than Killer, with more questions than Killer across the series. Some questions will cover tasks that you will not be expected to perform in the real exam, and possibly involving resources and techniques not covered in the courses. These are to test your skills of information gathering and problem solving that you will face in the real world should you land a job doing Kubernetes.<br/>Try to stick to the [permitted documentation](https://docs.linuxfoundation.org/tc-docs/certification/certification-resources-allowed#certified-kubernetes-administrator-cka-and-certified-kubernetes-application-developer-ckad) and not use Google, but there are one or two tasks that would require you to break this rule (e.g. viewing the [etcd docmentation](https://etcd.io/docs/v3.5/)). You can be sure these tasks _won't_ show up in the real exam.
 
+* [Kubernetes Challenges](https://kodekloud.com/courses/kubernetes-challenges/)
 * [Ultimate CKA Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam/)
 * [Ultimate CKAD Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-application-developer-ckad-mock-exam-series/)
 * Ultimate CKS Mocks - Coming soon.
