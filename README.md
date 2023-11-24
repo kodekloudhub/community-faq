@@ -35,6 +35,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [What does the environment look like?](#what-does-the-environment-look-like)
         * [How is the exam scored?](#how-is-the-exam-scored)
         * [What if I want to dispute my score?](#what-if-i-want-to-dispute-my-score)
+        * [The certifications are *so* expensive! What about a discount?](#the-certifications-are-so-expensive-what-about-a-discount)
 * [Kubernetes Certifications](#kubernetes-ckackad)
     * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
     * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
