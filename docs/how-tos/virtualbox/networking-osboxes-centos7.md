@@ -22,7 +22,7 @@ The assumption is that you have installed the image in VirtualBox, started it an
 
 Credentials to log into osboxes virtual machines are as follows. Note that for any `sudo` command, it will ask for this password.
 
-* Username: `oxboxes`
+* Username: `osboxes`
 * Password: `osboxes.org`
 
 # Network Adapter Configuration
