@@ -6,6 +6,9 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
 
 # Contents
 
+* [KodeKloud Platform](#kodekloud-platform)
+    * [I have a question about payments or subscriptions](#i-have-a-question-about-payments-or-subscriptions)
+    * [I cannot access labs from Udemy](#i-cannot-access-labs-from-udemy)
 * [Buying the Exam](#buying-the-exam)
 * [Exam Environment](#exam-environment)
     * [PSI Bridge](#psi-bridge)
@@ -61,6 +64,24 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
     * [CKS](#cks)
     * [Other](#other)
 
+
+# KodeKloud Platform
+
+This section is related to questions about the use of the KodeKloud platform, and our courses on Udemy
+
+### I have a question about payments or subscriptions
+
+For all issues related to this, please contact the dedicated team at support@kodekloud.com
+
+### I cannot access labs from Udemy
+
+In all Udemy courses that come with labs, there is a course slide somewhere near the beginning that instructs you how to enrol in the labs, and also provides a coupon code to use on the payment screen. You do need to first create a free account on https://kodekloud.com/ and you should use the same email address as your Udemy account.
+Please also read https://support.kodekloud.com/udemy-students-unable-to-access-labs.
+
+* CKA course - Slide 26
+* CKAD course - Slide 19
+
+If you are still having issues, then contact support@kodekloud.com
 
 # Buying the Exam
 
