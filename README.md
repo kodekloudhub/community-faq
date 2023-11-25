@@ -78,8 +78,20 @@ For all issues related to this, please contact the dedicated team at support@kod
 In all Udemy courses that come with labs, there is a course slide somewhere near the beginning that instructs you how to enrol in the labs, and also provides a coupon code to use on the payment screen. You do need to first create a free account on https://kodekloud.com/ and you should use the same email address as your Udemy account.
 Please also read https://support.kodekloud.com/udemy-students-unable-to-access-labs.
 
-* CKA course - Slide 26
-* CKAD course - Slide 19
+You may find the lab instructions and coupon code on the following course slides
+
+| Slide | Course |
+|-------|--------|
+|8	|Ansible for the Absolute Beginner - Hands-On - DevOps|
+|15	|Docker for the Absolute Beginner - Hands On - DevOps|
+|4	|Kubernetes for the Absolute Beginners - Hands-on|
+|19	|Kubernetes Certified Application Developer (CKAD) with Tests|
+|26	|Certified Kubernetes Administrator (CKA) with Practice Tests|
+|12	|Terraform for the Absolute Beginners with Labs|
+|9	|Python Basics Course|
+|8	|The Ultimate DevOps Bootcamp - 2023|
+|5	|Golang for Beginners|
+|9	|Linux Foundation Certified Systems Administrator - LFCS|
 
 If you are still having issues, then contact support@kodekloud.com
 
@@ -301,6 +313,8 @@ Exam servers are decommissioned within a few days from the Exam date, so if you 
 ### The certifications are *so* expensive! What about a discount?
 
 Linux Foundation certifications are quite expensive, however Linux Foundation do from time to time offer fairly substantial discounts. KodeKloud have no advance notice of when these discounts will occur, however Black Friday weekend is almost certain and other holiday weekends in the US calendar are not uncommon. You need to check their [website](https://training.linuxfoundation.org/) frequently. KodeKloud do have a permanent Linux Foundation discount of 20%. You can ask for details of that in our Slack channels.
+
+If you have created a [Linux Foundation](https://www.linuxfoundation.org/) account - which you need to have in order to purchase exams - they will normally email you when a promo is going to happen. So, go create one now!
 
 # Kubernetes Certifications
 
