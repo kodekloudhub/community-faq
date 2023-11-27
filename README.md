@@ -337,7 +337,7 @@ If you have a KodeKloud Pro subscription, you can attempt our Ultimate Mock Exam
 * [Kubernetes Challenges](https://kodekloud.com/courses/kubernetes-challenges/) - FREE course.
 * [Ultimate CKA Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam/) - Paid separately.
 * [Ultimate CKAD Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-application-developer-ckad-mock-exam-series/) - Paid separately.
-* Ultimate CKS Mocks - Coming soon.
+* Ultimate CKS Mocks - Future - No ETA.
 * [CKS Challenges](https://kodekloud.com/courses/cks-challenges/) - FREE course.
 
 ### How do I backup etcd?
