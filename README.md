@@ -99,11 +99,13 @@ If you are still having issues, then contact support@kodekloud.com as we cannot 
 
 To buy any exam run by The Linux Foundation, you need to first sign up with [The Linux Foundation](https://www.linuxfoundation.org/). Once you have an account, known as an LFID, then you can go to their [training portal](https://trainingportal.linuxfoundation.org/) to purchase the exam. For Kubernetes exams, you get two killer.sh sessions included in the purchase. More on this further down this document.
 
+If you are intending to take any Linux Foundation exam (includes all Kubernetes, LFCS and several others), you should create an account ASAP. Once you have an account, you will be notified by email when discounts are available, usually a day or two before they activate - see also [below](#the-certifications-are-so-expensive-what-about-a-discount).
+
 With most of these exams, you have one year from the date of purchase in which to schedule *and* take the exam and this time includes scheduling any free retake that may be offered. You do not have to schedule immediately at time of purchase.
 
 DO NOT LEAVE IT UNTIL THE LAST MINUTE TO SIT THE EXAM!!!
 
-If you do that, and you have only days remaining before the validity expires, what are you going to do if there are issues with the exam environment (these are not infrequent) which means that you fail to complete, or even start the exam? You should appear for your first attempt *at least* one month before the expiry in case of issues like this. If your exam is credited back to you due to issues like this, then you still have to do this and the free retake if you require it within the one year period.
+If you do that, and you have only days remaining before the validity expires, what are you going to do if you fail? You have to appear for the exam *and* the retake if you require it before 365 days is up. What if there are are issues with the exam environment (these are not infrequent) which means that you fail to complete, or even start the exam? You should appear for your first attempt *at least* one month before the expiry in case of issues like this. If your exam is credited back to you due to issues like this, then you still have to do this and the free retake if you require it within the one year period.
 
 # Exam Environment
 
