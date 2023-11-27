@@ -93,7 +93,7 @@ You may find the lab instructions and coupon code on the following course slides
 |5	|Golang for Beginners|
 |9	|Linux Foundation Certified Systems Administrator - LFCS|
 
-If you are still having issues, then contact support@kodekloud.com
+If you are still having issues, then contact support@kodekloud.com as we cannot resolve subscription issues on public forums like Slack.
 
 # Buying the Exam
 
