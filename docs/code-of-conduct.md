@@ -25,7 +25,9 @@
 
 ### Seeking Technical Guidance?
 
-1. **Utilize Designated Channels**: KodeKloud community offers specific channels tailored to various topics. For instance, `#azure-courses` is dedicated to Azure queries. Please find the channel that best matches your query. If you're uncertain, feel free to begin in the `#general` channel.
+1. **Where to Post**: Please use our [Discourse forum](https://community.kodekloud.com/) to post technical queries.
+
+1. **Utilize Designated Channels**: KodeKloud community offers specific channels tailored to various topics. For instance, [AZURE](https://kodekloud.com/community/c/cloud/azure-courses/31) is dedicated to Azure queries. Please find the channel that best matches your query. If you're uncertain, feel free to ask the correct place in the `#general` channel on Slack.
 
 1. **Comprehensive Queries for Effective Communication**: When asking questions, strive to incorporate all relevant details into one cohesive message. Additionally, consider utilizing [Slack threads](https://slack.com/intl/en-gb/help/articles/115000769927-Use-threads-to-organise-discussions) to keep the conversation organized. This practice enhances clarity and preserves context, contributing to more productive discussions.
 
