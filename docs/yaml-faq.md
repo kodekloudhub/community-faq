@@ -5,6 +5,7 @@ We see a few questions about "kubectl" YAML manifests and what you can and can't
 `kubectl` (and anything else in the ecosystem that needs to read YAML like `kubelet` etc) is built using the standard GoLang YAML package, which apart from anything explicitly mentioned in the package's [Compatibility](https://github.com/go-yaml/yaml#compatibility) paragraph is generally YAML 1.2 compliant (see [gotchas](#gotchas) below), and this is the dialect that `kubectl` understands. There is no "special" `kubectl` dialect.
 
 * [In a nutshell](#in-a-nutshell)
+* [Ordering of keys](#ordering-of-keys)
 * [To quote or not to quote](#to-quote-or-not-to-quote)
 * [Indentation](#indentation)
 * [Dealing with Errors (kubectl)](#dealing-with-errors-kubectl)
