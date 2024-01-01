@@ -136,7 +136,7 @@ command:
 
 If you are creating configmaps or secrets for use with environment variables, the same quoting rules apply.
 
-We've seen posts that say "You must quote mount paths" or "You must quote pod capabilities". This is not the case. The rules are as stated above. At the end of the day you want to use as few keystrokes as possible when doing the exam! You only need to quote in flow-style e.g.
+We've seen posts that say "You must quote mount paths" or "You must quote pod capabilities". This is not the case. The rules are as stated above. At the end of the day you want to use as few keystrokes as possible when doing the exam! You only need to quote if the value is not a string and you want it to be treated as a string (as in environment variable example above), or if using flow-style e.g.
 
 ```yaml
     securityContext:
