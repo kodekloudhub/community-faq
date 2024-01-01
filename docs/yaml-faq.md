@@ -82,6 +82,46 @@ volumes:
 
 This is because to put nothing after `emptyDir:` would be a syntax error as the value would be missing. What we are doing is asking for an `emptyDir` volume with no custom properties. There are properties that could be used with this but they are beyond the scope of the exams.
 
+## Ordering of keys
+
+Both YAML and JSON have no restriction on the ordering of keys in an object declaration
+
+All the following have *exactly* the same outcome. Key arrangement is a matter of personal preference, and many programs that save data to YAML files, including `kubectl` will emit the keys in alphabetical order. It so happens when saving kube objects with `-o yaml` that `apiVersion`, `kind`, `metadata`, `spec` are already in alphabetical order, but you'll notice that the keys for each container are sorted.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test
+spec:
+  containers:
+  - name: test
+    image: busybox
+```
+
+```yaml
+metadata:
+  name: test
+spec:
+  containers:
+  - name: test
+    image: busybox
+apiVersion: v1
+kind: Pod
+```
+
+```yaml
+spec:
+  containers:
+  - image: busybox
+    name: test
+apiVersion: v1
+metadata:
+  name: test
+kind: Pod
+```
+
+
 
 ## To quote or not to quote
 
