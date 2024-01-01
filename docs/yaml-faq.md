@@ -266,7 +266,7 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
 
     ```
     Error from server (BadRequest): error when creating "some-pod":
-    Pod in version “v1” cannot be handled as a Pod: strict decoding error: unknown field “spec.containers[0].dnsPolicy”
+    Pod in version "v1" cannot be handled as a Pod: strict decoding error: unknown field "spec.containers[0].dnsPolicy"
     ```
 
     Again, usually an indentation problem (in this case), or it really is a field that doesn't exist e.g. you put `foobar` or some other nonsense, or you simply typoed the key name.
@@ -282,7 +282,7 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
         name: test
         command:
         - sleep
-        - “1800”
+        - "1800"
         dnsPolicy: ClusterFirst  #<- This is indented too far
     ```
 
