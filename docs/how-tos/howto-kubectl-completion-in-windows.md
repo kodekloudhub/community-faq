@@ -40,7 +40,7 @@ What we will do is to create one shared profile script, and link all the differe
 1.  Link Windows PowerShell (regular shell) to it.
 
     1. In the same folder, create the file `Microsoft.PowerShell_profile.ps1`
-    1. In this file, put the following
+    1. In this file, put the following. Note the leading full stop - it's not a typo!
 
         ```powershell
         . (Join-Path $PSScriptRoot _profileShared.ps1)
