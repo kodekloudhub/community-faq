@@ -211,9 +211,8 @@ You can practice this in killer.sh before the exam.
 ### What are the system requirements for taking the exam?
 
 **IMPORTANT**
-* Linux is not supported _except_ for Ubuntu 18.04, 20.04 and 22.04.
-
-Mac M1 _is_ supported.
+* Linux is not supported _except_ for Ubuntu 18.04, 20.04 and 22.04. Beware - some people have had issues getting PSI bridge to run, even on supported distros. This can waste time and cause stress at the start of the exam. Better to use Windows or Mac if you can.
+* Apple silicon Mac (M1/M2/M3 etc) _is_ supported.
 
 Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements) and [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
 
@@ -223,7 +222,7 @@ See also this [detailed write-up on events for exam day](https://github.com/fire
 
 ### What ID is required?
 
-Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. If your primary ID is in a language that uses non-Latin characters (e.g. Arabic, Greek, Russian etc.), then you must provide an additional form of ID that has your name as written in English.
+Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. If your primary ID is in a language that uses non-Latin characters (e.g. Arabic, Greek, Hindi, Russian etc.), then you must provide an additional form of ID that has your name as written in English.
 
 Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
 
@@ -266,6 +265,8 @@ For exams with an included free retake, you may log into the training portal and
 Remember that the retake must also fall within the one year period since the date of exam purchase.
 
 ### If I raise a support ticket, when will it be answered?
+
+> 3 *business* days
 
 Expect _at least 3 business days_ for a response. If you raise it on a Friday, you're unlikely to hear back before the following Wednesday. They don't work weekends or US public holidays.
 
