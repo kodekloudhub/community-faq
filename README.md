@@ -111,7 +111,10 @@ If you do that, and you have only days remaining before the validity expires, wh
 
 ## PSI Bridge
 
-PSI Bridge is the system used to deliver all exams provided by Linux Foundation, be they performance based or Multiple Choice Question (MCQ). Linux Foundation exams are online only. There is no test center option.
+PSI Bridge is the system used to deliver all exams provided by The Linux Foundation, be they performance based or Multiple Choice Question (MCQ). Linux Foundation exams are online only. There is no test center option.
+
+Performance based exams include: CKA, CKAD, CKS, LFCS</br>
+Multiple choice exams include: KCNA, PCA
 
 Probably *the* most asked questions!</br></br>This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022. This provides a Linux XFCE desktop VDI for the exam environment. You may use any of the applications it provides in any way you see fit, however the only useful ones are `Terminal`, `Firefox` and `Mousepad` (for note taking). Firewalls prevent you from browsing anything other than allowed documentation. The terminal application connects to a remote host, thus the File Manager app is of no use, and for the same reason, Mousepad can't be used to edit exam files unless you edit them there, then paste into `vi` (not recommended).
 
@@ -274,7 +277,9 @@ If you have created a [Linux Foundation](https://www.linuxfoundation.org/) accou
 
 ## Performance Based Exams
 
-Performance based exams (as opposed to Multiple Choice Question) are provided in a virtual desktop (VDI) within the PSI Bridge software. This VDI is a Linux XFCE desktop running on top of Ubuntu. Kubernetes and LFCS fall in this category.
+If you are doing a Multiple Choice Question exam, skip this section.
+
+Performance based exams are provided in a virtual desktop (VDI) within the PSI Bridge software. This VDI is a Linux XFCE desktop running on top of Ubuntu. Kubernetes and LFCS fall in this category.
 
 ### Can I use my own bookmarks?
 
