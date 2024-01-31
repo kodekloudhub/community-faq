@@ -29,6 +29,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How long until I get my result?](#how-long-until-i-get-my-result)
         * [If I fail, how soon can I schedule a retake?](#if-i-fail-how-soon-can-i-schedule-a-retake)
         * [If I raise a support ticket, when will it be answered?](#if-i-raise-a-support-ticket-when-will-it-be-answered)
+        * [The certifications are *so* expensive! What about a discount?](#the-certifications-are-so-expensive-what-about-a-discount)
     * [Performance Based Exams](#performance-based-exams)
         * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
         * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
@@ -38,19 +39,18 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [What does the environment look like?](#what-does-the-environment-look-like)
         * [How is the exam scored?](#how-is-the-exam-scored)
         * [What if I want to dispute my score?](#what-if-i-want-to-dispute-my-score)
-        * [The certifications are *so* expensive! What about a discount?](#the-certifications-are-so-expensive-what-about-a-discount)
-* [Kubernetes Certifications](#kubernetes-ckackad)
-    * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
-    * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
-    * [How do I get some SERIOUS practice?](#how-do-i-get-some-serious-practice)
-    * [How do I backup etcd?](#how-do-i-backup-etcd)
-    * [How do I restore etcd?](#how-do-i-restore-etcd)
-    * [What's the deal with jsonpath and custom-columns?](#whats-the-deal-with-jsonpath-and-custom-columns)
-    * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
-    * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
-    * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
-    * [How-to: Install Ingress in the KodeKloud playgrounds](#how-to-install-ingress-in-the-kodekloud-playgrounds)
-    * [What's the deal with Certificate Signing Requests?](./docs/certificate-signing-requests.md)
+    * [Kubernetes Certifications](#kubernetes-ckackad)
+        * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
+        * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
+        * [How do I get some SERIOUS practice?](#how-do-i-get-some-serious-practice)
+        * [How do I backup etcd?](#how-do-i-backup-etcd)
+        * [How do I restore etcd?](#how-do-i-restore-etcd)
+        * [What's the deal with jsonpath and custom-columns?](#whats-the-deal-with-jsonpath-and-custom-columns)
+        * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
+        * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
+        * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
+        * [How-to: Install Ingress in the KodeKloud playgrounds](#how-to-install-ingress-in-the-kodekloud-playgrounds)
+        * [What's the deal with Certificate Signing Requests?](./docs/certificate-signing-requests.md)
 * [Other](#other)
     * [Labs are broken/crashing/not loading](#labs-are-brokencrashingnot-loading)
     * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
@@ -110,6 +110,8 @@ If you do that, and you have only days remaining before the validity expires, wh
 # Exam Environment
 
 ## PSI Bridge
+
+PSI Bridge is the system used to deliver all exams provided by Linux Foundation, be they performance based or Multiple Choice Question (MCQ). Linux Foundation exams are online only. There is no test center option.
 
 Probably *the* most asked questions!</br></br>This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022. This provides a Linux XFCE desktop VDI for the exam environment. You may use any of the applications it provides in any way you see fit, however the only useful ones are `Terminal`, `Firefox` and `Mousepad` (for note taking). Firewalls prevent you from browsing anything other than allowed documentation. The terminal application connects to a remote host, thus the File Manager app is of no use, and for the same reason, Mousepad can't be used to edit exam files unless you edit them there, then paste into `vi` (not recommended).
 
@@ -264,6 +266,12 @@ Remember that the retake must also fall within the one year period since the dat
 
 Expect _at least 3 business days_ for a response. If you raise it on a Friday, you're unlikely to hear back before the following Wednesday. They don't work weekends or US public holidays.
 
+### The certifications are *so* expensive! What about a discount?
+
+Linux Foundation certifications are quite expensive, however Linux Foundation do from time to time offer fairly substantial discounts. KodeKloud have no advance notice of when these discounts will occur, however Black Friday weekend is almost certain and other holiday weekends in the US calendar are not uncommon. You need to check their [website](https://training.linuxfoundation.org/) frequently. KodeKloud do have a permanent Linux Foundation discount of 20%. You can ask for details of that in our community forums.
+
+If you have created a [Linux Foundation](https://www.linuxfoundation.org/) account - which you need to have in order to purchase exams - they will normally email you when a promo is going to happen. So, go create one now!
+
 ## Performance Based Exams
 
 Performance based exams (as opposed to Multiple Choice Question) are provided in a virtual desktop (VDI) within the PSI Bridge software. This VDI is a Linux XFCE desktop running on top of Ubuntu. Kubernetes and LFCS fall in this category.
@@ -312,13 +320,9 @@ This is what The Linux Foundation says:
 >   We offer an Exam rescoring service, but the turnaround time is 4+ weeks right now due to the current workload of the Exam Tech Support team. What the rescore service provides is a manual scoring of your exam by the Exam Tech Support team that can then be compared to the automated scoring that was initially performed by the grading scripts. Due to the manual nature of the work, the rescore service does cost $150 USD. (It is worth bearing in mind that rescores rarely result in conversion of a non-passing score. This is because the grading scripts have been time tested and continuously refined; additionally, the likelihood of having incorrectly graded a question or two is very low since we grade on outcomes (end state of the system), not the path the user took to get there. Should the rescore result in a passing grade, we would refund the fee to you.)<br/><br/>
 Exam servers are decommissioned within a few days from the Exam date, so if you would like to go with the rescore service, please complete payment ASAP for the rescoring fee at –https://trainingportal.linuxfoundation.org/products/certification-exam-manual-rescore-fee-150.
 
-### The certifications are *so* expensive! What about a discount?
+## Kubernetes Certifications
 
-Linux Foundation certifications are quite expensive, however Linux Foundation do from time to time offer fairly substantial discounts. KodeKloud have no advance notice of when these discounts will occur, however Black Friday weekend is almost certain and other holiday weekends in the US calendar are not uncommon. You need to check their [website](https://training.linuxfoundation.org/) frequently. KodeKloud do have a permanent Linux Foundation discount of 20%. You can ask for details of that in our Slack channels.
-
-If you have created a [Linux Foundation](https://www.linuxfoundation.org/) account - which you need to have in order to purchase exams - they will normally email you when a promo is going to happen. So, go create one now!
-
-# Kubernetes Certifications
+This section applies to performance based Kubernetes exams only, i.e. CKA, CKAD and CKS. If you are doing KCNA, skip this section.
 
 ### How many killer.sh sessions do I get?
 
