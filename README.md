@@ -228,7 +228,13 @@ See also this [detailed write-up on events for exam day](https://github.com/fire
 
 Any national or state government issued photo ID where the name exactly matches the name you gave when registering for the exam. If your primary ID is in a language that uses non-Latin characters (e.g. Arabic, Greek, Hindi, Russian etc.), then you must provide an additional form of ID that has your name as written in English.
 
+Your ID must not be expired.
+
 Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
+
+* Students have reported that Indian [Aadhar cards](https://uidai.gov.in/en/) are sufficient.
+* Drivers License is usually sufficient (definitely works in UK).
+* Passport is always sufficent.
 
 ### Issues with launching the exam
 
