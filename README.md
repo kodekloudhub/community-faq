@@ -232,9 +232,9 @@ Your ID must not be expired.
 
 Please carefully read [Exam ID requirements](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-id-requirements-to-take-the-exam).
 
-* Students have reported that Indian [Aadhar cards](https://uidai.gov.in/en/) are sufficient.
+* Students have reported that Indian Aadhaar cards are sufficient.
 * Drivers License is usually sufficient (definitely works in UK).
-* Passport is always sufficent.
+* Passport is always sufficient.
 
 ### Issues with launching the exam
 
