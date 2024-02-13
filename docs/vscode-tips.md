@@ -19,7 +19,7 @@ This is the layout of the terminal for labs that use VSCode
 
 1. Explorer pane
 1. Editor Pane
-1. Integrated terminal. If this is not showung, see [Open Terminal](#open-terminal) below.
+1. Integrated terminal. If this is not showing, see [Open Terminal](#open-terminal) below.
 
 ## Chrome Settings
 
@@ -88,7 +88,7 @@ This happens, often after a "Setting things up..." between questions. Simply ope
 
 ![vscode terminal](../img/vs-code-terminal.jpg)
 
-Note that if you are using a small monitor, or you have narrowed the width of your browser, then the list of terminals at the side may intead appear as a drop list above the integrated terminal.
+Note that if you are using a small monitor, or you have narrowed the width of your browser, then the list of terminals at the side may instead appear as a drop list above the integrated terminal.
 
 ## How to add folders to the workspace
 
@@ -98,7 +98,7 @@ Using the Vault course as an example where it's necessary to edit files in the d
 
 1. Right click in the Explorer pane.
 1. Select `Add Folder to Workspace...` from the menu. This will open a drop-down list showing the file system.
-1. In the editor box above this list, enter the folder e.g. `/etc/vault.d` in the box and press the blue OK button. After a coouple of seconds it will reload and you should see the additional folder in the explorer pane.
+1. In the editor box above this list, enter the folder e.g. `/etc/vault.d` in the box and press the blue OK button. After a couple of seconds it will reload and you should see the additional folder in the explorer pane.
 
 Note that when you [open the integrated terminal](#open-terminal) after adding folders, it will ask you which of these folders to open the terminal on. You should select the one that was there at the beginning (ususally `root`).
 
