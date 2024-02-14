@@ -90,7 +90,6 @@ The categories here do not reflect the domains in the actual exam, because the d
 | Logging                      | :heavy_check_mark: | :heavy_check_mark: |
 | Monitoring                   | :heavy_check_mark: | :heavy_check_mark: |
 | Managing Application Logs    | :heavy_check_mark: |                    |
-| EmptyDir volume              | :heavy_check_mark: | :heavy_check_mark: |
 | Probes (readiness, liveness) |                    | :heavy_check_mark: |
 
 ## Cluster Setup and Maintenance
