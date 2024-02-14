@@ -40,6 +40,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How is the exam scored?](#how-is-the-exam-scored)
         * [What if I want to dispute my score?](#what-if-i-want-to-dispute-my-score)
     * [Kubernetes Certifications](#kubernetes-ckackad)
+        * [What are the similarites/differences between CKA and CKAD?](#what-are-the-similaritesdifferences-between-cka-and-ckad)
         * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
         * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
         * [How do I get some SERIOUS practice?](#how-do-i-get-some-serious-practice)
