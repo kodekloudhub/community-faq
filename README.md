@@ -341,6 +341,10 @@ Exam servers are decommissioned within a few days from the Exam date, so if you 
 
 This section applies to performance based Kubernetes exams only, i.e. CKA, CKAD and CKS. If you are doing KCNA, skip this section.
 
+### What are the similarites/differences between CKA and CKAD?
+
+Please see [here](./docs/cka-vs-ckad.md)
+
 ### How many killer.sh sessions do I get?
 
 > 2
