@@ -98,7 +98,7 @@ If the question is asking for a version that is not in this list, it becomes muc
                 }
             }
         ```
-1. Configure php-fpm nignx module
+1. Configure php-fpm nginx module
 
     1. Open `/etc/nginx/conf.d/php-fpm.conf` in vi
     1. Edit the path to the socket to match that in the question
