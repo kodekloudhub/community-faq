@@ -298,7 +298,7 @@ Performance based exams are provided in a virtual desktop (VDI) within the PSI B
 
 > No
 
-Because you cannot run your own browser. The only software that may be running on your desktop at exam time is the PSI software. Each question has several relevant links into the Kubernetes documentation. Clicking these links opens tabs in Firefox within the exam environment. You can visit any of the allowed documentation using the provided Firefox.</br>You may open multiple tabs in Firefox, however a question may state that you can only open one additional tab on a particular topic.
+Because you cannot run your own browser. The only software that may be running on your desktop at exam time is the PSI software. Each question has several relevant links into the Kubernetes documentation. Clicking these links opens tabs in Firefox within the exam environment. You can visit any of the allowed documentation using the provided Firefox.</br>You may open multiple tabs in Firefox, however a question may state that you can only open one additional tab on a particular topic.<br/>You may use the `man` command in the terminal to get help on Linux commands.
 
 ### Can I open multiple terminal sessions?
 
@@ -316,7 +316,7 @@ The only software that may be running is the PSI software, therefore you must me
 
 > Yes and No
 
-You may install additional packages if they are part of the operating system distribution. What this means is that you may use the Linux package manager to install anything that is available by default on the terminal without the addition of other `apt` (or `yum/dnf` for Linux certifications) package repos, unless directed by a question to add one. You may not download third party packages using curl, wget, cloning from Github etc. unless directed by a question.
+You may install additional packages if they are part of the operating system distribution. What this means is that you may use the Linux package manager to install anything that is available by default on the terminal without the addition of other `apt` (or `yum/dnf` on CentOS terminals) package repos, unless directed by a question to add one. You may not download third party packages using curl, wget, cloning from Github etc. unless directed by a question.
 
 See the third bullet point [here](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-rules-and-policies#policy-on-tools-and-resources-allowed-during-exam).
 
