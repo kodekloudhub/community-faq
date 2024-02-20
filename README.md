@@ -157,7 +157,7 @@ This can be the laptop display, or an externally connected display. If using an 
 
 If using a desktop computer with multiple monitors, disable or disconnect all but your best one.
 
-**TIP**: You are strongly advised *not* to rely on a small laptop screen (like 13 or 14 inch). Your workspace will be extremely tiny, worse if you rely on scaling the font size up. A monitor of higher than HD resolution running at 100% scale and large enough that you can read the text is highly recommended. Anything less than full HD is seriously disadvantageous! See the [image](#what-does-the-environment-look-like) further down this page.
+**TIP**: You are strongly advised *not* to rely on a small laptop screen (like 13 or 14 inch). Your workspace will be extremely tiny, worse if you rely on scaling the font size up. A monitor of higher than HD resolution running at 100% scale and large enough that you can read the text is highly recommended. Anything less than full HD is seriously disadvantageous! On Macs, be sure to adjust display settings to "More Space". See the [image](#what-does-the-environment-look-like) further down this page.
 
 The Linux Foundation recommends 15 inch or greater display.
 
