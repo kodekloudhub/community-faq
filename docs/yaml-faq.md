@@ -126,7 +126,9 @@ kind: Pod
 
 ## To quote or not to quote
 
-YAML always parses literal values as strings, _unless_ the value is wholly numeric (including canonical, integer, fixed point, exponential, octal or hex), a timestamp or a boolean (`true`, `false`). If you want to force a non-string to be parsed as a string, you must quote it. This rule applies to environment variable values and to command arguments which must both be passed to the underlying container as a string, hence
+YAML always parses literal values as strings, _unless_ the value is wholly numeric (including canonical, integer, fixed point, exponential, octal or hex), a timestamp or a Boolean (`true`, `false`), or if your value starts with a `&` or `*` in which case it will assume [anchor/alias](#aliases-and-anchors). Kubernetes students, this last case applies especially to CronJob schedules.
+
+If you want to force a non-string to be parsed as a string, you must quote it. This rule applies to environment variable values and to command arguments which must both be passed to the underlying container as a string, hence
 
 ```yaml
 command:
