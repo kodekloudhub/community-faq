@@ -4,54 +4,61 @@ As we embark on our journey to build a thriving community on Discord, it's essen
 
 To facilitate this, we have curated a troubleshooting guide to address common concerns encountered during the joining process and beyond. Whether you're new to Discord or a seasoned user, this guide aims to empower you with the knowledge needed to navigate potential hurdles effectively.
 
+**New to Discord?** Access our [Discord Onboarding Guide Video](https://www.loom.com/share/bd30c00301884f4e908576f71357b9ef?sid=67497132-f8c8-41d9-ab83-3df32f403e4a) for a step-by-step walkthrough.
+
+---
+
+**Link Update:** In case you come across an expired link, please use this updated [invitation link](https://discord.gg/Y4Q7pRjyFU).
+
+---
+
 ## Verification Processes:
 
 ### Expected Scenario:
-If users report issues with Discord's verification processes, including captcha and browser cookies.
+Encountering issues with Discord's verification processes.
 
 ### Troubleshooting Steps:
-- Instruct users to clear their browser cache and cookies.
-- Suggest trying to join using a different browser or device.
-- Advise disabling any browser extensions that may interfere with the verification process.
-- Ensure users are following the correct steps provided during the verification process.
+- Clear your browser cache and cookies, then try again.
+- Attempt to join using a different browser or device.
+- Disable any browser extensions that may interfere with the verification process.
+- Ensure you are following the correct steps provided during the verification process.
 
 ## Account Verification:
 
 ### Expected Scenario:
-Users who haven't verified their account may encounter prompts to do so. Failure to verify their account could result in losing access to their username and the inability to post anything within the Discord community. Additionally, users might be periodically prompted to verify their account with features such as "I'm not a robot" or captchas, depending on their activities on Discord. Regular account verification helps maintain security and authenticity within the community.
+If you haven't verified your account, you may see prompts to do so. Not verifying your account could lead to losing access to your username and the inability to post anything within the Discord community. Additionally, you might be asked to verify your account with features like "I'm not a robot" or captchas, depending on your activities. Regular account verification helps keep our community secure and authentic.
 
 ### Troubleshooting Guide:
-- Prompt users to verify their accounts promptly to avoid potential access issues.
-- Provide clear instructions to users to verify their accounts to maintain access to their usernames and community posting privileges.
-- Explain the importance of regular account verification and its role in maintaining security and authenticity within the Discord community.
+- Make sure to verify your account promptly to avoid any access issues and keep your usernames and posting privileges.
+- Understand the importance of regular account verification in maintaining security and authenticity within our Discord community.
 
 ## Multiple Accounts and IP Restrictions:
 
 ### Expected Scenario:
-If users encounter issues due to Discord's policies regarding multiple accounts originating from the same IP address.
+If you're having trouble because of Discord's policies on multiple accounts from the same IP address.
 
 ### Troubleshooting Steps:
-- Advise users to log out of all Discord accounts and log back in with only one account.
-- Check for any temporary bans or limitations on their account and guide them to contact Discord support if necessary.
-- Ensure that no other users on the same network are using Discord simultaneously with multiple accounts.
+- Make sure to log out of all Discord accounts and log back in with just one account.
+- Check if there are any temporary bans or limitations on your account. If so, reach out to Discord support for assistance.
+- Ensure that nobody else on your network is using Discord with multiple accounts simultaneously.
 
 ## Server Limitations:
 
 ### Expected Scenario:
-If users reach the maximum limit of 100 servers they can join, they may encounter difficulties in joining additional servers or managing their existing server memberships.
+If you've reached the maximum limit of 100 servers you can join, you might face issues joining more servers or managing your existing memberships.
 
 ### Troubleshooting Steps:
-- Encourage users to leave any servers that they no longer actively participate in to free up space for joining new servers.
-- Provide guidance on organizing and prioritizing server memberships based on their interests and activities within the community.
+- Consider leaving servers you no longer actively participate in to make room for new ones.
+- Get tips on organizing and prioritizing your server memberships based on your interests and activities within the community.
 
 ## VPN Considerations:
 
 ### Expected Scenario:
-If users encounter connectivity issues related to VPN usage.
+If you're experiencing connectivity issues due to VPN usage.
 
 ### Troubleshooting Steps:
-- Advise users to temporarily disable their VPN before creating a Discord account or joining servers.
-- Verify that the VPN service being used is compatible with Discord and does not block any necessary connections.
-- Recommend switching to a different VPN server location or provider if connectivity issues persist.
+- Consider temporarily disabling your VPN before creating a Discord account or joining servers.
+- Check if your VPN service works well with Discord and doesn't block any essential connections.
+- If the connectivity issues persist, try switching to another VPN server location or provider.
 
-**Note**: As our community grows, we may face new challenges. Kindly document them here to assist others in assisting users.
+**Note**: If you're still experiencing difficulties joining the KodeKloud Discord Community, please feel free to contact us at support@kodekloud.com.
