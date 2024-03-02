@@ -152,9 +152,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 
     Output
 
-    ```
-    test
-    ```
+    > test
 
 *   Image of the first container
 
@@ -164,9 +162,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 
     Output
 
-    ```
-    nginx
-    ```
+    > nginx
 
 *   Images of all containers
 
@@ -176,9 +172,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 
     Output
 
-    ```
-    nginx
-    ```
+    > nginx
 
     Results will be each image separated by a space, if there is more than one container.
 
@@ -190,9 +184,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 
     Output
 
-    ```
-    192.168.1.3/32
-    ```
+    > 192.168.1.3/32
 
 *   Every property called image beneath `spec`
 
@@ -202,9 +194,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 
     Output
 
-    ```
-    nginx
-    ```
+    > nginx
 
     The value here is that of `spec.containers[0].image`.
 
@@ -218,9 +208,7 @@ Note that if you put two dots `..` anywhere in a jsonpath query, then what will 
 
     Output
 
-    ```
-    nginx docker.io/library/nginx:latest
-    ```
+    > nginx docker.io/library/nginx:latest
 
     There are two values returned here, separated by a space. Those are the values at the following jsonpaths
 
