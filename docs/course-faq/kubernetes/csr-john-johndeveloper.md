@@ -162,3 +162,7 @@ See also [What is a distinguished name](https://knowledge.digicert.com/generalin
     groups:
     - system:authenticated
     ```
+
+## See Also
+
+This [video](https://www.youtube.com/watch?v=I-iVrIWfMl8) and this [blog post](https://articles.adityasamant.dev/blog/kubernetes/kubectl-auth-can-i/) created by one of our students.
