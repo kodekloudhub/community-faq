@@ -422,8 +422,10 @@ kubectl get pod pod1 -o jsonpath='{.spec.containers[?(@.name == "sidecar")].imag
 
 This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
 
+* Because `containers` is a list, we start with the outer square brackets.
+* Then we form a query to select the list index we want based on properties of each list object instead of `*` (everything) or a number (specific entry)...
 * `?` means "where" the following bracketed expression.
-* `@` means "the current list object", in this case container
+* `@` means "the current list object", in this case `container`.
 
 **Another Example**
 
