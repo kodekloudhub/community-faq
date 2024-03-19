@@ -442,7 +442,7 @@ You can use other operators, e.g.
 
 and comparison operators when the field's value is numeric
 * `<` - less than
-* `>` - grater than
+* `>` - greater than
 * `<=` - less than or equal
 * `>=` - greater than or equal
 
