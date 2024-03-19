@@ -425,6 +425,17 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
 * `?` means "where" the following bracketed expression.
 * `@` means "the current list object", in this case container
 
+**Another Example**
+
+List the `InternalIP` of all nodes of the cluster. All IPs should be on a single line and separated by a space.
+
+```
+kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'
+```
+
+To see how this query works, get a node with `-o yaml` and see if you can spot it.
+
+
 You can use other operators, e.g.
 
 * `!=` - not equals
