@@ -426,6 +426,7 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
 * Then we form a query to select the list index we want based on properties of each list object instead of `*` (everything) or a number (specific entry)...
 * `?` means "where" the following bracketed expression.
 * `@` means "the current list object", in this case `container`.
+* Finally, to the right of the square brackets we state which property of the selected list entry we want to print, i.e. the selected container's image.
 
 **Another Example**
 
