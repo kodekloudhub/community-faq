@@ -207,7 +207,7 @@ Connecting via a corporate network is also not recommended as company firewall p
 
 It is also quite common for corporate networks to decode HTTPS traffic at the company firewall, log it and re-encode it before your machine gets it. PSI software may detect this and refuse to run, as it would enable the exam content to be logged, and therefore leaked.
 
-Bear in mind that the online PSI compatability check that you run in a browser is _not_ a conculsive check of everything. It tests only _basic_ compatibility. It does not check for example, programs that are not allowed to be operational duing the exam.
+Bear in mind that the online PSI compatability check that you run in a browser is _not_ a conclusive check of everything. It tests only _basic_ compatibility. It does not check for example, programs that are not allowed to be operational duing the exam.
 
 See also [launching the exam](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS#launching-the-exam)
 
