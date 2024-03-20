@@ -32,7 +32,6 @@ Under the old system we had one giant repo that covered all versions going back 
     kubeadm | 1.29.2-1.1 | https://pkgs.k8s.io/core:/stable:/v1.29/deb  Packages
     kubeadm | 1.29.1-1.1 | https://pkgs.k8s.io/core:/stable:/v1.29/deb  Packages
     kubeadm | 1.29.0-1.1 | https://pkgs.k8s.io/core:/stable:/v1.29/deb  Packages
-    111
     ```
 
     To install 1.29.0, you'll use the 1.29.0-1.1 version of the kubeadm package.
