@@ -205,6 +205,8 @@ Use of corporate devices or laptops is not recommended, unless you have an accou
 
 Connecting via a corporate network is also not recommended as company firewall policy may block ports that are required by the exam software. Bear in mind that most companies install a mandatory VPN which kicks in if you use the device from outside of the office - ergo it means you are still connected via the corporate network, so the statements in the previous sentence still apply.
 
+It is also quite common for corporate networks to decode HTTPS traffic at the company firewall, log it and re-encode it before your machine gets it. PSI software may detect this and refuse to run, as it would enable the exam content to be logged, and therefore leaked.
+
 Bear in mind that the online PSI compatability check that you run in a browser is _not_ a conculsive check of everything. It tests only _basic_ compatibility. It does not check for example, programs that are not allowed to be operational duing the exam.
 
 See also [launching the exam](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS#launching-the-exam)
