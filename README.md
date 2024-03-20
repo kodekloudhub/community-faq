@@ -1,15 +1,16 @@
 # KodeKloud Community FAQ
 
-This document answers the most frequently asked questions in the KodeKloud Slack channels. We will be adding to this list periodically.
+This document answers the most frequently asked questions in the KodeKloud social channels. We will be adding to this list periodically.
 
 First and foremost, please be aware of our [Community Guidelines](./docs/code-of-conduct.md), thank you! :smile:
 
 # Contents
 
+* [KodeKloud Forums](#kodekloud-forums)
 * [KodeKloud Platform](#kodekloud-platform)
     * [I have a question about payments or subscriptions](#i-have-a-question-about-payments-or-subscriptions)
     * [I cannot access labs from Udemy](#i-cannot-access-labs-from-udemy)
-* [Buying the Exam](#buying-the-exam)
+* [Purchasing Exams Operated by Linux Foundation](#purchasing-exams-operated-by-linux-foundation)
 * [Exam Environment](#exam-environment)
     * [PSI Bridge](#psi-bridge)
         * [Students' own notes on the Exam Environment](#students-own-notes-on-the-exam-environment)
@@ -44,6 +45,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
         * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
         * [How do I get some SERIOUS practice?](#how-do-i-get-some-serious-practice)
+        * [How do I upgrade a cluster?](#how-do-i-upgrade-a-cluster)
         * [How do I backup etcd?](#how-do-i-backup-etcd)
         * [How do I restore etcd?](#how-do-i-restore-etcd)
         * [What's the deal with jsonpath and custom-columns?](#whats-the-deal-with-jsonpath-and-custom-columns)
@@ -65,6 +67,12 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
     * [CKS](#cks)
     * [Other](#other)
 
+# KodeKloud Forums
+
+As of March 1st 2024 we have discontinued use of Slack. Our online forums are now as follows
+
+* [Community Forum](https://community.kodekloud.com/) - Please go here for all technical questions and discussions about our courses. There are sections here related to all courses.
+* Discord Server - For general conversation. Joining instructions for this should be provided in our courses. If you can't find it, please ask in the Community Forum. Click [here](./docs/Discord_Troubleshooting_Guide.md) for troublshooting joining the discord server.
 
 # KodeKloud Platform
 
@@ -96,7 +104,7 @@ You may find the lab instructions and coupon code on the following course slides
 
 If you are still having issues, then contact support@kodekloud.com as we cannot resolve subscription issues on public forums like Slack.
 
-# Buying the Exam
+# Purchasing Exams Operated by Linux Foundation
 
 To buy any exam run by The Linux Foundation, you need to first sign up with [The Linux Foundation](https://www.linuxfoundation.org/). Once you have an account, known as an LFID, then you can go to their [training portal](https://trainingportal.linuxfoundation.org/) to purchase the exam. For Kubernetes exams, you get two killer.sh sessions included in the purchase. More on this further down this document.
 
@@ -367,6 +375,12 @@ If you have a KodeKloud Pro subscription, you can attempt our Ultimate Mock Exam
 * [Ultimate CKAD Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-application-developer-ckad-mock-exam-series/) - Paid separately.
 * Ultimate CKS Mocks - Future - No ETA.
 * [CKS Challenges](https://kodekloud.com/courses/cks-challenges/) - FREE course.
+
+### How do I upgrade a cluster?
+
+Specifically, the question asks to upgrade to version X of Kubernetes, but I can't find the right version of the packages.
+
+See the dedicated [upgrade FAQ](./docs/cluster-upgrades.md)
 
 ### How do I backup etcd?
 
