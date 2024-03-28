@@ -146,7 +146,7 @@ It is infrequently used in programming, but it's most common use is with the Lin
 | `rw-`        | 6 |
 | `rwx`        | 7 |
 
-So to set the permission `rwxr-xr-x` on a file, it would be `chmod 755 <file>`
+So to set the permission `rwxr-xr-x` on a file, it would be `chmod 755 <file>`. Thus if you were writing a python or go program that needed to set the permissions on a file, it is clearer to declare the value you pass to the `os` package's `chmod` call as octal.
 
 # Hexadecimal
 
