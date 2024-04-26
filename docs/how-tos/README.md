@@ -2,5 +2,10 @@
 
 This section contains mini how-tos to diagnose or fix common issues found in some self-setup instructions in our courses
 
-* VirtualBox
-    * [Fix Networking for CentOS 7](./virtualbox/networking-osboxes-centos7.md) (Ansible Beginners, DevOps Prerequisite courses)
+# VirtualBox
+
+* [Fix Networking for CentOS 7](./virtualbox/networking-osboxes-centos7.md) (Ansible Beginners, DevOps Prerequisite courses)
+
+# Apple Silicon
+
+* [Install VMware Fusion](./apple-silicon/vmware-fusion.md) - Fusion Player is a type-2 hypervisor for Apple Silicon. It does the same job as VirtualBox (which is incompatible with Apple Silicon).
