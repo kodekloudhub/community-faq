@@ -14,7 +14,7 @@ VMware Fusion is a type-2 hypervisor for Apple Silicon computers. This allows yo
 Now let's install Vagrant and configure it to work with VMware
 
 1. Go to the [downloads page](https://developer.hashicorp.com/vagrant/install).
-1. Follow the instructions. It is easiest to installl via homebrew, however if you want to do it manually, you should download the ARM64 version.
+1. Follow the instructions. It is easiest to install via homebrew, however if you want to do it manually, you should download the ARM64 version.
 1. Install the VMware plugin for vagrant
    ```
    vagrant plugin install vagrant-vmware-desktop
@@ -22,6 +22,6 @@ Now let's install Vagrant and configure it to work with VMware
 
 1. Next, install the Vagrant VMware utility
     1. Go [here](https://developer.hashicorp.com/vagrant/install/vmware).
-    1. Download the ARM64 version for macOS whiich is another `.dmg` installer.
+    1. Download the ARM64 version for macOS which is another `.dmg` installer.
     1. Click on the `.dmg` file and then on the package icon in the dialog that follows.
     1. Follow the instructions.

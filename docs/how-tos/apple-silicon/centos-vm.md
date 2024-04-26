@@ -11,7 +11,7 @@ We will be using VMware Fusion as the hypervisor instead of VirtualBox which doe
     vagrant init gyptazy/rocky9.3-arm64
     ```
 
-    This will create `Vagrantfile` in the current directory to spin up a virtual machine with default settings, and a machine nam,e of `default`.
+    This will create `Vagrantfile` in the current directory to spin up a virtual machine with default settings, and a machine name of `default`.
 1. If you want to adjust settings like CPU or memory, then you can apply the settings as directed by the course videos to your `Vagrantfile`.
 1. Start the VM
     ```
@@ -22,4 +22,4 @@ We will be using VMware Fusion as the hypervisor instead of VirtualBox which doe
     vagrant ssh default
     ```
 
-    If you changed the machine name in the `Vagrantfile` then use that name instead of `default.
+    If you changed the machine name in the `Vagrantfile` then use that name instead of `default`.
