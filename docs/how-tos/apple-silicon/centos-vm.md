@@ -24,6 +24,7 @@ We will be using VMware Fusion as the hypervisor instead of VirtualBox which doe
 
     If you changed the machine name in the `Vagrantfile` then use that name instead of `default`.
 1. Deleting the VM
+
     In the same directory where you ran `vagrant up`, run the following
     ```
     vagrant destroy -f
