@@ -8,4 +8,4 @@ This section contains mini how-tos to diagnose or fix common issues found in som
 
 # Apple Silicon
 
-* [Install VMware Fusion](./apple-silicon/vmware-fusion.md) - Fusion Player is a type-2 hypervisor for Apple Silicon. It does the same job as VirtualBox (which is incompatible with Apple Silicon).
+* [Apple Silicon Index](./apple-silicon/README.md)

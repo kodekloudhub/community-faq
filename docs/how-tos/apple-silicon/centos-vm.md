@@ -1,4 +1,4 @@
-# CentOS Virtual Machine
+# How-To: Run CentOS Virtual Machine on Apple Silicon
 
 Whilst there *is* a CentOS offering for Macs, it's buggy therefore we are going to install an alternative distro that is 100% comaptible called Rocky Linux. All CentOS commands found in the courses should also work on this distro.
 
