@@ -11,7 +11,7 @@ Firstly, "distro" is short for "distribution". A Linux distro is an opinionated 
 
 ## What is Linux?
 
-Linux is the core of the operating system, comprising mainly the kernel and the device drivers. The kernel is the identity of Linux and versions of it are released a few times a year. Windows also has a kernel, so Windows 10 and Windows 11 are different versions of the Windows kernel. The kernel provides a device independent interface to your computer and knows how to interface with the CPU, memory and hardware devices, abstracting away the differences between e.g. Intel and ARM processors. Device drivers are plugins to a kernel which manage the specific hardware on your computer - the disks, network interfaces, input/output devices etc. Developers from the various hardware manufacturers contribute device driver code to the Linux project for new hardware they create.
+Linux is the core of the operating system, comprising mainly the kernel and the device drivers. The kernel is the identity of Linux and versions of it are released a few times a year. Windows also has a kernel, so Windows 10 and Windows 11 are different versions of the Windows kernel. The kernel provides a device independent interface to your computer and knows how to interface with the CPU, memory and hardware devices, abstracting away the differences between e.g. Intel and ARM processors. Device drivers are plugins to a kernel which manage the specific hardware on your computer - the disks, network interfaces, input/output devices etc. Developers from the various hardware manufacturers contribute device driver code to the Linux project for new hardware they create. The kernel provides [syscalls](https://en.wikipedia.org/wiki/System_call) for userspace software (everything that isn't part of the kernel itself) running to interact with the computer hardware.
 
 In the Linux world, the kernel and device drivers are open source and are maintained by anyone who wants to involve themselves with the project, and is overseen by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the creator of Linux.
 
@@ -19,7 +19,7 @@ In the Linux world, the kernel and device drivers are open source and are mainta
 
 A distro comprises the following:
 
-1. A version of the Linux Kernel.
+1. A version of the Linux Kernel, selected by the distro's creators based on factors like the stability of it and the number of known issues.
 1. The standard utilities (sed, awk, grep, ls, cat etc., etc.).
 1. A package manager for the distro's specific package management system.
 1. Other pieces of software chosen by the distro's creators, e.g. for a security focused distro like Kali Linux, it will include a lot of software for hacking, penetration testing etc.
@@ -54,13 +54,17 @@ Unlike RHEL, core Debian is free. If you run core Debian, this is generally cons
 
 Some sub-distros of Debian are
 
-* Ubuntu - the most well known one.
+* Ubuntu - the most well known one, which also has many distros forked from it.
 * Linux Mint
 * Kali (mentioned above)
+* Raspbian - Raspberry PI computers.
 
 ### Others
 
-There are quite a few other distros not based on the above that are less common (other than Android). You can see these [here](https://en.wikipedia.org/wiki/List_of_Linux_distributions).
+There are literally hundreds of Linux distributions! However, if you create a piece of software that is a statically linked native code binary (which can be done using languages like golang or C/C++), then that software will run on any of these distros without modification, as long as that distro is on the same CPU architecture that your program was built on.
+
+See [this infographic](https://upload.wikimedia.org/wikipedia/commons/a/ad/2023_Linux_Distributions_Timeline.svg) to get an idea of just how many there are!
+
 
 ## A note about containers
 
@@ -93,6 +97,6 @@ Note that when we look at `/etc/os-release` it is telling us `CentOS`, but when 
 
 Why is this?
 
-It indicates that the lab is running inside a container. The container is built from a CentOS distro, however the machine hosting the container is running Ubuntu on a kernel version of 5.4.0. We can also tell from this that the host is running in Google Cloud!
+It indicates that the lab is running inside a container. The container is built from a CentOS distro, however the machine hosting the container is running Ubuntu on a kernel version of 5.4.0. We can also tell from this that the host is running in Google Cloud! Remember that the kernel is the kernel and it doesn't matter whether there's Ubuntu, Red Hat or anything else on top of it in the host machine. The distro in the container will access the same syscalls in the kernel which adhere to a standard.
 
 You should always check `/etc/os-release` to identify the distro, not `uname`.
