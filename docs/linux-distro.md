@@ -20,6 +20,8 @@ A distro comprises the following:
 
 Many distros are arranged into families based on a well-known core distro. The two main core distros are Red Hat and Debian, so a distro based on one of these will generally have the first three items from the list above taken from the parent distro, and the other two will be specific to that distro.
 
+If you weren't aware, Android is also a Linux distro, specifically created for mobile devices!
+
 Let's look at these two big players and some of the distros created from them.
 
 ### Red Hat
@@ -31,17 +33,22 @@ All these distros will use `yum`/`dnf` for package management
 Some sub-distros based on Red Hat are
 
 * CentOS Stream - Created by Red Hat. Uses a newer version of the kernel than RHEL. Should be safe for production use, but not guaranteed or supported by Red Hat for this.
-* Fedora - Created by RedHat. Uses the absolute latest version of everything. Targeted at people who want to test the latest features.
+* Fedora - Created by Red Hat. Uses the absolute latest version of everything. Targeted at people who want to test the latest features.
 * Rocky Linux - Aims to use the same versions of everything used in the current version of RHEL, so seen as a free alternative for use with production workloads.
 * Alma Linux - Similarly positioned to Rocky.
-* Oracle Linux - Created by Oracle corp and can be bought with a support agreement.
+* Amazon Linux - a default choice for AWS EC2 instances, but can also be downloaded and run as a VM.
+* Oracle Linux - Created by Oracle corp and can be bought with a support agreement for production workloads.
 
 ### Debian
 
-Unlike RHEL, core Debian is free, and is called "Debian". If you run core Debian, this is generally considered production stable and like RedHat, will not use the latest version of the kernel. This family uses the `apt` package manager.
+Unlike RHEL, core Debian is free. If you run core Debian, this is generally considered production stable and like Red Hat, will not use the latest version of the kernel. This family uses the `apt` package manager.
 
 Some sub-distros of Debian are
 
 * Ubuntu - the most well known one.
 * Linux Mint
 * Kali (mentioned above)
+
+## Others
+
+There are quite a few other distros not based on the above that are less common (other than Android). You can see these [here](https://en.wikipedia.org/wiki/List_of_Linux_distributions).
