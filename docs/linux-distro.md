@@ -93,6 +93,6 @@ Note that when we look at `/etc/os-release` it is telling us `CentOS`, but when 
 
 Why is this?
 
-It indicates that the lab is running inside a container. The container is built from a CentOS distro, however the machine hosting the container is running Ubuntu. We can also tell from this that the host is running in Google Cloud!
+It indicates that the lab is running inside a container. The container is built from a CentOS distro, however the machine hosting the container is running Ubuntu on a kernel version of 5.4.0. We can also tell from this that the host is running in Google Cloud!
 
 You should always check `/etc/os-release` to identify the distro, not `uname`.
