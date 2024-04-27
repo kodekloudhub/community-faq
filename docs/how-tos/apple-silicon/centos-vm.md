@@ -1,10 +1,10 @@
 # How-To: Run CentOS Virtual Machine on Apple Silicon
 
-Whilst there *is* a CentOS offering for Macs, it's buggy therefore we are going to install an alternative distro that is 100% comaptible called Rocky Linux. All CentOS commands found in the courses should also work on this distro.
+Whilst there *is* a CentOS offering for Macs, it's buggy therefore we are going to install an alternative [distro](../../linux-distro.md) that is 100% compatible called Rocky Linux. All CentOS commands found in the courses should also work on this distro.
 
 We will be using VMware Fusion as the hypervisor instead of VirtualBox which does not work on Apple Silicon Macs.
 
-1. Ensure you have installed and configured VMware fusion and Vagrant according to [these instuctions](./vmware-fusion.md).
+1. Ensure you have installed and configured VMware fusion and Vagrant according to [these instructions](./vmware-fusion.md).
 1. Open your terminal application and create a directory to work in.
 1. Run the following command to create a `Vagrantfile`
     ```
