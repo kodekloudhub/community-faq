@@ -20,6 +20,8 @@ A distro comprises the following:
 
 Many distros are arranged into families based on a well-known core distro. The two main core distros are Red Hat and Debian, so a distro based on one of these will generally have the first three items from the list above taken from the parent distro, and the other two will be specific to that distro.
 
+Some third party commercial software will refuse to run unless it detects it's installed on genuine RHEL. Not because it wouldn't actually run, but more down to the licensing and support agreements.
+
 If you weren't aware, Android is also a Linux distro, specifically created for mobile devices!
 
 Let's look at these two big players and some of the distros created from them.
