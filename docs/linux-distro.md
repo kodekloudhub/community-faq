@@ -4,7 +4,7 @@ Firstly, "distro" is short for "distribution". A Linux distro is an opinionated 
 
 ## What is Linux
 
-Linux is the core of the operating system, comprising mainly the kernel and the device drivers. The kernel is the identity of Linux and versions of it are released a few times a year. Windows also has a kernel, so Windows 10 and Windows 11 are different versions of the Windows kernel. The kernel provides a device independent interface to your computer and knows how to interface with the CPU and memory, abstracting away the differences between e.g. Intel and ARM processors. Device drivers are plugins to a kernel which manage the hardware on your computer - the disks, network interfaces, input/output devices etc.
+Linux is the core of the operating system, comprising mainly the kernel and the device drivers. The kernel is the identity of Linux and versions of it are released a few times a year. Windows also has a kernel, so Windows 10 and Windows 11 are different versions of the Windows kernel. The kernel provides a device independent interface to your computer and knows how to interface with the CPU, memory and hardware devices, abstracting away the differences between e.g. Intel and ARM processors. Device drivers are plugins to a kernel which manage the specific hardware on your computer - the disks, network interfaces, input/output devices etc. Developers from the various hardware manufacturers contribute device driver code to the Linux project for new hardware they create.
 
 In the Linux world, the kernel and device drivers are open source and are maintained by anyone who wants to involve themselves with the project, and is overseen by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds), the creator of Linux.
 
