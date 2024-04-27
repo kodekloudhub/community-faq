@@ -41,7 +41,7 @@ All these distros will use `yum`/`dnf` for package management
 
 Some sub-distros based on Red Hat are
 
-* CentOS Stream - Created by Red Hat. Uses a newer version of the kernel than RHEL. Should be safe for production use, but not guaranteed or supported by Red Hat for this.
+* CentOS Stream - Created by Red Hat. Uses a newer version of the kernel than RHEL. Should be safe for production use, but not guaranteed or supported by Red Hat for this. Used as a proving ground for what will go into the next GA version of RHEL.
 * Fedora - Created by Red Hat. Uses the absolute latest version of everything. Targeted at people who want to test the latest features.
 * Rocky Linux - Aims to use the same versions of everything used in the current version of RHEL, so seen as a free alternative for use with production workloads.
 * Alma Linux - Similarly positioned to Rocky.
