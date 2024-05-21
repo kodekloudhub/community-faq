@@ -102,7 +102,7 @@ You may find the lab instructions and coupon code on the following course slides
 |5	|Golang for Beginners|
 |9	|Linux Foundation Certified Systems Administrator - LFCS|
 
-If you are still having issues, then contact support@kodekloud.com as we cannot resolve subscription issues on public forums like Slack.
+If you are still having issues, then contact support@kodekloud.com as we cannot resolve subscription issues on public forums like Discord.
 
 # Purchasing Exams Operated by Linux Foundation
 
@@ -143,7 +143,7 @@ In addition to the Q&A below, you can also watch [our video](https://youtu.be/1f
 
 ### Students' own notes on the Exam Environment
 
-Download [this PDF](./student-exam-experiences.pdf) of curated student experiences taken from our Slack channels.
+Download [this PDF](./student-exam-experiences.pdf) of curated student experiences taken from our old Slack channels.
 
 ### Can I use an external monitor?
 
@@ -484,7 +484,7 @@ For this and other `vi` tips, see [vi-101](./docs/vi-101.md)
 ## Specific Questions About The Exam
 * [Specific Questions About Exam](https://trainingsupport.linuxfoundation.org/). Login here with your Linux Foundation credentials. You can raise a ticket to ask questions about anything to do with the exam. The answers you receive here are the ultimate source of truth and trump anything you may read on this page or in any public discussion forums. Expect _at least 3 business_ days for a response. They don't work weekends or US public holidays.
 
-Should a response from Linux Foundation contradict anything on this page, please reach out to a member of the support team in Slack. Thanks!
+Should a response from Linux Foundation contradict anything on this page, please reach out to a member of the support team in Discord. Thanks!
 
 KodeKloud Team.
 

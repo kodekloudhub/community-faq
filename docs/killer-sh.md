@@ -26,7 +26,7 @@ Aim to score more than 90% with time to spare.
 * When timer is at zero you can still do things in the environment but any questions answered after timer is at zero are not scored.
 * Note that the score is recalculated every few minutes. When you end the test, the score for the last question you answered before ending might not be calculated. Wait 5 minutes, then refresh the score page.
 * If you pass the real exam without having used both killer sessions, any remaining sessions are still available to you.
-* You may ask about questions in killer.sh on KodeKloud slack/community forum. NDA applies only to questions from real exams.
+* You may ask about questions in killer.sh on Discord/community forum. NDA applies only to questions from real exams.
 
 See also
 * [Complete killer.sh FAQ](https://killer.sh/faq)

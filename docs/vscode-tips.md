@@ -80,7 +80,7 @@ This requires further validation and is based on the input of one person who rep
 
 Open the lab in a new browser window, then `CTRL + C` and `CTRL + V` should work in the terminal.
 
-Please post in Slack on your own experiences with using VSCode labs in Linux OS.
+Please post in Discord on your own experiences with using VSCode labs in Linux OS.
 
 ## The terminal I had open closed on me!
 

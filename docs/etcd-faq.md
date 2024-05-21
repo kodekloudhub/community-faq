@@ -225,7 +225,7 @@ The output looks like this
 > etcd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;804&nbsp;&nbsp;&nbsp;&nbsp;0.0  0.0 11217856 46296 ?      Ssl  10:10   0:08 /usr/local/bin/etcd --name etcd-server --data-dir=/var/lib/etcd-data --cert-file=/etc/etcd/pki/etcd.pem --key-file=/etc/etcd/pki/etcd-key.pem --peer-cert-file=/etc/etcd/pki/etcd.pem --peer-key-file=/etc/etcd/pki/etcd-key.pem --trusted-ca-file=/etc/etcd/pki/ca.pem --peer-trusted-ca-file=/etc/etcd/pki/ca.pem --peer-client-cert-auth --client-cert-auth --initial-advertise-peer-urls <span>https://</span>10.21.18.18:2380 --listen-peer-urls <span>https://</span>10.21.18.18:2380 --advertise-client-urls <span>https://</span>10.21.18.18:2379 `--listen-client-urls https://10.21.18.18:2379,https://127.0.0.1:2379` --initial-cluster-token etcd-cluster-1 --initial-cluster etcd-server=https://10.21.18.18:2380 --initial-cluster-state new<br>
 root&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1106&nbsp;&nbsp;&nbsp;&nbsp;0.0  0.0  13448  1064 pts/0    S+   10:17   0:00 grep etcd
 
-In the above, there is one instance of `etcd` running. If there were more, then you would see additional big blocks of `etcd` arguments. It should be highly unusual to be faced with more than one `etcd` running on the same host in the exam. If you have seen more than one `etcd`, please post in the [slack channel](https://kodekloud.slack.com/archives/CHMV3P9NV). Don't include full details of the question, as that would violate NDA. Only state that you have seen multiple external etcd processes.
+In the above, there is one instance of `etcd` running. If there were more, then you would see additional big blocks of `etcd` arguments. It should be highly unusual to be faced with more than one `etcd` running on the same host in the exam. If you have seen more than one `etcd`, please post in Discord. Don't include full details of the question, as that would violate NDA. Only state that you have seen multiple external etcd processes.
 
 In the exam, use the `mousepad` application to take notes.
 
@@ -321,7 +321,7 @@ In the exam, use the `mousepad` application to take notes.
 
 ### Multiple etcd processes
 
-It is highly unlikely you will find this configuration, but if you do, please report it in the [slack channel](https://kodekloud.slack.com/archives/CHMV3P9NV).
+It is highly unlikely you will find this configuration, but if you do, please report it on Discord.
 
 If there's more than one, you need to identify the correct one! In the output of the above `ps -aux | grep etcd` command, you should be able to see the `--listen-client-urls` argument. Note down the port numbers from this URL for each `etcd` process.
 
