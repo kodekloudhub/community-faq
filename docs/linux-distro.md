@@ -73,7 +73,7 @@ See [this infographic](https://upload.wikimedia.org/wikipedia/commons/a/ad/2023_
 
 ## A note about containers
 
-When you run containers in Docker or Kubernetes, the base images from which you build your containers are also based on distros. The important thing to note here is that the image *does not* contain a kernel. It will only contain items 2, 3 and 4 from the list above. This is because the container will use the kernel of the host machine, and you cannot run GUI desktops inside containers.
+When you run containers in Docker or Kubernetes, the base images from which you build your containers are also based on distros. The important thing to note here is that the image *does not* contain a kernel. It will only contain items 2, 3 and possibly 4 (Alpine doesn't by default) from the list above. This is because the container will use the kernel of the host machine, and you cannot run GUI desktops inside containers.
 
 Some sharper eyed students have noticed the following when running our labs that are based on CentOS:
 
