@@ -59,6 +59,10 @@ Some sub-distros of Debian are
 * Kali (mentioned above)
 * Raspbian - Raspberry PI computers.
 
+### Special Mention - Alpine
+
+[Alpine](https://www.alpinelinux.org/) is a distro that's favored by people building Docker images, due to its extremely small size. The entire distribution is about 5 megabytes because it is cut down to just a shell and the basic command line tools, though many popular packages are ported to its package repository, which is accessed using the `apk` command. This minimalist distro also reduces the attack surface as less software available in a container means less that an attacker can do. See also the [note about containers](#a-note-about-containers) below.
+
 ### Others
 
 There are literally hundreds of Linux distributions! However, if you create a piece of software that is a statically linked native code binary (which can be done using languages like golang or C/C++), then that software will run on any of these distros without modification, as long as that distro is on the same CPU architecture that your program was built on.
