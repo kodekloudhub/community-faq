@@ -4,6 +4,7 @@
 * [What is a distro?](#what-is-a-distro)
     * [Red Hat](#red-hat)
     * [Debian](#debian)
+    * [Special Mention - Alpine](#special-mention---alpine)
     * [Others](#others)
 * [A note about containers](#a-note-about-containers)
 
