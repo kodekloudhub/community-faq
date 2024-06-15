@@ -2,6 +2,11 @@
 
 Despite the title, the issue here is not entirely the volume mount itself, but also the content of the configmap which is being mounted. The site is not working because the nginx configuration in the configmap is incorrect.
 
+**HINT** - This is all about the path to where the web server files are stored which is an emptyDir volume mounted in both containers. The mount paths to this from both containers and also the root path in the nginx configuration contained in the configmap must all be in agreement. Once that is fixed and you then copy the PHP file into the directory which is the emptyDir volume, then it will pass.
+
+
+<details>
+<summary>Expand solution</summary>
 1. Inspect the pod
 
     ```
@@ -74,3 +79,5 @@ Despite the title, the issue here is not entirely the volume mount itself, but a
 1. Test it by pressing the website button. You should see a page like this
 
     ![](../img/kube-14-01.png)
+
+</details>
