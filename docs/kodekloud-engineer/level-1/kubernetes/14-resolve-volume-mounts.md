@@ -7,6 +7,7 @@ Despite the title, the issue here is not entirely the volume mount itself, but a
 
 <details>
 <summary>Expand solution</summary>
+
 1. Inspect the pod
 
     ```
