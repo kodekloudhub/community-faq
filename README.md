@@ -53,6 +53,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
         * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
         * [How-to: Install Ingress in the KodeKloud playgrounds](#how-to-install-ingress-in-the-kodekloud-playgrounds)
+        * [What is an operator in Kubernetes?](#what-is-an-operator-in-kubernetes)
         * [What's the deal with Certificate Signing Requests?](./docs/certificate-signing-requests.md)
 * [Other](#other)
     * [Labs are broken/crashing/not loading](#labs-are-brokencrashingnot-loading)
@@ -430,6 +431,10 @@ See the [Crashed API Server](./docs/diagnose-crashed-apiserver.md) page.
 ### How-to: Install Ingress in the KodeKloud playgrounds
 
 See [this guide](./docs/howto-install-ingress-on-kk-playground.md).
+
+### What is an operator in Kubernetes?
+
+See [this guide](./docs/kube-operators/README.md)
 
 # Other
 
