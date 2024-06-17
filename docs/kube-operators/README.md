@@ -8,6 +8,8 @@ Basically, it is a workload usually running as a deployment just like all other 
     * Custom Resource controllers have to be installed as a separate deployment along with the Custom Resource Definition(s) they will manage (more on this later).
 * Installer - These operators are used to manage the installation of other software that itself has a complicated installation process, again via the use of Custom Resource Definitions. Prometheus is typically installed this way - when you `kubectl apply` a `Prometheus` resource manifest, then the operator will install and configure an instance of Prometheus automatically.
 
+Note that for CKAD it is not necessary to know how to create an operator. You will only need to know what they are (above) and how they relate to Custom Resources. The course material on custom resources and custom resource definitions is sufficient.
+
 ## How do they work?
 
 The software in the operator pods watch for changes to custom resources they manage. When they see a change (one is created, deleted or edited), then they act on the changes to bring the cluster to the state desired by the resource. For example, if you edit `replicas` of a deployment, the deployment controller sees this and updates the replica count in the manifest for the repliacset it controls. The replicaset controller responds to this change by creating or deleting pods as appropriate.
