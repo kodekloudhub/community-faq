@@ -1,6 +1,6 @@
 # What is an Operator in Kubernetes?
 
-Basically, it is a workload usually running as a deployment just like all other workloads. More speficially its purpose is to do a job involved in maintaining desired state of the cluster. There are a few kinds of operator...
+Basically, it is a workload usually running as a deployment just like all other workloads. More speficially its purpose is to do a job involved in maintaining desired state of the cluster. We can braodly categorize them as...
 
 * Controller - These operators are responsible for managing cluster resources.
     * The kube-controller-manager is a collection of such operators all bundled into a single process and is responsible for nearly all the resources that are avaiaible by default in a kubernetes installation, e.g. `Deployment`, `ReplicaSet`, `StatefulSet`, `PersistentVolume` etc.
