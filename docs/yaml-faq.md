@@ -294,7 +294,7 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
       - name: nginx-container
         image: nginx:latest
       - name: redis-container
-        image: redis:latsest
+        image: redis:latest
     ```
 
 * Unknown field
