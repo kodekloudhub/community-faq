@@ -287,6 +287,16 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
         image: nginx:latest
     ```
 
+    If you are creating a multi-container pod, then note how the second container begins with `-`
+
+    ```yaml
+    containers:
+      - name: nginx-container
+        image: nginx:latest
+      - name: redis-container
+        image: redis:latsest
+    ```
+
 * Unknown field
 
     ```
