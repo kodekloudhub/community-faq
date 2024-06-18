@@ -264,6 +264,29 @@ Some common errors you'll get from Kubernetes components when your YAML is malfo
       containers:
       - name: nginx
     ```
+
+* Incorrect indentation in lists
+
+    ```
+    yaml: line 8: did not find expected '-' indicator
+    ```
+
+    The error is caused by
+
+    ```yaml
+    containers:
+      - name: nginx-container
+      image: nginx:latest
+    ```
+
+    `containers` is a list, therefore everything at the first indent beneath `containers` must begin with `-` to indicate the next container in the list of containers. The error here is that `image` is part of the container with name `nginx-container` therefore should be indented at the same level as `name`. Therefore to correct it, indent `image` further
+
+    ```yaml
+    containers:
+      - name: nginx-container
+        image: nginx:latest
+    ```
+
 * Unknown field
 
     ```
