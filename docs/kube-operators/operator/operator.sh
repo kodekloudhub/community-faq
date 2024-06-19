@@ -25,8 +25,15 @@ do
         # Get the number of replicas there should be
         replicas=$(kubectl get BashReplicaSet -n $namespace $resource -o jsonpath='{.spec.replicas}')
 
+        # Build a selector for pods from the custom resource's matchLabels
+        # Output resource as JSON, then
+        # - jq expression turns "app: nginx" into "app=nginx"
+        # - awk will join multiple labels into a comma list, e.g. "app=nginx,foo=bar"
+        # - sed will remove any trailing ','
+        selector=$(kubectl get BashReplicaSet -n $namespace $resource -o json | jq -r '.spec.selector.matchLabels | to_entries[] | join("=")' | awk -vORS=, '{ print $1 }' | sed 's/,$/\n/')
+
         # Check if we have the right number of pods
-        pod_count=$(kubectl get pods -n $namespace --selector pod-template-hash=$pod_template_hash --no-headers | wc -l)
+        pod_count=$(kubectl get pods -n $namespace --selector $selector --no-headers | wc -l)
 
         # If we have the right number of replicas, then move on
         [ $pod_count -eq $replicas ] && continue
@@ -81,7 +88,7 @@ do
             difference=$(( 0 - $difference ))
 
             # Now select the names of "difference" number of pods and delete them.
-            for pod in $(kubectl get pods -n $namespace --selector pod-template-hash=$pod_template_hash -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | head -${difference})
+            for pod in $(kubectl get pods -n $namespace --selector $selector -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}' | head -${difference})
             do
                 kubectl delete pod -n $namespace $pod
             done
