@@ -9,10 +9,12 @@
 # It simply ensures the number of running pods matches the replica count in the resource spec.
 
 # Reconcilication loop - watching for changes to any instance of the custom resource BashReplicaSet
+echo "Watching for changes..."
+
 while true
 do
     # Iterate the custom resources across all namespaces
-    for custom_resource in $(kubectl get BashReplicaSet -A -o jsonpath='{range .items[*]}{.metadata.namespace}/{.metadata.name}{end}')
+    for custom_resource in $(kubectl get BashReplicaSet -A -o jsonpath='{range .items[*]}{.metadata.namespace}/{.metadata.name}{end}' 2>/dev/null)
     do
         # Get the namespace and custom resource name
         namespace=$(cut -d / -f 1 <<< $custom_resource)
@@ -33,7 +35,7 @@ do
         selector=$(kubectl get BashReplicaSet -n $namespace $resource -o json | jq -r '.spec.selector.matchLabels | to_entries[] | join("=")' | awk -vORS=, '{ print $1 }' | sed 's/,$/\n/')
 
         # Check if we have the right number of pods
-        pod_count=$(kubectl get pods -n $namespace --selector $selector --no-headers | wc -l)
+        pod_count=$(kubectl get pods -n $namespace --selector $selector --no-headers 2>/dev/null | wc -l)
 
         # If we have the right number of replicas, then move on
         [ $pod_count -eq $replicas ] && continue
@@ -56,16 +58,17 @@ do
             # so that they can be owned by other resources and a dependency relationship created.
             #
             # If the BashReplicaSet resource is deleted, it will also delete any pods whose ownerReference is the BashReplicaSet which is desired behaviour.
+
+            # get UID of the BashReplicaSet for owner reference
+            uid=$(kubectl get BashReplicaSet -n $namespace $resource -o jsonpath='{.metadata.uid}')
+
+            # Get the pod spec into a temporary JSON file
+            kubectl get BashReplicaSet -n $namespace $resource -o jsonpath='{.spec.template}' > /tmp/pod.spec
+
             for pod_no in $(seq 1 $difference)
             do
                 # generate random 5 character suffix for pod name
                 suffix=$(tr -dc a-z0-9 </dev/urandom 2>/dev/null | head -c 5)
-
-                # get UID of the BashReplicaSet for owner reference
-                uid=$(kubectl get BashReplicaSet -n $namespace $resource -o jsonpath='{.metadata.uid}')
-
-                # Get the pod spec into a temporary JSON file
-                kubectl get BashReplicaSet -n $namespace $resource -o jsonpath='{.spec.template}' > /tmp/$pod_hash.spec
 
                 # Create JSON to merge into the pod spec to make it a valid pod spec
                 # Need to add apiVersion and kind, along with a label we can use to identify the pods we create (the template hash),
@@ -73,14 +76,18 @@ do
                 echo '{"apiVersion": "v1", "kind": "Pod", "metadata": {"name": "'${resource}-${suffix}'", "labels": {"pod-template-hash": "'${pod_template_hash}'"}, "ownerReferences": [{"apiVersion": "example.com/v1", "kind": "BashReplicaSet", "name": "'$resource'", "uid": "'$uid'"}]}}' > /tmp/$pod_hash.meta
 
                 # Merge template with stuff created in the line above
-                jq -s '.[0] * .[1]' /tmp/$pod_hash.spec /tmp/$pod_hash.meta > /tmp/new-pod.json
+                jq -s '.[0] * .[1]' /tmp/pod.spec /tmp/$pod_hash.meta > /tmp/new-pod.json
 
                 # Create the pod
                 kubectl apply -n $namespace -f /tmp/new-pod.json
 
-                # Clean temp files
-                rm /tmp/$pod_hash.spec /tmp/$pod_hash.meta /tmp/new-pod.json
+                # Clean temp files for pod
+                rm /tmp/$pod_hash.meta /tmp/new-pod.json
             done
+
+            # Clean temp file holding pod template
+            rm /tmp/pod.spec
+
         elif [ $difference -lt 0 ]
         then
             # We need to delete this number of pods
@@ -93,5 +100,7 @@ do
                 kubectl delete pod -n $namespace $pod
             done
         fi
+
+        echo "Watching for changes..."
     done
 done
