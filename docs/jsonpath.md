@@ -443,25 +443,34 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
 * `.name` gets the current container's name for the comparison. If it equals the given value, the list iteration stops and that entry is selected.
 * Finally, to the right of the square brackets we state which property of the selected list entry we want to print, i.e. the selected container's image.
 
-**Another Example**
+### More exmaples
 
-List the `InternalIP` of all nodes of the cluster. All IPs should be on a single line and separated by a space.
+* List the `InternalIP` of all nodes of the cluster. All IPs should be on a single line and separated by a space.
 
-```
-kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'
-```
+    ```
+    kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'
+    ```
 
-To see how this query works, get a node with `-o yaml` and see if you can spot it.
+    To see how this query works, get a node with `-o yaml` and see if you can spot it.
 
 
-You can use other operators, e.g.
+    You can use other operators, e.g.
 
-* `!=` - not equals
+    * `!=` - not equals
 
-and comparison operators when the field's value is numeric
-* `<` - less than
-* `>` - greater than
-* `<=` - less than or equal
-* `>=` - greater than or equal
+    and comparison operators when the field's value is numeric
+    * `<` - less than
+    * `>` - greater than
+    * `<=` - less than or equal
+    * `>=` - greater than or equal
 
-There are others too. See [here](https://docs.oracle.com/cd/E60058_01/PDF/8.0.8.x/8.0.8.0.0/PMF_HTML/JsonPath_Expressions.htm)
+    There are others too. See [here](https://docs.oracle.com/cd/E60058_01/PDF/8.0.8.x/8.0.8.0.0/PMF_HTML/JsonPath_Expressions.htm)
+
+* Get the time at which the containers in a pod became ready
+
+    Returning to the [pod example above](#jsonpath), you can see in `status` section there is a condition of type `ContainersReady`. We need the `lastTransitionTime` from that...
+
+    ```
+    kubectl get pod test jsonpath='{.status.conditions[?(@.type == "ContainersReady")].lastTransitionTime}'
+    ```
+
