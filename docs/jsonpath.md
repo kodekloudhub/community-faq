@@ -445,7 +445,7 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
 
 ### More examples
 
-* List the `InternalIP` of all nodes of the cluster. All IPs should be on a single line and separated by a space.
+1. List the `InternalIP` of all nodes of the cluster. All IPs should be on a single line and separated by a space.
 
     ```
     kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="InternalIP")].address}'
@@ -466,7 +466,15 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
 
     There are others too. See [here](https://docs.oracle.com/cd/E60058_01/PDF/8.0.8.x/8.0.8.0.0/PMF_HTML/JsonPath_Expressions.htm)
 
-* Get the time at which the containers in a pod became ready
+1. List the `InternalIP` of all nodes of the cluster. All IPs should be on separate lines.
+
+    A slight variation on the first example. This combines formatting and query by property.
+
+    ```
+    kubectl get nodes -o jsonpath='{range .items[*]}{.status.addresses[?(@.type=="InternalIP")].address}{"\n"}{end}'
+    ```
+
+1. Get the time at which the containers in a pod became ready
 
     Returning to the [pod example above](#jsonpath), you can see in `status` section there is a condition of type `ContainersReady`. We need the `lastTransitionTime` from that...
 
