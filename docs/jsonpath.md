@@ -377,22 +377,22 @@ for _, pod := range items {
 You can use any other plain text and/or get multiple fields in the same jsonpath query and format them nicely.
 
 ```
-kubectl get pods -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{","}{.status.podIP}{"\n"}{end}'
+kubectl get pods -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{"/"}{.status.podIP}{"\n"}{end}'
 ```
 
 yields e.g.
 
 ```
-default/fah-cpu-7c66fc7948-txvpg,10.244.0.7
-default/fah-cpu-7c66fc7948-vzpbz,10.244.0.9
-default/mando-57fff9d5f5-rdxrx,10.244.0.3
-kube-system/coredns-66bff467f8-r9g25,10.244.0.2
-kube-system/coredns-66bff467f8-xfd5k,10.244.0.5
-kube-system/etcd-kind-control-plane,172.18.0.2
-kube-system/kindnet-g6jvd,172.18.0.2
+default/fah-cpu-7c66fc7948-txvpg/10.244.0.7
+default/fah-cpu-7c66fc7948-vzpbz/10.244.0.9
+default/mando-57fff9d5f5-rdxrx/10.244.0.3
+kube-system/coredns-66bff467f8-r9g25/10.244.0.2
+kube-system/coredns-66bff467f8-xfd5k/10.244.0.5
+kube-system/etcd-kind-control-plane/172.18.0.2
+kube-system/kindnet-g6jvd/172.18.0.2
 ```
 
-This is useful when you need to process multiple values from each resource in a bash for loop. Due to the way `for` processing works in shell, you need all the values your want from each resource ss a single string without spaces, i.e. like the output above. Then within the body of the for loop you split this string on the delimiter which in this case is forward slash (`/`).
+This is useful when you need to process multiple values from each resource in a bash for loop. Due to the way `for` processing works in shell, you need all the values your want from each resource as a single string without spaces, i.e. like the output above. Then within the body of the for loop you split this string on the delimiter which in this case is forward slash (`/`).
 
 ```bash
 for pod in $(kubectl get pods -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{","}{.status.podIP}{"\n"}{end}')
