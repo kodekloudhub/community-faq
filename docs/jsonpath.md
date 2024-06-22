@@ -443,7 +443,7 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
 * `.name` gets the current container's name for the comparison. If it equals the given value, the list iteration stops and that entry is selected.
 * Finally, to the right of the square brackets we state which property of the selected list entry we want to print, i.e. the selected container's image.
 
-### More exmaples
+### More examples
 
 * List the `InternalIP` of all nodes of the cluster. All IPs should be on a single line and separated by a space.
 
