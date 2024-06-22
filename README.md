@@ -430,7 +430,7 @@ See the [Crashed API Server](./docs/diagnose-crashed-apiserver.md) page.
 
 ### How-to: Install Ingress in the KodeKloud playgrounds
 
-See [this guide](./docs/howto-install-ingress-on-kk-playground.md).
+See [this guide](./docs/how-tos/howto-install-ingress-on-kk-playground.md).
 
 ### What is an operator in Kubernetes?
 
