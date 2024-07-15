@@ -167,32 +167,7 @@ See also [What is a distinguished name](https://knowledge.digicert.com/generalin
 
 ## Creating a CertificateSigningRequest
 
-1. Get the base64 content of the CSR file
-
-    ```bash
-    cat john.csr | base64
-    ```
-
-    Copy the output of the above command
-
-1. Create a `CertificateSigningRequest` manifest
-
-    ```yaml
-    apiVersion: certificates.k8s.io/v1
-    kind: CertificateSigningRequest
-    metadata:
-      name: john-developer  # <- This can be anything you like. Doesn't have to be "john".
-    spec:
-      request:  # <- Paste the output you copied above here.
-      signerName: kubernetes.io/kube-apiserver-client
-      expirationSeconds: 86400  # one day before the request is automatically revoked if you haven't approved it.
-    usages:
-    - digital signature
-    - key encipherment
-    - client auth
-    groups:
-    - system:authenticated
-    ```
+See the examples above.
 
 ## See Also
 
