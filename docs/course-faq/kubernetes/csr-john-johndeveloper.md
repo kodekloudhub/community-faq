@@ -78,8 +78,6 @@ Now when the cluster admin comes to add the user from the CSR file, then the adm
    signerName: kubernetes.io/kube-apiserver-client
    request: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSB-some-stuff-truncated-for-brevity==
    usages:
-   - digital signature
-   - key encipherment
    - client auth
    groups:
    - system:authenticated
@@ -96,8 +94,6 @@ The important thing to know is that the `name` on this `CertificateSigningReques
    signerName: kubernetes.io/kube-apiserver-client
    request: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURSB-some-stuff-truncated-for-brevity==
    usages:
-   - digital signature
-   - key encipherment
    - client auth
    groups:
    - system:authenticated
@@ -105,6 +101,41 @@ The important thing to know is that the `name` on this `CertificateSigningReques
 
 ...but leave all the other properties (and crucially the base64 data in `request`) unchanged, the result is still the same. The user's name is still `john`; it does not suddenly become `ipsum-lorem`!<br/>You must remember that the user's name is embedded in the `request` data, as coming from the `.csr` file.
 
+**PRO TIP!**
+
+When creating a CertificateSigningRequest from a CSR, save yourself the trouble of trying to paste the base64 content of the `.csr` file into the resource and possibly messing up the copy/paste. Instead turn the resource creation into a shell command.
+
+1. Open vi on a new file, let's call it `create-csr.sh`
+1. Copy the [template from the documentation](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#create-certificatessigningrequest) and paste that into the editor.
+1. Delete the base64 text that comes after `request:`
+    1. Hit ESC to return vi to Normal mode.
+    1. Move cursor to the start of the base64 text, then hit `SHIFT-D` to delete to end of line.
+1. Hit `A` to re-enter insert mode at end of current line.
+1. Now fill in `$(cat john.csr | base64 -w 0)`, then edit the name to be the correct one. It should now look like this:
+
+    ```bash
+    cat <<EOF | kubectl apply -f -
+    apiVersion: certificates.k8s.io/v1
+    kind: CertificateSigningRequest
+    metadata:
+      name: john-developer
+    spec:
+      request: $(cat john.csr | base64 -w 0)
+      signerName: kubernetes.io/kube-apiserver-client
+      expirationSeconds: 86400  # one day
+      usages:
+      - client auth
+    groups:
+    - system:authenticated
+    EOF
+    ```
+1. Save and exit vi.
+1. Apply the resource
+
+    ```bash
+    bash -c create-csr.sh
+    ```
+Anyone having knowledge of Linux and shell will recognize this as substitution in a HERE document, which is being piped into `kubectl apply`.
 
 ## Creating a key and csr
 
