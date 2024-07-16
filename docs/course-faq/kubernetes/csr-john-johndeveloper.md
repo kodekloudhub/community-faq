@@ -109,8 +109,8 @@ When creating a CertificateSigningRequest from a CSR, save yourself the trouble 
 1. Copy the [template from the documentation](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#create-certificatessigningrequest) and paste that into the editor.
 1. Delete the base64 text that comes after `request:`
     1. Hit ESC to return vi to Normal mode.
-    1. Move cursor to the start of the base64 text, then hit `SHIFT-D` to delete to end of line.
-1. Hit `A` to re-enter insert mode at end of current line.
+    1. Move cursor to the start of the base64 text, then hit `SHIFT + D` to delete to end of line.
+1. Hit `SHIFT + A` to re-enter insert mode at end of current line.
 1. Now fill in `$(cat john.csr | base64 -w 0)`, then edit the name to be the correct one. It should now look like this:
 
     ```bash
