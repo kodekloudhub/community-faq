@@ -29,9 +29,9 @@ fi
 
 echo "PRIMARY_IP=${MY_IP}" >> /etc/environment
 
-cat <<EOF > /usr/local/bin/public-ip
+cat <<EOF > /usr/bin/primary-ip
 #!/usr/bin/env sh
 echo -n $MY_IP
 EOF
 
-chmod +x /usr/local/bin/public-ip
+chmod +x /usr/bin/primary-ip
