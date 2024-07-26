@@ -2,6 +2,10 @@
 
 PACKAGES=$1
 
+if [ -z "$PACKAGES" ]
+    exit 0
+fi
+
 # DISTRO will be "debian" or "rhel"
 DISTRO=$(. /etc/os-release ; echo $ID_LIKE | cut -d ' ' -f 1)
 
