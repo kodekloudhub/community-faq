@@ -1,6 +1,6 @@
 ################################################################
 #
-# Everything below here is for multi-platform support
+# Everything in here is for multi-platform support
 # Handles differences between Windows, Intel Mac, AS Mac etc.
 #
 # Do not edit unless you _really_ know what you are doing!
