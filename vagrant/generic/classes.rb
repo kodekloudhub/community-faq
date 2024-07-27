@@ -40,6 +40,13 @@ module OS
   end
 end
 
+module Powershell
+  def powershell(cmd)
+    encoded_cmd = Base64.strict_encode64(cmd.encode("utf-16le"))
+    return %x{powershell.exe -EncodedCommand #{encoded_cmd}}.chomp()
+  end
+end
+
 # Hypervisor is an abstraction for the type of virtualization running on the host.
 # - ARM machines = VMware
 # - Intel machines = VirtualBox
@@ -116,9 +123,18 @@ class Hypervisor
              distro: :debian,
            }
   end
+
+  def can_bridge?
+    false
+  end
+
+  def bridge_adapter
+    ""
+  end
 end
 
 class VMware < Hypervisor
+  # TODO - work out bridging
   def set_hostname(hostname:)
     @@node.vm.provision "set-hostname", type: "shell", inline: "sudo hostnamectl set-hostname #{hostname}"
   end
@@ -132,6 +148,8 @@ class VMware < Hypervisor
 end
 
 class VirtualBox < Hypervisor
+  include Powershell
+
   def set_hostname(hostname:)
     @@node.vm.hostname = hostname
     # virtualbox UI name
@@ -146,6 +164,26 @@ class VirtualBox < Hypervisor
       v.memory = memory
     end
   end
+
+  def can_bridge?
+    # TODO linux one day
+    not OS.linux?
+  end
+
+  def bridge_adapter
+    if OS.windows?
+      return self.powershell("Get-NetRoute -DestinationPrefix 0.0.0.0/0 | Get-NetAdapter | Select-Object -ExpandProperty InterfaceDescription")
+    elsif OS.mac?
+      sh = <<~SHEL
+        iface=$(netstat -rn -f inet | grep '^default' | sort | head -1 | awk '{print $4}')
+        interface=$(VBoxManage list bridgedifs | awk '/^Name:/ { print }' | sed -e 's/^Name:[ ]*\(.*\)/\1/' | grep $iface)
+        echo -n $interface
+      SHEL
+      return %x{ #{sh} }.chomp()
+    else
+      return ""
+    end
+  end
 end
 
 class DetectionError < RuntimeError
@@ -158,6 +196,8 @@ class Host
   RAM = 2
   OS_NAME = 3
   HV_EXISTS = 4
+
+  @@specs = nil
 
   def self.get()
     if OS.apple_silicon?
@@ -181,9 +221,50 @@ class Host
 end
 
 class WindowsHost < Host
-  @specs = []
+  include Powershell
 
-  def initialize
+  def physical_ram_gb()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[RAM].to_i
+  end
+
+  def cpu_count()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[CPU_COUNT].to_i
+  end
+
+  def cpu_name()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[CPU_NAME]
+  end
+
+  def os_name()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[OS_NAME]
+  end
+
+  def hypervisor_name()
+    return "VirtualBox"
+  end
+
+  def hypervisor_exists?
+    if not @@specs
+      self.get_sysinfo()
+    end
+    @@specs[HV_EXISTS] == "1"
+  end
+
+  private
+
+  def get_sysinfo()
     ps = <<~PS
       $p = Get-CimInstance Win32_Processor | Select-Object NumberOfLogicalProcessors, Name
       $m = (Get-CimInstance Win32_PhysicalMemory | Measure-Object -Property Capacity -Sum).Sum / 1GB
@@ -198,46 +279,46 @@ class WindowsHost < Host
       catch {}
       Write-Host "$($p.Name)/$($p.NumberOfLogicalProcessors)/$m/$o/$hv"
     PS
-    @specs = self.powershell(ps).split("/")
-  end
-
-  def physical_ram_gb()
-    return @specs[RAM].to_i
-  end
-
-  def cpu_count()
-    return @specs[CPU_COUNT].to_i
-  end
-
-  def cpu_name()
-    return @specs[CPU_NAME]
-  end
-
-  def os_name()
-    return @specs[OS_NAME]
-  end
-
-  def hypervisor_name()
-    return "VirtualBox"
-  end
-
-  def hypervisor_exists?
-    @specs[HV_EXISTS] == "1"
-  end
-
-  private
-
-  # Run a powershell command
-  def powershell(cmd)
-    encoded_cmd = Base64.strict_encode64(cmd.encode("utf-16le"))
-    return %x{powershell.exe -EncodedCommand #{encoded_cmd}}.chomp()
+    @@specs = self.powershell(ps).split("/")
   end
 end
 
 class MacHost < Host
-  @specs = []
+  def physical_ram_gb()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[RAM].to_i / 1073741824
+  end
 
-  def initialize
+  def cpu_count()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[CPU_COUNT].to_i
+  end
+
+  def cpu_name()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[CPU_NAME]
+  end
+
+  def os_name()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[OS_NAME]
+  end
+
+  def get_system_name()
+    return "Mac"
+  end
+
+  private
+
+  def get_sysinfo()
     sh = <<~SHEL
       pc=$(sysctl -n "hw.ncpu")
       m=$(sysctl -n "hw.memsize")
@@ -246,27 +327,7 @@ class MacHost < Host
       os_ver=$(sw_vers | awk '/ProductVersion/ { print $2 }')
       echo "${pn}/${pc}/${m}/${os_name} ${os_ver}"
     SHEL
-    @specs = %x{ #{sh} }.chomp().split("/")
-  end
-
-  def physical_ram_gb()
-    return @specs[RAM].to_i / 1073741824
-  end
-
-  def cpu_count()
-    return @specs[CPU_COUNT].to_i
-  end
-
-  def cpu_name()
-    return @specs[CPU_NAME]
-  end
-
-  def os_name()
-    return @specs[OS_NAME]
-  end
-
-  def get_system_name()
-    return "Mac"
+    @@specs = %x{ #{sh} }.chomp().split("/")
   end
 end
 
@@ -291,9 +352,37 @@ class AppleSiliconHost < MacHost
 end
 
 class LinuxHost < Host
-  @specs = []
+  def physical_ram_gb()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[RAM].to_i / 1048576
+  end
 
-  def initialize
+  def cpu_count()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[CPU_COUNT].to_i
+  end
+
+  def cpu_name()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[CPU_NAME]
+  end
+
+  def os_name()
+    if not @@specs
+      self.get_sysinfo()
+    end
+    return @@specs[OS_NAME]
+  end
+
+  private
+
+  def get_sysinfo
     sh = <<~SHEL
       m=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
       pc=$(nproc)
@@ -301,23 +390,7 @@ class LinuxHost < Host
       o=$(source /etc/os-release && echo -n "$NAME $VERSION")
       echo "${pn}/${pc}/${m}/${o}"
     SHEL
-    @specs = %x{ #{sh} }.chomp().split("/")
-  end
-
-  def physical_ram_gb()
-    return @specs[RAM].to_i / 1048576
-  end
-
-  def cpu_count()
-    return @specs[CPU_COUNT].to_i
-  end
-
-  def cpu_name()
-    return @specs[CPU_NAME]
-  end
-
-  def os_name()
-    return @specs[OS_NAME]
+    @@specs = %x{ #{sh} }.chomp().split("/")
   end
 end
 
