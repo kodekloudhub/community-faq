@@ -22,15 +22,7 @@ d. Once configured correctly, you can test the website using `curl http://stapp0
 
 ## Solution
 
-Firstly, note that the PHP versions 7.2, 7.3, 7.4 and 8.0 are available directly from the configured package repos. You can see this by running
-
-```
-sudo dnf module list php
-```
-
-If the question is asking for a version that is not in this list, it becomes much harder as you would have to source the version from an external repo. Press `Try Later` and reset until the question asks for one of the above versions.
-
-1. SSH to the app server requested
+1. SSH to the app server requested - it may be a different app server for you.
 
     ```bash
     ssh steve@stapp02
@@ -45,7 +37,8 @@ If the question is asking for a version that is not in this list, it becomes muc
 1. Install `ngnix` and `php-fpm`
 
     ```bash
-    dnf module -y install nginx php:7.4/common
+    dnf install -y nginx
+    dnf module -y install php:8.1/common
     ```
 
 1.  Configure php-fpm
@@ -62,7 +55,7 @@ If the question is asking for a version that is not in this list, it becomes muc
 1. Configure nginx
 
     1. Open `/etc/nginx/nginx.conf` in vi
-    1. Set given port number
+    1. Set given port number (which may be different for you)
     1. Set given HTML directory
     1. Set location block for PHP files.
     1. The `server` configuration should look like this when completed
@@ -123,5 +116,5 @@ If the question is asking for a version that is not in this list, it becomes muc
     logout
     Connection to stapp02 closed.
     thor@jump_host ~$ curl http://stapp02:8094/index.php
-    Welcome to xFusionCorp Industries!thor@jump_host ~$ 
+    Welcome to xFusionCorp Industries!thor@jump_host ~$
     ```
