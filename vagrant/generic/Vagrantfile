@@ -3,54 +3,44 @@
 
 require_relative "./classes"
 
-# Define virtual machines to be created here.
-VIRTUAL_MACHINES = {
-  private_network: "192.168.56.",   # Network prefix for VM network if using NAT mode
-  ip_start: 11,                     # First IP to use for VMs on NAT mode private netowrk
-  build_mode: "NAT",                # NAT = use a private network; BRIDGE = use addresses from your router's network
-  nodes: [ # List of VMs to be created
-    {
-      name: "controller",           # Name (and hostname) for the VM
-      cpu: 4,                       # Number of vCPUs to assign it
-      memory: 2048,                 # RAM in MB to assign it
-      box: Hypervisor.centos,       # Operating system to run (centos or ubuntu). Note on Apple Silicon "centos" installs Rocky Linux. They are 100% compatible
-    #packages: ["jq"],              # Packages to be installed by OS's package manager
-    },
-    {
-      name: "target1",
-      cpu: 2,
-      memory: 2048,
-      box: Hypervisor.ubuntu,
-    #packages: ["jq"],
-    },
-  ],
+# Define network that the virtual machines will join.
+NETWORK_SETTINGS = {
+  network_type: "NAT",              # NAT = use a private network; BRIDGE = use addresses from your router's network.
+  private_network: "192.168.56.",   # Network prefix for VM network if using NAT mode. Ignored for BRIDGE.
+  ip_start: 11,                     # First IP to use for VMs on private network if using NAT mode. Ignored for BRIDGE.
 }
+
+# Define list of virtual machines to be created here.
+VIRTUAL_MACHINES = [
+  {
+    name: "controller",           # Name (and hostname) for the VM
+    cpu: 4,                       # Number of vCPUs to assign it
+    memory: 2048,                 # RAM in MB to assign it
+    box: Hypervisor.centos,       # Operating system to run (centos or ubuntu). Note on Apple Silicon "centos" installs Rocky Linux. They are 100% compatible
+  #packages: ["jq"],              # Packages to be installed by OS's package manager
+  },
+  {
+    name: "target1",
+    cpu: 2,
+    memory: 2048,
+    box: Hypervisor.ubuntu,
+  #packages: ["jq"],
+  },
+]
 
 # Deploy the VMs
 Vagrant.configure("2") do |config|
   config.vm.box_check_update = false
 
   # For each machine defined in VIRTUAL_MACHINES above
-  VIRTUAL_MACHINES[:nodes].each_with_index do |vm, index|
+  VIRTUAL_MACHINES.each_with_index do |vm, index|
     config.vm.define vm[:name] do |node|
       # Set the "box", i.e. operating system for guest
-      node.vm.box = vm[:box][:name]
+      node.vm.box = vm[:box]
       # Get hypervisor support for the host OS
-      Hypervisor.get node: node, distro: vm[:box][:distro] do |h| # TODO: Don't need distro. Shell scripts work it out.
-        # Set CPU and RAM
-        h.set_spec cpu: vm[:cpu], memory: vm[:memory]
-        # Set IP address
-        h.private_network ip: VIRTUAL_MACHINES[:private_network] + "#{VIRTUAL_MACHINES[:ip_start] + index}"
-        # Set SSH port forwarding
-        h.port_forward guest: 22, host: "#{2710 + index}"
-        # Set hostname inside guest
-        h.set_hostname hostname: vm[:name]
-        # Set PRIMARY_IP shell variable inside guest
-        h.provision_script VIRTUAL_MACHINES[:private_network], VIRTUAL_MACHINES[:build_mode], script: "setup_ip.sh"
-        if vm.key?(:packages)
-          # If there are packages to install in guest, install them
-          h.provision_script vm[:packages].join(","), script: "package_install.sh"
-        end
+      Hypervisor.get node: node do |hv|
+        # Deploy the VM
+        hv.deploy vm: vm, network: NETWORK_SETTINGS, index: index
       end
     end
   end
@@ -131,5 +121,7 @@ def post_provision(env)
     %x{ vagrant upload hosts.tmp /tmp/hosts.tmp #{vm_name}}
     %x{ vagrant ssh -c 'sudo sed -i "/#{vm_name}/d" /etc/hosts ; cat /tmp/hosts.tmp | sudo tee -a /etc/hosts' #{vm_name}}
   end
+  puts ""
+  puts hosts
   File.delete("hosts.tmp")
 end

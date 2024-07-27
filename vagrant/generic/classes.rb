@@ -52,19 +52,42 @@ end
 # - Intel machines = VirtualBox
 class Hypervisor
   @@node = nil
-  @@disto = nil
   @@workdir = File.dirname(__FILE__)
 
   # Create Hypervisor support for the current VM node
-  def self.get(node:, distro:)
+  def self.get(node:)
     @@node = node
-    @@distro = distro.to_s
 
     if OS.arm?
       yield VMware.new
     end
 
     yield VirtualBox.new
+  end
+
+  # Deploy the VM with given index
+  def deploy(vm:, network:, index:)
+    self.set_spec cpu: vm[:cpu], memory: vm[:memory]
+    self.network network: network, index: index
+    self.set_hostname hostname: vm[:name]
+    if vm.key?(:packages)
+      # If there are packages to install in guest, install them
+      self.provision_script vm[:packages].join(","), script: "package_install.sh"
+    end
+  end
+
+  def network(network:, index:)
+    typ = network[:network_type]
+    if !self.can_bridge?
+      puts "==> WARNING: Hypervisor does not support bridge. Falling back to NAT"
+      typ = "NAT"
+    end
+    if typ == "NAT"
+      @@node.vm.network :private_network, ip: network[:private_network] + "#{network[:ip_start] + index}"
+    else
+      @@node.vm.network :public_network, bridge: self.bridge_adapter
+    end
+    self.provision_script network[:private_network], network[:network_type], script: "setup_ip.sh"
   end
 
   # Create an interface with given IP on hypervisor's private network
@@ -80,9 +103,7 @@ class Hypervisor
   # Run a shell script from distro specific directort
   def provision_script(*args, script:)
     s = ""
-    if File.exists?(File.join(@@workdir, @@distro, script))
-      s = File.join(@@workdir, @@distro, script)
-    elsif File.exists?(File.join(@@workdir, "linux", script))
+    if File.exists?(File.join(@@workdir, "linux", script))
       s = File.join(@@workdir, "linux", script)
     else
       raise Exception.new "Provisioner script not found: #{script}"
@@ -99,29 +120,16 @@ class Hypervisor
   # Return a working CentOS (or equivalent) box image for the current architecture
   def self.centos()
     if OS.arm?
-      return {
-               name: "gyptazy/rocky9.3-arm64",
-               distro: :redhat,
-             }
+      return "gyptazy/rocky9.3-arm64"
     end
-    return {
-             name: "boxomatic/centos-stream-9",
-             distro: :redhat,
-           }
+    return "boxomatic/centos-stream-9"
   end
 
   def self.ubuntu()
     if OS.arm?
-      return {
-               name: "bento/ubuntu-22.04-arm64",
-               distro: :debian,
-             }
+      return "bento/ubuntu-22.04-arm64"
     end
-
-    return {
-             name: "ubuntu/jammy64",
-             distro: :debian,
-           }
+    return "ubuntu/jammy64"
   end
 
   def can_bridge?
