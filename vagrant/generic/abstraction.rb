@@ -78,8 +78,12 @@ class Hypervisor
 
   def network(network:, index:)
     typ = network[:network_type]
-    if !self.can_bridge?
-      puts "==> WARNING: Hypervisor does not support bridge. Falling back to NAT"
+    if not(typ == "NAT" or typ == "BRIDGE")
+      raise Exception.new "Invalid network type #{typ}. Must be NAT or BRIDGE"
+    end
+    if typ == "BRIDGE" and !self.can_bridge?
+      puts "WARNING: Hypervisor does not support BRIDGE. Falling back to NAT"
+      network[:network_type] = "NAT"
       typ = "NAT"
     end
     if typ == "NAT"
@@ -495,6 +499,8 @@ def validate_configuration(trigger, host, vms)
   end
 end
 
+require "tmpdir"
+
 def post_provision(env)
   # Build hosts file fragment
   puts "--> Harvesting machine IPs"
@@ -505,14 +511,14 @@ def post_provision(env)
     hosts << ip << " " << vm_name << "\n"
   end
   # Adjust hosts file
-  File.open("hosts.tmp", "w") { |file| file.write(hosts) }
+  hosts_tmp = File.join(File.dirname(__FILE__), "hosts.tmp")
+  File.open(hosts_tmp, "w") { |file| file.write(hosts) }
   env.active_machines.each do |active_machine|
     vm_name = active_machine[0].to_s
     puts "--> Setting hosts file: #{vm_name}"
-    %x{ vagrant upload hosts.tmp /tmp/hosts.tmp #{vm_name}}
-    %x{ vagrant ssh -c 'sudo sed -i "/#{vm_name}/d" /etc/hosts ; cat /tmp/hosts.tmp | sudo tee -a /etc/hosts' #{vm_name}}
+    %x{ vagrant ssh -c 'sudo /opt/vagrant/update-hosts.sh' #{vm_name}}
   end
   puts ""
   puts hosts
-  File.delete("hosts.tmp")
+  File.delete hosts_tmp
 end

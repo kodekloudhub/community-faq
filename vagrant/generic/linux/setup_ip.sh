@@ -35,3 +35,32 @@ echo -n $MY_IP
 EOF
 
 chmod +x /usr/bin/primary-ip
+
+# Create some other scripts used later in provisioning
+
+scripts=/opt/vagrant
+
+[ -d $scripts ] || mkdir -p $scripts
+
+cat <<EOF > $scripts/update-hosts.sh
+#!/usr/bin/env bash
+# Idempotent hosts file updater
+set -e
+
+err_report() {
+  logger -p local0.error -t "update-hosts.sh" "Error at $(caller)"
+  exit 1
+}
+
+trap err_report ERR
+
+logger -p local0.notice -t "update-hosts.sh" "Updating hosts file"
+sed -i '/# BEGIN-VAGRANT/,/# END-VAGRANT/d' /etc/hosts
+sed -i "/$(hostname)/d" /etc/hosts
+echo "# BEGIN-VAGRANT" >> /etc/hosts
+cat /vagrant/hosts.tmp >> /etc/hosts
+echo "# END-VAGRANT" >> /etc/hosts
+logger -p local0.notice -t "update-hosts.sh" "Done updating hosts file"
+EOF
+
+chmod +x $scripts/update-hosts.sh
