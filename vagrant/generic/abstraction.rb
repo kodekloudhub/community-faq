@@ -91,7 +91,7 @@ class Hypervisor
     else
       @@node.vm.network :public_network, bridge: self.bridge_adapter
     end
-    self.provision_script network[:private_network], network[:network_type], script: "setup_ip.sh"
+    self.provision_script network[:private_network], network[:network_type], script: "setup_host.sh"
   end
 
   # Create an interface with given IP on hypervisor's private network

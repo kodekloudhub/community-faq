@@ -10,7 +10,7 @@ BUILD_MODE=$2
 # DISTRO will be "debian" or "rhel"
 DISTRO=$(. /etc/os-release ; echo $ID_LIKE | cut -d ' ' -f 1)
 
-logger -p local0.notice -t "setup-ip.sh" "IP_NW: ${IP_NW}, BUILD_MODE=${BUILD_MODE}"
+logger -p local0.notice -t "setup_host.sh" "IP_NW: ${IP_NW}, BUILD_MODE=${BUILD_MODE}"
 
 if [ "$BUILD_MODE" = "BRIDGE" ]
 then
