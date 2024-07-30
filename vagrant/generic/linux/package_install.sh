@@ -3,6 +3,7 @@
 PACKAGES=$1
 
 if [ -z "$PACKAGES" ]
+then
     exit 0
 fi
 
