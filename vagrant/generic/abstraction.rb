@@ -23,6 +23,10 @@ module OS
     RUBY_PLATFORM == "arm64-darwin"
   end
 
+  def OS.intel_mac?
+    OS.mac? and not OS.apple_silicon?
+  end
+
   def OS.unix?
     !OS.windows?
   end
@@ -89,9 +93,15 @@ class Hypervisor
     if typ == "NAT"
       @@node.vm.network :private_network, ip: network[:private_network] + "#{network[:ip_start] + index}"
     else
-      @@node.vm.network :public_network, bridge: self.bridge_adapter
+      b = self.bridge_adapter
+      if b == ""
+        @@node.vm.network :public_network
+      else
+        @@node.vm.network :public_network, bridge: self.bridge_adapter
+      end
     end
-    self.provision_script network[:private_network], network[:network_type], script: "setup_host.sh"
+    h = Host.get
+    self.provision_script network[:private_network], network[:network_type], h.gateway_addresses, script: "setup_host.sh"
   end
 
   # Create an interface with given IP on hypervisor's private network
@@ -124,7 +134,7 @@ class Hypervisor
   # Return a working CentOS (or equivalent) box image for the current architecture
   def self.centos()
     if OS.arm?
-      return "gyptazy/rocky9.3-arm64"
+      return "gyptazy/rocky9.3-arm64" # bento/centos-stream-9-arm64
     end
     return "boxomatic/centos-stream-9"
   end
@@ -137,7 +147,7 @@ class Hypervisor
   end
 
   def can_bridge?
-    false
+    true
   end
 
   def bridge_adapter
@@ -185,7 +195,7 @@ class VirtualBox < Hypervisor
   def bridge_adapter
     if OS.windows?
       return self.powershell("Get-NetRoute -DestinationPrefix 0.0.0.0/0 | Get-NetAdapter | Select-Object -ExpandProperty InterfaceDescription")
-    elsif OS.mac?
+    elsif OS.intel_mac?
       sh = <<~SHEL
         iface=$(netstat -rn -f inet | grep '^default' | sort | head -1 | awk '{print $4}')
         interface=$(VBoxManage list bridgedifs | awk '/^Name:/ { print }' | sed -e 's/^Name:[ ]*\(.*\)/\1/' | grep $iface)
@@ -229,6 +239,10 @@ class Host
 
   def get_system_name()
     return ""
+  end
+
+  def gateway_addresses()
+    ""
   end
 end
 
@@ -326,6 +340,11 @@ class MacHost < Host
 
   def get_system_name()
     return "Mac"
+  end
+
+  def gateway_addresses()
+    cmd = "netstat -rn -f inet | egrep '^default.*UGS' | awk '{print $2}' | xargs echo | tr ' ' ','"
+    %x{ #{cmd} }.chomp()
   end
 
   private

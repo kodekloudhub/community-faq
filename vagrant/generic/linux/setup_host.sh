@@ -6,17 +6,28 @@
 
 IP_NW=$1
 BUILD_MODE=$2
+GATEWAY_ADDRESSES=$3
 
 # DISTRO will be "debian" or "rhel"
 DISTRO=$(. /etc/os-release ; echo $ID_LIKE | cut -d ' ' -f 1)
 
-logger -p local0.notice -t "setup_host.sh" "IP_NW: ${IP_NW}, BUILD_MODE=${BUILD_MODE}"
+logger -p local0.notice -t "setup_host.sh" "IP_NW: ${IP_NW}, BUILD_MODE=${BUILD_MODE}, GATEWAYS=${GATEWAY_ADDRESSES}"
 
 if [ "$BUILD_MODE" = "BRIDGE" ]
 then
     # Determine machine IP from route table -
     # Interface that routes to default GW that isn't on the NAT network.
-    MY_IP="$(ip route | grep default | grep -Pv '10\.\d+\.\d+\.\d+' | awk '{ print $9 }')"
+    if [ -z "$GATEWAY_ADDRESSES" ]
+    then
+        MY_IP="$(ip route | grep default | grep -Pv '10\.\d+\.\d+\.\d+' | awk '{ print $9 }')"
+    else
+        for g in $(tr ',' '\n' <<< $GATEWAY_ADDRESSES)
+        do
+            MY_IP="$(ip route | grep default | grep -P $g | awk '{ print $9 }' | head -1)"
+            logger -p local0.notice -t "setup_host.sh" "Bridge: GW=$g IF=$MY_IP"
+            [ ! -z "$MY_IP" ] && break
+        done
+    fi
 
     # From this, determine the network (which for average broadband we assume is a /24)
     MY_NETWORK=$(echo $MY_IP | awk 'BEGIN {FS="."} ; { printf("%s.%s.%s", $1, $2, $3) }')
