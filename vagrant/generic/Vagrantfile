@@ -1,7 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-require_relative "./abstraction"
+require_relative "./utils"
+require_relative "./hypervisor"
+require_relative "./host"
 
 # Define network that the virtual machines will join.
 NETWORK_SETTINGS = {
@@ -19,13 +21,13 @@ VIRTUAL_MACHINES = [
     box: Hypervisor.centos,       # Operating system to run (centos or ubuntu). Note on Apple Silicon "centos" installs Rocky Linux. They are 100% compatible
   #packages: ["jq"],              # Packages to be installed by OS's package manager
   },
-  # {
-  #   name: "target1",
-  #   cpu: 2,
-  #   memory: 2048,
-  #   box: Hypervisor.ubuntu,
-  # #packages: ["jq"],
-  # },
+  {
+    name: "target1",
+    cpu: 2,
+    memory: 2048,
+    box: Hypervisor.ubuntu,
+    packages: ["jq"],
+  },
 ]
 
 # Deploy the VMs
