@@ -111,7 +111,7 @@ def post_provision(env)
   hosts = ""
   env.active_machines.each do |active_machine|
     vm_name = active_machine[0].to_s
-    ip = %x{ vagrant ssh -c primary-ip #{vm_name} }
+    ip = %x{ vagrant ssh -c primary-ip #{vm_name} }.chomp()
     hosts << ip << " " << vm_name << "\n"
   end
   # Adjust hosts file
