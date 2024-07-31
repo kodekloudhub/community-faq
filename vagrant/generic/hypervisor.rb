@@ -85,7 +85,7 @@ class Hypervisor
   # Return a working CentOS (or equivalent) box image for the current architecture
   def self.centos()
     if OS.arm?
-      return "gyptazy/rocky9.3-arm64" # bento/centos-stream-9-arm64
+      return "bento/centos-stream-9-arm64" #  "gyptazy/rocky9.3-arm64"
     end
     return "boxomatic/centos-stream-9"
   end
