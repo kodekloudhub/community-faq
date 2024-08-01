@@ -1,5 +1,37 @@
 ######################################################################################
 #
+# Box describes the box resource that will be instantiated by the hypervisor along
+# with an optional provision script. A box version from one supplier may not have
+# the same things pre-installed as the same OS version from another, so the provision
+# script will align to the most provisioned box.
+#
+######################################################################################
+
+class Box
+  @name
+  @provision
+
+  def initialize(name, provision)
+    @name = name
+    @provision = provision
+  end
+
+  def box
+    @name
+  end
+
+  def provision_script
+    @provision
+  end
+
+  def needs_provision?
+    @provision != ""
+  end
+end
+
+
+######################################################################################
+#
 # Hypervisor is an abstraction for the type of virtualization running on the host.
 # - ARM machines = VMware
 # - Intel machines = VirtualBox
@@ -25,6 +57,9 @@ class Hypervisor
     self.set_spec cpu: vm[:cpu], memory: vm[:memory]
     self.network network: network, index: index
     self.set_hostname hostname: vm[:name]
+    if vm[:box].needs_provision?
+      @@node.vm.provision "box-alignment", type: "shell", inline: vm[:box].provision_script
+    end
     if vm.key?(:packages)
       # If there are packages to install in guest, install them
       self.provision_script vm[:packages].join(","), script: "package_install.sh"
@@ -85,16 +120,21 @@ class Hypervisor
   # Return a working CentOS (or equivalent) box image for the current architecture
   def self.centos()
     if OS.arm?
-      return "bento/centos-stream-9-arm64" #  "gyptazy/rocky9.3-arm64"
+      script = <<~EOF
+        # Install EPEL
+        dnf config-manager --set-enabled crb
+        dnf install -y epel-release epel-next-release
+      EOF
+      return Box.new "bento/centos-stream-9-arm64", script
     end
-    return "boxomatic/centos-stream-9"
+    return Box.new "boxomatic/centos-stream-9", ""
   end
 
   def self.ubuntu()
     if OS.arm?
-      return "bento/ubuntu-22.04-arm64"
+      return Box.new "bento/ubuntu-22.04-arm64", ""
     end
-    return "ubuntu/jammy64"
+    return Box.new "ubuntu/jammy64", ""
   end
 
   def can_bridge?

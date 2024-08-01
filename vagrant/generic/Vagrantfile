@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
   VIRTUAL_MACHINES.each_with_index do |vm, index|
     config.vm.define vm[:name] do |node|
       # Set the "box", i.e. operating system for guest
-      node.vm.box = vm[:box]
+      node.vm.box = vm[:box].box
       # Get hypervisor support for the host OS
       Hypervisor.get node: node do |hv|
         # Deploy the VM
