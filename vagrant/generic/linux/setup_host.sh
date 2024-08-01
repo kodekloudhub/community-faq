@@ -35,7 +35,7 @@ else
     # Determine machine IP from route table -
     # Interface that is connected to the NAT network.
     # VMware may create 2 entries with different metrics
-    MY_IP="$(ip route | awk '/'${IP_NW}'/ { print $9 }') | uniq"
+    MY_IP="$(ip route | awk '/'${IP_NW}'/ { print $9 }' | uniq)"
     MY_NETWORK=$IP_NW
 fi
 
