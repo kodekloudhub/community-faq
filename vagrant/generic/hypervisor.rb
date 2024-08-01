@@ -138,7 +138,7 @@ class Hypervisor
       chmod +x yq
       mv yq /usr/bin/yq
     EOF
-    return Box.new "boxomatic/centos-stream-9", ""
+    return Box.new "boxomatic/centos-stream-9", script
   end
 
   def self.ubuntu()
