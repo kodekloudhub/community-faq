@@ -40,6 +40,7 @@ end
 class Hypervisor
   @@node = nil
   @@workdir = File.dirname(__FILE__)
+  @yq_version = "v4.44.2"
 
   # Create Hypervisor support for the current VM node
   def self.get(node:)
@@ -124,17 +125,37 @@ class Hypervisor
         # Install EPEL
         dnf config-manager --set-enabled crb
         dnf install -y epel-release epel-next-release
+        # Install YQ
+        curl -sLo yq https://github.com/mikefarah/yq/releases/download/#{@yq_version}/yq_linux_arm64
+        chmod +x yq
+        mv yq /usr/bin/yq
       EOF
       return Box.new "bento/centos-stream-9-arm64", script
     end
+    script = <<~EOF
+      # Install YQ
+      curl -sLo yq https://github.com/mikefarah/yq/releases/download/#{@yq_version}/yq_linux_amd64
+      chmod +x yq
+      mv yq /usr/bin/yq
+    EOF
     return Box.new "boxomatic/centos-stream-9", ""
   end
 
   def self.ubuntu()
+    arch = OS.arm? ? "arm64" : "amd64"
+    script = <<~EOF
+      # Install JQ/YQ
+      export DEBIAN_FRONTEND=noninteractive
+      apt update
+      apt-get install -y jq
+      curl -sLo yq https://github.com/mikefarah/yq/releases/download/#{@yq_version}/yq_linux_#{arch}
+      chmod +x yq
+      mv yq /usr/bin/yq
+    EOF
     if OS.arm?
-      return Box.new "bento/ubuntu-22.04-arm64", ""
+      return Box.new "bento/ubuntu-22.04-arm64", script
     end
-    return Box.new "ubuntu/jammy64", ""
+    return Box.new "ubuntu/jammy64", script
   end
 
   def can_bridge?
