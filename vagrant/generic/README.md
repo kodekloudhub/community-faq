@@ -26,5 +26,5 @@ It should be very simple affair to customize this for a given project and more o
         Run the given script which should be placed in the [linux](./linux/) subdirectory in the guest. The shell script can be passed optional arguments
 
         ```ruby
-        hv.provision_script [arg1 , arg2, ...argn] , script: "my_script.sh"
+        hv.provision_script [arg1 , arg2, ...argn,] script: "my_script.sh"
         ```
