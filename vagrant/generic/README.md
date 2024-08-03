@@ -23,7 +23,7 @@ It should be very simple affair to customize this for a given project and more o
 
     * `provision_script`
 
-        Run the given script which should be placed in the [linux](./linux/) subdirectory in the guest. The shell script can be passed optional arguments. Note that the same script will be run on *all* guests, so ensure it is [distro aware](./linux/setup_host.sh#L11-L13) and idempotent. Host name should be set already as long as the script comes after `hv.deploy` so that can also be switched on
+        Run the given script which should be placed in the [linux](./linux/) subdirectory on the host. The shell script can be passed optional arguments. Note that the same script will be run on *all* guests, so ensure it is [distro aware](./linux/setup_host.sh#L11-L13) and idempotent. Host name should be set already as long as the script comes after `hv.deploy` so that can also be switched on
 
         ```ruby
         hv.provision_script [arg1 , arg2, ...argn,] script: "my_script.sh"
