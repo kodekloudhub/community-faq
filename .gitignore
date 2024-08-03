@@ -2,3 +2,4 @@
 *.tmp
 */**/*.hidden.*
 .vagrant/
+temp/
