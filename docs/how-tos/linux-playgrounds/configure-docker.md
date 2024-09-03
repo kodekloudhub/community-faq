@@ -2,6 +2,8 @@
 
 ## Overview
 
+Note that there is also a specific [Docker playground](https://kodekloud.com/playgrounds/playground-docker) running Ubuntu 20.04 where docker is preinstalled and all the steps below are already applied.
+
 You have successfully installed Docker on a Linux playground, however you are receiving an error like the following when you try to pull or run any image
 
 > You have reached your pull rate limit You may increase the rate limit by authenticating and upgrading...
