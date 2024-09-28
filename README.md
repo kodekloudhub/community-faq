@@ -264,10 +264,17 @@ No infrastructure is perfect! Be that KodeKloud labs, killer.sh or the exam envi
 * Issue with your own broadband provider.
 * Issue with some third party network provider on the route between your own broadband provider and PSI's exam environment. This would add latency (lagging) or disconnects.
 * The route between your location and the nearest cloud region has many hops or has slow sections (again adds latency). Doesn't matter how fast your own broadband provider is. If the route goes through a slow section, then that is the maximum speed you will attain. Think traffic jam - having a Ferrari won't get you through it any faster!
-* Issue within the cloud provider used by PSI (AWS, GCP, Azure - don't know which they actually do use).
+* Issue within the cloud provider used by the exam platform (AWS, GCP, Azure - don't know which they actually do use).
+* Issue with the exam platform.
 * Issue with PSI themselves.
 
 The first two and to a certain extent the third are more likely if you live in, or the route crosses countries with poorly maintained infrastructure or political instability. What I'm getting at is it is not *always* PSI's fault! If you are still connected to the proctor, then they will generally try to help but it is not always successful. In the event that your exam finishes incomplete due to technical issues, you must [raise a ticket with Linux Foundation](https://trainingsupport.linuxfoundation.org/) explaining clearly what happened. In most cases they will credit your exam back to you.
+
+Please bear in mind that proctors are *non-technical*. They are very unlikely to be able to resolve an issue.
+
+* Proctors work for PSI - Their primary function is to check you into the exam and ensure you are not cheating.
+* They may be able to assist on issues with the PSI Browser itself.
+* They cannot assist with issues *inside* the exam environment. The PSI platform is used for exams from many providers, including Linux Foundation and AWS. Such issues are the responsibility of the organization that set the exam, and you have to raise a support ticket with that organization following an environment failure.
 
 ### How long until I get my result?
 
