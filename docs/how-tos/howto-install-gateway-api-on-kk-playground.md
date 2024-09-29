@@ -188,12 +188,12 @@ Note that this only works if you [built your own cluster](https://github.com/kod
     * Windows: `C:\Windows\System32\drivers\etc\hosts` - open in notepad "As Administrator"
     * Mac: `/etc/hosts` - use `sudo vi`
 
-1.  Add an entry for `nginx.exmaple.com`
+1.  Add an entry for `nginx.example.com`
 
     Add this line replacing `<ip-address>` with the IP you determined in step 1, then save the file
 
     ```
-    <ip-address> nginx.exmaple.com
+    <ip-address> nginx.example.com
     ```
 
 1. Browse the API gateway node port:
@@ -389,12 +389,12 @@ Let's now create two services representing two versions of an application and de
     From controlplane to gateway's node port (again we must use host header):
 
     ```
-    curl -s -H "Host: echo.exmaple.com" http://localhost:30080
+    curl -s -H "Host: echo.example.com" http://localhost:30080
     ```
 
     You should now see the response alrenate between `VERSION ONE` and `VERSION 2`
 
-    Try editing the `HTTPRoute` and setting the weight of one of the service to `2`. Not the traffic is a `2:1` ratio, so that version should appear twice as frequently as the other.
+    Try editing the `HTTPRoute` and setting the weight of one of the service to `2`. Now the traffic is a `2:1` ratio, so the version with a weighting of `2` should appear twice as frequently as the other.
 
     ```
     kubectl edit httproute echo-route
