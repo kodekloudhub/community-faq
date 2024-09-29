@@ -19,7 +19,7 @@ Now, let's proceed to configuring a gateway. At this point it is not clear how m
 
 This will almost certainly *not* be required for the exam, since ingress controller installation was not required, plus as mentioned above, there are several gateway controller implementations and you cannot be expected to learn all the configurations, nor are their websites allowed exam resources.
 
-We will use the Traefik ingress controller and use Helm to install it so as not to concern ourselves with the detail
+We will use the Traefik (pronounced "traffic") ingress controller and use Helm to install it so as not to concern ourselves with the detail
 
 1. Install the Gateway API Custom Resource Definitions
 
@@ -392,7 +392,7 @@ Let's now create two services representing two versions of an application and de
     curl -s -H "Host: echo.example.com" http://localhost:30080
     ```
 
-    You should now see the response alrenate between `VERSION ONE` and `VERSION 2`
+    You should now see the response alternate between `VERSION ONE` and `VERSION 2`
 
     Try editing the `HTTPRoute` and setting the weight of one of the service to `2`. Now the traffic is a `2:1` ratio, so the version with a weighting of `2` should appear twice as frequently as the other.
 
