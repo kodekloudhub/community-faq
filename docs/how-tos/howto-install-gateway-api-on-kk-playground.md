@@ -1,11 +1,12 @@
-# How-To: Configure Kubernetes API gateway
+# How-To: Configure Kubernetes Gateway API
 
 You can do this exercise either on the KodeKloud Kubernetes [Multi-Node Latest](https://kodekloud.com/playgrounds/playground-kubernetes-multi-node-latest) Playground or on a cluster [you have built yourself](https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/kubeadm-clusters).
 
+Gateway API is a new requirement for CKA exam starting in early 2025.
 
-## What is API Gateway?
+## What is Gateway API?
 
-API Gateway is an extension to and enhancement of regular ingress. In order to use API gateway, we must first install an API Gateway compatible ingress controller (note that this step should not be something you would have to do in CKA exam). Then we can utilise the new `gateway.networking.k8s.io/v1` APIs of Kubernetes to route and control traffic to services we've deployed in the cluster using more granular rules than was possible with ingress.
+Gateway API is an extension to and enhancement of regular ingress. In order to use Gateway API, we must first install a Gateway API compatible ingress controller (note that this step should not be something you would have to do in CKA exam). Then we can utilise the new `gateway.networking.k8s.io/v1` APIs of Kubernetes to route and control traffic to services we've deployed in the cluster using more granular rules than was possible with ingress.
 
 Gateway is not a "thing" in Kubernetes. Gateway API is only a set of Custom Resource Definitions (CRDs) that defines a standard to which implementation providers must conform to.
 
@@ -15,9 +16,9 @@ The actual implementations are third party, e.g. [Kong](https://docs.konghq.com/
 
 Now, let's proceed to configuring a gateway. At this point it is not clear how much of the following needs to be known for the new CKA exam.
 
-## Install API Gateway CRDs and a compatible ingress controller
+## Install Gateway API CRDs and a compatible ingress controller
 
-This will almost certainly *not* be required for the exam, since ingress controller installation was not required, plus as mentioned above, there are several gateway controller implementations and you cannot be expected to learn all the configurations, nor are their websites allowed exam resources.
+This will almost certainly *not* be required for the exam, since ingress controller installation was not required. As mentioned above, there are several gateway controller implementations and you cannot be expected to learn all the configurations, nor are their websites allowed exam resources. You *should* be aware of the [GatewayClass](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-gateway-class) resource and its usage in selecting gateway controllers - similar to how `IngressClass` works. 
 
 We will use the Traefik (pronounced "traffic") ingress controller and use Helm to install it so as not to concern ourselves with the detail
 
@@ -71,7 +72,7 @@ We will use the Traefik (pronounced "traffic") ingress controller and use Helm t
           kubernetesIngress:
             enabled: false          # Disable classic ingress functionality
           kubernetesGateway:
-            enabled: true           # Enable API Gateway functionality
+            enabled: true           # Enable Gateway API functionality
         service:
           type: NodePort            # Create the service as NodePort (default is LoadBalancer)
         ports:
@@ -105,7 +106,7 @@ This *may* be required for the exam.
 
 Documentation: [Gateway](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-gateway)
 
-Here we create a `Gateway` resource that connects our ClusterIP services with the API gateway. It will serve hosts in the `example.com` domain externally, and also allow connections from `HTTPRoute`s in any namespace.
+Here we create a `Gateway` resource that connects our ClusterIP services with the Gateway API. It will serve hosts in the `example.com` domain externally, and also allow connections from `HTTPRoute`s in any namespace.
 
 1. Create a `Gateway` resource that will be used to route our traffic.
 
@@ -131,7 +132,7 @@ Here we create a `Gateway` resource that connects our ClusterIP services with th
 
 ## Create a deployment and expose it on the gateway
 
-This definitely *will* be in the exam. This is the API Gateway equivalent of defining an `Ingress` for a service. I would also expect it to appear in the next version of CKAD whenever this is announced.
+This definitely *will* be in the exam. This is the Gateway API equivalent of defining an `Ingress` for a service. I would also expect it to appear in the next version of CKAD whenever this is announced.
 
 1. Create a deployment and expose it
 
@@ -202,7 +203,7 @@ Note that this only works if you [built your own cluster](https://github.com/kod
     <ip-address> nginx.example.com
     ```
 
-1. Browse the API gateway node port:
+1. Browse the Gateway API node port:
 
     ```
     http://nginx.example.com:30080
