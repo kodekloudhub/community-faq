@@ -1,6 +1,6 @@
 # How-To: Configure Kubernetes API gateway
 
-You can do this exercise either on the KodeKloud Kubernetes (latest version) Playground or on a cluster [you have built yourself](https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/kubeadm-clusters).
+You can do this exercise either on the KodeKloud Kubernetes [Multi-Node Latest](https://kodekloud.com/playgrounds/playground-kubernetes-multi-node-latest) Playground or on a cluster [you have built yourself](https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/kubeadm-clusters).
 
 
 ## What is API Gateway?
@@ -77,6 +77,7 @@ We will use the Traefik (pronounced "traffic") ingress controller and use Helm t
         ports:
           web:
             port: 8000              # Port that the controller communicates with Gateway resources on
+            nodePort: 30080         # Port for controller's NodePort service
         ```
 
     1. Install the controller with our custom settings
@@ -91,6 +92,8 @@ We will use the Traefik (pronounced "traffic") ingress controller and use Helm t
 
     The installation will also install a correctly configured `GatewayClass` resource to refer to the Traefik controller and a `Gateway` resource for the controller's internal use. You can inspect these with
 
+    Documentation: [GatewayClass](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-gateway-class), [Gateway](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-gateway)
+
     ```
     kubectl get gatewayclass traefik -o yaml
     kubectl get gateway -n traefik traefik -o yaml
@@ -100,11 +103,13 @@ We will use the Traefik (pronounced "traffic") ingress controller and use Helm t
 
 This *may* be required for the exam.
 
+Documentation: [Gateway](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-gateway)
+
 Here we create a `Gateway` resource that connects our ClusterIP services with the API gateway. It will serve hosts in the `example.com` domain externally, and also allow connections from `HTTPRoute`s in any namespace.
 
 1. Create a `Gateway` resource that will be used to route our traffic.
 
-    This manifest must be applied in the same namespace in which we installed the controller. It links the Traefik ingress to the `GatewayClass` we just defined, and sets up a listener on port 80
+    This manifest must be applied in the same namespace in which we installed the controller. It links the Traefik ingress to the `GatewayClass` we just defined, and sets up a listener on port 8000
 
     ```yaml
     apiVersion: gateway.networking.k8s.io/v1
@@ -114,8 +119,8 @@ Here we create a `Gateway` resource that connects our ClusterIP services with th
       namespace: traefik            # This is where Traefik is installed
     spec:
       gatewayClassName: traefik     # Use the gateway class created by traefik deployment (like ingressClass for traditional ingress)
-      listeners:
-      - name: http                  # Connect to controller's listener
+      listeners:                    # Each entry in this list is knwon as a "section"
+      - name: http                  # HTTPRoute uses this name to use this listener
         protocol: HTTP
         port: 8000                  # Port number we configured in values.yaml above
         hostname: "*.example.com"   # Domain we will serve (any hostname in this domain)
@@ -139,6 +144,8 @@ This definitely *will* be in the exam. This is the API Gateway equivalent of def
 
 1. Create an `HTTPRoute` to connect the service to the gateway
 
+    Documentation: [HTTPRoute](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-httproute)
+
     ```yaml
     apiVersion: gateway.networking.k8s.io/v1
     kind: HTTPRoute
@@ -149,8 +156,7 @@ This definitely *will* be in the exam. This is the API Gateway equivalent of def
       parentRefs:
       - name: my-example-com-gateway    # Name of the Gateway created above
         namespace: traefik              # Namespace where the above Gateway is deployed
-        sectionName: http               # Specific lstener in the Gateway resource
-        port: 8000
+        sectionName: http               # Specific named listener in the Gateway resource
       hostnames:
       - nginx.example.com               # Hostname for this service
       rules:                            # The rules are similar to Ingress
@@ -220,11 +226,12 @@ Let's now create two services representing two versions of an application and de
     kind: ConfigMap
     metadata:
       name: echo-configmap
+      namespace: default
     data:
       entrypoint.sh: |
         #!/bin/sh
-        echo $MESSAGE > index.htm  #<- Message
-        port=1111                       #<- Server Port
+        echo $MESSAGE > index.htm       # Message
+        port=1111                       # Server Port
         # Run server...
         while true
         do
@@ -242,6 +249,7 @@ Let's now create two services representing two versions of an application and de
       labels:
         app: echo-v1
       name: echo-v1
+      namespace: default
     spec:
       replicas: 1
       selector:
@@ -272,6 +280,7 @@ Let's now create two services representing two versions of an application and de
 
     ---
 
+    # Version 1 service
     apiVersion: v1
     kind: Service
     metadata:
@@ -297,6 +306,7 @@ Let's now create two services representing two versions of an application and de
       labels:
         app: echo-v2
       name: echo-v2
+      namespace: default
     spec:
       replicas: 1
       selector:
@@ -327,6 +337,7 @@ Let's now create two services representing two versions of an application and de
 
     ---
 
+    # Version 2 service
     apiVersion: v1
     kind: Service
     metadata:
@@ -366,8 +377,7 @@ Let's now create two services representing two versions of an application and de
       parentRefs:
       - name: my-example-com-gateway    # Name of the Gateway created above
         namespace: traefik              # Namespace where the above Gateway is deployed
-        sectionName: http               # Specific listener in the Gateway resource
-        port: 8000
+        sectionName: http               # Specific named listener in the Gateway resource
       hostnames:
       - echo.example.com                # Hostname for this service
       rules:                            # The rules are similar to Ingress
@@ -375,7 +385,7 @@ Let's now create two services representing two versions of an application and de
         - path:
             type: PathPrefix
             value: /
-        backendRefs:                    # Can have more than one service to implement blue/green and canary.
+        backendRefs:                    # Add both versions of the service
         - name: echo-v1                 # V1 of service we created
           port: 80                      # and the port it listens on
           weight: 1                     # Equally weighted (take 50% traffic)
@@ -392,7 +402,7 @@ Let's now create two services representing two versions of an application and de
     curl -s -H "Host: echo.example.com" http://localhost:30080
     ```
 
-    You should now see the response alternate between `VERSION ONE` and `VERSION 2`
+    You should now see the response alternate between `VERSION ONE` and `VERSION TWO`
 
     Try editing the `HTTPRoute` and setting the weight of one of the service to `2`. Now the traffic is a `2:1` ratio, so the version with a weighting of `2` should appear twice as frequently as the other.
 
