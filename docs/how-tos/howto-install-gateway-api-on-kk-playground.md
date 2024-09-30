@@ -131,7 +131,7 @@ Here we create a `Gateway` resource that connects our ClusterIP services with th
 
 ## Create a deployment and expose it on the gateway
 
-This definitely *will* be in the exam. This is the API Gateway equivalent of defining an `Ingress` for a service.
+This definitely *will* be in the exam. This is the API Gateway equivalent of defining an `Ingress` for a service. I would also expect it to appear in the next version of CKAD whenever this is announced.
 
 1. Create a deployment and expose it
 
