@@ -306,7 +306,7 @@ Expect _at least 3 business days_ for a response. If you raise it on a Friday, y
 
 ### The certifications are *so* expensive! What about a discount?
 
-Linux Foundation certifications are quite expensive, however Linux Foundation do from time to time offer fairly substantial discounts. KodeKloud have no advance notice of when these discounts will occur, however Black Friday weekend is almost certain and other holiday weekends in the US calendar are not uncommon. You need to check their [website](https://training.linuxfoundation.org/) frequently. KodeKloud do have a permanent Linux Foundation discount of 20%. You can ask for details of that in our community forums.
+Linux Foundation certifications are quite expensive, however Linux Foundation do from time to time offer fairly substantial discounts, sometimes as much as 45%. KodeKloud have no advance notice of when these discounts will occur or how big they will be, however Black Friday weekend is almost certain and usually a large one, and other holiday weekends in the US calendar are not uncommon. You need to check their [website](https://training.linuxfoundation.org/) frequently. KodeKloud do have a permanent Linux Foundation discount of 20%. You can ask for details of that in our community forums.
 
 If you have created a [Linux Foundation](https://www.linuxfoundation.org/) account - which you need to have in order to purchase exams - they will normally email you when a promo is going to happen. So, go create one now!
 
