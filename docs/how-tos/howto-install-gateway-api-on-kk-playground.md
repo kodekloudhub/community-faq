@@ -227,9 +227,13 @@ Note that this only works if you [built your own cluster](https://github.com/kod
 
 ## Traffic Switching
 
+It *is possible* that a blue-green or canary configuration of `HTTPRoute` could appear in the exam.
+
 Let's now create two services representing two versions of an application and demonstrate traffic switching. This technique allows us to manage blue/green and canary deployments.
 
 1. Create and expose two deployments
+
+    I have custom-built these deployments such that you can easily see the traffic switch without the need for a browser - as would be the case if I'd used the KodeKloud webapp-color image.
 
     <details>
     <summary>Expand YAML</summary>
