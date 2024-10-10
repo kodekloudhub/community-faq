@@ -26,7 +26,7 @@ We refer to the more narrow set of tasks using a specific technology or feature,
 
 Note that Gateway API is only *part* of the overall domain, therefore you would not get a whole 24 minutes worth of questions on it. This *suggests* you *may* get from zero to two questions specifically on Gateway API since there would need to be other questions from the overall domain competency, of which there are 6 sub-categories.
 
-Now, let's proceed to configuring a gateway. At this point it is not clear how much of the following needs to be known for the new CKA exam.
+Now, let's proceed to configuring a gateway.
 
 ## Install Gateway API CRDs and a compatible ingress controller
 
