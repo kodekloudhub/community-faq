@@ -14,11 +14,25 @@ These APIs were developed by the Kubernetes Networking Special Interest Group (S
 
 The actual implementations are third party, e.g. [Kong](https://docs.konghq.com/gateway/latest/), [Traefik](https://traefik.io/blog/getting-started-with-kubernetes-gateway-api-and-traefik/) and [Istio](https://istio.io/latest/docs/tasks/traffic-management/ingress/gateway-api/) to name but a few. Note that some of these providers have additional functionality which is not yet covered by the Gateway APIs. Work is ongoing between the SIG and the providers to extend the APIs to include these in a standardised way.
 
+
+## What from this will be tested in the new CKA?
+
+Following a question I put to Linux Foundation Training Support, I have put under each of the following sections the likelihood of there being questions on the procedures in that particular section. The highlight quote from their response is
+
+> You are asking about "Use the Gateway API to manage Ingress traffic" in the domain "Servicing and Networking", weighted at 20%.
+That provides about 24 minutes for the entire domain and up to 24 minutes for the single competency.<br/><br/>
+SO if you think any of the tasks you mention would take MORE that that amount of time - then it is very unlikely that we would ask you to perform it.<br/><br/>The verb choice is "use".<br/>
+We refer to the more narrow set of tasks using a specific technology or feature, which would typically exclude installing and configuring a gateway-compliant ingress controller from scratch.
+
+Note that Gateway API is only *part* of the overall domain, therefore you would not get a whole 24 minutes worth of questions on it. This *suggests* you *may* get from zero to two questions specifically on Gateway API since there would need to be other questions from the overall domain competency, of which there are 6 sub-categories.
+
 Now, let's proceed to configuring a gateway. At this point it is not clear how much of the following needs to be known for the new CKA exam.
 
 ## Install Gateway API CRDs and a compatible ingress controller
 
-This will almost certainly *not* be required for the exam, since ingress controller installation was not required. As mentioned above, there are several gateway controller implementations and you cannot be expected to learn all the configurations, nor are their websites allowed exam resources. You *should* be aware of the [GatewayClass](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-gateway-class) resource and its usage in selecting gateway controllers - similar to how `IngressClass` works. 
+This *will not* be required for the exam.
+
+As mentioned above, there are several gateway controller implementations and you cannot be expected to learn all the configurations, nor are their websites allowed exam resources. You *should* be aware of the [GatewayClass](https://kubernetes.io/docs/concepts/services-networking/gateway/#api-kind-gateway-class) resource and its usage in selecting gateway controllers - similar to how `IngressClass` works.
 
 We will use the Traefik (pronounced "traffic") ingress controller and use Helm to install it so as not to concern ourselves with the detail
 
@@ -100,7 +114,7 @@ We will use the Traefik (pronounced "traffic") ingress controller and use Helm t
     kubectl get gateway -n traefik traefik -o yaml
     ```
 
-## Configure a gateway for our own routes
+## Configure a gateway resource for our own routes
 
 This *may* be required for the exam.
 
@@ -132,7 +146,9 @@ Here we create a `Gateway` resource that connects our ClusterIP services with th
 
 ## Create a deployment and expose it on the gateway
 
-This definitely *will* be in the exam. This is the Gateway API equivalent of defining an `Ingress` for a service. I would also expect it to appear in the next version of CKAD whenever this is announced.
+Configuring `HTTPRoute` definitely *will* be in the exam.
+
+This is the Gateway API equivalent of defining an `Ingress` for a service. I would also expect it to appear in the next version of CKAD whenever this is announced.
 
 1. Create a deployment and expose it
 
