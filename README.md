@@ -35,7 +35,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
         * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
         * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
-        * [Can I install packages to the exam terminal?](#can-i-install-packages-to-the-exam-terminal)
+        * [Can I install packages or download *anything* to the exam terminal?](#can-i-install-packages-to-the-exam-terminal)
         * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
         * [What does the environment look like?](#what-does-the-environment-look-like)
         * [How is the exam scored?](#how-is-the-exam-scored)
@@ -336,13 +336,21 @@ Either multiple instances of the terminal emulator app, multiple tabs within the
 
 The only software that may be running is the PSI software, therefore you must memorize such things and enter them up manually at the beginning of the exam.
 
-### Can I install packages to the exam terminal?
+### Can I install packages or download *anything* to the exam terminal?
 
 > Yes and No
 
 You may install additional packages if they are part of the operating system distribution. What this means is that you may use the Linux package manager to install anything that is available by default on the terminal without the addition of other `apt` (or `yum/dnf` on CentOS terminals) package repos, unless directed by a question to add one. You may not download third party packages using curl, wget, cloning from Github etc. unless directed by a question.
 
-See the third bullet point [here](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-rules-and-policies#policy-on-tools-and-resources-allowed-during-exam).
+Linux Foundation also say this, quoted from a question raised on the training support portal
+
+> Curl and wget commands are allowed during the exam. Unauthorized sites are blocked, i.e. they will not load, so you will not receive a penalty.
+
+What this means that there is a firewall between the exam terminal and the Internet which will *actively prevent* you from accessing unauthorized sites.
+
+It is therefore also possible in Kubernetes exams to directly download YAML fragments to files on the exam terminal by right-clicking the copy link and pasting the copied URL to a [wget or curl command](https://discord.com/channels/1197109182172770304/1222924937040232592/1303030265530155089) (link to KodeKloud discord), thus eliminating copy/paste.
+
+See also the third bullet point [here](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-rules-and-policies#policy-on-tools-and-resources-allowed-during-exam).
 
 ### What does the environment look like?
 
