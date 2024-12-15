@@ -34,6 +34,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
     * [Performance Based Exams](#performance-based-exams)
         * [Can I use my own bookmarks?](#can-i-use-my-own-bookmarks)
         * [Can I open multiple terminal sessions?](#can-i-open-multiple-terminal-sessions)
+        * [How do I copy/paste in the exam terminal?](#how-do-i-copypaste-in-the-exam-terminal)
         * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
         * [Can I install packages or download *anything* to the exam terminal?](#can-i-install-packages-or-download-anything-to-the-exam-terminal)
         * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
@@ -329,6 +330,18 @@ Because you cannot run your own browser. The only software that may be running o
 > Yes
 
 Either multiple instances of the terminal emulator app, multiple tabs within the terminal emulator, or both. We would encourage you to do so. This is useful when editing manifests. Have the manifest open in `vi` in one terminal, and a command prompt in the other. Edit the YAML and save without exiting (`:w`). In the other terminal, apply. Repeat until the bugs in the YAML are out.
+
+### How do I copy/paste in the exam terminal?
+
+Note that the exam gives you an option to see the copy/paste functionality as part of the pre-start tour. You should read this and ensure it aligns with the following. *Remember that what it says there is what will happen*.
+
+The exam terminals are Linux terminals and follow the rules for Linux terminals. You should be able to select text with the mouse.
+
+* Right clicking in the terminal window will give a menu with copy/paste on it.
+* `CTRL+SHIFT+C` to copy using the keyboard
+* `CTRL+SHIFT+V` to paste to the termninal
+
+You need to use `SHIFT` in the terminal window, because the regualr CTRL sequences have special meaning to terminals. In GUI applications like mousepad, copy/pate operations are as you would expect.
 
 ### Can I paste settings for vi, aliases etc from my notepad?
 
