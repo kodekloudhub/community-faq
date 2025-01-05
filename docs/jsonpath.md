@@ -19,6 +19,7 @@ Lots of people ask questions about jsonpath.
 * [Advanced](#advanced)
     * [Formatting](#formatting)
     * [Querying items by property value](#querying-items-by-property-value)
+* [JQ](#jq)
 
 # Basic
 
