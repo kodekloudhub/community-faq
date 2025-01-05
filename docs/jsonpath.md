@@ -482,3 +482,78 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
     kubectl get pod test jsonpath='{.status.conditions[?(@.type == "ContainersReady")].lastTransitionTime}'
     ```
 
+# JQ
+
+Note: The `jq` tool is installed on PSI exam terminals.
+
+Sometimes jsonpath is insufficient for getting the data you really want in the format you need. Enter [jq](https://jqlang.github.io/jq/) (which stands for Json Query). This supports far more advanced filtering and formatting than you get using `-o jsonpath`. For simple operations it is pretty much the same as jsonpath in terms of selecting things from a resource manifest, though how the output is formatted is different, though you can control this.
+
+Consider the examples above where we are getting multiple values for `image` by using the expression `..image`. If you wanted to get the first, and only the first occurrence of image in the entire manifest without knowing exactly the path to it, you can use a `jq` filter:
+
+```text
+kubectl get some-pod -o json | jq -r 'first(.. | objects | select(has("image")) | .image)'
+```
+
+`jq` can be extremely useful for some much more complex scenarios. Consider the following perfectly reasonable request which could be made of a working DevOps/Kubernetes engineer (that engineer was me!):
+
+> We need to determine all cluster workloads where Pod Presets are being used, because we need to upgrade the cluster to a version past v1.21 where Pod Presets are no longer supported by Kubernetes. We need to know every deployment, statefulset and daemonset in every namespace where its pods are using Pod Presets so that we know what workloads need to be attended to to use an alternative mechanism. Create a report that lists the deployments/statefulsets/daemonsets by namespace. You can ignore the `cattle-*` and `kube-system` namespaces because we know that neither Rancher nor Kubernetes uses pod presets on its own workloads.
+
+We approach this by knowing that Pod Presets annotates all pods it has changed with an annotation that starts with `podpreset.admission.kubernetes.io`, therefore we need to get all pods in the cluster, check their annotations for the existence of the given string, then look up through the pod's ownership chain to find the deployment etc. that created it, then store the name of that object. We use the raw power of `jq` to pull apart the resource manifests in the way needed to solve the problem.
+
+Pro Tip: You *really do* need to know bash to be an effective CKA!
+
+```bash
+#!/usr/bin/env bash
+#
+# Dictionary to store unique owning resources by namespace
+#
+set -e
+declare -A owning_resources
+
+# Read pod metadata into a variable to avoid subshell issues
+echo "Reading all pods..."
+pod_metadata=$(kubectl get pods -A -o json | jq -c '.items[].metadata')
+
+# Iterate over all pods in all namespaces
+while read -r pod; do
+  # Extract namespace and pod name
+  namespace=$(echo "$pod" | jq -r '.namespace')
+  # Ignore rancher and kube-system namespaces
+  [[ "$namespace" = cattle-* ]] || [[ "$namespace" = "kube-system" ]] && continue
+  pod_name=$(echo "$pod" | jq -r '.name')
+  echo "${namespace}/${pod_name}"
+  # Check if the pod has annotations with keys prefixed by `podpreset.admission.kubernetes.io`
+  if echo "$pod" | jq -e '.annotations | to_entries | any(.key | startswith("podpreset.admission.kubernetes.io"))' >/dev/null; then
+    echo "found presets"
+    # Get the owner references for the pod
+    owner_info=$(echo "$pod" | jq -c '.ownerReferences[]?')
+    while [[ -n "$owner_info" ]]; do
+      # Parse owner kind and name
+      kind=$(echo "$owner_info" | jq -r '.kind')
+      name=$(echo "$owner_info" | jq -r '.name')
+      case "$kind" in
+        Deployment|StatefulSet|DaemonSet)
+          # Record the top-level resource
+          owning_resources["$namespace"]+="$kind/$name "
+          break
+          ;;
+        *)
+          # Follow owner references recursively if not a top-level resource
+          owner_info=$(kubectl get "$kind" "$name" -n "$namespace" -o json | jq -c '.metadata.ownerReferences[]?')
+          ;;
+      esac
+    done
+  fi
+  echo
+done <<< "$pod_metadata"
+
+# Emit results per namespace as unique lists of owning resources, sorted by namespace
+echo "---RESULTS---"
+for ns in $(printf "%s\n" "${!owning_resources[@]}" | sort | tr '\n' ' '); do
+  echo "Namespace: $ns"
+  for r in $(echo "${owning_resources[$ns]}" | tr ' ' '\n' | sort -u) ; do
+    echo "- $r"
+  done
+  echo
+done
+```
