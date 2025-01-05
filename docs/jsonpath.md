@@ -489,6 +489,19 @@ Note: The `jq` tool is installed on PSI exam terminals.
 
 Sometimes jsonpath is insufficient for getting the data you really want in the format you need. Enter [jq](https://jqlang.github.io/jq/) (which stands for Json Query). This supports far more advanced filtering and formatting than you get using `-o jsonpath`. For simple operations it is pretty much the same as jsonpath in terms of selecting things from a resource manifest, though how the output is formatted is different, though you can control this.
 
+For instance, the get the pod name:
+
+jsonpath:
+
+```
+kubectl get pod test -o jsonpath='{.metadata.name}'
+```
+
+To do the same with `jq`:
+```
+kubectl get pod test -o json | jq -r '.metadata.name'
+```
+
 Consider the examples above where we are getting multiple values for `image` by using the expression `..image`. If you wanted to get the first, and only the first occurrence of image in the entire manifest without knowing exactly the path to it, you can use a `jq` filter:
 
 ```text
