@@ -505,7 +505,7 @@ kubectl get pod test -o json | jq -r '.metadata.name'
 Consider the examples above where we are getting multiple values for `image` by using the expression `..image`. If you wanted to get the first, and only the first occurrence of image in the entire manifest without knowing exactly the path to it, you can use a `jq` filter:
 
 ```text
-kubectl get some-pod -o json | jq -r 'first(.. | objects | select(has("image")) | .image)'
+kubectl get pod test -o json | jq -r 'first(.. | objects | select(has("image")) | .image)'
 ```
 
 `jq` can be extremely useful for some much more complex scenarios. Consider the following perfectly reasonable request which could be made of a working DevOps/Kubernetes engineer (that engineer was me!):
@@ -514,31 +514,39 @@ kubectl get some-pod -o json | jq -r 'first(.. | objects | select(has("image")) 
 
 We approach this by knowing that Pod Presets annotates all pods it has changed with an annotation that starts with `podpreset.admission.kubernetes.io`, therefore we need to get metadata for all pods in the cluster, check the annotations for the existence of the given string, then look up through the pod's ownership chain to find the deployment etc. that created it, then store the name of that object. We use the raw power of `jq` to pull apart the resource manifests in the way needed to solve the problem.
 
-Pro Tip: You *really do* need to know bash to be an effective CKA!
+Pro Tip: You *really do* need to know bash to be an effective CKA! Check out these courses:
+* [Learning Linux Basics](https://learn.kodekloud.com/courses/learning-linux-basics-course-labs)
+* [Shell Scripts for Beginners](https://learn.kodekloud.com/courses/shell-scripts-for-beginners)
+* [Advanced Bash Scripting](https://learn.kodekloud.com/courses/advanced-bash-scripting)
+
+
+<details>
+<summary>Script</summary>
 
 ```bash
 #!/usr/bin/env bash
 #
-# Dictionary to store unique owning resources by namespace
-#
 set -e
+
+# Dictionary to store unique owning resources by namespace
 declare -A owning_resources
 
-# Read pod metadata into a variable to avoid subshell issues
+# Read pod metadata for all pods into a variable to avoid subshell issues
 echo "Reading all pods..."
 pod_metadata=$(kubectl get pods -A -o json | jq -c '.items[].metadata')
 
-# Iterate over all pods in all namespaces
+# Iterate over pod metadata
 while read -r pod; do
-  # Extract namespace and pod name
+  # Extract namespace
   namespace=$(echo "$pod" | jq -r '.namespace')
   # Ignore rancher and kube-system namespaces
   [[ "$namespace" = cattle-* ]] || [[ "$namespace" = "kube-system" ]] && continue
+  # Extract name
   pod_name=$(echo "$pod" | jq -r '.name')
-  echo "${namespace}/${pod_name}"
+  echo -ne "\r${namespace}/${pod_name}                                  "
   # Check if the pod has annotations with keys prefixed by `podpreset.admission.kubernetes.io`
   if echo "$pod" | jq -e '.annotations | to_entries | any(.key | startswith("podpreset.admission.kubernetes.io"))' >/dev/null; then
-    echo "found presets"
+    echo
     # Get the owner references for the pod
     owner_info=$(echo "$pod" | jq -c '.ownerReferences[]?')
     while [[ -n "$owner_info" ]]; do
@@ -558,10 +566,12 @@ while read -r pod; do
       esac
     done
   fi
-  echo
 done <<< "$pod_metadata"
 
-# Emit results per namespace as unique lists of owning resources, sorted by namespace
+echo
+echo
+
+# Emit results per namespace as unique lists of owning resources
 echo "---RESULTS---"
 for ns in $(printf "%s\n" "${!owning_resources[@]}" | sort | tr '\n' ' '); do
   echo "Namespace: $ns"
@@ -571,3 +581,5 @@ for ns in $(printf "%s\n" "${!owning_resources[@]}" | sort | tr '\n' ' '); do
   echo
 done
 ```
+
+</details>
