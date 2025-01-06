@@ -485,7 +485,7 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
 
 # JQ
 
-Note: The `jq` tool is installed on PSI exam terminals.
+Note: The `jq` tool is pre-installed on PSI exam terminals and KodeKloud labs.
 
 Sometimes jsonpath is insufficient for getting the data you really want in the format you need. Enter [jq](https://jqlang.github.io/jq/) (which stands for Json Query). This supports far more advanced filtering and formatting than you get using `-o jsonpath`. For simple operations it is pretty much the same as jsonpath in terms of selecting things from a resource manifest, though how the output is formatted is different, though you can control this.
 
