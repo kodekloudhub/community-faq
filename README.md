@@ -361,7 +361,7 @@ Linux Foundation also say this, quoted from a question raised on the training su
 
 What this means that there is a firewall between the exam terminal and the Internet which will *actively prevent* you from accessing unauthorized sites.
 
-It is therefore also possible in Kubernetes exams to directly download YAML fragments to files on the exam terminal by right-clicking the copy link and pasting the copied URL to a [wget or curl command](https://discord.com/channels/1197109182172770304/1222924937040232592/1303030265530155089) (link to KodeKloud discord), thus eliminating copy/paste.
+It is therefore also possible in Kubernetes exams to directly download YAML fragments to files on the exam terminal by right-clicking the copy link and pasting the copied URL to a [wget or curl command](https://discord.com/channels/1197109182172770304/1222924937040232592/1303030265530155089) (link to KodeKloud discord), thus eliminating copy/paste of entire blocks of YAML.
 
 See also the third bullet point [here](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-rules-and-policies#policy-on-tools-and-resources-allowed-during-exam).
 
