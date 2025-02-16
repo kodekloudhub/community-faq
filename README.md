@@ -37,6 +37,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How do I copy/paste in the exam terminal?](#how-do-i-copypaste-in-the-exam-terminal)
         * [Can I paste settings for vi, aliases etc from my notepad?](#can-i-paste-settings-for-vi-aliases-etc-from-my-notepad)
         * [Can I install packages or download *anything* to the exam terminal?](#can-i-install-packages-or-download-anything-to-the-exam-terminal)
+        * [Will I be failed if I click a link that is outside of allowed docs?](#will-i-be-failed-if-i-click-a-link-that-is-outside-of-allowed-docs)
         * [How do I remove the nag dialog when pasting into the terminal application?](#how-do-i-remove-the-nag-dialog-when-pasting-into-the-terminal-application)
         * [What does the environment look like?](#what-does-the-environment-look-like)
         * [How is the exam scored?](#how-is-the-exam-scored)
@@ -225,7 +226,7 @@ Press the "Request Break" button at top left of the PSI application, if you need
 
 ### How do I remove the nag dialog when pasting into the terminal application?
 
-In the terminal application, select `Edit -> Preferences`. Uncheck `Show unsafe paste dialog`.
+This should already be turned off (originally it wasn't), however if you do get it, in the terminal application, select `Edit -> Preferences`. Uncheck `Show unsafe paste dialog`.
 
 You can practice this in killer.sh before the exam.
 
@@ -355,7 +356,7 @@ The only software that may be running is the PSI software, therefore you must me
 
 You may install additional packages if they are part of the operating system distribution. What this means is that you may use the Linux package manager to install anything that is available by default on the terminal without the addition of other `apt` (or `yum/dnf` on CentOS terminals) package repos, unless directed by a question to add one. You may not download third party packages using curl, wget, cloning from Github etc. unless directed by a question.
 
-Linux Foundation also say this, quoted from a question raised on the training support portal
+The Linux Foundation also says this, quoted from a question raised on the training support portal
 
 > Curl and wget commands are allowed during the exam. Unauthorized sites are blocked, i.e. they will not load, so you will not receive a penalty.
 
@@ -364,6 +365,14 @@ What this means that there is a firewall between the exam terminal and the Inter
 It is therefore also possible in Kubernetes exams to directly download YAML fragments to files on the exam terminal by right-clicking the copy link and pasting the copied URL to a [wget or curl command](https://discord.com/channels/1197109182172770304/1222924937040232592/1303030265530155089) (link to KodeKloud discord), thus eliminating copy/paste of entire blocks of YAML.
 
 See also the third bullet point [here](https://docs.linuxfoundation.org/tc-docs/certification/lf-handbook2/exam-rules-and-policies#policy-on-tools-and-resources-allowed-during-exam).
+
+### Will I be failed if I click a link that is outside of allowed docs?
+
+The Linux Foundation says:
+
+> Keep in mind that the search function at kubernetes.io/docs may sometimes point to results outside the documentation (e.g. discussion forum) - you will not be able to open URLs that are not nested under kubernetes.io/docs domain.
+
+This applies to all allowed documentation based on the exam you are taking.
 
 ### What does the environment look like?
 
