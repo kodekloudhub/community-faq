@@ -368,7 +368,7 @@ See also the third bullet point [here](https://docs.linuxfoundation.org/tc-docs/
 
 ### Will I be failed if I click a link that is outside of allowed docs?
 
-The Linux Foundation says:
+Pretty much the same as the previous question. The Linux Foundation says:
 
 > Keep in mind that the search function at kubernetes.io/docs may sometimes point to results outside the documentation (e.g. discussion forum) - you will not be able to open URLs that are not nested under kubernetes.io/docs domain.
 
