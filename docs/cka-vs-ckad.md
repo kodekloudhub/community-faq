@@ -4,7 +4,7 @@ Many people ask about this. Here we set out what is in each curricumlum and what
 
 The categories here do not reflect the domains in the actual exam, because the domains are different. A particular concept appears in one domain in CKA and another in CKAD. These categories attempt only to compare the individual concepts more or less at lecture/lab level. The important thing is that you cover all the concepts.
 
-## Workloads/Services
+## Workloads/Services/Networking
 
 | Concept               | CKA                | CKAD               |
 |-----------------------|--------------------|--------------------|
@@ -21,6 +21,9 @@ The categories here do not reflect the domains in the actual exam, because the d
 | Ingress               | :heavy_check_mark: | :heavy_check_mark: |
 | Multi Container Pods  | :heavy_check_mark: | :heavy_check_mark: |
 | Init Containers       | :heavy_check_mark: | :heavy_check_mark: |
+| Gateway API           | :heavy_check_mark: |                    |
+| Workload autoscaling  | :heavy_check_mark: |                    |
+| CoreDNS               | :heavy_check_mark: |                    |
 
 ## Configuration
 
@@ -32,6 +35,7 @@ The categories here do not reflect the domains in the actual exam, because the d
 | Command and Arguments | :heavy_check_mark: | :heavy_check_mark: |
 | Security Contexts     | :heavy_check_mark: | :heavy_check_mark: |
 | Resource Reqs/Limits  | :heavy_check_mark: | :heavy_check_mark: |
+| CNI/CRI/CSI           | :heavy_check_mark: |                    |
 
 
 ## Scheduling/Deploying
@@ -49,7 +53,7 @@ The categories here do not reflect the domains in the actual exam, because the d
 | Affinity/Anti-Affinity | :heavy_check_mark: | :heavy_check_mark: |
 | Deployment Strategies  |                    | :heavy_check_mark: |
 | Rolling Updates        | :heavy_check_mark: | :heavy_check_mark: |
-| Helm                   |                    | :heavy_check_mark: |
+| Helm                   | :heavy_check_mark: | :heavy_check_mark: |
 
 ## Storage
 
@@ -79,9 +83,9 @@ The categories here do not reflect the domains in the actual exam, because the d
 | API groups         |                    | :heavy_check_mark: |
 | API versions       |                    | :heavy_check_mark: |
 | API deprecations   |                    | :heavy_check_mark: |
-| Admission Controllers |                    | :heavy_check_mark: |
-| Custom Resources   |                    | :heavy_check_mark: |
-| Operators          |                    | :heavy_check_mark: |
+| Admission Controllers |:heavy_check_mark: | :heavy_check_mark: |
+| Custom Resources   | :heavy_check_mark: | :heavy_check_mark: |
+| Operators          | :heavy_check_mark: | :heavy_check_mark: |
 
 ## Observability
 
@@ -98,7 +102,7 @@ These topics are CKA only
 
 * Cluster Install - Never seen this tested in exam. It would take far longer than 6 min average time per question, but doesn't mean to say that it never will be, therefore you should *not* skip it! What you certainly won't have to do is to provision virtual machines. That is a Linux SA topic and is only presented here so that you can install your own cluster.
 * Cluster Upgrade
-* etcd architecture, backup and restore
+* etcd architecture, backup and restore (presumed retired from 2025 updated)
 * Kube Proxy
 * CoreDNS
 
