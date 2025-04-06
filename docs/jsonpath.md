@@ -483,6 +483,56 @@ This says get me `image` from `spec.containers` where `.name` equals `sidecar`.
     kubectl get pod test jsonpath='{.status.conditions[?(@.type == "ContainersReady")].lastTransitionTime}'
     ```
 
+## Putting it all together
+
+Let's have a fictional CKS question...
+
+> Using trivy, scan all pods in `kube-system` namespace and identify the image with the highest number of critical vulnerabilities
+
+This is a bit contrived as there's only 6 images in total so you could use a manual method of `kubectl get pod ... -o yaml`, copy the image name and paste to the trivy command, however what if there were say 30 pods in some other namespace the question wanted you to scan, or in a real-world scenario where you might need to automate a trivy scan? It is the kind of question I might ask if I were interviewing you for a job!
+
+In this case, you can make a shell command using JSONPath and the shell utility `cut`:
+
+```bash
+ for p in $(k get po -n kube-system -o jsonpath='{range .items[*]}{.metadata.name}{";"}{.spec.containers[*].image}{"\n"}{end}') ; do echo $(cut -f 1 -d ';' <<< $p) ; trivy i --severity CRITICAL $(cut -f 2 -d ';' <<< $p) 2>&1 | grep -i total ; done
+ ```
+
+Let's break this down
+
+1. The JSONPath query
+
+    ```
+    k get po -n kube-system -o jsonpath='{range .items[*]}{.metadata.name}{";"}{.spec.containers[*].image}{"\n"}{end}'
+    ```
+
+    This returns the pod name and its image, separated by a `;`, one per line, e.g.
+
+    ```
+    coredns-7484cd47db-jv9k2;registry.k8s.io/coredns/coredns:v1.10.1
+    coredns-7484cd47db-xb8t2;registry.k8s.io/coredns/coredns:v1.10.1
+    etcd-controlplane;registry.k8s.io/etcd:3.5.16-0
+    kube-apiserver-controlplane;registry.k8s.io/kube-apiserver:v1.32.0
+    kube-controller-manager-controlplane;registry.k8s.io/kube-controller-manager:v1.32.0
+    kube-proxy-k8zk6;registry.k8s.io/kube-proxy:v1.32.0
+    kube-scheduler-controlplane;registry.k8s.io/kube-scheduler:v1.32.0
+    ```
+
+    We want both pieces of information so it's easy to identify what's what in the final outpout. There's 2 copies of CoreDNS here due to the `replicas` setting of its deployment, however as you would expect, both pods will ultimately give the same result.
+
+1. The `for` loop
+
+    ```bash
+    for p in $(...) ; do ... ; done
+    ```
+
+    This will take the results from the JSONPath query executed within `$(...)` one at a time, assigning each result to shell variable `p`, then exeucte the commands between `do` and `done`
+
+1. The commands to execute
+
+    We use `cut` to get the pieces of text either side of `;` in a result line where `-d` sets the field delimiter, in this case `;` and `-f` is the field number (1 or 2)
+
+    So here we `echo` the pod name (field 1) and run `trivy` on the image name (field 2), first removing log output on stderr (`2>&1`) because we don't need it and then piping the results to `grep` to get only the totals line
+
 # JQ
 
 Note: The `jq` tool is pre-installed on PSI exam terminals and KodeKloud labs.
