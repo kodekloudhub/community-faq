@@ -517,7 +517,7 @@ Let's break this down
     kube-scheduler-controlplane;registry.k8s.io/kube-scheduler:v1.32.0
     ```
 
-    We want both pieces of information so it's easy to identify what's what in the final outpout. There's 2 copies of CoreDNS here due to the `replicas` setting of its deployment, however as you would expect, both pods will ultimately give the same result.
+    We want both pieces of information so it's easy to identify what's what in the final output. There's 2 copies of CoreDNS here due to the `replicas` setting of its deployment, however as you would expect, both pods will ultimately give the same result.
 
 1. The `for` loop
 
@@ -531,7 +531,7 @@ Let's break this down
 
     We use `cut` to get the pieces of text either side of `;` in a result line where `-d` sets the field delimiter, in this case `;` and `-f` is the field number (1 or 2)
 
-    So here we `echo` the pod name (field 1) and run `trivy` on the image name (field 2), first removing log output on stderr (`2>&1`) because we don't need it and then piping the results to `grep` to get only the totals line
+    So here we `echo` the pod name (field 1) and run `trivy` on the image name (field 2), first removing log output on stderr (`2>&1`) because we don't need it and then piping the results to `grep` to get only the totals line.
 
 # JQ
 
