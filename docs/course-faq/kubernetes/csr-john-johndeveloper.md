@@ -1,6 +1,6 @@
 # CSRs - What is it with john and john-developer?
 
-This is regarding CKA Mock Exam 2, question 6. This question is as follows
+This is regarding CKA Mock Exam 2, question 6. A similar question appears in CKA course mock exams. This question is as follows:
 
 > Create a new user called `john`. Grant him access to the cluster.<br/>John should have permissions to `create, list, get, update and delete pods` in the `development` namespace. The private key exists in the location `/root/CKA/john.key` and csr at `root/CKA/john.csr`.
 
