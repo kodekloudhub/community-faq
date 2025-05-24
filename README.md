@@ -43,7 +43,8 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How is the exam scored?](#how-is-the-exam-scored)
         * [What if I want to dispute my score?](#what-if-i-want-to-dispute-my-score)
     * [Kubernetes Certifications](#kubernetes-ckackad)
-        * [What are the similarites/differences between CKA and CKAD?](#what-are-the-similaritesdifferences-between-cka-and-ckad)
+        * [About the Kubernetes exam environments](#about-the-kubernetes-exam-environments)
+        * [What are the similarities/differences between CKA and CKAD?](#what-are-the-similaritiesdifferences-between-cka-and-ckad)
         * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
         * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
         * [How do I get some SERIOUS practice?](#how-do-i-get-some-serious-practice)
@@ -55,6 +56,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
         * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
         * [How-to: Install Ingress in the KodeKloud playgrounds](#how-to-install-ingress-in-the-kodekloud-playgrounds)
+        * [How-to: Install Gateway API in the KodeKloud playgrounds](#how-to-install-gateway-api-in-the-kodekloud-playgrounds)
         * [What is an operator in Kubernetes?](#what-is-an-operator-in-kubernetes)
         * [What's the deal with Certificate Signing Requests?](./docs/certificate-signing-requests.md)
 * [Other](#other)
@@ -396,7 +398,15 @@ Exam servers are decommissioned within a few days from the Exam date, so if you 
 
 This section applies to performance based Kubernetes exams only, i.e. CKA, CKAD and CKS. If you are doing KCNA, skip this section.
 
-### What are the similarites/differences between CKA and CKAD?
+## About the Kubernetes exam environments
+
+All 3 exams use multiple clusters, usually one cluster per question. The good news is that if you break a cluster it will affect the scoring of that question only. The bad news is that you must first `ssh` to the control plane node of the cluster for the question. The SSH command required is given in the question pane and can be copied and pasted to the terminal.
+
+The fact that you must SSH to a different node for every question means that you cannot customise `vi` editor once and use for the whole exam. You would have to repeat that customisation for *every* question which would lose too much time! The defaults they have are sufficient for YAML editing.
+
+On all terminals, the `k` alias and `kubectl` autocomplete is pre-configured.
+
+### What are the similarities/differences between CKA and CKAD?
 
 Please see [here](./docs/cka-vs-ckad.md)
 
@@ -419,7 +429,6 @@ If you have a KodeKloud Pro subscription, you can attempt our Ultimate Mock Exam
 * [Kubernetes Challenges](https://kodekloud.com/courses/kubernetes-challenges/) - FREE course.
 * [Ultimate CKA Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam/) - Available on standard KodeKloud subscription.
 * [Ultimate CKAD Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-application-developer-ckad-mock-exam-series/) - Available on standard KodeKloud subscription.
-* Ultimate CKS Mocks - Future - No ETA.
 * [CKS Challenges](https://kodekloud.com/courses/cks-challenges/) - FREE course.
 
 ### How do I upgrade a cluster?
@@ -448,6 +457,8 @@ Note that for e.g. cluster upgrades, then `apt` package manager should work exac
 
 ### How do I run Docker commands when Docker is removed?
 
+For questions specifically related to Docker, then the docker command will be present.
+
 As you most likely know, the Dockershim layer is removed in Kubernetes 1.24. This means that the `docker` command is also likely not installed.
 
 For examining and working with containers at that level, you should find that one, other or both of `crictl` and `podman` will be present, depending on the exam requirements.
@@ -470,6 +481,10 @@ See the [Crashed API Server](./docs/diagnose-crashed-apiserver.md) page.
 ### How-to: Install Ingress in the KodeKloud playgrounds
 
 See [this guide](./docs/how-tos/howto-install-ingress-on-kk-playground.md).
+
+### How-to: Install Gateway API in the KodeKloud playgrounds
+
+See [this guide](./docs/how-tos/howto-install-gateway-api-on-kk-playground.md).
 
 ### What is an operator in Kubernetes?
 
