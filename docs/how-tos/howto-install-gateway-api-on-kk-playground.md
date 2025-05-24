@@ -380,7 +380,7 @@ Let's now create two services representing two versions of an application and de
 
     ```
     kubectl run test --image wbitt/network-multitool
-    # wait a few seconds
+    # wait a few seconds till the pod is running
     kubectl exec -t test -- curl -s http://echo-v1
     kubectl exec -t test -- curl -s http://echo-v2
     kubectl delete pod test
@@ -425,7 +425,7 @@ Let's now create two services representing two versions of an application and de
 
     You should now see the response alternate between `VERSION ONE` and `VERSION TWO`
 
-    Try editing the `HTTPRoute` and setting the weight of one of the service to `2`. Now the traffic is a `2:1` ratio, so the version with a weighting of `2` should appear twice as frequently as the other.
+    Try editing the `HTTPRoute` and setting the weight of one of the services to `2`. Now the traffic is a `2:1` ratio, so the version with a weighting of `2` should appear twice as frequently as the other.
 
     ```
     kubectl edit httproute echo-route
