@@ -283,7 +283,7 @@ You need to do `Change server` in speedtest, and run tests for each of the possi
 
 * AWS Each of the four US regions and `eu-west-2` (London). See [here](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html#available-regions).
 * Azure - All of the USA regions, and`UK South` (London) - See [here](https://learn.microsoft.com/en-us/azure/reliability/regions-list#azure-regions-list-1)
-* GCP - All of the USA reagions and London - See [here](https://cloud.google.com/about/locations)
+* GCP - All of the USA regions and London - See [here](https://cloud.google.com/about/locations)
 
 **Proctors**
 
