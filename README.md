@@ -276,6 +276,17 @@ No infrastructure is perfect! Be that KodeKloud labs, killer.sh or the exam envi
 
 The first two and to a certain extent the third are more likely if you live in, or the route crosses countries with poorly maintained infrastructure or political instability. What I'm getting at is it is not *always* PSI's fault! If you are still connected to the proctor, then they will generally try to help but it is not always successful. In the event that your exam finishes incomplete due to technical issues, you must [raise a ticket with Linux Foundation](https://trainingsupport.linuxfoundation.org/) explaining clearly what happened. In most cases they will credit your exam back to you.
 
+**Speedtest**
+
+Many people say "Oh, but I ran speedtest and it said that my speed was (something mega fast)". That's all well and good, but it is only testing the speed between you and some server that is geographically close to you - usually not more than a few hundred miles away. The exam infrastructure might be running in a different country potentially thousands of miles away! Nobody actually knows which cloud provider PSI uses, or exactly where they launch the exam infrastructure, however USA is 99% certain, and it is also very likely they have a mirror in London, since personally I've been fine with all exams I've run living very close to London. As for anywhere else, that's unknown. My broadband is 500 mbps, but if I run a speedtest to West Coast USA from London, I get a tenth of the speed!
+You need to do `Change server` in speedtest, and run tests for each of the possible locations for the cloud provider regions. Choose a server in a city in each of the following locations
+
+* AWS Each of the four US regions and `eu-west-2` (London). See [here](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html#available-regions).
+* Azure - All of the USA regions, and`UK South` (London) - See [here](https://learn.microsoft.com/en-us/azure/reliability/regions-list#azure-regions-list-1)
+* GCP - All of the USA reagions and London - See [here](https://cloud.google.com/about/locations)
+
+**Proctors**
+
 Please bear in mind that proctors are *non-technical*. They are very unlikely to be able to resolve an issue.
 
 * Proctors work for PSI - Their primary function is to check you into the exam and ensure you are not cheating.
