@@ -278,12 +278,14 @@ The first two and to a certain extent the third are more likely if you live in, 
 
 **Speedtest**
 
-Many people say "Oh, but I ran speedtest and it said that my speed was (something mega fast)". That's all well and good, but it is only testing the speed between you and some server that is geographically close to you - usually not more than a few hundred miles away. The exam infrastructure might be running in a different country potentially thousands of miles away! Nobody actually knows which cloud provider PSI uses, or exactly where they launch the exam infrastructure, however USA is 99% certain, and it is also very likely they have a mirror in London, since personally I've been fine with all exams I've run living very close to London. As for anywhere else, that's unknown. My broadband is 500 mbps, but if I run a speedtest to West Coast USA from London, I get a tenth of the speed and signifcantly longer ping times and latency measurements!
+Many people say "Oh, but I ran speedtest and it said that my speed was (something mega fast)". That's all well and good, but it is only testing the speed between you and some server that is geographically close to you - usually not more than a few hundred miles away. The exam infrastructure might be running in a different country potentially thousands of miles away! Nobody actually knows which cloud provider PSI uses, or exactly where they launch the exam infrastructure, however USA is certain as their head office is there, and it is also very likely they have a mirror in London, since personally I've been fine with all exams I've run living very close to London. As for anywhere else, that's unknown. My broadband is 500 mbps, but if I run a speedtest to West Coast USA from London, I get a tenth of the speed and significantly longer ping times and latency measurements!
 You need to do `Change server` in speedtest, and run tests for each of the possible locations for the cloud provider regions. Choose a server in a city in each of the following locations
 
 * AWS Each of the four US regions and `eu-west-2` (London). See [here](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html#available-regions).
 * Azure - All of the USA regions, and`UK South` (London) - See [here](https://learn.microsoft.com/en-us/azure/reliability/regions-list#azure-regions-list-1)
 * GCP - All of the USA regions and London - See [here](https://cloud.google.com/about/locations)
+
+Remember, speed is not the issue. Theoretically *five* megabit is more than sufficient as there is no audio or video content in the exams. The killer is *latency*, that is the time it takes the network packets to get from your machine to the exam infrastructure and back again. You can have all the speed in the world, but if there is a one second latency between you and the exam infra then your keypresses will go through at one per second.
 
 **Proctors**
 
