@@ -1,6 +1,6 @@
 # Configure Nginx + PHP-FPM Using Unix Sock
 
-IMPORTANT: Various parameters highlighted below in the question may be different each time you reset the lab. As such the solution below is tailored to this particular instance of the question. You must change it accordingly with what your version of the question asks for.
+**IMPORTANT**: Various parameters `highlighted` below in the question may be different each time you reset the lab. As such the solution below is tailored to this particular instance of the question. You must change it accordingly with what your version of the question asks for.
 
 
 ## Question
@@ -12,7 +12,7 @@ The Nautilus application development team is planning to launch a new PHP-based 
 a. Install nginx on `app server 2` , configure it to use port `8094` and its document root should be `/var/www/html`.
 
 
-b. Install php-fpm version `7.4` on `app server 2`, it must use the unix socket `/var/run/php-fpm/default.sock` (create the parent directories if don't exist).
+b. Install php-fpm version `8.1` on `app server 2`, it must use the unix socket `/var/run/php-fpm/default.sock` (create the parent directories if don't exist).
 
 
 c. Configure php-fpm and nginx to work together.
