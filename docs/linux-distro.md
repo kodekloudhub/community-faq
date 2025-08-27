@@ -75,7 +75,7 @@ See [this infographic](https://upload.wikimedia.org/wikipedia/commons/a/ad/2023_
 
 When you run containers in Docker or Kubernetes, the base images from which you build your containers are also based on distros. The important thing to note here is that the image *does not* contain a kernel. It will only contain items 2, 3 and possibly 4 (Alpine doesn't by default) from the list above. This is because the container will use the kernel of the host machine, and you cannot run GUI desktops inside containers.
 
-What this means is that when you run for example a CentOS container on an Ubuntu server, then the items from #2 are those that are found on any other CentOS Linux system, but these programs are using the kernel of the host system, Ubuntu. Remember the kernel is the kernel and is not specific to any distribution. On the other hand a virtual machine is a complete Linux operating system including its own kernel.
+What this means is that when you run for example a CentOS container on an Ubuntu server, then the items from 2, 3, 4 are those that are found on any other CentOS Linux system, but these programs are using the kernel of the *host* system, Ubuntu. Remember the kernel is the kernel and is not specific to any distribution. On the other hand a virtual machine is a complete Linux operating system including its own kernel.
 
 Some sharper eyed students have noticed the following when running our labs that are based on CentOS:
 
