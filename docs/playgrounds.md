@@ -11,7 +11,7 @@ The majority of questions we handle on the forums are questions like "*Why can't
 
 There are 3 main reasons
 
-1. **Cost**. Many services are expensive to run. Also various configurations of services you are allowed to run like AWS EC2 where it's possible without constraints to launch a single instance that costs over 60 US dollars an hour! If we did not limit what can be done on a cost basis, the subscription price for PRO membership would have to be significantly increased!
+1. **Cost**. Many services are expensive to run. Also various configurations of services you are allowed to run like AWS EC2 where it's possible without constraints to launch a single instance that costs over 200 US dollars an hour! If we did not limit what can be done on a cost basis, the subscription price for PRO membership would have to be significantly increased!
 1. **Security**. We need to protect against privilege escalations, e.g. ability to create new users with more permissions than the user you log in as, and unacceptable use of resources. Hence the IAM is quite tightly locked down. Tighter control on IAM also enforces the cost control described above, preventing users from launching costly resources.
 1. **Manageability**. Adding a service that isn't currently offered in the playground is not a simple case of "just switch it on". We maintain a pool of cloud provider accounts which are recycled at the end of every session. For each supported service, there is a lot of work involved in:
     * Planning what parts of that service can be enabled from a cost point of view.
