@@ -59,10 +59,12 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How-to: Install Gateway API in the KodeKloud playgrounds](#how-to-install-gateway-api-in-the-kodekloud-playgrounds)
         * [What is an operator in Kubernetes?](#what-is-an-operator-in-kubernetes)
         * [What's the deal with Certificate Signing Requests?](./docs/certificate-signing-requests.md)
+        * [JSONPath explained](./docs/jsonpath.md)
 * [Other](#other)
     * [Labs are broken/crashing/not loading](#labs-are-brokencrashingnot-loading)
     * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
     * [I can't get out of vi!](#i-cant-get-out-of-vi)
+    * [Playground mini-FAQ](./docs/playgrounds.md)
 * YAML Syntax
     * See the [dedicated YAML FAQ](./docs/yaml-faq.md)
 * [Useful Links](#useful-links)
