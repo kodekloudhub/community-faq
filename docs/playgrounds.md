@@ -31,3 +31,5 @@ For each of the cloud playgrounds, the start page lists the services available a
 Also a popular topic on the forums is "*I tried to launch an EKS/AKS/GKE cluster, but I got this permission error*". The permission errors are for the reasons stated in the previous paragraph. We have curated cluster builds that will work on the playgrounds. See [here](https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/managed-clusters).
 
 Note that `eksctl` is not supported on AWS playgrounds as it asserts IAM permissions that are not granted.
+
+Also don't try to use terraform, CloudFormation, ARM templates etc that you find elsewhere on the Internet as they will almost certainly not work, again due to IAM restrictions.
