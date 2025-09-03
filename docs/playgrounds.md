@@ -7,7 +7,7 @@ KodeKloud playgrounds are available to PRO subscribers and allow you to try thin
 
 # Why can't I?
 
-The majority of questions we handle on the forums are questions like "*Why can't I do X on this playground?*", normally in relation to the cloud playgrounds.
+The majority of questions we handle on the forums are questions like "*Why can't I do X on this playground?*", normally in relation to the cloud playgrounds. These playgrounds have *limited* functionality and *restricted* access, i.e. it's not like you signed up for your own cloud account where you have full admin rights to do anything.
 
 There are 3 main reasons
 
@@ -20,7 +20,7 @@ There are 3 main reasons
 
     We are gradually increasing the number of offered services on each playground.
 
-For each of the cloud playgrounds, the start page lists the services available and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link.
+For each of the cloud playgrounds, the start page lists the services available and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link. What you can do should include anything that covered by labs in any of our cloud courses, and a bit more.
 
 Bottom line - if it's not listed, you can't launch it!
 
