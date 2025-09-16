@@ -51,7 +51,10 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How do I upgrade a cluster?](#how-do-i-upgrade-a-cluster)
         * [How do I backup etcd?](#how-do-i-backup-etcd)
         * [How do I restore etcd?](#how-do-i-restore-etcd)
+        * [What's the deal with init containers, sidecars, co-located etc.?](#whats-the-deal-with-init-containers-sidecars-co-located-etc)
+        * [Where is the VPA documentation?](#where-is-the-vpa-documentation)
         * [What's the deal with jsonpath and custom-columns?](#whats-the-deal-with-jsonpath-and-custom-columns)
+        * [How do I decode cryptic kubectl errors (and othe YAML questions)](#how-do-i-decode-cryptic-kubectl-errors-and-othe-yaml-questions)
         * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
         * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
         * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
@@ -59,7 +62,6 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How-to: Install Gateway API in the KodeKloud playgrounds](#how-to-install-gateway-api-in-the-kodekloud-playgrounds)
         * [What is an operator in Kubernetes?](#what-is-an-operator-in-kubernetes)
         * [What's the deal with Certificate Signing Requests?](./docs/certificate-signing-requests.md)
-        * [JSONPath explained](./docs/jsonpath.md)
 * [Other](#other)
     * [Labs are broken/crashing/not loading](#labs-are-brokencrashingnot-loading)
     * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
@@ -460,9 +462,39 @@ See the dedicated [etcd FAQ](./docs/etcd-faq.md)
 
 See the dedicated [etcd FAQ](./docs/etcd-faq.md)
 
+## What's the deal with init containers, sidecars, co-located etc.?
+
+The Linux Foundation says:
+> Our engineers have already noticed the change in the definitions and made the necessary changes to the exams accordingly.
+        This means that whenever we want candidates to create a sidecar container, it is aligned with the official doc's definition of sidecar, and if we want candidates to create a co-located container (the old way), we ask for a co-located container.
+
+The official definition of a "sidecar" container as of more recent versions of Kubernetes (and the current version of the exams) is an init container with `restartPolicy: Always`. There will be no tricks in the exam. If they ask for sidecar, then this is what they want.
+
+```yaml
+initContainers:
+  - name: regular-init
+    image: busybox
+  - name: sidecar
+    image: busybox
+    restartPolicy: Always    # <-- This makes it a sidecar
+containers:
+  - name: main-container
+    image: busybox
+  - name: co-located        # <-- Any additional containers here are co-located
+    image: busybox
+```
+
+## Where is the VPA documentation?
+
+There isn't any, at least not in the [Allowed Documentation](https://docs.linuxfoundation.org/tc-docs/certification/certification-resources-allowed#certified-kubernetes-administrator-cka-and-certified-kubernetes-application-developer-ckad). This makes it *highly unlikely* that you will receive any questions on it. If you do, then `kubectl explain` is your friend. It is well worth getting to grips with, as it can be faster on all resources than searching docs, not just VPA.
+
 ### What's the deal with jsonpath and custom-columns?
 
 See the dedicated [jsonpath FAQ](./docs/jsonpath.md)
+
+### How do I decode cryptic kubectl errors (and othe YAML questions)
+
+See the dedicated [YAML FAQ](./docs/yaml-faq.md)
 
 ### How do I install a CNI (or anything else)?
 
