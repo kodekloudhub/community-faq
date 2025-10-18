@@ -28,6 +28,23 @@ Bottom line - if it's not listed, you can't launch it!
 * Azure - https://kodekloud.com/cloud-playgrounds/azure
 * GCP - https://kodekloud.com/cloud-playgrounds/google
 
+## Cloud IAM
+
+When you first log into a playground, you start with an intital user, usally something ile `kk_labs_user_XX`. This has a set of permissions. In the palygrounds where you can create addditional IAM resources, those resources must have specific names and cannot be granted any higher privilege than the user you log in as.
+
+### AWS IAM
+
+* You can create `IAM::User` as long as the name starts with `iamuser_`
+* You can create `IAM::Group` as long as the name starts with `iamgroup_`
+* You can create `IAM:Role` with specific names. Must be one of
+    * `lambda_execution_role`
+    * `CodeDeployRole`
+    * `EC2InstanceRole`
+    * `CodePipelineServiceRole`
+    * `eksClusterRole`
+
+You cannot assign any IAM resource higher permissions than the user you first log in as. This would be a privilege escalation.
+
 # Kubernetes Clusters
 
 Also a popular topic on the forums is "*I tried to launch an EKS/AKS/GKE cluster, but I got this permission error*". The permission errors are for the reasons stated in the previous paragraph. We have curated cluster builds that will work on the playgrounds. See [here](https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/managed-clusters).
