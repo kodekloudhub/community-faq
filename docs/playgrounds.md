@@ -30,7 +30,7 @@ Bottom line - if it's not listed, you can't launch it!
 
 ## Cloud IAM
 
-When you first log into a playground, you start with an intital user, usally something ile `kk_labs_user_XX`. This has a set of permissions. In the palygrounds where you can create addditional IAM resources, those resources must have specific names and cannot be granted any higher privilege than the user you log in as.
+When you first log into a playground, you start with an intital user, usally something ile `kk_labs_user_XX`. This has a set of permissions. In the playgrounds where you can create addditional IAM resources, those resources must have specific names and cannot be granted any higher privilege than the user you log in as.
 
 ### AWS IAM
 
