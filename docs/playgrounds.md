@@ -62,7 +62,7 @@ You have created a Kubernetes service in a Kube playground, or perhaps deployed 
 
 In the dialog box that comes up, enter your port number and your browser will open a new tab on the service.
 
-For multi-node playgrounds such as [Kubernetes Multi Cluster](https://kodekloud.com/playgrounds/playground-kubernetes-multi-cluster) there is a bit more work to do. The `View Port` functionality can only connect to the node that the lab begins on, normally something like `student-node`. The clusters are running on other nodes which you have to SSH to, and as such `View Port` doesn't know about these. Therefore what we need to do is to set up a low-level port forward from the student node to another node where you server workload or Kubernetes node port service is running
+For multi-node playgrounds such as [Kubernetes Multi Cluster](https://kodekloud.com/playgrounds/playground-kubernetes-multi-cluster) there is a bit more work to do. The `View Port` functionality can only connect to the node that the lab begins on, normally something like `student-node`. The clusters are running on other nodes which you have to SSH to, and as such `View Port` doesn't know about these. Therefore what we need to do is to set up a low-level port forward from the student node to another node where your server workload or Kubernetes node port service is running
 
 Here is a worked example (using the Kubernetes Multi Cluster playground)
 
