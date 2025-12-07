@@ -3,6 +3,8 @@
 KodeKloud playgrounds are available to PRO subscribers and allow you to try things out in sandboxed playgrounds at no additional cost.
 
 * [Why can't I?](#why-cant-i)
+* [Cloud IAM](#cloud-iam)
+    * [AWS IAM](#aws-iam)
 * [Kubernetes Clusters](#kubernetes-clusters)
 * [How do I browse my service?](#how-do-i-browse-my-service)
 
