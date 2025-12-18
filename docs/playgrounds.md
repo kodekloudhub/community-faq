@@ -45,6 +45,7 @@ When you first log into a playground, you start with an initial user, usually so
     * `EC2InstanceRole`
     * `CodePipelineServiceRole`
     * `eksClusterRole`
+    * `eksWorkerNodeRole`
 
 You cannot assign any IAM resource higher permissions than the user you first log in as. This would be a privilege escalation.
 
