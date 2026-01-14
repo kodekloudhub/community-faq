@@ -23,7 +23,7 @@ There are 3 main reasons
 
     We are gradually increasing the number of offered services on each playground.
 
-For each of the cloud playgrounds, the start page lists the services available and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link. What you can do should include anything that covered by labs in any of our cloud courses, and a bit more.
+For each of the cloud playgrounds, the start page lists the services available, the features of those services which you can use (note not all features of a particular service may be enabled), and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link. What you can do should include anything that covered by labs in any of our cloud courses, and a bit more.
 
 Bottom line - if it's not listed, you can't launch it!
 
