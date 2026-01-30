@@ -8,7 +8,7 @@ KodeKloud playgrounds are available to PRO subscribers and allow you to try thin
 * [Kubernetes Clusters](#kubernetes-clusters)
 * [How do I browse my service?](#how-do-i-browse-my-service)
 
-# Why can't I?
+## Why can't I?
 
 The majority of questions we handle on the forums are questions like "*Why can't I do X on this playground?*", normally in relation to the cloud playgrounds. These playgrounds have *limited* functionality and *restricted* access, i.e. it's not like you signed up for your own cloud account where you have full admin rights to do anything.
 
@@ -23,7 +23,7 @@ There are 3 main reasons
 
     We are gradually increasing the number of offered services on each playground.
 
-For each of the cloud playgrounds, the start page lists the services available, the features of those services which you can use (note not all features of a particular service may be enabled), and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link. What you can do should include anything that covered by labs in any of our cloud courses, and a bit more.
+For each of the cloud playgrounds, the start page lists the services available, the features of those services which you can use (note not all features of a particular service may be enabled), and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link. What you can do should include anything that covered by labs in any of our cloud courses.
 
 Bottom line - if it's not listed, you can't launch it!
 
@@ -31,13 +31,18 @@ Bottom line - if it's not listed, you can't launch it!
 * Azure - https://kodekloud.com/cloud-playgrounds/azure
 * GCP - https://kodekloud.com/cloud-playgrounds/google
 
+### Often asked about, but disabled
+
+* **Azure DevOps** - Requires a high level of permissions, therefore would violate **security** policy, and also permit the creation of high **cost** resources.
+* **AWS Transit Gateway** - High per-minute operational cost.
+
 ## Cloud IAM
 
 When you first log into a playground, you start with an initial user, usually something like `kk_labs_user_XX`. This has a set of permissions. In the playgrounds where you can create additional IAM resources, those resources must have specific names and cannot be granted any higher privilege than the user you log in as.
 
 ### AWS IAM
 
-* You can create `IAM::User` as long as the name starts with `iamuser_`
+* You can create `IAM::User` as long as the name starts with `iamuser_`. Users you create have a permissions boundary restricting their access to read-only. You can only *create* or *modify* resources via the `kk_labs` user you login as.
 * You can create `IAM::Group` as long as the name starts with `iamgroup_`
 * You can create `IAM:Role` with specific names. Must be one of
     * `lambda_execution_role`
