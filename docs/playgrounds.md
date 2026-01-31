@@ -21,7 +21,7 @@ There are 3 main reasons
     * Security reviews on what we should permit to be done with that service, and that we do not leave open a privilege escalation door.
     * Creating the automation required to clean up all resources related to that service when your session ends.
 
-    We are gradually increasing the number of offered services on each playground.
+    We are gradually increasing the number of offered services on each playground, although we may add a service and later withdraw it if it is found that it is not cost effective or it manages to be hacked. If we do withdraw a service that has associated tasks in KKE, then these tasks will be replaced with new ones.
 
 For each of the cloud playgrounds, the start page lists the services available, the features of those services which you can use (note not all features of a particular service may be enabled), and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link. What you can do should include anything that covered by labs in any of our cloud courses.
 
