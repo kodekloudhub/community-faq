@@ -10,7 +10,7 @@ KodeKloud playgrounds are available to PRO subscribers and allow you to try thin
 
 ## Why can't I?
 
-The majority of questions we handle on the forums are questions like "*Why can't I do X on this playground?*", normally in relation to the cloud playgrounds. These playgrounds have *limited* functionality and *restricted* access, i.e. it's not like you signed up for your own cloud account where you have full admin rights to do anything.
+The majority of questions we handle on the forums are questions like "*Why can't I do X on this playground?*", normally in relation to the cloud playgrounds. These playgrounds have *limited* functionality and *restricted* access, i.e. it's not like you signed up for your own cloud account where you have full admin rights to do anything. There is of course nothing to stop you from signing up for your own cloud accounts - they are all free to sign up to, but you personally pay for any resources created which can get expensive quickly, especially if you forget to delete resources you created or you leave a door open and a hacker starts a bitcoin mining operation on your account! Our sandboxes, while limited, protect you from nasty surprises!
 
 There are 3 main reasons
 
