@@ -20,7 +20,7 @@ The following describes in what order and how frequently you can attempt the tas
 
 ### Pro and AI Plans
 
-Unlock Logic
+**Unlock Logic**
 * When a topic is added to **Active Practice**, you can unlock **multiple tasks on the same day**
 * Tasks unlock **strictly in sequence**
 * Next task unlocks **only after the previous task is marked as completed**
