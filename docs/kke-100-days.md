@@ -26,5 +26,5 @@ The following describes in what order and how frequently you can attempt the tas
 * Next task unlocks **only after the previous task is marked as completed**
 
 **Attempt Restrictions**
-* You can attempt** unlimited tasks per day**
+* You can attempt **unlimited tasks per day**
 * **No skipping** of tasks allowed
