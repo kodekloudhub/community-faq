@@ -21,7 +21,7 @@ In the Linux world, the kernel and device drivers are open source and are mainta
 A distro comprises the following:
 
 1. A version of the Linux Kernel, selected by the distro's creators based on factors like the stability of it and the number of known issues.
-1. The standard utilities (sed, awk, grep, ls, cat etc., etc.).
+1. The [core utilities](https://en.wikipedia.org/wiki/GNU_Core_Utilities) (sed, awk, grep, ls, cat etc., etc.).
 1. A package manager for the distro's specific package management system.
 1. Other pieces of software chosen by the distro's creators, e.g. for a security focused distro like Kali Linux, it will include a lot of software for hacking, penetration testing etc.
 1. A desktop GUI (if installed), of which there are many choices, e.g. Gnome, KDE.
