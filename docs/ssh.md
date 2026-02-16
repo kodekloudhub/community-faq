@@ -16,7 +16,7 @@ Let's look at this in pictures
 
 ## Spider's web SSH
 
-With just 5 hosts here the number of possible SSH routes here using the formula is 20. Therefore to sustain this network I must update the `authorized_keys` file on every host with the public key of every other host, and if I add one more host, that is a lot of edits I have to do, as all the existing hosts now need to know about the new host! Consider when the network becomes 100 servers (not uncommon). That's now 9,900 edits!!
+With just 5 hosts here the number of possible SSH routes here using the formula is 20. Therefore to sustain this network I must update the `authorized_keys` file on every host with the public key of every other host, and if I add one more host, that is a lot of edits I have to do, as all the existing hosts now need to know the public key of the new host and the new host needs all the public keys of the existing hosts! Consider when the network becomes 100 servers (not uncommon). That's now 9,900 edits!!
 
 ```mermaid
 flowchart TD
@@ -56,7 +56,7 @@ flowchart TD
 
 ## Hub and spoke using a bastion
 
-The number of routes is 4. You can use a single keypair with the public key copied to each of hosts A thru D, or to be more secure, 4 keypairs, one for each host. If I add one more server, then I only have to update the `authorized_keys` file on the new host.
+The number of routes is 4. You can use a single keypair with the public key copied to each of hosts A thru D, or to be more secure, 4 keypairs, one for each host. If I add one more server, then I only have to update the `authorized_keys` file on the new host to add the public key for `jump host`.
 
 ```mermaid
 flowchart TD
