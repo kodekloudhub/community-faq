@@ -159,17 +159,18 @@ is _exactly_ the same as
 Let's look at some datatypes. Doesn't matter where in the YAML the values are (key values, list entries etc.) the rules are the same. It does not matter if you do quote strings that do not require them. It's just more typing! When a lab marks you incorrect for quoting/not quoting based on the following examples, this is a lab bug and should be reported on the forums.
 
 ```yaml
-numericValue1: 123      # integer numeric
-numericValue2: 1.23     # fixed point numeric
-numericvalue3: -25.7    # negative fixed point numeric
-numericvalue4: 1.2e+04  # exponential numeric
-numericString: "123"    # Quoting this makes it string instead of numeric
-booleanValue: true      # boolean
-booleanString: "true"   # Quoting this makes it string instead of boolean
+numericValue1: 123              # integer numeric
+numericValue2: 1.23             # fixed point numeric
+numericvalue3: -25.7            # negative fixed point numeric
+numericvalue4: 1.2e+04          # exponential numeric
+timeValue: 2026-01-02T11:30:27Z # ISO 8601 Timestamp
+numericString: "123"            # Quoting this makes it string instead of numeric
+booleanValue: true              # boolean
+booleanString: "true"           # Quoting this makes it string instead of boolean
 listOfStrings:
   - I do not need quotes because I cannot be misintepreted as not being a string
   - "* I do need need quotes because I'm not an alias" # See further down in doc
-  - 100Mi               # Doesn't need quotes. The nun-numeric characters make it a string
+  - 100Mi                       # Doesn't need quotes. The non-numeric characters make it a string
 ```
 
 When it comes to values expressed as SI units like `100Mi`, YAML treats these as strings according to its parsing rules. *Kubernetes* when it receives these recognizes the SI suffix and internally converts it to a number knowing that `Mi` is the SI multiplier for 1,048,576 (Mebibyte).
