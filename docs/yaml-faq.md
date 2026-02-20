@@ -155,6 +155,24 @@ is _exactly_ the same as
         - NET_ADMIN
         - SYS_TIME
 ```
+
+Let's look at some datatypes. Doesn't matter where in the YAML the values are (key values, list entries etc.) the rules are the same.
+
+```yaml
+numericValue1: 123      # integer numeric
+numericValue2: 1.23     # fixed point numeric
+numericvalue3: -25.7    # negative fixed point numeric
+numericvalue4: 1.2e+04  # exponential numeric
+numericString: "123"    # Quoting this makes it string instead of numeric
+booleanValue: true      # boolean
+booleanString: "true"   # Quoting this makes it string instead of boolean
+listOfStrings:
+  - I do not need quotes because I cannot be misintepreted as not being a string
+  - "* I do need need quotes because I'm not an alias" # See further down in doc
+  - 100Mi               # Doesn't need quotes. The nun-numeric characters make it a string
+```
+
+
 ## Indentation
 
 Beware of the pesky indentation rules. Whitespace is part of the syntax like Python, however `TAB` characters are not. Each indentation level should be two spaces. If you mess this up you can get all kinds of different errors from `kubectl` depending on where it was in the file when it encountered the error.
