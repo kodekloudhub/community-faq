@@ -191,6 +191,8 @@ What these do, in order:
 5. Enable auto indent
 6. NOTE - this was not working properly in the exam as of 2022-07-06. See [Issues with Exam Portal](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS#issues-with-the-exam-portal).<br>Set F3 key to toggle paste mode. This is super important when pasting from the Kubernetes docs. Enter insert mode `i` then press `F3` so the bottom line reads<br>`INSERT (paste)`<br>Once you've pasted, ensure to toggle paste mode OFF again, or `TAB` key will start inserting tab characters and `kubectl` will complain!
 
+**UPDATE** The exams now tend toward making you SSH to a different node to attempt each question, therefore it is not practical to edit the `.vimrc` on each terminal as this will cost you time. The exam terminals now do generally have a satisfactory `.vimrc` on each so editing them should not be necessary.
+
 Paste mode may also be toggled from vi [normal mode](https://www.freecodecamp.org/news/vim-editor-modes-explained/) with the following commands:
 
 * `:set paste`
