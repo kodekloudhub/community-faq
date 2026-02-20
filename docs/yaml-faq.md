@@ -172,6 +172,8 @@ listOfStrings:
   - 100Mi               # Doesn't need quotes. The nun-numeric characters make it a string
 ```
 
+When it comes to values expressed as SI units like `100Mi`, YAML treats these as strings according to its parsing rules. *Kubernetes* when it receives these recognizes the SI suffix and internally converts it to a number knowing that `Mi` is the SI multiplier for 1,048,576 (Mebibyte). Understand the distinction. YAML does not understand SI units - they are plain strings as far as YAML parsers are concerned, Kubernetes recognizes the SI pattern in the string it is given and converts to numeric internally.
+
 
 ## Indentation
 
