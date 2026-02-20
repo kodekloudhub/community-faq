@@ -156,7 +156,7 @@ is _exactly_ the same as
         - SYS_TIME
 ```
 
-Let's look at some datatypes. Doesn't matter where in the YAML the values are (key values, list entries etc.) the rules are the same.
+Let's look at some datatypes. Doesn't matter where in the YAML the values are (key values, list entries etc.) the rules are the same. It does not matter if you do quote strings that do not require them. It's just more typing! When a lab marks you incorrect for an unquoted string value where quotes do not matter, this is a lab bug and should be reported on the forums.
 
 ```yaml
 numericValue1: 123      # integer numeric
@@ -172,7 +172,9 @@ listOfStrings:
   - 100Mi               # Doesn't need quotes. The nun-numeric characters make it a string
 ```
 
-When it comes to values expressed as SI units like `100Mi`, YAML treats these as strings according to its parsing rules. *Kubernetes* when it receives these recognizes the SI suffix and internally converts it to a number knowing that `Mi` is the SI multiplier for 1,048,576 (Mebibyte). Understand the distinction. YAML does not understand SI units - they are plain strings as far as YAML parsers are concerned, Kubernetes recognizes the SI pattern in the string it is given and converts to numeric internally.
+When it comes to values expressed as SI units like `100Mi`, YAML treats these as strings according to its parsing rules. *Kubernetes* when it receives these recognizes the SI suffix and internally converts it to a number knowing that `Mi` is the SI multiplier for 1,048,576 (Mebibyte). 
+
+Understand the distinction. YAML does not understand SI units - they are plain strings as far as YAML parsers are concerned, Kubernetes recognizes the SI pattern in the string it is given and converts to numeric internally.
 
 
 ## Indentation
