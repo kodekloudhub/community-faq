@@ -8,7 +8,7 @@ The following describes in what order and how frequently you can attempt the tas
 
 ### Free and Standard Plans
 
-The general rule across the entire KKE platform is **1 task per day**, irrespective of whether the task you do is a 100 days or a regular task.
+The general rule across the entire KKE platform is **1 task per day**, irrespective of whether the task you do is a 100 days or a regular task. A day from the point of view of this platform begins at 00:00 UTC (05:30 IST).
 
 **Unlock Logic**
 * When a topic is added to **Active Practice, 1 task unlocks per day**
