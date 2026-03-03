@@ -22,6 +22,8 @@ The general rule across the entire KKE platform is **1 task per day**, irrespect
 
 ### Pro and AI Plans
 
+On these plans there are no restrictions to the *number* of tasks you can attempt in one day, so you can do some 100-days or some KKE tasks or a combination of both.
+
 **Unlock Logic**
 * When a topic is added to **Active Practice**, you can unlock **multiple tasks on the same day**
 * 100-days tasks unlock **strictly in sequence**
