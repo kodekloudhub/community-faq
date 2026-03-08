@@ -32,8 +32,6 @@ A day from the point of view of this platform begins at 00:00 UTC (05:30 IST).
 
 ### Pro and AI Plans
 
-You can do unlimited number of tasks per day.
-
 **Unlock Logic**
 * When a topic is added to **Active Practice**, you can unlock **multiple tasks on the same day**
 * Campaign topic tasks unlock **strictly in sequence**
