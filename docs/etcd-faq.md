@@ -1,6 +1,6 @@
 # ETCD FAQ
 
-**IMPORTANT** Following recent student comments about the exam backup/restore questions,  this FAQ is currently under review. Once we ascertain what is actually required,  we will update this page, and the labs accordingly.
+**UPDATE** In Feb 2025 version of the exam (current at the time of writing), there is less focus on etcd to make space for newer topics like Gateway API, and the fact that more people are using managed cloud solutions like EKS/AKS/GKE where the provider manages this for you so it is highly unlikely to get a question on it. We keep etcd in the course as we believe it is still important as an administrator to know what it is and how to manage it.
 
 `etcd` is a distributed key-value store, kind of similar to a NoSQL database. It is the database backend chosen by the Kubernetes project for the storage of cluster state. It is a separate open source project that is not maintained by the Kubernetes developers, but no doubt they have some input on its development.
 
