@@ -78,11 +78,11 @@ For a more detailed explanation of how mTLS works, see [this page](https://www.c
 
 ## Should I stop API server and/or etcd during backup or restore?
 
-> No
-
-Consider a production environment. In such environments, you would be making regular automated backups of etcd. If you stopped either of these processes, then the cluster could go offline, and you would be faced with a production major incident!
-
-etcd is designed to ensure consistency in its backups even while in use, just as you would expect from any regular SQL database.
+On single etcd node clusters it shouldn't matter. With stacked etcd (see below), etcd will be restarted when you edit the pod definition to set the new volume path to the restored data. If API server still doesn't seem right after the restore (and you've ensured etcd is running again), then restart it in case it has cached corrupt data from before the restore. With external etcd, you would have to restart etcd yourself after the restore and editing the unit file via
+```
+systemctl daemon-reload
+systemctl restart etcd
+```
 
 There may be some instances on a multi-node etcd cluster that it would be beneficial to stop everything to do a restore to ensure the database is not written before all nodes are aligned. In the CKA exam, all clusters are single-node etcd.
 
