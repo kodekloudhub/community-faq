@@ -420,7 +420,7 @@ Exam servers are decommissioned within a few days from the Exam date, so if you 
 
 ## Kubernetes Certifications
 
-This section applies to performance based Kubernetes exams only, i.e. CKA, CKAD and CKS. If you are doing KCNA, skip this section.
+This section applies to performance based Kubernetes exams only, i.e. CKA, CKAD, CKS, Istio, CNPE etc. If you are doing KCNA, KCSA or any other multiple choice exam, skip this section.
 
 ## About the Kubernetes exam environments
 
@@ -475,7 +475,7 @@ The Linux Foundation says:
 > Our engineers have already noticed the change in the definitions and made the necessary changes to the exams accordingly.
         This means that whenever we want candidates to create a sidecar container, it is aligned with the official doc's definition of sidecar, and if we want candidates to create a co-located container (the old way), we ask for a co-located container.
 
-The official definition of a "sidecar" container as of more recent versions of Kubernetes (and the current version of the exams) is an init container with `restartPolicy: Always`. There will be no tricks in the exam. If they ask for sidecar, then this is what they want.
+The official definition of a "sidecar" container as of more recent versions of Kubernetes (and the current version of the exams) is an init container with `restartPolicy: Always`. There will be no tricks in the exam. If they ask for sidecar, then this is what they want. A "co-located sidecar" is "co-located", i.e. beneath `containers:`.
 
 ```yaml
 initContainers:
@@ -490,6 +490,8 @@ containers:
   - name: co-located        # <-- Any additional containers here are co-located
     image: busybox
 ```
+
+See the [documentation](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/#pod-sidecar-containers).
 
 ## Where is the VPA documentation?
 
