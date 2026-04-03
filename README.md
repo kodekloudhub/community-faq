@@ -190,6 +190,8 @@ Due to the nature of the check-in process for the exam, it's actually easier to 
 
 Note that you should practice getting a clear shot of your ID using the webcam you intend to use in the exam *well before* exam day using your operating system's camera app. Even consider building something to hold the ID card steady using your kids Lego or something :smiley:. See [here](https://github.com/fireflycons/tips-for-CKA-CKAD-CKS#launching-the-exam) for an example that has been used successfully in an exam check-in process.
 
+Update April 2026: Note that there is now a feature that permits you to use a phone for the check-in process. I have not tried it personally, but you are given a QR to scan which presumably installs an app to connect your phone to the proctor so that you can use it to do the room scan. The phone still cannot be used once the exam itself begins so your webcam must still work.
+
 ### Does my microphone need to work?
 
 > Yes
