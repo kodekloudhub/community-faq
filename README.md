@@ -418,13 +418,15 @@ Exam servers are decommissioned within a few days from the Exam date, so if you 
 
 This section applies to performance based Kubernetes exams only, i.e. CKA, CKAD, CKS, Istio, CNPE etc. If you are doing KCNA, KCSA or any other multiple choice exam, skip this section.
 
-## About the Kubernetes exam environments
+### About the Kubernetes exam environments
 
 All 3 exams use multiple clusters, usually one cluster per question. The good news is that if you break a cluster it will affect the scoring of that question only. The bad news is that you must first `ssh` to the control plane node of the cluster for the question. The SSH command required is given in the question pane and can be copied and pasted to the terminal.
 
 The fact that you must SSH to a different node for every question means that you cannot customise `vi` editor once and use for the whole exam. You would have to repeat that customisation for *every* question which would lose too much time! The defaults they have are sufficient for YAML editing.
 
 On all terminals, the `k` alias and `kubectl` autocomplete is pre-configured.
+
+Note that this applies also to the newer Kubernetes *related* performance-based exams like Istio and CNPE.
 
 ### What are the similarities/differences between CKA and CKAD?
 
@@ -465,7 +467,7 @@ See the dedicated [etcd FAQ](./docs/etcd-faq.md)
 
 See the dedicated [etcd FAQ](./docs/etcd-faq.md)
 
-## What's the deal with init containers, sidecars, co-located etc.?
+### What's the deal with init containers, sidecars, co-located etc.?
 
 The Linux Foundation says:
 > Our engineers have already noticed the change in the definitions and made the necessary changes to the exams accordingly.
@@ -489,7 +491,7 @@ containers:
 
 See the [documentation](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/#pod-sidecar-containers).
 
-## Where is the VPA documentation?
+### Where is the VPA documentation?
 
 There isn't any, at least not in the [Allowed Documentation](https://docs.linuxfoundation.org/tc-docs/certification/certification-resources-allowed#certified-kubernetes-administrator-cka-and-certified-kubernetes-application-developer-ckad). This makes it *highly unlikely* that you will receive any questions on it. If you do, then `kubectl explain` is your friend. It is well worth getting to grips with, as it can be faster on all resources than searching docs, not just VPA.
 
