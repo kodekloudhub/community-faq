@@ -129,12 +129,12 @@ If you do that, and you have only days remaining before the validity expires, wh
 
 ## PSI Bridge
 
-PSI Bridge is the system used to deliver all exams provided by The Linux Foundation, be they performance based or Multiple Choice Question (MCQ). Linux Foundation exams are online only. There is no test center option.
+PSI Bridge (a.k.a. Secure Browser) is the system used to deliver all exams provided by The Linux Foundation, be they performance based or Multiple Choice Question (MCQ). Linux Foundation exams are online only. There is no test center option.
 
-Performance based exams include: CKA, CKAD, CKS, LFCS</br>
-Multiple choice exams include: KCNA, PCA
+Performance based exams include: CKA, CKAD, CKS, LFCS, Istio, CNPE</br>
+Everything else on the Golden Kubestronaut track is multiple choice.
 
-Probably *the* most asked questions!</br></br>This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022.
+Firstly, the Secure Browser is not a browser in the normal sense of the word. It is an exam delivery platform that is built using the same technology as Chrome so that all the content you see within it can be delivered as HTML and JavaScript. However since it is their own software it is more secure because it is free of plugins and configuration you may have done to your own browser that could leak exam content.
 
 For performance based exams, the bridge provides a Linux XFCE desktop VDI for the exam environment. You may use any of the applications it provides in any way you see fit, however the only useful ones are `Terminal`, `Firefox` and `Mousepad` (for note taking). Firewalls prevent you from browsing anything other than allowed documentation. The terminal application connects to a remote host, thus the File Manager app is of no use, and for the same reason, Mousepad can't be used to edit exam files unless you edit them there, then paste into `vi` (not recommended).
 
@@ -149,10 +149,6 @@ Many people also ask "Can I use external webcam?", "Can I use bluetooth mouse?" 
 * Camera
 
 In addition to the Q&A below, you can also watch [our video](https://youtu.be/1fSxM0_dtac) on this subject.
-
-### Students' own notes on the Exam Environment
-
-Download [this PDF](./student-exam-experiences.pdf) of curated student experiences taken from our old Slack channels.
 
 ### Can I use an external monitor?
 
@@ -178,7 +174,7 @@ If using a desktop computer with multiple monitors, disable or disconnect all bu
 
 **TIP**: You are strongly advised *not* to rely on a small laptop screen (like 13 or 14 inch). Your workspace will be extremely tiny, worse if you rely on scaling the font size up. A monitor of higher than HD resolution running at 100% scale and large enough that you can read the text is highly recommended. Anything less than full HD is seriously disadvantageous! On Macs, be sure to adjust display settings to "More Space". See the [image](#what-does-the-environment-look-like) further down this page.
 
-The Linux Foundation recommends 15 inch or greater display.
+The Linux Foundation recommends 15 inch or greater display. For the best experience when doing performance based exams, use a 4K 16:9 aspect ratio (TV shape, as opposed to widescreen gaming) monitor although gaming monitors beneficial if the display *height* is more than 1080 pixels. MCQs are fine on any display.
 
 ### Can I use an external webcam?
 
