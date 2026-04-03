@@ -134,7 +134,7 @@ PSI Bridge is the system used to deliver all exams provided by The Linux Foundat
 Performance based exams include: CKA, CKAD, CKS, LFCS</br>
 Multiple choice exams include: KCNA, PCA
 
-Probably *the* most asked questions!</br></br>This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022. 
+Probably *the* most asked questions!</br></br>This pertains to the new PSI Bridge Proctoring Platform that went live for the Kubernetes exams on 25 June 2022.
 
 For performance based exams, the bridge provides a Linux XFCE desktop VDI for the exam environment. You may use any of the applications it provides in any way you see fit, however the only useful ones are `Terminal`, `Firefox` and `Mousepad` (for note taking). Firewalls prevent you from browsing anything other than allowed documentation. The terminal application connects to a remote host, thus the File Manager app is of no use, and for the same reason, Mousepad can't be used to edit exam files unless you edit them there, then paste into `vi` (not recommended).
 
@@ -241,9 +241,14 @@ You can practice this in killer.sh before the exam.
 ### What are the system requirements for taking the exam?
 
 **IMPORTANT**
-* Linux is not supported _except_ for Ubuntu 20.04, 22.04 and 24.04. Beware - some people have had issues getting PSI bridge to run, even on supported distros. This can waste time and cause stress at the start of the exam. Better to use Windows or Mac if you can.
-* Intel Mac - Monterey (until 02 Dec 24), Ventura.
-* Apple silicon Mac (M1/M2/M3 etc) - Sonoma, Sequoia.
+* Linux is not supported _except_ for Ubuntu 22.04 and 24.04 with X11. Wayland display server which is the default for most installations unless you specifically opt out is NOT supported. In a terminal run
+    ```bash
+    echo $XDG_SESSION_TYPE
+    ```
+    If this says `wayland` then your system is *not supported*!
+
+    Beware - some people have had issues getting PSI bridge to run, even on supported distros. This can waste time and cause stress at the start of the exam. Better to use Windows or Mac if you can.
+* Apple silicon Mac (M1/M2/M3 etc) - Sonoma, Sequoia, Tahoe.
 * Windows - Windows 10, 11 64 bit, all editions.
 
 Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements) and [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
