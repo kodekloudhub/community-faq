@@ -170,7 +170,7 @@ You are permitted to use one *active* monitor. All other monitors must be disabl
 This can be the laptop display, or an externally connected display. If using an external monitor connected to laptop, the laptop display must be disabled:
 
 * **Windows** - This can be done from Display Settings (Windows key + P)
-* **Mac** - You must set it up in  [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too, if the external camera is not fitted with one already - test the mic first!</br>If using an Intel chipset Mac (pre-M1 versions), beware of cooling issues!
+* **Mac** - You must set it up in  [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too, if the external camera is not fitted with one already - test the mic first!</br>If using an Intel chipset Mac (pre-M1 versions), beware of cooling issues! Note that as of April 2026 the oldest supported OS version is Sonoma which means pretty soon Intel Macs will be ruled out altogether.
 
 Display mirroring (where the laptop and external monitor are showing the same display) is also not permitted.
 
