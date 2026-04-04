@@ -54,7 +54,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [What's the deal with init containers, sidecars, co-located etc.?](#whats-the-deal-with-init-containers-sidecars-co-located-etc)
         * [Where is the VPA documentation?](#where-is-the-vpa-documentation)
         * [What's the deal with jsonpath and custom-columns?](#whats-the-deal-with-jsonpath-and-custom-columns)
-        * [How do I decode cryptic kubectl errors (and othe YAML questions)](#how-do-i-decode-cryptic-kubectl-errors-and-othe-yaml-questions)
+        * [How do I decode cryptic kubectl errors (and other YAML questions)](#how-do-i-decode-cryptic-kubectl-errors-and-other-yaml-questions)
         * [How do I install a CNI (or anything else)?](#how-do-i-install-a-cni-or-anything-else)
         * [How do I run Docker commands when Docker is removed?](#how-do-i-run-docker-commands-when-docker-is-removed)
         * [How do I diagnose a crashed API Server?](#how-do-i-diagnose-a-crashed-api-server)
@@ -493,13 +493,13 @@ See the [documentation](https://kubernetes.io/docs/concepts/workloads/pods/sidec
 
 ### Where is the VPA documentation?
 
-There isn't any, at least not in the [Allowed Documentation](https://docs.linuxfoundation.org/tc-docs/certification/certification-resources-allowed#certified-kubernetes-administrator-cka-and-certified-kubernetes-application-developer-ckad). This makes it *highly unlikely* that you will receive any questions on it. If you do, then `kubectl explain` is your friend. It is well worth getting to grips with, as it can be faster on all resources than searching docs, not just VPA.
+There wasn't any. There is now! It is [here](https://kubernetes.io/docs/concepts/workloads/autoscaling/vertical-pod-autoscale/). Note that it contains some links that you cannot follow such as to the VPA Github repository.
 
 ### What's the deal with jsonpath and custom-columns?
 
 See the dedicated [jsonpath FAQ](./docs/jsonpath.md)
 
-### How do I decode cryptic kubectl errors (and othe YAML questions)
+### How do I decode cryptic kubectl errors (and other YAML questions)
 
 See the dedicated [YAML FAQ](./docs/yaml-faq.md)
 
