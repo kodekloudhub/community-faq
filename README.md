@@ -306,7 +306,7 @@ Please bear in mind that proctors are *non-technical*. They are very unlikely to
 
 > 24 hours
 
-For the Linux Foundation online proctored exams, you will receive the result via email to the address registered to your Linux Foundation account. For performance-based exams, the response comes in not less than 24 hours, but can occasionally be longer, especially if there is a USA public holiday on the day or day after you take the exam. MCQ exams you normally have the result within 30 minutes since they are fully automated.
+For the Linux Foundation online proctored exams, you will receive the result via email to the address registered to your Linux Foundation account. For performance-based exams, the response comes in not less than 24 hours, but can occasionally be longer, especially if there is a [US public holiday](https://www.usa.gov/holidays) on the day or day after you take the exam. MCQ exams you normally have the result within 30 minutes since they are fully automated.
 
 If you've been waiting more than 48 hours, raise a [support ticket](https://trainingsupport.linuxfoundation.org/). Be sure to check it's not gone into your junk folder.
 
