@@ -33,7 +33,7 @@ For some KKE tasks you have to create a VPC. *You* have to ensure as part of tha
 ### Connecting from lab terminal
 
 Everything in the above section must be true to ensure SSH access from the outside world will work. Connection from the lab terminal will either be
-* Via SSH key pair which you created from the AWS console, in which case that will have downloaded a PEM file either to you laptop (open the file, and paste the content to a new file *on the lab terminal*)
+* Via SSH key pair which you created from the AWS console, in which case that will have downloaded a PEM file either to your laptop (open the file, and paste the content to a new file *on the lab terminal*), or via a PEM file that is pre-created in the lab terminal. With either of these, use `ssh -i <PEM>` where PEM is the path to the PEM file name.
 * Via ssh keys you created using `ssh-keygen` on the lab terminal. When using this method, ALWAYS accept the defaults for the key names (`id_rsa`) unless the question specifically says otherwise, else the grader will fail you.
 
 When you use `ssh-keygen`, you must copy the content of the created `id_rsa.pub` to the EC2 instance's `authorized_keys` file as directed by the question. You will use EC2 Instance Connect to make the initial connection to EC2 to perform the copy.
