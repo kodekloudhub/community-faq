@@ -28,7 +28,7 @@ Often to begin a task, you will need to connect directly from the AWS console fi
 
 If all the above is true, then you can connect to the instance using EC2 Instance Connect.
 
-For some KKE tasks you have to create a VPC. *You* have to ensure as part of that task if instances within the new VPC are to be able to be contacted from the lab terminal that all the above is set up when you create the VPC, subnet and route table.
+For some KKE tasks you have to create a VPC. *You* have to ensure as part of that task if instances within the new VPC are to be able to be contacted from the lab terminal that all the above is set up when you create the VPC, subnet and route table. These concepts should be familiar if you have done the [AWS Certified CloudOps](https://learn.kodekloud.com/courses/aws-certified-sysops-administrator-associate) course.
 
 ### Connecting from lab terminal
 
