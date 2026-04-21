@@ -66,6 +66,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
     * [Labs are broken/crashing/not loading](#labs-are-brokencrashingnot-loading)
     * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
     * [I can't get out of vi!](#i-cant-get-out-of-vi)
+    * [I am having trouble with ssh](#i-am-having-trouble-with-ssh)
     * [Playground mini-FAQ](./docs/playgrounds.md)
 * YAML Syntax
     * See the [dedicated YAML FAQ](./docs/yaml-faq.md)
@@ -336,6 +337,8 @@ Linux Foundation certifications are quite expensive, however Linux Foundation do
 
 If you have created a [Linux Foundation](https://www.linuxfoundation.org/) account - which you need to have in order to purchase exams - they will normally email you when a promo is going to happen. So, go create one now!
 
+If you are a student resident in India, see [this page](./docs/exam-vouchers.md).
+
 ## Performance Based Exams
 
 If you are doing a Multiple Choice Question exam, skip this section.
@@ -559,6 +562,10 @@ Please see [this guide](./docs/vscode-tips.md).
 ### I can't get out of vi!
 
 For this and other `vi` tips, see [vi-101](./docs/vi-101.md)
+
+### I am having trouble with ssh
+
+Either ssh between nodes of a lab, or connecting to EC2 instance, see [this mini-FAQ](./docs/ssh.md)
 
 # Useful Links
 
