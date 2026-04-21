@@ -53,6 +53,8 @@ If you later try [KodeKloud Engineer](https://engineer.kodekloud.com/), there ar
 
 Why is it done this way? It is a security and operational best practice and is how it is done in the real world, not just labs. Every SSH connection requires a key pair, so if you could `ssh` from any host (server) to any other host in any direction on a network with `n` hosts, the number of key pairs that would have to be managed can be calculated using the formula `n(n-1)` which even with 10 servers on the network is 90 key pairs - per user who has access to all servers!
 
+Note that in the real exams, ssh is also set up this way (because it's the industry standard way to do it). The jump host is normally called something like `candidate-node`, either way it is the node you are on when you open the terminal app. Always `exit` back to this node at the end of a question so you can ssh to another node in the next question. Some questions e.g. in Kubernetes exams may require you to ssh to a control plane and *from there* ssh to a node of that cluster. This is also normal. You would `exit` once back to the control plane and then `exit` again to the candidate node. This is a tree arrangement where the control plane node acts as the jump host to the nodes of that cluster.
+
 Jump hosts are often referred to as "bastion" servers. You will see this term come up in some of the other courses.
 
 Let's look at this in pictures
