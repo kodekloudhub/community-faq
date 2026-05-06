@@ -167,7 +167,7 @@ You are permitted to use one *active* monitor. All other monitors must be disabl
 This can be the laptop display, or an externally connected display. If using an external monitor connected to laptop, the laptop display must be disabled:
 
 * **Windows** - This can be done from Display Settings (Windows key + P)
-* **Mac** - You must set it up in  [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too, if the external camera is not fitted with one already - test the mic first!</br>If using an Intel chipset Mac (pre-M1 versions), beware of cooling issues! Note that as of April 2026 the oldest supported OS version is Sonoma which means pretty soon Intel Macs will be ruled out altogether.
+* **Mac** - You must set it up in  [clamshell mode](https://svalt.com/blogs/svalt/76622081-laptop-clamshell-setup), but this will require external camera, keyboard, mouse and possibly microphone too, if the external camera is not fitted with one already - test the mic first!
 
 Display mirroring (where the laptop and external monitor are showing the same display) is also not permitted.
 
@@ -238,7 +238,7 @@ You can practice this in killer.sh before the exam.
 ### What are the system requirements for taking the exam?
 
 **IMPORTANT**
-* Linux is not supported _except_ for Ubuntu 22.04 and 24.04 with X11. Wayland display server which is the default for most installations unless you specifically opt out is NOT supported. In a terminal run
+* Linux is not supported _except_ for Ubuntu 22.04, 24.04 and 26.04 with X11. Wayland display server which is the default for most installations unless you specifically opt out is NOT supported. In a terminal run
     ```bash
     echo $XDG_SESSION_TYPE
     ```
@@ -246,6 +246,7 @@ You can practice this in killer.sh before the exam.
 
     Beware - some people have had issues getting PSI bridge to run, even on supported distros. This can waste time and cause stress at the start of the exam. Better to use Windows or Mac if you can.
 * Apple silicon Mac (M1/M2/M3 etc) - Sonoma, Sequoia, Tahoe.
+* Intel Mac is no longer supported.
 * Windows - Windows 10, 11 64 bit, all editions.
 
 Please see [PSI Bridge Requirements](https://helpdesk.psionline.com/hc/en-gb/articles/4409608794260--PSI-Bridge-FAQ-System-Requirements) and [Exam System Requirements (Linux Foundation)](https://docs.linuxfoundation.org/tc-docs/certification/faq-cka-ckad-cks#what-are-the-system-requirements-to-take-the-exam)
