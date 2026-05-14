@@ -63,6 +63,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [What is an operator in Kubernetes?](#what-is-an-operator-in-kubernetes)
         * [What's the deal with Certificate Signing Requests?](./docs/certificate-signing-requests.md)
 * [Other](#other)
+    * [Course video questions/issues](#course-video-questionsissues)
     * [Labs are broken/crashing/not loading](#labs-are-brokencrashingnot-loading)
     * [How do I copy/paste in VSCode integrated terminal window?](#how-do-i-copypaste-in-vscode-integrated-terminal-window)
     * [I can't get out of vi!](#i-cant-get-out-of-vi)
@@ -549,6 +550,20 @@ See [this guide](./docs/how-tos/howto-install-gateway-api-on-kk-playground.md).
 See [this guide](./docs/kube-operators/README.md)
 
 # Other
+
+### Course video questions/issues
+
+Videos in our courses are displayed using the Vimeo video player. Vimeo are a professional third party video hosting company that provide video display capabilities to many sites on the Internet, such that the owners of those sites (like us) do not need to invest in the engineering capability to manage a high volume video playing infrastructure, preferring instead to pay a subscription fee such that this work is somebody else's problem. We simply upload our video content to Vimeo and they display it for us in a browser-embedded video player which is *their* software, not ours!
+
+What this means is that we have no control over how the player works in terms of the controls available e.g. playback speed etc, and that if you find that videos in all courses are suddenly not working, this is an outage at Vimeo and something that KodeKloud cannot fix. We, like you, are all waiting for Vimeo to fix the issue at their end!
+
+Since Vimeo have potentially tens of thousands of customers, they do not respond to a request from a single customer (like KodeKloud) for e.g. "I would like a 1.75x playback speed". They would need *significant interest* from their entire customer base, or to make that decision for themselves.
+
+* If all videos are not working, check the [Vimeo Status Page](https://www.vimeostatus.com/)
+* If you are having other issues with videos, check the [Vimeo Help Page](https://help.vimeo.com/hc/en-us)
+* See also the [KodeKloud Support Page](https://support.kodekloud.com/).
+
+Note also that certain countries may block access to Vimeo due to its potential to serve what they would consider dissenting content. If you live in such a country, then your option is to use a VPN.
 
 ### Labs are broken/crashing/not loading
 
