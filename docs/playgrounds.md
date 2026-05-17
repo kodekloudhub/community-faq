@@ -33,7 +33,8 @@ Bottom line - if it's not listed, you can't launch it!
 
 ### Often asked about, but disabled
 
-* **Azure DevOps** - Requires a high level of permissions, therefore would violate **security** policy, and also permit the creation of high **cost** resources, therefore not permitted in the general playground. A specific targeted playground for this is planned for later in 2026, with its own permissions boundaries and some parts of it preinstalled.
+* **Azure DevOps** - Requires a high level of permissions, therefore would violate **security** policy, and also permit the creation of high **cost** resources, therefore not permitted in the general playground.
+However, we launched a [specific playground](https://kodekloud.com/cloud-playgrounds/azure-devops) for this on May 2026 where Azure Devops is preinstalled with guardrails. You might not be able to do everything you want, but some features will be there.
 * **Azure Entra ID** - Too permissive for playground use, although it may feature in controlled course labs in future.
 * **AWS Glue** - Possible to run up massive bills in a short time. Difficult to put guardrails on without making it unusable.
 * **AWS Transit Gateway** - High per-minute operational cost.
