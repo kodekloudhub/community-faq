@@ -462,7 +462,7 @@ If you have a KodeKloud subscription which you will have if you did the course v
 
 ### I passed all 5 exams. When do I get my Kubestronaut badge?
 
-Once you successfully complete your final exam, *and* the other four are still valid (none have expired), you will receive an email from CNCF about a week later in order to complete your Kubestronaut registration.
+Once you successfully complete your final exam, *and* the other four are still valid (none have expired), you will receive an email from CNCF about a week later with instructions as to how to complete your Kubestronaut registration.
 
 
 ### How do I upgrade a cluster?
