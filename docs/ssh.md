@@ -1,6 +1,7 @@
 # SSH mini-FAQ
 
 * [Debugging connection to AWS EC2 instances](#debugging-connection-to-aws-ec2-instances)
+* [Inserting SSH keys for root user](#inserting-ssh-keys-for-root-user)
 * [SSH connections in a network of servers (hosts)](#ssh-connections-in-a-network-of-servers-hosts)
 
 ## Debugging connection to AWS EC2 instances
@@ -39,6 +40,36 @@ console, in which case that will have downloaded a PEM file either to your lapto
 
 When you use `ssh-keygen`, you must copy the content of the created `id_rsa.pub` to the EC2 instance's `authorized_keys` file as directed by the question. You will use EC2 Instance Connect to make the initial connection to EC2 to perform the copy.
 
+## Inserting SSH keys for root user
+
+Some of our cloud labs request that you set up password-less access to an EC2 instance or an Azure VM, by first creating a keypair using `ssh-keygen` in the lab terminal and then to put it into the cloud instance root user's `authorized_keys` file.
+
+A common mistake is not noticing what is *already present* in the `authorized_keys` file and simply appending the new public key to what's already there. The when trying to SSH as root to the instance you will get a response like this
+
+> Please login as the user '*some-other-user*' rather than the user 'root'
+
+OK, what just happened? Under normal circumstances you shouldn't allow root access over SSH, even with SSH only. If you look closely at the content of root's `authorized_keys` it will look something like this:
+
+```
+command="echo 'Please login as the user '\''some-other-user'\'' rather than the user '\''root'\''.'; sleep 2; exit 1",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBExamplePublicKeyDataHere user@example
+```
+
+What this does:
+
+* `command="..."`
+
+    Forces execution of the message command instead of granting a shell.
+* `no-pty`
+
+    Prevents allocating a terminal.
+* `no-port-forwarding, no-agent-forwarding, no-X11-forwarding`
+
+    Disables SSH forwarding features.
+* `no-user-rc`
+
+    Prevents execution of ~/.ssh/rc.
+
+While this is still present, root logins will not work. To make root logins work, you must *remove* this and *replace* it with the public key you generated.
 
 
 ## SSH connections in a network of servers (hosts)
