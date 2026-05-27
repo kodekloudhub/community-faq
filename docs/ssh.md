@@ -48,7 +48,7 @@ A common mistake is not noticing what is *already present* in the `authorized_ke
 
 > Please login as the user '*some-other-user*' rather than the user 'root'
 
-OK, what just happened? Under normal circumstances you shouldn't allow root access over SSH, even with SSH only. If you look closely at the content of root's `authorized_keys` it will look something like this:
+OK, what just happened? Under normal circumstances you shouldn't allow root access over SSH, even with keys only. If you look closely at the content of root's `authorized_keys` it will look something like this:
 
 ```
 command="echo 'Please login as the user '\''some-other-user'\'' rather than the user '\''root'\''.'; sleep 2; exit 1",no-agent-forwarding,no-port-forwarding,no-pty,no-user-rc,no-X11-forwarding ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBExamplePublicKeyDataHere user@example
