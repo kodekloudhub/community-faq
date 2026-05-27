@@ -42,9 +42,9 @@ When you use `ssh-keygen`, you must copy the content of the created `id_rsa.pub`
 
 ## Inserting SSH keys for root user
 
-Some of our cloud labs request that you set up password-less access to an EC2 instance or an Azure VM, by first creating a keypair using `ssh-keygen` in the lab terminal and then to put it into the cloud instance root user's `authorized_keys` file.
+Some of our cloud labs request that you set up password-less root access to an EC2 instance or an Azure VM, by first creating a keypair using `ssh-keygen` in the lab terminal and then to put it into the cloud instance root user's `authorized_keys` file.
 
-A common mistake is not noticing what is *already present* in the `authorized_keys` file and simply appending the new public key to what's already there. The when trying to SSH as root to the instance you will get a response like this
+A common mistake is not noticing what is *already present* in the `authorized_keys` file and simply appending the new public key to what's already there. Then when trying to SSH as root to the instance you will get a response like this
 
 > Please login as the user '*some-other-user*' rather than the user 'root'
 
