@@ -48,6 +48,7 @@ First and foremost, please be aware of our [Community Guidelines](./docs/code-of
         * [How many killer.sh sessions do I get?](#how-many-killersh-sessions-do-i-get)
         * [How does killer.sh compare to the real thing?](#how-does-killersh-compare-to-the-real-thing)
         * [How do I get some SERIOUS practice?](#how-do-i-get-some-serious-practice)
+        * [I passed all 5 exams. When do I get my Kubestronaut badge?](#i-passed-all-5-exams-when-do-i-get-my-kubestronaut-badge)
         * [How do I upgrade a cluster?](#how-do-i-upgrade-a-cluster)
         * [How do I backup etcd?](#how-do-i-backup-etcd)
         * [How do I restore etcd?](#how-do-i-restore-etcd)
@@ -458,6 +459,12 @@ If you have a KodeKloud subscription which you will have if you did the course v
 * [Ultimate CKA Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-administrator-cka-mock-exam/) - Available on standard KodeKloud subscription.
 * [Ultimate CKAD Mocks](https://kodekloud.com/courses/ultimate-certified-kubernetes-application-developer-ckad-mock-exam-series/) - Available on standard KodeKloud subscription.
 * [Ultimate CKS Mocks](https://learn.kodekloud.com/courses/ultimate-certified-kubernetes-security-specialist-cks-mock-exam-series) - Available on standard KodeKloud subscription.
+
+### I passed all 5 exams. When do I get my Kubestronaut badge?
+
+Once you successfully complete your final exam, *and* the other four are still valid (none have expired), you will receive an email from CNCF about a week later in order to complete your Kubestronaut registration.
+
+
 ### How do I upgrade a cluster?
 
 Specifically, the question asks to upgrade to version X of Kubernetes, but I can't find the right version of the packages.
