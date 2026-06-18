@@ -346,7 +346,13 @@ If you are a student resident in India, see [this page](./docs/exam-vouchers.md)
 
 If you are doing a Multiple Choice Question exam, skip this section.
 
-Performance based exams are provided in a virtual desktop (VDI) within the PSI Bridge software. This VDI is a Linux XFCE desktop running on top of Ubuntu. Kubernetes and LFCS fall in this category.
+Performance based exams are provided in a virtual desktop (VDI) within the PSI Bridge software. This VDI is a Linux XFCE desktop running on top of Ubuntu. The following are performance based:
+* CKA
+* CKAD
+* CKS
+* ICA
+* CNPE
+* LFCS
 
 ### Can I use my own bookmarks?
 
