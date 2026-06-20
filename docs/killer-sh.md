@@ -1,6 +1,6 @@
 # killer.sh
 
-**Killer is included in the exam purchase. You do not need to purchase it separately**
+**Killer is included in the *standard* exam purchase. You do not need to purchase it separately**. Note that if you purchased using the [voucher scheme for residents of India](./exam-vouchers.md), this is *not* the case.
 
 Killer is the ultimate test of readiness to take the exam. In their own words:
 
