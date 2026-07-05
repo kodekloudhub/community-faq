@@ -374,9 +374,9 @@ The exam terminals are Linux terminals and follow the rules for Linux terminals.
 
 * Right clicking in the terminal window will give a menu with copy/paste on it.
 * `CTRL+SHIFT+C` to copy using the keyboard
-* `CTRL+SHIFT+V` to paste to the termninal
+* `CTRL+SHIFT+V` to paste to the terminal
 
-You need to use `SHIFT` in the terminal window, because the regualr CTRL sequences have special meaning to terminals. In GUI applications like mousepad, copy/pate operations are as you would expect.
+You need to use `SHIFT` in the terminal window, because the regular CTRL sequences have special meaning to terminals. In GUI applications like mousepad, copy/pate operations are as you would expect.
 
 ### Can I paste settings for vi, aliases etc from my notepad?
 
