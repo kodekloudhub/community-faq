@@ -384,6 +384,10 @@ You need to use `SHIFT` in the terminal window, because the regualr CTRL sequenc
 
 The only software that may be running is the PSI software, therefore you must memorize such things and enter them up manually at the beginning of the exam.
 
+Having said that, the exams now tend to make you SSH to a different node for each question, therefore there is no mileage in setting up any terminal customization as you would have to do it for *every* question and that will use up your time.
+
+Instead, get used to using tab completion for commands. In Kubernetes exams, full completion is enabled for `kubectl` in the exam terminals. Also for any exam (inc. LFCS), where you need to add file paths to a command, completion for file paths is implicitly handled by `bash`.
+
 ### Can I install packages or download *anything* to the exam terminal?
 
 > Yes and No
