@@ -32,7 +32,7 @@
 
 1. **Where to Post**: Please use our [Discourse forum](https://community.kodekloud.com/) to post technical queries.
 
-1. **Utilize Designated Catergories in Community Forum**: KodeKloud community offers specific categories tailored to various topics. For instance, [AZURE](https://kodekloud.com/community/c/cloud/azure-courses/31) is dedicated to Azure queries. Please find the category that best matches your query.
+1. **Utilize Designated Categories in Community Forum**: KodeKloud community offers specific categories tailored to various topics. For instance, [AZURE](https://kodekloud.com/community/c/cloud/azure-courses/31) is dedicated to Azure queries. Please find the category that best matches your query.
 
 1. **Comprehensive Queries for Effective Communication**: When asking questions, strive to incorporate all relevant details into one cohesive message. Additionally, consider utilizing threads to keep the conversation organized. This practice enhances clarity and preserves context, contributing to more productive discussions.
 
