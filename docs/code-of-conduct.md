@@ -14,15 +14,17 @@
 
 1. **A Pause on Promotions**: We'd like to gently remind everyone that promotional or advertising content is not in line with our KodeKloud community ethos. Please use the designated channels, such as `#random`, for such communications in Discord Server.
 
-1. **Introduction and Greetings Protocol**: For initial greetings and introductions, we encourage you to utilize the `#say-hi` channel. This ensures that other channels remain focused on their intended topics.
+1. **Introduction and Greetings Protocol**: For initial greetings and introductions, we encourage you to utilize the `#introductions` channel. This ensures that other channels remain focused on their intended topics.
 
-1. **Considerate Use of Technical Channels on Discord**: Channels like `#aws-courses`, `#cka-discussions`, and similar ones are strictly for technical discussions in Discord. Please use channels like `#say-hi` for greetings and casual conversations. This keeps discussions in the right context.
+1. **Considerate Use of Technical Channels on Discord**: Channels like `#aws`, `#cka`, and similar ones are strictly for technical discussions in Discord. Please use channels like `#introductions` for greetings and casual conversations. This keeps discussions in the right context.
 
 1. **Channel Description Awareness**: Before posting, please take a moment to familiarize yourself with the purpose and guidelines outlined in each channel's description. This ensures that your message is aligned with the channel's intended focus and contributes to a more organized and relevant discussion.
 
+1. **Posting Etiquette**: Please *do not* post the same message in multiple channels, and that includes cross-posting on Discord and the Forum. All the channels are monitored and your message if it's a request for assistance will be seen. We take an especially dim view of self-promotion when placed in general and technical channels. If you are advertising your skills in the hope of finding work, please use `#hiring-board` only, or you will receive a warning.
+
 1. **File and Link Sharing Etiquette**: When sharing files or links, please provide context and briefly explain their relevance to the discussion. This helps members understand the content without having to open the file or link.
 
-1. **Exam Integrity and Non-Disclosure Agreement (NDA)**: KodeKloud strictly prohibits the use or sharing of exam dumps, asking about or publishing details of any question encountered in an exam, as these activitites violate the NDA and can lead to disqualification from exams. Upholding community integrity is paramount. Refraining from such activities is essential, and non-compliance may result in a ban.
+1. **Exam Integrity and Non-Disclosure Agreement (NDA)**: KodeKloud strictly prohibits the use or sharing of exam dumps, asking about or publishing details of any question encountered in an exam, as these activities violate the NDA and can lead to disqualification from exams. Upholding community integrity is paramount. Refraining from such activities is essential, and non-compliance may result in a ban.
 
 
 
