@@ -9,4 +9,4 @@ KodeKloud offers a scheme whereby students can purchase vouchers for the CKA exa
 
 For further help or information on this offer, and to request retake vouchers, please write to support@kodekloud.com from the email account you use to log into the platform. These queries cannot be dealt with on Discord.
 
-Students in other countries should monitor the Linux Foundation website for offers which do happen several times a year (and always on Cyber Weekend in November) offering variously discounts between 30 and 45%. Offers directly from LF include everything that is part of the standard exam package.
+Students in other countries should monitor the [Linux Foundation website](https://training.linuxfoundation.org/) for offers which do happen several times a year (and always on Cyber Weekend in November) offering variously discounts between 30 and 45%. Offers directly from LF include everything that is part of the standard exam package.
