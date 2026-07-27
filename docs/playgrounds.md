@@ -23,9 +23,9 @@ There are 3 main reasons
 
     We are gradually increasing the number of offered services on each playground, although we may add a service and later temporarily or permanently withdraw it if it is found that it is not cost effective or it manages to be hacked. If we do permanently withdraw a service that has associated tasks in KKE, then these tasks will be replaced with new ones.
 
-For each of the cloud playgrounds, the start page lists the services available, the features of those services which you can use (note not all features of a particular service may be enabled), and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link. What you can do should include anything that covered by labs in any of our cloud courses.
+For each of the cloud playgrounds, the start page lists the services available, the features of those services which you can use (note not all features of a particular service may be enabled), and constraints on each. Read the entire page, don't just press the Launch Now button at the top. Pay particular attention to what it says there, including any service limitations where you will see a `View Limits` link. Note that some of the published limits cannot be directly enforced at the point of use due to how the cloud providers work, and we can only detect violations later. Should you have exceeded any limit, you will generally receive a warning on your next session. Should you wish to dispute a warning, you can post in Discord.
 
-Bottom line - if it's not listed, you can't launch it!
+What you can do should include anything that covered by labs in any of our cloud courses. Bottom line - if it's not listed, you can't launch it!
 
 * AWS - https://kodekloud.com/cloud-playgrounds/aws
 * Azure - https://kodekloud.com/cloud-playgrounds/azure
