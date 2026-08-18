@@ -43,6 +43,12 @@ However, we launched a [specific playground](https://kodekloud.com/cloud-playgro
 
 When you first log into a playground, you start with an initial user, usually something like `kk_labs_user_XX`. This has a set of permissions. In the playgrounds where you can create additional IAM resources, those resources must have specific names and cannot be granted any higher privilege than the user you log in as.
 
+### Why can't I have admin access?
+
+"I *need* admin access so I can practice x, y, z - please fix this for me!" - Er, no! That would allow you to circumvent everything detailed above.
+
+Also, what if I were a criminal and got to know that KodeKloud playgrounds have unrestricted access? I would absolutely pay the PRO subscription from an untraceable account then spin up huge amounts of expensive infrastructure very quickly that could earn me much more in an hour than the subs fee cost!
+
 ### AWS IAM
 
 * You can create `IAM::User` as long as the name starts with `iamuser_`. Users you create have a permissions boundary restricting their access to read-only. You can only *create* or *modify* resources via the `kk_labs` user you login as.
