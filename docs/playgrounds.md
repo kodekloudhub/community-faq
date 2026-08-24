@@ -27,7 +27,7 @@ For each of the cloud playgrounds, the start page lists the services available, 
 
 What you can do should include anything that covered by labs in any of our cloud courses. Bottom line - if it's not listed, you can't launch it!
 
-Note also that just because a service may be available, this does not mean that all its APIs are also available. This means that while you may be able to create a certain resource, not all the documented functionality of that resource may work without permission errors. These permission restrictions are usually in place due to one of the constriants in the list above.
+Note also that just because a service may be available, this does not mean that all its APIs are also available. This means that while you may be able to create a certain resource, not all the documented functionality of that resource may work without permission errors. These permission restrictions are usually in place due to one of the constraints in the list above.
 
 * AWS - https://kodekloud.com/cloud-playgrounds/aws
 * Azure - https://kodekloud.com/cloud-playgrounds/azure
