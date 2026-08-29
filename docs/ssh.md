@@ -1,8 +1,27 @@
 # SSH mini-FAQ
 
+* [Changing SSH server settings](#changing-ssh-server-settings)
 * [Debugging connection to AWS EC2 instances](#debugging-connection-to-aws-ec2-instances)
 * [Inserting SSH keys for root user](#inserting-ssh-keys-for-root-user)
 * [SSH connections in a network of servers (hosts)](#ssh-connections-in-a-network-of-servers-hosts)
+
+## Changing SSH server settings
+
+This comes up time and time and time again in the forums! For instance:
+
+> The question asks to disable root login. I set `PermitRootLogin no` yet the task is failing
+
+When you change any settings in the `sshd_config` file, the settings are not applied *until you restart the `sshd` service*! The grader tests your changes by attempting to ssh to the lab terminal (or cloud instance), so if your changes are not *applied*, the grader doesn't find what it is looking for.
+
+Do 
+```bash
+sudo systemctl restart sshd
+```
+
+This causes `sshd` to read and apply the new settings. Then the task will pass.
+
+For those that wonder why restarting the `sshd` service does not drop your ssh connection and disconnect you. The `sshd` process exists to listen for new connections. When a connection is made, it's connected according to the settings in `sshd_config` that were active when the connection was initiated. `sshd` creates a new, separate process to handle that connection until you close your connection. This allows you to safely restart the service without dropping your connection, and the new settings apply to connections started after the service restart.
+
 
 ## Debugging connection to AWS EC2 instances
 
