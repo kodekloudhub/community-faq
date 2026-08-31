@@ -393,7 +393,7 @@ kube-system/etcd-kind-control-plane/172.18.0.2
 kube-system/kindnet-g6jvd/172.18.0.2
 ```
 
-This is useful when you need to process multiple values from each resource in a bash for loop. Due to the way `for` processing works in shell, you need all the values your want from each resource as a single string without spaces, i.e. like the output above. Then within the body of the for loop you split this string on the delimiter which in this case is forward slash (`/`).
+This is useful when you need to process multiple values from each resource in a bash for loop. Due to the way `for` processing works in shell, you need all the values you want from each resource as a single string without spaces, i.e. like the output above. Then within the body of the for loop you split this string on the delimiter which in this case is forward slash (`/`).
 
 ```bash
 for pod in $(kubectl get pods -A -o jsonpath='{range .items[*]}{.metadata.namespace}{"/"}{.metadata.name}{","}{.status.podIP}{"\n"}{end}')
