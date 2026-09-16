@@ -132,7 +132,7 @@ You should install all the tools you are going to use first to your laptop, e.g.
     $env:AWS_SECRET_ACCESS_KEY="replace-with-access-key"
     ```
 
-    Now all tools that talk to AWS e.g. aws cli, terraform etc. will use these credentials.
+    Now all tools that talk to AWS e.g. aws cli, terraform AWS provider etc. will use these credentials.
 
 ## Azure
 
@@ -174,7 +174,7 @@ Note that you cannot create new resource groups in the playground. All resources
     $env:RESOURCE_GROUP_NAME="replace-with-resource-group"
     ```
 
-    Tools such as terraform will pick up the `ARM_` variables automatically.
+    The terrafrom Azure provider will pick up the `ARM_` variables automatically.
 
     To perform a non-interactive login with the Azure CLI, do this
 
