@@ -7,6 +7,7 @@ KodeKloud playgrounds are available to PRO subscribers and allow you to try thin
     * [AWS IAM](#aws-iam)
 * [Kubernetes Clusters](#kubernetes-clusters)
 * [How do I browse my service?](#how-do-i-browse-my-service)
+* [How do I connect remotely to a Cloud Playground?](#how-do-i-connect-remotely-to-a-cloud-playground)
 
 ## Why can't I?
 
@@ -106,3 +107,82 @@ Here is a worked example (using the Kubernetes Multi Cluster playground)
 1. Switch back to Terminal 1 to continue working.
 
 
+# How do I connect remotely to a Cloud Playground?
+
+You should install all the tools you are going to use first to your laptop, e.g. terraform, aws cli, azure cli etc.
+
+## AWS
+
+1. Go to `IAM` -> `Users` in the console and select the lab user.
+1. In the security section, go to Access Keys and generate a new access key pair.
+1. Note down the Access Key and Secret Key.
+1. Export these values as environment variables in your laptop's shell
+
+    **Linux/macOS**
+
+    ```bash
+    export AWS_ACCESS_KEY_ID="replace-with-access-key"
+    export AWS_SECRET_ACCESS_KEY="replace-with-access-key"
+    ```
+
+    **Windows PowerShell**
+
+    ```powershell
+    $env:AWS_ACCESS_KEY_ID="replace-with-access-key"
+    $env:AWS_SECRET_ACCESS_KEY="replace-with-access-key"
+    ```
+
+    Now all tools that talk to AWS e.g. aws cli, terraform etc. will use these credentials.
+
+## Azure
+
+Note that you cannot create new resource groups in the playground. All resources must be deployed to the provided resource group.
+
+1. Collect the `Application Client ID` and `Client Secret` from the playground start page
+1. From the console home page, go to `Resource Groups`. Copy the resource group name (which usually starts with `kml_rg_main_`)
+1. Go to `Resource Manager` -> `Management Groups` in the console and collect the values for `Management Group` and `Subscription`
+1. Export these values as environment variables in your laptop's shell
+
+    **Linux/macOS**
+
+    ```bash
+    export ARM_CLIENT_ID="replace-with-client-id"
+    export ARM_CLIENT_SECRET="replace-with-client-secret"
+    export ARM_TENANT_ID="replace-with-management-group-id"
+    export ARM_SUBSCRIPTION_ID="replace-with-subscription"
+    export RESOURCE_GROUP_NAME="replace-with-resource-group"
+    ```
+
+    To perform a non-interactive login with the Azure CLI, do this
+
+    ```bash
+    az login \
+        --service-principal \
+        --username "$ARM_CLIENT_ID" \
+        --password "$ARM_CLIENT_SECRET" \
+        --tenant "$ARM_TENANT_ID" \
+        --subscription "$ARM_SUBSCRIPTION_ID"
+    ```
+
+    **Windows PowerShell**
+
+    ```powershell
+    $env:ARM_CLIENT_ID="replace-with-client-id"
+    $env:ARM_CLIENT_SECRET="replace-with-client-secret"
+    $env:ARM_TENANT_ID="replace-with-management-group-id"
+    $env:ARM_SUBSCRIPTION_ID="replace-with-subscription"
+    $env:RESOURCE_GROUP_NAME="replace-with-resource-group"
+    ```
+
+    Tools such as terraform will pick up the `ARM_` variables automatically.
+
+    To perform a non-interactive login with the Azure CLI, do this
+
+    ```powershell
+    az login `
+        --service-principal `
+        --username $env:ARM_CLIENT_ID `
+        --password $env:ARM_CLIENT_SECRET `
+        --tenant $env:ARM_TENANT_ID `
+        --subscription $env:ARM_SUBSCRIPTION_ID
+    ```
