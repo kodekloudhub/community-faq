@@ -174,8 +174,6 @@ Note that you cannot create new resource groups in the playground. All resources
     $env:RESOURCE_GROUP_NAME="replace-with-resource-group"
     ```
 
-    The terrafrom Azure provider will pick up the `ARM_` variables automatically.
-
     To perform a non-interactive login with the Azure CLI, do this
 
     ```powershell
@@ -186,3 +184,6 @@ Note that you cannot create new resource groups in the playground. All resources
         --tenant $env:ARM_TENANT_ID `
         --subscription $env:ARM_SUBSCRIPTION_ID
     ```
+
+The terraform Azure provider will pick up the `ARM_` variables automatically.
+
