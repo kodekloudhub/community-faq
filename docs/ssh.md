@@ -2,6 +2,7 @@
 
 * [Changing SSH server settings](#changing-ssh-server-settings)
 * [Debugging connection to AWS EC2 instances](#debugging-connection-to-aws-ec2-instances)
+* [Debugging connection to Azure VMs](#debugging-connection-to-azure-vms)
 * [Connecting to cloud instances from lab terminal](#connecting-to-cloud-instances-from-lab-terminal)
 * [Inserting SSH keys for root user](#inserting-ssh-keys-for-root-user)
 * [SSH connections in a network of servers (hosts)](#ssh-connections-in-a-network-of-servers-hosts)
