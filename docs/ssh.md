@@ -2,6 +2,7 @@
 
 * [Changing SSH server settings](#changing-ssh-server-settings)
 * [Debugging connection to AWS EC2 instances](#debugging-connection-to-aws-ec2-instances)
+* [Connecting to cloud instances from lab terminal](#connecting-to-cloud-instances-from-lab-terminal)
 * [Inserting SSH keys for root user](#inserting-ssh-keys-for-root-user)
 * [SSH connections in a network of servers (hosts)](#ssh-connections-in-a-network-of-servers-hosts)
 
@@ -50,14 +51,26 @@ If all the above is true, then you can connect to the instance using EC2 Instanc
 
 For some KKE tasks you have to create a VPC. *You* have to ensure as part of that task if instances within the new VPC are to be able to be contacted from the lab terminal that all the above is set up when you create the VPC, subnet and route table. These concepts should be familiar if you have done the [AWS Certified CloudOps](https://learn.kodekloud.com/courses/aws-certified-sysops-administrator-associate) course.
 
-### Connecting from lab terminal
+## Debugging connection to Azure VMs
 
-Everything in the above section must be true to ensure SSH access from the outside world will work. Connection from the lab terminal will either be
-* Via SSH key pair which you created from the AWS
+(To be expanded with more detail soon)
+
+Ensure that:
+* The VM should be *fully* started
+* The VM must be Linux
+* The VM has a public IP bound to it
+* The VM's NIC is associated with a Network Security Group that permits inbound access on port 22 to all sources
+
+
+## Connecting to cloud instances from lab terminal
+
+Everything in the above section (AWS or Azure as appropriate) must be true to ensure SSH access from the outside world will work. Connection from the lab terminal will either be
+* Via SSH key pair which you created from the Cloud
 console, in which case that will have downloaded a PEM file either to your laptop (open the file, and paste the content to a new file *on the lab terminal*), or via a PEM file that is pre-created in the lab terminal. With either of these, use `ssh -i <PEM>` where PEM is the path to the PEM file name.
-* Via ssh keys you created using `ssh-keygen` on the lab terminal. When using this method, ALWAYS accept the defaults for the key names (`id_rsa`) unless the question specifically says otherwise, else the grader will fail you.
+* Via ssh keys you created using `ssh-keygen` on the lab terminal. When using this method, *ALWAYS* accept the defaults for the key names (`id_rsa`) unless the question specifically says otherwise, else the grader will fail you.
 
-When you use `ssh-keygen`, you must copy the content of the created `id_rsa.pub` to the EC2 instance's `authorized_keys` file as directed by the question. You will use EC2 Instance Connect to make the initial connection to EC2 to perform the copy.
+When you use `ssh-keygen`, you must copy the content of the created `id_rsa.pub` to the cloud instance's `authorized_keys` file as directed by the question.
+* On AWS you can use EC2 Instance Connect to make the initial connection to EC2 to perform the copy if the instance already exists.
 
 ## Inserting SSH keys for root user
 
