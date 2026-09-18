@@ -165,7 +165,7 @@ It is a common misconception of students and the cause of many questions on the 
 
 > In the lab, I did `ssh db` to get to DB server from web server. Now I try `ssh web` to return to web server and it is asking for password. What is the password?
 
-It is asking for a password because `ssh` is not configured for that direction. The correct way to return to web server is to type `exit` (or `CTRL-D`) which essentially reverses the `ssh` connection you made.
+It is asking for a password because `ssh` is not configured for that direction. The correct way to return to web server is to type `exit` (or press `CTRL-D`) which essentially reverses the `ssh` connection you made.
 
 If you later try [KodeKloud Engineer](https://engineer.kodekloud.com/), there are many servers. The start server is called `jumphost`.  You always `ssh` to one server, `exit` back to `jumphost` then `ssh` to another server.
 
