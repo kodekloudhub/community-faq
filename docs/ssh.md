@@ -54,13 +54,10 @@ For some KKE tasks you have to create a VPC. *You* have to ensure as part of tha
 
 ## Debugging connection to Azure VMs
 
-(To be expanded with more detail soon)
-
 Ensure that:
-* The VM should be *fully* started
-* The VM must be Linux
-* The VM has a public IP bound to it
-* The VM's NIC is associated with a Network Security Group that permits inbound access on port 22 to all sources
+* The VM must be Linux and be be *fully* started ![](../img/ssh-az-vm-running.png)
+* The VM has a public IP bound to it ![](../img/ssh-az-vm-pip.png)
+* The VM's NIC is associated with a Network Security Group that permits inbound access on port 22 with source `0.0.0.0/0` and destination `Any` ![](../img/ssh-az-vm-nsg.png)
 
 
 ## Connecting to cloud instances from lab terminal
@@ -69,6 +66,13 @@ Everything in the above section (AWS or Azure as appropriate) must be true to en
 * Via SSH key pair which you created from the Cloud
 console, in which case that will have downloaded a PEM file either to your laptop (open the file, and paste the content to a new file *on the lab terminal*), or via a PEM file that is pre-created in the lab terminal. With either of these, use `ssh -i <PEM>` where PEM is the path to the PEM file name.
 * Via ssh keys you created using `ssh-keygen` on the lab terminal. When using this method, *ALWAYS* accept the defaults for the key names (`id_rsa`) unless the question specifically says otherwise, else the grader will fail you.
+    ```text
+    azure-client ~ ➜  ls -l ~/.ssh
+    total 12
+    -rw------- 1 root root  562 Sep 18 03:49 authorized_keys
+    -rw------- 1 root root 3243 Sep 18 04:00 id_rsa
+    -rw------- 1 root root  725 Sep 18 04:00 id_rsa.pub
+    ```
 
 When you use `ssh-keygen`, you must copy the content of the created `id_rsa.pub` to the cloud instance's `authorized_keys` file as directed by the question.
 * On AWS you can use EC2 Instance Connect to make the initial connection to EC2 to perform the copy if the instance already exists.
