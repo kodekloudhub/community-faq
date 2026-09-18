@@ -15,7 +15,7 @@ This comes up time and time and time again in the forums! For instance:
 
 When you change any settings in the `sshd_config` file, the settings are not applied *until you restart the `sshd` service*! The grader tests your changes by attempting to ssh to the lab terminal (or cloud instance), so if your changes are not *applied*, the grader doesn't find what it is looking for.
 
-Do 
+Do
 ```bash
 sudo systemctl restart sshd
 ```
@@ -34,18 +34,47 @@ Students often have issues connecting to EC2 instances from labs or KKE/100 days
 Often to begin a task, you will need to connect directly from the AWS console first. This may be to insert an SSH public key that you have created using `ssh-keygen` in the lab console. There are a few things that must be correctly lined up to be able to do this.
 
 1. The instance should be *fully* started. Check the `Status` column in the EC2 console and ensure it is `2/2 checks passed`. Wait until this is the case.
+
+    <details>
+    <summary>Image</summary>
+
     ![](../img/ssh-instance-state.png)
+
+    </details>
 1. The instance *must* have a security group that allows inbound access from `0.0.0.0/0` on *at least* port 22, or `All` will do (less secure, but will work),
+    <details>
+    <summary>Image</summary>
+
     ![](../img/ssh-security-group.png)
+
+    </details>
 1. The instance *must* have a Public IP
+
+    <details>
+    <summary>Image</summary>
+
     ![](../img/ssh-public-ip.png)
+
+    </details>
 1. The subnet it is connected to *must* have a route to the Internet Gateway.
     1. Click the small squares next to `VPC ID` and `Subnet ID` to copy values, paste these to your notepad
+
+        <details>
+        <summary>Image</summary>
+
         ![](../img/ssh-subnet-id.png)
+
+        </details>
     1. Go to VPC console
     1. Select the VPC with the ID you copied (in nearly all labs there is only one VPC)
     1. Check the VPC `Resource Map`. It looks like this
+
+        <details>
+        <summary>Image</summary>
+
         ![](../img/ssh-vpc-resources.png)
+
+        </details>
     1. Verify that the subnet ID you coped is in the list on the left and that you can trace a line through `Route tables` to `Network connections` and that the network connection begins with `igw`, which indicates the Internet Gateway.
 
 If all the above is true, then you can connect to the instance using EC2 Instance Connect.
@@ -55,9 +84,30 @@ For some KKE tasks you have to create a VPC. *You* have to ensure as part of tha
 ## Debugging connection to Azure VMs
 
 Ensure that:
-* The VM must be Linux and be be *fully* started ![](../img/ssh-az-vm-running.png)
-* The VM has a public IP bound to it ![](../img/ssh-az-vm-pip.png)
-* The VM's NIC is associated with a Network Security Group that permits inbound access on port 22 with source `0.0.0.0/0` and destination `Any` ![](../img/ssh-az-vm-nsg.png)
+* The VM must be Linux and be be *fully* started
+
+    <details>
+    <summary>Image</summary>
+
+    ![](../img/ssh-az-vm-running.png)
+
+    </details>
+* The VM has a public IP bound to it
+
+    <details>
+    <summary>Image</summary>
+
+    ![](../img/ssh-az-vm-pip.png)
+
+    </detals>
+* The VM's NIC is associated with a Network Security Group that permits inbound access on port 22 with source `0.0.0.0/0` and destination `Any`
+
+    <details>
+    <summary>Image</summary>
+
+    ![](../img/ssh-az-vm-nsg.png)
+
+    </details>
 
 
 ## Connecting to cloud instances from lab terminal
