@@ -1,11 +1,16 @@
 # SSH mini-FAQ
 
+* [What is SSH?](#what-is-ssh)
 * [Changing SSH server settings](#changing-ssh-server-settings)
 * [Debugging connection to AWS EC2 instances](#debugging-connection-to-aws-ec2-instances)
 * [Debugging connection to Azure VMs](#debugging-connection-to-azure-vms)
 * [Connecting to cloud instances from lab terminal](#connecting-to-cloud-instances-from-lab-terminal)
 * [Inserting SSH keys for root user](#inserting-ssh-keys-for-root-user)
 * [SSH connections in a network of servers (hosts)](#ssh-connections-in-a-network-of-servers-hosts)
+
+## What is SSH?
+
+SSH, which stands for Secure Shell, is a technology that allows you to safely connect to and control a remote computer or server over the internet. Think of it like a secure, invisible tunnel that connects your device to another one, ensuring that everything you type or send is completely encrypted so hackers cannot spy on it. Once the connection is made, it opens up a text-based window where you can run commands and manage files as if you were sitting right in front of that remote computer. It is widely used by developers and website owners because it replaces older, unsafe connection methods that could easily leak passwords. To keep things safe, it usually verifies who you are by using either a traditional password or a special digital "key pair" stored on your machine.
 
 ## Changing SSH server settings
 
