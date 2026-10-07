@@ -33,6 +33,17 @@ This causes `sshd` to read and apply the new settings. Then the task will pass.
 
 For those that wonder why restarting the `sshd` service does not drop your ssh connection and disconnect you. The `sshd` process exists to listen for new connections. When a connection is made, it's connected according to the settings in `sshd_config` that were active when the connection was initiated. `sshd` creates a new, separate process to handle that connection until you close your connection. This allows you to safely restart the service without dropping your connection, and the new settings apply to connections started after the service restart.
 
+### Gotchas
+
+Note that it is not an error if the same configuration parameter appears more than once in `ssh_config` file, therefore you need to be aware of what will happen.
+
+```text
+PermitRootLogin yes
+PermitRootLogin no
+```
+
+`sshd` will not error if it sees this in the file. What actually happens is that it will use the *first* occurrence of the parameter and ignore subsequent ones. In the above example, the server will *ALLOW* root logins!
+
 
 ## Debugging connection to AWS EC2 instances
 
