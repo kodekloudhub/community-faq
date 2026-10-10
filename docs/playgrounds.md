@@ -153,17 +153,6 @@ Note that you cannot create new resource groups in the playground. All resources
     export RESOURCE_GROUP_NAME="replace-with-resource-group"
     ```
 
-    To perform a non-interactive login with the Azure CLI, do this
-
-    ```bash
-    az login \
-        --service-principal \
-        --username "$ARM_CLIENT_ID" \
-        --password "$ARM_CLIENT_SECRET" \
-        --tenant "$ARM_TENANT_ID" \
-        --subscription "$ARM_SUBSCRIPTION_ID"
-    ```
-
     **Windows PowerShell**
 
     ```powershell
@@ -174,16 +163,31 @@ Note that you cannot create new resource groups in the playground. All resources
     $env:RESOURCE_GROUP_NAME="replace-with-resource-group"
     ```
 
-    To perform a non-interactive login with the Azure CLI, do this
-
-    ```powershell
-    az login `
-        --service-principal `
-        --username $env:ARM_CLIENT_ID `
-        --password $env:ARM_CLIENT_SECRET `
-        --tenant $env:ARM_TENANT_ID `
-        --subscription $env:ARM_SUBSCRIPTION_ID
-    ```
-
 The terraform Azure provider will pick up the `ARM_` variables automatically.
+
+### Non-interactive login
+
+If you need to perform a non-interactive login in scripts or terraform `local-exec`, so that it does not try to pop up a browser, this can be done using the environment variables you have set:
+
+**Linux/macOS**
+
+```bash
+az login \
+    --service-principal \
+    --username "$ARM_CLIENT_ID" \
+    --password "$ARM_CLIENT_SECRET" \
+    --tenant "$ARM_TENANT_ID" \
+    --subscription "$ARM_SUBSCRIPTION_ID"
+```
+
+**Windows PowerShell**
+
+```powershell
+az login `
+    --service-principal `
+    --username $env:ARM_CLIENT_ID `
+    --password $env:ARM_CLIENT_SECRET `
+    --tenant $env:ARM_TENANT_ID `
+    --subscription $env:ARM_SUBSCRIPTION_ID
+```
 
