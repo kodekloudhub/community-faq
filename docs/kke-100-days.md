@@ -2,9 +2,10 @@
 
 This mini FAQ pertains to the task unlock logic for KodeKloud Engineer (KKE) tasks. 100 Days challenges (campaign topics) are part of the KKE platform therefore there are some similarities.
 
-There are currenty two campaign topics:
+There are currenty three campaign topics:
 * 100 Days of DevOps
 * 100 Days of Cloud
+* 100 Days of ML
 
 Then there are the regular topics like "Linux Level 1" etc.
 
