@@ -262,7 +262,7 @@ flowchart TD
     C[Host C]
     D[Host D]
 
-    User -->|ssh| Jump
+    User -->|ssh or terminal login| Jump
 
     Jump -->|ssh| A
     Jump -->|ssh| B
