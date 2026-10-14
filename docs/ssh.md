@@ -101,6 +101,15 @@ If all the above is true, then you can connect to the instance using EC2 Instanc
 
 For some KKE tasks you have to create a VPC. *You* have to ensure as part of that task if instances within the new VPC are to be able to be contacted from the lab terminal that all the above is set up when you create the VPC, subnet and route table. These concepts should be familiar if you have done the [AWS Certified CloudOps](https://learn.kodekloud.com/courses/aws-certified-sysops-administrator-associate) course.
 
+### The keypair store
+
+In the EC2 console, there is a store for pre-created SSH keypairs (`Key Pairs` on the left menu). There are a few ways to add new key pairs to this
+* `Create key pair` from within the console.
+* From the `Launch an Instance` screen
+* By creating yourself with `ssh-keygen` and uploading it via `aws ec2 import-key-pair`
+
+Either way, when a named keypair from this store is used to launch an instance, that keypair will be assigned to the *default user account* for the instance, i.e. `ec2-user`, `ubuntu` etc, but never `root`. If a lab question asks you to assign keys to the `root` user, there will always be a manual step to copy the public key to `root`'s `authorized_keys` file. See also [Inserting SSH keys for root user](#inserting-ssh-keys-for-root-user).
+
 ## Debugging connection to Azure VMs
 
 Ensure that:
