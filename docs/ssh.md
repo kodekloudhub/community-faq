@@ -187,6 +187,17 @@ What this does:
 
 While this is still present, root logins will not work. To make root logins work, you must *remove* this and *replace* it with the public key you generated.
 
+For cloud instances, if the key you intend to use has already been inserted for the default user (e.g. `ec2-user`, `ubuntu`, `azureuser` etc.), simply SSH to the VM as that user, then copy the file to root which overwrites what was already there with your key:
+
+```bash
+sudo cp .ssh/authorized_keys /root/.ssh/
+```
+
+Key thing for these questions is that the following must work for you, because that's what the grader will also do. Replace `<ip-of-cloud-instance>` with the IP address you have for the instance/VM.
+
+```bash
+ssh root@<ip-of-cloud-instance>
+```
 
 ## SSH connections in a network of servers (hosts)
 
