@@ -322,30 +322,32 @@ Not all infrastructure and routes are shown, but the remaining cluster nodes are
 Routes marked with ❌ are not possible because they have not been configured with ssh keys. If you attempt a connection this way, `ssh` will ask for a password, which you don't have! If you've read everything above, you will understand that this is *purposely by design*.
 
 ```mermaid
-flowchart TD
+graph TD
 
     Jump[student-node]
 
     AC[cluster1-controlplane]
-    BC[cluster4-controlplane]
     A1[cluster1-node01]
     A2[cluster1-node02]
+    BC[cluster4-controlplane]
     B1[cluster4-node01]
 
     Jump -->|ssh| AC
     Jump -->|ssh| BC
 
-    AC -->|ssh| A1
-    AC -->|ssh| A2
-
-    BC -->|ssh| B1
-
-    A1 -->|exit| AC
-    A2 -->|exit| AC
     AC -->|exit| Jump
+    subgraph Cluster1 [cluster1]
+        AC -->|ssh| A1
+        AC -->|ssh| A2
+        A1 -->|exit| AC
+        A2 -->|exit| AC
+    end
 
-    B1 -->|exit| BC
     BC -->|exit| Jump
+    subgraph Cluster4 [cluster4]
+        BC -->|ssh| B1
+        B1 -->|exit| BC
+    end
 
     AC -->|❌| BC
     BC -->|❌| AC
