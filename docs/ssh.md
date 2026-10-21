@@ -259,14 +259,16 @@ flowchart TD
 
 ### Hub and spoke using a bastion
 
-The number of routes is 4. You can use a single keypair with the public key copied to each of hosts A thru D, or to be more secure, 4 keypairs, one for each host. If I add one more server, then I only have to update the `authorized_keys` file on the new host to add the public key for `jump host`.
+The number of routes in this example is 4. You can use a single keypair with the public key copied to each of hosts A thru D, or to be more secure, 4 keypairs, one for each host. If I add one more server, then I only have to update the `authorized_keys` file on the new host to add the public key for `jump host`. Note that you *cannot* ssh directly between any of hosts A, B, C and D.
+
+This is exactly how KodeKloud Engineer labs are set up. Hosts A thru D represent e.g. `stapp01`, `stapp02`, etc.
 
 ```mermaid
 flowchart TD
 
     User((User))
 
-    Jump[Jump Host]
+    Jump[jump-host]
 
     A[Host A]
     B[Host B]
@@ -287,35 +289,7 @@ flowchart TD
 
 ```
 
-### Lab Examples
-
-#### KodeKloud Engineer
-
-Not all infrastructure is shown, but the remaining servers are all connected the same way to `jump-host`
-
-```mermaid
-flowchart TD
-
-    Jump[jump-host]
-
-    A[stapp01]
-    B[stapp02]
-    C[stapp03]
-    D[ststor01]
-
-    Jump -->|ssh| A
-    Jump -->|ssh| B
-    Jump -->|ssh| C
-    Jump -->|ssh| D
-
-    A -->|exit| Jump
-    B -->|exit| Jump
-    C -->|exit| Jump
-    D -->|exit| Jump
-
-```
-
-#### Kubernetes Ultimate Mocks
+### Tree arrangement: Kubernetes Ultimate Mocks
 
 Not all infrastructure and routes are shown, but the remaining cluster nodes are connected the same way. This is an example of a **tree** configuration. Each control plane acts as the jump host for its worker node(s). `student-node` is the jump host to each control plane node.
 
