@@ -207,7 +207,7 @@ It is a common misconception of students and the cause of many questions on the 
 
 It is asking for a password because `ssh` is not configured for that direction. The correct way to return to web server is to type `exit` (or press `CTRL-D`) which essentially reverses the `ssh` connection you made.
 
-If you later try [KodeKloud Engineer](https://engineer.kodekloud.com/), there are many servers. The start server is called `jumphost`.  You always `ssh` to one server, `exit` back to `jumphost` then `ssh` to another server.
+If you later try [KodeKloud Engineer](https://engineer.kodekloud.com/), there are many servers. The start server is called `jump-host`.  You always `ssh` to one server, `exit` back to `jump-host` then `ssh` to another server. In some labs such as Kubernetes Ultimate Mocks series, this may be called `student-node`. Either way it's still the start server - the one you land on when the lab first starts, and the one you must *always* `exit` back to before attempting to `ssh` to any other server.
 
 Why is it done this way? It is a security and operational best practice and is how it is done in the real world, not just labs. Every SSH connection requires a key pair, so if you could `ssh` from any host (server) to any other host in any direction on a network with `n` hosts, the number of key pairs that would have to be managed can be calculated using the formula `n(n-1)` which even with 10 servers on the network is 90 key pairs - per user who has access to all servers!
 
@@ -286,6 +286,67 @@ flowchart TD
     D -->|exit| Jump
 
 ```
+
+### Lab Examples
+
+#### KodeKloud Engineer
+
+Not all infrastructure is shown, but the remaining servers are all connected the same way to `jump-host`
+
+```mermaid
+flowchart TD
+
+    Jump[jump-host]
+
+    A[stapp01]
+    B[stapp02]
+    C[stapp03]
+    D[ststor01]
+
+    Jump -->|ssh| A
+    Jump -->|ssh| B
+    Jump -->|ssh| C
+    Jump -->|ssh| D
+
+    A -->|exit| Jump
+    B -->|exit| Jump
+    C -->|exit| Jump
+    D -->|exit| Jump
+
+```
+
+#### Kubernetes Ultimate Mocks
+
+Not all infrastructure is shown, but the remaining cluster nodes are connected the same way. This is an example of a **tree** configuration. Each control plane acts as the jump host for its worker node(s). `student-node` is the jump host to each control plane node.
+
+```mermaid
+flowchart TD
+
+    Jump[student-node]
+
+    AC[cluster1-controlplane]
+    BC[cluster4-controlplane]
+    A1[cluster1-node01]
+    A2[cluster1-node02]
+    B1[cluster4-node01]
+
+    Jump -->|ssh| AC
+    Jump -->|ssh| BC
+
+    AC -->|ssh| A1
+    AC -->|ssh| A2
+
+    BC -->|ssh| B1
+
+    A1 -->|exit| AC
+    A2 -->|exit| AC
+    AC -->|exit| Jump
+
+    B1 -->|exit| BC
+    BC -->|exit| Jump
+
+```
+
 
 ## Terminology
 
