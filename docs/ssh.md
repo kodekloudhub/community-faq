@@ -319,6 +319,8 @@ flowchart TD
 
 Not all infrastructure is shown, but the remaining cluster nodes are connected the same way. This is an example of a **tree** configuration. Each control plane acts as the jump host for its worker node(s). `student-node` is the jump host to each control plane node.
 
+Routes marked with ❌ are not possible because they have not been configured with ssh keys. If you attempt a connection this way, `ssh` will ask for a password, which you don't have! If you've read everything above, you will understand that this is *by design*.
+
 ```mermaid
 flowchart TD
 
