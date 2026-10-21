@@ -349,10 +349,8 @@ graph TD
         B1 -->|exit| BC
     end
 
-    AC -->|❌| BC
-    BC -->|❌| AC
-    A1 -->|❌| B1
-    A2 -->|❌| B1
+    Cluster1 --->|❌| Cluster4
+    Cluster4 --->|❌| Cluster1
 ```
 
 
