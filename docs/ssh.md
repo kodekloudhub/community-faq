@@ -158,9 +158,46 @@ When you use `ssh-keygen`, you must copy the content of the created `id_rsa.pub`
 
 ## Inserting SSH keys for root user
 
-Some of our cloud labs request that you set up password-less root access to an EC2 instance or an Azure VM, by first creating a keypair using `ssh-keygen` in the lab terminal and then to put it into the cloud instance root user's `authorized_keys` file.
+Some of our cloud labs request that you set up password-less root access to an EC2 instance or an Azure VM. The grader checks this by attempting to connect as `root` to the cloud instance from the lab terminal, therefore before ending the question, you should check that this works for yourself. What *must* work *from the lab terminal* is this. Until it does, the grader will fail you.
 
-A common mistake is not noticing what is *already present* in the `authorized_keys` file and simply appending the new public key to what's already there. Then when trying to SSH as root to the instance you will get a response like this
+```text
+ssh root@<ip-of-cloud-instance>
+```
+
+Replace `<ip-of-cloud-instance>` with the IP address of the instance/VM from the cloud console.
+
+So what is needed for this to work?
+
+1. A running instance/VM and its public IP address
+1. The instance security group must allow inbound access from the Internet.
+1. An SSH keypair with the public key in the root user's `authorized_keys` file on the cloud instance, and the private key saved as `~/.ssh/id_rsa` on the lab terminal.
+
+How you get it there depends on the question.
+
+### Instance already exists at start of question
+
+If it doesn't say how you should create the keys, the cloud instance exists and you can already ssh into it as the default user (`ec2-user`, `ubuntu`, `azureuser` etc) from the lab terminal, then you can simply copy the default user's key to root
+
+1. Log into cloud instance (e.g. `ssh ec2-user@<ip-of-cloud-instance>`)
+1. Copy the key
+    ```bash
+    sudo cp ~/.ssh/authorized_keys /root/.ssh/
+    ```
+
+### Creating the keypair yourself
+
+If you are asked to create the keypair in the lab termainal
+
+1. Run `ssh-keygen` on the lab terminal. Accept the defaults for where to save it by pressing `ENTER`. This creates `~/.ssh/id_rsa` (private key) and `~/.ssh/id_rsa.pub` (public key)
+1. Connect to the running instance (create it first if the question requires it)
+1. Copy the *content* of `~/.ssh/id_rsa.pub` into `/root/.ssh/authorized_keys` then
+
+    1. `cat ~/.ssh/id_rsa.pub`
+    1. Copy the text it prints
+    1. Log into cloud instance by any means (ssh if possible, EC2 instance connect in AWS etc), and run `sudo vi /root/.ssh/authorized_keys`. Paste your key content into here, *overwriting* anything already present, then save it.
+
+
+A common mistake is not noticing what is *already present* in root's `authorized_keys` file and simply appending the new public key to what's already there. Then when trying to SSH as root to the instance you will get a response like this
 
 > Please login as the user '*some-other-user*' rather than the user 'root'
 
@@ -185,19 +222,6 @@ What this does:
 
     Prevents execution of ~/.ssh/rc.
 
-While this is still present, root logins will not work. To make root logins work, you must *remove* this and *replace* it with the public key you generated.
-
-For cloud instances, if the key you intend to use has already been inserted for the default user (e.g. `ec2-user`, `ubuntu`, `azureuser` etc.), simply SSH to the VM as that user, then copy the file to root which overwrites what was already there with your key:
-
-```bash
-sudo cp ~/.ssh/authorized_keys /root/.ssh/
-```
-
-Key thing for these questions is that the following must work for you, because that's what the grader will also do. Replace `<ip-of-cloud-instance>` with the IP address you have for the instance/VM.
-
-```bash
-ssh root@<ip-of-cloud-instance>
-```
 
 ## SSH connections in a network of servers (hosts)
 
