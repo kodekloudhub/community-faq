@@ -1,6 +1,6 @@
 # killer.sh
 
-**Killer is included in the *standard* exam purchase. You do not need to purchase it separately**. Note that if you purchased using the [voucher scheme for residents of India](./exam-vouchers.md), this is *not* the case.
+**Killer is included in the *standard* exam purchase. You do not need to purchase it separately**. Note that if you purchased your exam using the [voucher scheme for residents of India](./exam-vouchers.md), this is ***not*** the case.
 
 Killer is the ultimate test of readiness to take the exam. In their own words:
 
@@ -24,9 +24,9 @@ Aim to score more than 90% with time to spare.
 * At the end of the two hour test duration, a link to the solutions and score page appears at the top of the question pane.
 * If you finish early, you can end the test by selecting `Solutions & Score` from the `Exam Controls` menu. This will set the timer to zero before displaying the link to the solutions and score pages.
 * When timer is at zero you can still do things in the environment but any questions answered after timer is at zero are not scored.
-* Note that the score is recalculated every few minutes. When you end the test, the score for the last question you answered before ending might not be calculated. Wait 5 minutes, then refresh the score page.
+* Note that the score is recalculated every few minutes. When you end the test, the score for the last question you answered before finishing might not be calculated. Wait 5 minutes, then refresh the score page.
 * If you pass the real exam without having used both killer sessions, any remaining sessions are still available to you.
-* You may ask about questions in killer.sh on Discord/community forum. NDA applies only to questions from real exams.
+* You may ask about questions in killer.sh on KodeKloud's Discord/community forum or on [Killer's Discord](https://killer.sh/discord) (where there are likely to be people that work for Killer meaning you might get better answers). NDA applies only to questions from real exams.
 
 See also
 * [Complete killer.sh FAQ](https://killer.sh/faq)
