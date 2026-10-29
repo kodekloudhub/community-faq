@@ -14,6 +14,7 @@ We see a few questions about "kubectl" YAML manifests and what you can and can't
 * [Advanced features](#advanced-features)
      * [Documents](#documents)
      * [Aliases and anchors](#aliases-and-anchors)
+     * [Blocks and Folding](#blocks-and-folding)
 
 ## In a nutshell
 
