@@ -642,7 +642,7 @@ This is useful when you have a string value that is very long (e.g. a Falco rule
     **YAML**
 
     ```yaml
-    data: >
+    condition: >
       container.id != host and
       fd.name startswith /etc/kubernetes
     ```
@@ -653,10 +653,10 @@ This is useful when you have a string value that is very long (e.g. a Falco rule
     container.id != host and fd.name startswith /etc/kubernetes
     ```
 
-    You would get exactly the same output if you had simply put the following without an operator.
+    You would get *exactly* the same output if you had simply put the following without an operator.
 
     ```yaml
-    data: container.id != host and fd.name startswith /etc/kubernetes
+    condition: container.id != host and fd.name startswith /etc/kubernetes
     ```
 
 
