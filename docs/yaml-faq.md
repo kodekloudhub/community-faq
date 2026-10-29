@@ -614,7 +614,7 @@ You will see that the environment for c1 is replicated to all the other containe
 
 ### Blocks and Folding
 
-This is useful when you have a string value that is very long (e.g. a Falco rule), or possibly multi-line (e.g. an embedded bash script). By use of block operators following the key, you can determine how the string content will be rendered.
+This is useful when you have a scalar string value that is very long (e.g. a Falco rule), or possibly multi-line (e.g. an embedded bash script). By use of block operators following the key, you can determine how the string content will be rendered.
 
 1. The **literal** operator (`|`)
 
@@ -658,6 +658,14 @@ This is useful when you have a string value that is very long (e.g. a Falco rule
     ```yaml
     condition: container.id != host and fd.name startswith /etc/kubernetes
     ```
+
+
+**Pro-Tip: Controlling Trailing Newlines (Chomping Indicators)**
+
+Both operators can be paired with a modifier (`+` or `-`) to control how the very end of the string handles trailing newlines:
+* Clip (Default - no symbol): Preserves exactly one trailing newline at the end of the text block.
+* Strip (`|-` or `>-`): Strips all trailing newlines. The string ends exactly after the last character.
+* Keep (`|+` or `>+`): Keeps all trailing blank lines at the end of the file.
 
 
 
