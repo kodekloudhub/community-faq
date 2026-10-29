@@ -611,5 +611,53 @@ kubectl get pod nginx-with-anchors -o yaml
 
 You will see that the environment for c1 is replicated to all the other containers. Neat huh?
 
+### Blocks and Folding
+
+This is useful when you have a string value that is very long (e.g. a Falco rule), or possibly multi-line (e.g. an embedded bash script). By use of block operators following the key, you can determine how the string content will be rendered.
+
+1. The **literal** operator (`|`)
+
+    Use for embedded scripts, and things you need to preserve newlines in.
+
+    **YAML**
+
+    ```yaml
+    data: |
+      set -e
+      echo "hello"
+    ```
+
+    **Rendered Output***
+
+    ```text
+    set -e
+    echo "hello"
+    ```
+
+1. The **folding** operator (`>`)
+
+    Use for things you want to be on multiple lines in the YAML for ease of reading, but when rendered should *not* have line breaks, e.g. Falco rules. YAML converts each newline in the folded block to a space when it renders the output.
+
+    **YAML**
+
+    ```yaml
+    data: >
+      container.id != host and
+      fd.name startswith /etc/kubernetes
+    ```
+
+    **Rendered Output**
+
+    ```text
+    container.id != host and fd.name startswith /etc/kubernetes
+    ```
+
+    You would get exactly the same output if you had simply put the following without an operator.
+
+    ```yaml
+    data: container.id != host and fd.name startswith /etc/kubernetes
+    ```
+
+
 
 [Return to main FAQ](../README.md)
