@@ -106,6 +106,12 @@ Here is a worked example (using the Kubernetes Multi Cluster playground)
 1. Start `View Port` as described above and enter the node port number. You should now see the nginx welcome page in your browser.
 1. Switch back to Terminal 1 to continue working.
 
+If you have more than one service you want to access simultaneously.
+
+1. Ensure each has a different node port.
+1. Follow the above instructions for the first service
+1. For additional services, open a new terminal window for each, then run only the `socat` command for that service's node port. You only need to install `socat` once.
+
 
 # How do I connect remotely to a Cloud Playground?
 
