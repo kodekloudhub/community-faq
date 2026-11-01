@@ -22,9 +22,11 @@ Should this fail to resolve the issue, please report Discord, including a link t
 
 You're probably reading this because you've experienced labs that are crashing, not loading, giving nginx error codes, slow or other similar reasons.
 
-We are really sorry that you are experiencing this, however you must understand a few things. If you are successful in fulfilling a career in DevOps, these sorts of issues will become very familiar to you and is all in the day in the life of a DevOps engineer!
-
-First off, let's rule out any potential browser issues. If you are new to the labs, this could be the issue. Please read and try out the tips here: https://support.kodekloud.com/troubleshooting-labs
+First off, let's rule out any potential browser issues. If you are new to the labs, this could be the issue. Please read and try out the tips here: https://support.kodekloud.com/troubleshooting-labs. Also browser-related is an error that contains the text
+```text
+400 Request Header Or Cookie Too Large
+```
+If you see this anywhere in the error message, then you must clear your browser cookies for all KodeKloud sites, which may log you off so just log back in.
 
 If the labs are still not working, there are a number of reasons this may be happening. To provide the labs, we rely on Cloud-based infrastructure and various other third party services, such as content distribution network (CDN) providers and the like which are not under our control. Any of these pieces in the puzzle could be having an issue, meaning that if it is not something under our control, we all have to wait until the third party fixes their issue.
 
