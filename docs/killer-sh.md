@@ -11,9 +11,16 @@ Each question is made of a number of "sub-tasks", each completed sub-task scorin
 
 The killer.sh test interface is a very close simulation of the real exam and everything in it should work very similarly.
 
+Killer simulators are available for the following certifications:
+
+* CKA: you get **two different simulator sessions**, one in CKA-A and one in CKA-B
+* CKS: you get **two different simulator sessions**, one in CKS-A and one in CKS-B
+* CKAD: you get **two different simulator sessions**, one in CKAD-A and one in CKAD-B
+* CNPE|LFCS: you get two sessions **in the same simulator** with the same questions
+
+
 Aim to score more than 90% with time to spare.
 
-* There is a killer test associated with each of CKA, CKAD and CKS.
 * You get two simulator sessions included in the price of the exam. If you want more, you must purchase them separately from `killer.sh` website, or in the event that you failed the main exam twice - when you purchase another exam.<br/>You should aim to do the first session about 2 weeks before the exam. Revise anything you find hard. Do the second session 2-3 days before your exam.
 * You activate the free sessions from the [exam portal](https://trainingportal.linuxfoundation.org/). Note that the killer test does not start immediately when you click this link. You will get a confirmation dialog that you must accept before it launches the test environment.<br/><br/>![killer](../img/killer.jpg)
 * Each session lasts for 36 hours from when you start it, i.e. if you activate it at 9am Monday, it lasts till 9pm Tuesday.
