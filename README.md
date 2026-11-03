@@ -92,7 +92,9 @@ This section is related to questions about the use of the KodeKloud platform, an
 
 ### I have a question about payments or subscriptions
 
-For all issues related to this, please contact the dedicated team at support@kodekloud.com
+For all issues related to this, please contact the dedicated team at [support@kodekloud.com](mailto:support@kodekloud.com) from the email address you use to log into the platform if you already have an account, which is important so that the support team can match your email address to your login.
+
+For your own security, issues related to your subscription or payments cannot be discussed on a public forum.
 
 ### I cannot access labs from Udemy
 
