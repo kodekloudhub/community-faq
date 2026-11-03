@@ -32,13 +32,11 @@ If the labs are still not working, there are a number of reasons this may be hap
 
 If you are in the middle of a lab and the terminal screen shows an nginx 404/502/504 error or a "connection closed" error, then sometimes this can clear by opening a new terminal tab after a minute or so.
 
-Additionally, we have tens of thousands of students doing courses at any one time. There is only so much infrastructure to go round. It may be that you've hit a busy time, so you should wait a few minutes and retry. If still broken, wait a few hours before retrying. Even Cloud providers (which we rely on) have periods where infrastructure cannot be provisioned due to excessive demand. Issues may also be regional. What works for a user in one part of the world may not work in another. This can be attributed to regional third parry services such as CDN or Cloud Provider issues (outside our direct control).
+Additionally, we have tens of thousands of students enrolled in courses at any one time. There is only so much infrastructure to go round. It may be that you've hit a busy time, so you should wait a few minutes and retry. If still broken, wait 30 min to an hour before retrying. Even Cloud providers (which we rely on) have periods where infrastructure cannot be provisioned due to excessive demand. Issues may also be regional. What works for a user in one part of the world may not work in another. This can be attributed to regional third party services such as CDN or Cloud Provider issues (outside our direct control).
 
-When it is the case that the issue is with our own platform or infrastructure, or if we know where the cause is elsewhere, there will generally be announcements made on our Discord server, so you should  check there for updates and fix ETAs.
+When it is the case that the issue is with our own platform or infrastructure, or if we know where the cause is elsewhere, there will generally be announcements made on our Discord server, so you should check there for updates and fix ETAs.
 
-Either way, you should try reloading the lab immediately, after a few minutes and if that does not work, after an hour or so.
-
-All lab issues raised via our Userback feedback system (small blue box containing speech bubble to the right of the screen) are moved to a special queue that helps us track the type and frequency of such issues.
+Either way, you should try reloading the lab immediately, after a few minutes and if that does not work, after an hour or so. For the most part, many of these issues including labs not loading are transient and fix themselves. Only if you are still getting the same error after an hour should you report it.
 
 The key takeaway from this is that the issues you may be facing are not always something that is our fault, therefore not something that can be fixed immediately.
 
