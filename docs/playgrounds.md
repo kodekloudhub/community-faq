@@ -42,9 +42,10 @@ Note also that just because a service may be available, this does not mean that 
 * **Azure DevOps** - Requires a high level of permissions, therefore would violate **security** policy, and also permit the creation of high **cost** resources, therefore not permitted in the general playground.
 However, we launched a [specific playground](https://kodekloud.com/cloud-playgrounds/azure-devops) for this on May 2026 where Azure Devops is preinstalled with guardrails. You might not be able to do everything you want, but some features will be there.
 * **Azure Entra ID** - Too permissive for playground use, although it may feature in controlled course labs in future.
+* **Azure AI Foundry** - Likely insufficient controls to constrain model use which would result in high cost.
 * **AWS Glue** - Possible to run up massive bills in a short time. Difficult to put guardrails on without making it unusable.
 * **AWS Transit Gateway** - High per-minute operational cost.
-* **Azure AI Foundry** - Likely insufficent controls to constrain model use which would result in high cost.
+
 
 ## Cloud IAM
 
