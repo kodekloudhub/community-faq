@@ -97,9 +97,14 @@ Often to begin a task, you will need to connect directly from the AWS console fi
         </details>
     1. Verify that the subnet ID you coped is in the list on the left and that you can trace a line through `Route tables` to `Network connections` and that the network connection begins with `igw`, which indicates the Internet Gateway.
 
-If all the above is true, then you can connect to the instance using EC2 Instance Connect.
+If all the above is true, then you can connect to the instance using EC2 Instance Connect (see below).
 
 For some KKE tasks you have to create a VPC. *You* have to ensure as part of that task if instances within the new VPC are to be able to be contacted from the lab terminal that all the above is set up when you create the VPC, subnet and route table. These concepts should be familiar if you have done the [AWS Certified CloudOps](https://learn.kodekloud.com/courses/aws-certified-sysops-administrator-associate) course.
+
+#### EC2 Instance Connect
+
+This is implemented by a software package that must be installed on the instance. It comes pre-installed on recent Amazon Linux and Ubuntu instances, but most others (e.g. Red Hat Linux) it is *not* preinstalled, therefore instance connect doesn't work even if all the networking conditions described above are correct. To make it work on other distros, you must first be able to connect to the instance by another means (e.g. regular SSH), then [install the EC2 Instance Connect service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html) onto the instance using the distro's package manager.
+
 
 ### The keypair store
 
