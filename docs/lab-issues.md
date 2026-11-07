@@ -26,7 +26,7 @@ First off, let's rule out any potential browser issues. If you are new to the la
 ```text
 400 Request Header Or Cookie Too Large
 ```
-If you see this anywhere in the error message, then you must clear your browser cookies for all KodeKloud sites, which may log you off so just log back in.
+If you see this anywhere in the error message, then please see the section about this at the end of this document.
 
 If the labs are still not working, there are a number of reasons this may be happening. To provide the labs, we rely on Cloud-based infrastructure and various other third party services, such as content distribution network (CDN) providers and the like which are not under our control. Any of these pieces in the puzzle could be having an issue, meaning that if it is not something under our control, we all have to wait until the third party fixes their issue.
 
@@ -41,3 +41,14 @@ Either way, you should try reloading the lab immediately, after a few minutes an
 The key takeaway from this is that the issues you may be facing are not always something that is our fault, therefore not something that can be fixed immediately.
 
 We thank you for your patience.
+
+# Request Header Or Cookie Too Large
+
+We have an active investigation on this issue, and request your assistance in solving it. If you get this error, please get screenshots of your site cookies related to KodeKloud sorted by size from Developer Tools in the browser and then attach them to your message in Discord and post in the `feedback-featues-bugs` channel. Once you have posted the message and screenshots, then clear your cookies to retry the lab.
+
+1. Select `Application` as indicated by the arrow
+1. For each URL containing `KodeKloud` on the left, click it, sort the table by Size, largest first (other arrow)
+1. Take screenshot
+
+![devtools](/img/cookie-devtools.png)
+
