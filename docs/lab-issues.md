@@ -48,7 +48,7 @@ We have an active investigation on this issue, and request your assistance in so
 
 1. Select `Application` as indicated by the arrow
 1. For each URL containing `KodeKloud` on the left, click it, sort the table by Size, largest first (other arrow)
-1. Take screenshot
+    1. Take screenshot
 
 ![devtools](/img/cookie-devtools.png)
 
