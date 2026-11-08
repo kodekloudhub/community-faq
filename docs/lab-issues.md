@@ -50,5 +50,10 @@ We have an active investigation on this issue, and request your assistance in so
 1. For each URL containing `KodeKloud` on the left, click it, sort the table by Size, largest first (other arrow)
     1. Take screenshot
 
+Always include a reference to the lab:
+* Course labs - copy link from browser
+* KodeKloud Engineer - The course, level and lab title, e.g. `Linux Level 1, Custom Apache Setup`
+* 100 days challenges - The course and day number, e.g. `100 days of cloud, day 47`
+
 ![devtools](/img/cookie-devtools.png)
 
