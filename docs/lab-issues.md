@@ -52,7 +52,7 @@ We have an active investigation on this issue, and request your assistance in so
 
 Always include a reference to the lab:
 * Course labs - copy link from browser
-* KodeKloud Engineer - The course, level and lab title, e.g. `Linux Level 1, Custom Apache Setup`
+* KodeKloud Engineer - The course, level and lab title, e.g. `Linux Level 1, Custom Apache User Setup`
 * 100 days challenges - The course and day number, e.g. `100 days of cloud, day 47`
 
 ![devtools](/img/cookie-devtools.png)
