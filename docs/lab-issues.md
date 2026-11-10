@@ -46,7 +46,8 @@ We thank you for your patience.
 
 We have an active investigation on this issue, and request your assistance in solving it. If you get this error, please get screenshots of your site cookies related to KodeKloud sorted by size from Developer Tools in the browser and then attach them to your message in Discord and post in the `feedback-bugs-features` or `support-help` channels. Once you have posted the message and screenshots, then clear your cookies to retry the lab. The information we need from this is the `Name` and the `Size` of the cookies, not the value. Make the value column narrower if an entire value is showing, which it might be for ones with a small size. Make the `Name` column wider if any of the names are truncated (have `...` at the end). Either way we're trying to find the really big ones.
 
-1. Select `Application` as indicated by the arrow
+1. Open Developer Tools
+1. Select `Application` as indicated by the arrow (see screenshot below)
 1. For each URL containing `KodeKloud` on the left, click it, sort the table by Size, largest first (other arrow)
     1. Take screenshot
 
@@ -54,6 +55,14 @@ Always include a reference to the lab:
 * Course labs - copy link from browser, and say which question number it happened in.
 * KodeKloud Engineer - The course, level and lab title, e.g. `Linux Level 1, Custom Apache User Setup`
 * 100 days challenges - The course and day number, e.g. `100 days of cloud, day 47`
+
+Please note that this procedure applies *specifically* to errors that look like
+
+```text
+Oops! There is an error with reading the question.
+
+<html>\r\n<head><title>400 Request Header Or Cookie Too Large<title> ...
+```
 
 ![devtools](/img/cookie-devtools.png)
 
