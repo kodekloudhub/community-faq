@@ -63,7 +63,9 @@ Our engineers are aware of the root cause for this issue and are working on a fi
 
 We use a third party, [Vimeo](https://vimeo.com/) to host and play our video content. Issues with the video player are at Vimeo and not something we can fix.
 
-Firstly, are you in a country where Vimeo is blocked or restricted? In such countries you will see this message and your option is to try to use a VPN to not appear to be in your own country. If you are *not* located in any of the counties below, you can check the [Vimeo Help Center](https://help.vimeo.com/hc/en-us/categories/12385942899985-Watching-videos-and-events) to see if they are experiencing an outage, or for help on other error messages that may be shown by the video player.
+Firstly, are you in a country where Vimeo is blocked or restricted? In such countries you will see this message and your option is to try to use a VPN to not appear to be in your own country. If you are *not* located in any of the countries below, you can check the [Vimeo Help Center](https://help.vimeo.com/hc/en-us/categories/12385942899985-Watching-videos-and-events) to see if they are experiencing an outage, or for help on other error messages that may be shown by the video player.
+
+This is not an exhaustive list. There may be other countries, particularly in South East Asia - check your local laws.
 
 ### Blocked by the government
 
