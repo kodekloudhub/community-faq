@@ -3,6 +3,9 @@
 * [Unable to access labs from Udemy course](#unable-to-access-labs-from-udemy-course)
 * [Question options are all marked incorrect](#question-options-are-all-marked-incorrect)
 * [Labs Disconnecting/Crashing](#labs-disconnectingcrashing)
+* [Specific lab/video errors](#specific-labvideo-errors)
+    * [Request Header Or Cookie Too Large](#request-header-or-cookie-too-large)
+    * [This video isn't available right now](#this-video-isnt-available-right-now)
 
 For all lab issues that are not related to login problems, the primary channel for getting further information is our Discord server, so this is where you should go for further information and status updates.
 
@@ -24,7 +27,7 @@ You're probably reading this because you've experienced labs that are crashing, 
 
 First off, let's rule out any potential browser issues. If you are new to the labs, this could be the issue. Please read and try out the tips here: https://support.kodekloud.com/troubleshooting-labs. Also browser-related is an error that contains the text
 ```text
-400 Request Header Or Cookie Too Large
+400 Request Header Or Cookie Too LargeThis vieo i
 ```
 If you see this anywhere in the error message, then please see the section about this at the end of this document.
 
@@ -42,21 +45,11 @@ The key takeaway from this is that the issues you may be facing are not always s
 
 We thank you for your patience.
 
-# Request Header Or Cookie Too Large
+# Specific lab/video errors
 
-We have an active investigation on this issue, and request your assistance in solving it. If you get this error, please get screenshots of your site cookies related to KodeKloud sorted by size from Developer Tools in the browser and then attach them to your message in Discord and post in the `feedback-bugs-features` or `support-help` channels. Once you have posted the message and screenshots, then clear your cookies to retry the lab. The information we need from this is the `Name` and the `Size` of the cookies, not the value. Make the value column narrower if an entire value is showing, which it might be for ones with a small size. Make the `Name` column wider if any of the names are truncated (have `...` at the end). Either way we're trying to find the really big ones.
+## Request Header Or Cookie Too Large
 
-1. Open Developer Tools
-1. Select `Application` as indicated by the arrow (see screenshot below)
-1. For each URL containing `KodeKloud` on the left, click it, sort the table by Size, largest first (other arrow)
-    1. Take screenshot
-
-Always include a reference to the lab:
-* Course labs - copy link from browser, and say which question number it happened in.
-* KodeKloud Engineer - The course, level and lab title, e.g. `Linux Level 1, Custom Apache User Setup`
-* 100 days challenges - The course and day number, e.g. `100 days of cloud, day 47`
-
-Please note that this procedure applies *specifically* to errors that look like
+Please note that this applies *specifically* to errors that look like
 
 ```text
 Oops! There is an error with reading the question.
@@ -64,5 +57,35 @@ Oops! There is an error with reading the question.
 <html>\r\n<head><title>400 Request Header Or Cookie Too Large<title> ...
 ```
 
-![devtools](/img/cookie-devtools.png)
+Our engineers are aware of the root cause for this issue and are working on a fix. In the meantime, please clear your cookies and retry the lab.
 
+## This video isn't available right now
+
+We use a third party, [Vimeo](https://vimeo.com/) to host and play our video content. Issues with the video player are at Vimeo and not something we can fix.
+
+Firstly, are you in a country where Vimeo is blocked or restricted? In such countries you will see this message and your option is to try to use a VPN to not appear to be in your own country. If you are *not* located in any of the counties below, you can check the [Vimeo Help Center](https://help.vimeo.com/hc/en-us/categories/12385942899985-Watching-videos-and-events) to see if they are experiencing an outage, or for help on other error messages that may be shown by the video player.
+
+### Blocked by the government
+
+* China
+* Indonesia
+
+### Blocked possibly by government, or by individual ISPs
+
+In these countries if there is not an active ban by the state, your choice of ISP may affect whether or not you are blocked. Check your ISP's documentation.
+
+* Vietnam
+* Thailand
+* Malaysia
+* Cambodia
+
+### Blocked by Vimeo themselves
+
+Any country currently sanctioned by the USA is blocked at source since Vimeo is a US company and are bound by US law. Such countries include:
+
+* Russia
+* Iran
+* Syria
+* Cuba
+* North Korea
+* Occupied regions of Ukraine
